@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-behavior-smooth">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Whiskey Barrel — Single Malt Aged in Charred Oak</title>
+  <meta name="description"
+    content="Whiskey Barrel crafts small-batch single malt aged in charred American oak. Explore our casks, our expressions and book a distillery tasting.">
+  <meta property="og:title" content="Whiskey Barrel — Single Malt Aged in Charred Oak">
+  <meta property="og:description"
+    content="Small-batch single malt, patiently aged in charred oak casks. Discover the expressions of Whiskey Barrel.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Lovable">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts: Domine (Serif Headings) & Hanken Grotesk (Sans-Serif Body & UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="overflow-x-hidden bg-background text-foreground font-body">
+
+  <main class="overflow-x-hidden">
+    <!-- Header/Navigation -->
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-border/40 bg-background/70 backdrop-blur-xl">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#top" class="group flex items-center gap-3">
+          <span
+            class="relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-ember/60 bg-background/90 overflow-hidden shadow-sm transition-transform duration-500 group-hover:scale-105 nav-logo-icon">
+            <img src="assets/wb-icon.png" alt="WB Logo Icon" class="h-full w-full object-cover rounded-full">
+          </span>
+          <span class="font-display text-base sm:text-lg tracking-[0.25em] uppercase font-bold text-foreground">Whiskey
+            Barrel</span>
+        </a>
+        <ul class="hidden items-center gap-9 text-xs uppercase tracking-[0.2em] text-muted-foreground md:flex">
+          <li>
+            <a href="#expressions"
+              class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">Expressions</a>
+          </li>
+          <li>
+            <a href="visit.html"
+              class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">Visit</a>
+          </li>
+        </ul>
+        <div class="flex items-center gap-3">
+          <a href="category.html?category=WHISKEY"
+            class="hidden rounded-sm border border-ember/50 px-5 py-2 text-xs uppercase tracking-[0.2em] text-ember transition-all duration-500 hover:bg-ember hover:text-primary-foreground hover:shadow-ember sm:inline-block">
+            Explore Spirits
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- 1. Hero -->
+    <section id="top" class="relative w-full overflow-hidden pt-[68px] bg-[#0d0a08]">
+      <div class="relative mx-auto w-full max-w-full overflow-hidden flex items-center justify-center">
+        <img src="assets/hero-wooden-sign.png" alt="Whisky Barrel Illuminated Wooden Banner" width="1024" height="329"
+          class="w-full h-auto max-h-[calc(100vh-68px)] object-contain block mx-auto">
+      </div>
+    </section>
+
+    <!-- 2. About Whiskey -->
+    <section id="about" class="bg-[#faf9f7] text-[#1c1917] px-6 pt-16 pb-18 border-b border-border/20">
+      <div class="mx-auto max-w-4xl text-center">
+        <div data-reveal="up" class="flex items-center justify-center gap-4">
+          <span class="h-px w-14 bg-border/40"></span>
+          <h2
+            class="text-sm sm:text-base uppercase tracking-[0.35em] font-semibold text-[#1c1917] flex items-center gap-2">
+            ABOUT <span class="inline-block h-2 w-2 rounded-full bg-ember"></span>
+          </h2>
+          <span class="h-px w-14 bg-border/40"></span>
+        </div>
+
+        <div data-reveal="up" data-delay="100"
+          class="mt-8 space-y-6 text-base sm:text-lg leading-relaxed text-[#44403c] font-body">
+          <p>
+            The world of whisk(e)y is wide - it is distilled in <strong class="font-semibold text-[#1c1917]">over 20
+              countries</strong> including Scotland, Japan, Ireland, United States, Canada, Taiwan, Sweden and India.
+            There are a seemingly infinite number of different types of whiskies and whiskeys throughout the world, but
+            there is one unifying trait: they are all distilled from any number of grains including <strong
+              class="font-semibold text-[#1c1917]">barley, corn, rye, and wheat</strong>, and generally <strong
+              class="font-semibold text-[#1c1917]">aged in wooden casks</strong>.
+          </p>
+
+          <div id="about-expanded-content" class="hidden space-y-6 pt-1">
+            <p>
+              The type of whiskey or whisky is determined by the grain used in the distillation process, and the country
+              of origin. <span class="text-ember font-medium">Scotland</span>, India and Japan leave out the "e" in
+              whisky, while countries like <span class="text-ember font-medium">Ireland</span> and the United States
+              spell it with the "e".
+            </p>
+            <p>
+              Different grains deliver <span class="text-muted-foreground">different flavors</span>. Combine that with
+              varying distillation methods by region and producer, and you get a whole world of <strong
+                class="font-semibold text-[#1c1917]">flavors from sweet to bold and spicy, smoky and smooth</strong>.
+              Explore the incredible world of whisk(e)y below.
+            </p>
+            <p class="pt-1">
+              Not sure where to start? Check out our list of <a href="#expressions"
+                class="text-ember underline underline-offset-4 hover:opacity-80 transition-opacity font-semibold">Top 10
+                Whiskeys</a>.
+            </p>
+          </div>
+        </div>
+
+        <div data-reveal="up" data-delay="200" class="mt-8 flex items-center justify-center gap-4">
+          <span class="h-px w-20 bg-border/30"></span>
+          <button type="button" id="about-toggle-btn"
+            class="text-xs sm:text-sm uppercase tracking-[0.25em] text-ember hover:text-ember/80 font-semibold transition-colors focus:outline-none cursor-pointer">
+            Read More
+          </button>
+          <span class="h-px w-20 bg-border/30"></span>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- 4. Expressions / Category Section -->
+    <section id="expressions"
+      class="relative bg-[#0a0806] px-4 sm:px-6 py-16 sm:py-20 overflow-hidden border-t border-b border-[#382f27]/40 text-center">
+      <!-- Ambient Radial Background Glow -->
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#5e4324]/20 via-[#1f150b]/10 to-transparent pointer-events-none blur-3xl">
+      </div>
+
+      <div class="relative mx-auto max-w-7xl">
+
+
+
+        <!-- Section Header -->
+        <div data-reveal="up" class="text-center flex flex-col items-center mb-10">
+
+          <!-- Section Title -->
+          <h2
+            class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[0.2em] text-[#f7f3eb] drop-shadow-md">
+            EXPLORE OUR COLLECTION
+          </h2>
+
+          <!-- Subtitle -->
+          <p class="mt-2.5 text-xs sm:text-sm font-serif italic text-[#c4b5a0] tracking-wide max-w-md">
+            <br>Finest spirits from around the world<br>
+          </p>
+
+          <!-- Decorative Golden Flourish Divider -->
+          <div
+            class="mt-4 w-full max-w-xs mx-auto h-px bg-gradient-to-r from-transparent via-[#8c6d46]/70 to-transparent opacity-80">
+          </div>
+
+        </div>
+
+        <!-- 7 Category Cards Row (Reference Image - Contained Vertical Cards Grid) -->
+        <div id="category-cards-grid"
+          class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 max-w-7xl mx-auto px-2">
+
+          <!-- 1. WHISKEY -->
+          <div data-category-card="WHISKEY" class="category-card group cursor-pointer">
+            <div class="category-card-frame">
+              <div class="category-card-content">
+                <div class="category-card-img-wrapper">
+                  <img src="assets/cat-whiskey.jpg" alt="Whiskey" class="category-card-img">
+                  <div class="category-card-img-overlay"></div>
+                </div>
+                <div class="category-card-footer">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M5 4h14l-1.5 14a2 2 0 0 1-2 1.8H8.5A2 2 0 0 1 6.5 18L5 4z" />
+                      <line x1="5" y1="9" x2="19" y2="9" />
+                      <line x1="8" y1="14" x2="16" y2="14" />
+                    </svg>
+                  </div>
+                  <span class="category-card-label">WHISKEY</span>
+                  <div class="category-card-divider"></div>
+                </div>
+              </div>
+            </div>
+            <div class="category-card-glow"></div>
+          </div>
+
+          <!-- 2. RUM -->
+          <div data-category-card="RUM" class="category-card group cursor-pointer">
+            <div class="category-card-frame">
+              <div class="category-card-content">
+                <div class="category-card-img-wrapper">
+                  <img src="assets/cat-rum.jpg" alt="Rum" class="category-card-img">
+                  <div class="category-card-img-overlay"></div>
+                </div>
+                <div class="category-card-footer">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22V12" />
+                      <path d="M12 12c-2-3-6-4-9-3 0 4 3 7 9 3z" />
+                      <path d="M12 12c2-3 6-4 9-3 0 4-3 7-9 3z" />
+                      <path d="M12 15c-3-2-7-1-9 2 2 3 6 3 9-2z" />
+                      <path d="M12 15c3-2 7-1 9 2-2 3-6 3-9-2z" />
+                    </svg>
+                  </div>
+                  <span class="category-card-label">RUM</span>
+                  <div class="category-card-divider"></div>
+                </div>
+              </div>
+            </div>
+            <div class="category-card-glow"></div>
+          </div>
+
+          <!-- 3. BEER -->
+          <div data-category-card="BEER" class="category-card group cursor-pointer">
+            <div class="category-card-frame">
+              <div class="category-card-content">
+                <div class="category-card-img-wrapper">
+                  <img src="assets/cat-beer.jpg" alt="Beer" class="category-card-img">
+                  <div class="category-card-img-overlay"></div>
+                </div>
+                <div class="category-card-footer">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2v20" />
+                      <path d="M12 4c-2 1.5-3.5 3-3.5 5 2 0 3.5-1.5 3.5-5z" />
+                      <path d="M12 4c2 1.5 3.5 3 3.5 5-2 0-3.5-1.5-3.5-5z" />
+                      <path d="M12 9c-2.5 1.5-4 3.5-4 5.5 2.5 0 4-1.5 4-5.5z" />
+                      <path d="M12 9c2.5 1.5 4 3.5 4 5.5-2.5 0-4-1.5-4-5.5z" />
+                      <path d="M12 14.5c-3 1.5-4.5 3.5-4.5 5.5 3 0 4.5-1.5 4.5-5.5z" />
+                      <path d="M12 14.5c3 1.5 4.5 3.5 4.5 5.5-3 0-4.5-1.5-4.5-5.5z" />
+                    </svg>
+                  </div>
+                  <span class="category-card-label">BEER</span>
+                  <div class="category-card-divider"></div>
+                </div>
+              </div>
+            </div>
+            <div class="category-card-glow"></div>
+          </div>
+
+          <!-- 4. VODKA -->
+          <div data-category-card="VODKA" class="category-card active-card group cursor-pointer">
+            <div class="category-card-frame">
+              <div class="category-card-content">
+                <div class="category-card-img-wrapper">
+                  <img src="assets/cat-vodka.jpg" alt="Vodka" class="category-card-img">
+                  <div class="category-card-img-overlay"></div>
+                </div>
+                <div class="category-card-footer">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+                    </svg>
+                  </div>
+                  <span class="category-card-label">VODKA</span>
+                  <div class="category-card-divider"></div>
+                </div>
+              </div>
+            </div>
+            <div class="category-card-glow"></div>
+          </div>
+
+          <!-- 5. WINE -->
+          <div data-category-card="WINE" class="category-card group cursor-pointer">
+            <div class="category-card-frame">
+              <div class="category-card-content">
+                <div class="category-card-img-wrapper">
+                  <img src="assets/cat-wine.jpg" alt="Wine" class="category-card-img">
+                  <div class="category-card-img-overlay"></div>
+                </div>
+                <div class="category-card-footer">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="7" r="2.5" />
+                      <circle cx="8.5" cy="11.5" r="2.5" />
+                      <circle cx="15.5" cy="11.5" r="2.5" />
+                      <circle cx="12" cy="16" r="2.5" />
+                      <circle cx="12" cy="20.5" r="1.5" />
+                      <path d="M12 2v2.5" />
+                    </svg>
+                  </div>
+                  <span class="category-card-label">WINE</span>
+                  <div class="category-card-divider"></div>
+                </div>
+              </div>
+            </div>
+            <div class="category-card-glow"></div>
+          </div>
+
+          <!-- 6. GIN -->
+          <div data-category-card="GIN" class="category-card group cursor-pointer">
+            <div class="category-card-frame">
+              <div class="category-card-content">
+                <div class="category-card-img-wrapper">
+                  <img src="assets/cat-gin.jpg" alt="Gin" class="category-card-img">
+                  <div class="category-card-img-overlay"></div>
+                </div>
+                <div class="category-card-footer">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14" />
+                    </svg>
+                  </div>
+                  <span class="category-card-label">GIN</span>
+                  <div class="category-card-divider"></div>
+                </div>
+              </div>
+            </div>
+            <div class="category-card-glow"></div>
+          </div>
+
+          <!-- 7. CIGAR -->
+          <div data-category-card="CIGAR" class="category-card group cursor-pointer">
+            <div class="category-card-frame">
+              <div class="category-card-content">
+                <div class="category-card-img-wrapper">
+                  <img src="assets/cat-cigar.jpg" alt="Cigar" class="category-card-img">
+                  <div class="category-card-img-overlay"></div>
+                </div>
+                <div class="category-card-footer">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 2 9a9 9 0 0 1-10 9z" />
+                      <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+                    </svg>
+                  </div>
+                  <span class="category-card-label">CIGAR</span>
+                  <div class="category-card-divider"></div>
+                </div>
+              </div>
+            </div>
+            <div class="category-card-glow"></div>
+          </div>
+
+        </div>
+
+        <!-- Dynamic Shopify Products Container -->
+        <div id="products-loading" class="mt-16 flex justify-center">
+          <i data-lucide="loader-2" class="h-6 w-6 animate-spin text-ember"></i>
+        </div>
+
+        <div id="products-empty" class="hidden mt-16">
+          <div data-reveal="up" class="mx-auto max-w-lg rounded-sm border border-dashed border-border p-14 text-center">
+            <p id="products-empty-title" class="font-display text-2xl text-foreground">Select a Category</p>
+            <p id="products-empty-desc" class="mt-3 text-sm leading-relaxed text-muted-foreground">
+              Click any category button above to view dedicated images and products.
+            </p>
+          </div>
+        </div>
+
+        <div id="products-grid"
+          class="hidden mt-12 flex flex-col max-w-6xl mx-auto w-full rounded-2xl overflow-hidden bg-[#161311] border border-border/40 shadow-2xl">
+          <!-- Products will be dynamically populated here -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. Visit Our Store -->
+    <section id="visit" class="px-6 py-20 bg-[#12100e]">
+      <div data-reveal="scale"
+        class="mx-auto max-w-6xl w-full rounded-2xl overflow-hidden bg-[#1d1a17] border border-[#382f27] shadow-2xl transition-all duration-500">
+        <div class="grid grid-cols-1 items-center lg:grid-cols-2">
+
+          <!-- LEFT COLUMN: Store Info -->
+          <div class="p-8 sm:p-12 lg:p-14 flex flex-col justify-center">
+            <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-[#d49959] leading-tight">
+              Visit Our Store
+            </h2>
+            <p class="mt-4 text-sm sm:text-base leading-relaxed text-[#a3998e] font-body">
+              Experience the atmosphere and let our knowledgeable staff guide you to your next favorite bottle.
+            </p>
+
+            <div class="mt-10 space-y-7">
+              <!-- Address Item -->
+              <div class="flex items-start gap-4">
+                <span
+                  class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#3d3125] text-[#d49959] shadow-sm">
+                  <i data-lucide="map-pin" class="h-4 w-4"></i>
+                </span>
+                <div>
+                  <h3 class="font-semibold text-sm sm:text-base text-[#e6ded5] font-body">Address</h3>
+                  <p class="mt-1 text-sm sm:text-base text-[#a3998e] font-body leading-relaxed">
+                    12205 W. 63rd St<br>
+                    Shawnee, KS 66216
+                  </p>
+                </div>
+              </div>
+
+              <!-- Hours Item -->
+              <div class="flex items-start gap-4">
+                <span
+                  class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#3d3125] text-[#d49959] shadow-sm">
+                  <i data-lucide="clock" class="h-4 w-4"></i>
+                </span>
+                <div>
+                  <h3 class="font-semibold text-sm sm:text-base text-[#e6ded5] font-body">Hours</h3>
+                  <p class="mt-1 text-sm sm:text-base text-[#a3998e] font-body leading-relaxed">
+                    Mon - Thu: 10am - 9pm<br>
+                    Fri - Sat: 10am - 10pm<br>
+                    Sun: 11am - 6pm
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Complete Storefront Image -->
+          <div class="relative h-full w-full p-4 sm:p-6 lg:p-8 flex items-center justify-center bg-[#151311]">
+            <img src="assets/storefront.jpg" alt="Whiskey Barrel Storefront Location"
+              class="w-full h-auto max-h-[520px] object-contain rounded-xl shadow-2xl transition-transform duration-700 hover:scale-[1.02]">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-border px-6 py-10">
+      <div
+        class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-[0.65rem] uppercase tracking-[0.25em] text-muted-foreground sm:flex-row">
+        <span>© 2026 Whiskey Barrel Distillery</span>
+        <span>Please savour responsibly</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Cart Drawer Component Markup -->
+  <div id="cart-drawer-overlay"
+    class="fixed inset-0 z-[100] bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm">
+  </div>
+  <aside id="cart-drawer"
+    class="fixed right-0 top-0 bottom-0 z-[101] flex h-full w-full translate-x-full flex-col bg-card sm:max-w-lg transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border-l border-border">
+    <div class="flex items-center justify-between px-6 py-6 border-b border-border">
+      <div>
+        <h2 class="font-display text-2xl">Your Cart</h2>
+        <p id="cart-description" class="text-xs text-muted-foreground">Your cart is empty</p>
+      </div>
+      <button type="button" id="cart-close-btn" aria-label="Close cart"
+        class="text-muted-foreground hover:text-foreground transition-colors p-1">
+        <i data-lucide="x" class="h-6 w-6"></i>
+      </button>
+    </div>
+
+    <div class="flex min-h-0 flex-1 flex-col px-6 pt-6 overflow-y-auto">
+      <!-- Empty Cart State -->
+      <div id="cart-empty-state" class="flex flex-1 items-center justify-center">
+        <div class="text-center">
+          <i data-lucide="shopping-cart" class="mx-auto mb-4 h-12 w-12 text-muted-foreground"></i>
+          <p class="text-muted-foreground">Your cart is empty</p>
+        </div>
+      </div>
+
+      <!-- Cart Items State -->
+      <div id="cart-items-container" class="hidden flex-1 overflow-y-auto pr-2 space-y-4">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Cart Footer -->
+      <div id="cart-footer" class="hidden flex-shrink-0 space-y-4 border-t border-border bg-card pt-4 pb-6">
+        <div class="flex items-center justify-between">
+          <span class="text-sm uppercase tracking-[0.2em] text-muted-foreground">Total</span>
+          <span id="cart-total-price" class="font-display text-2xl text-ember">$0.00</span>
+        </div>
+        <button type="button" id="cart-checkout-btn"
+          class="flex w-full items-center justify-center gap-2 rounded-sm bg-[image:var(--gradient-ember)] px-6 py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-all duration-500 hover:shadow-ember disabled:opacity-60">
+          <i data-lucide="external-link" class="h-4 w-4"></i>
+          Checkout with Shopify
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-behavior-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Visit Our Store — Whiskey Barrel</title>
+  <meta name="description" content="Visit Whiskey Barrel in Shawnee, KS. Experience the atmosphere and let our knowledgeable staff guide you to your next favorite bottle.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts: Domine (Serif Headings) & Hanken Grotesk (Sans-Serif Body & UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="overflow-x-hidden bg-background text-foreground font-body">
+
+  <main class="min-h-screen flex flex-col justify-between overflow-x-hidden">
+    <!-- Header/Navigation -->
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-border/40 bg-background/70 backdrop-blur-xl">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="index.html" class="group flex items-center gap-3">
+          <span class="relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-ember/60 bg-background/90 overflow-hidden shadow-sm transition-transform duration-500 group-hover:scale-105 nav-logo-icon">
+            <img src="assets/wb-icon.png" alt="WB Logo Icon" class="h-full w-full object-cover rounded-full">
+          </span>
+          <span class="font-display text-base sm:text-lg tracking-[0.25em] uppercase font-bold text-foreground">Whiskey Barrel</span>
+        </a>
+        <ul class="hidden items-center gap-9 text-xs uppercase tracking-[0.2em] text-muted-foreground md:flex">
+          <li>
+            <a href="index.html#expressions" class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">Expressions</a>
+          </li>
+          <li>
+            <a href="visit.html" class="relative py-2 text-ember font-semibold after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-ember">Visit</a>
+          </li>
+        </ul>
+        <div class="flex items-center gap-3">
+          <a href="index.html#expressions" class="hidden rounded-sm border border-ember/50 px-5 py-2 text-xs uppercase tracking-[0.2em] text-ember transition-all duration-500 hover:bg-ember hover:text-primary-foreground hover:shadow-ember sm:inline-block">
+            Shop
+          </a>
+
+          <!-- Cart Trigger -->
+          <button type="button" id="cart-trigger-btn" aria-label="Open cart" class="relative rounded-sm border border-border p-2.5 text-foreground transition-all duration-500 hover:border-ember hover:text-ember">
+            <i data-lucide="shopping-cart" class="h-4 w-4"></i>
+            <span id="cart-badge" class="hidden absolute -right-2 -top-2 flex h-5 min-w-5 items-center justify-center rounded-full bg-[image:var(--gradient-ember)] px-1 text-[0.6rem] font-medium text-primary-foreground">0</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Visit Main Container -->
+    <section class="flex-1 flex items-center justify-center px-6 pt-24 pb-32 bg-[#12100e]">
+      <div data-reveal="scale" class="mx-auto max-w-6xl w-full rounded-2xl overflow-hidden bg-[#1d1a17] border border-[#382f27] shadow-2xl transition-all duration-500">
+        <div class="grid grid-cols-1 items-center lg:grid-cols-2">
+
+          <!-- LEFT COLUMN: Store Info -->
+          <div class="p-8 sm:p-12 lg:p-14 flex flex-col justify-center">
+            <h1 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-[#d49959] leading-tight">
+              Visit Our Store
+            </h1>
+            <p class="mt-4 text-sm sm:text-base leading-relaxed text-[#a3998e] font-body">
+              Experience the atmosphere and let our knowledgeable staff guide you to your next favorite bottle.
+            </p>
+
+            <div class="mt-10 space-y-7">
+              <!-- Address Item -->
+              <div class="flex items-start gap-4">
+                <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#3d3125] text-[#d49959] shadow-sm">
+                  <i data-lucide="map-pin" class="h-4 w-4"></i>
+                </span>
+                <div>
+                  <h2 class="font-semibold text-sm sm:text-base text-[#e6ded5] font-body">Address</h2>
+                  <p class="mt-1 text-sm sm:text-base text-[#a3998e] font-body leading-relaxed">
+                    12205 W. 63rd St<br>
+                    Shawnee, KS 66216
+                  </p>
+                </div>
+              </div>
+
+              <!-- Hours Item -->
+              <div class="flex items-start gap-4">
+                <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#3d3125] text-[#d49959] shadow-sm">
+                  <i data-lucide="clock" class="h-4 w-4"></i>
+                </span>
+                <div>
+                  <h2 class="font-semibold text-sm sm:text-base text-[#e6ded5] font-body">Hours</h2>
+                  <p class="mt-1 text-sm sm:text-base text-[#a3998e] font-body leading-relaxed">
+                    Mon - Thu: 10am - 9pm<br>
+                    Fri - Sat: 10am - 10pm<br>
+                    Sun: 11am - 6pm
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Complete Storefront Image -->
+          <div class="relative h-full w-full p-4 sm:p-6 lg:p-8 flex items-center justify-center bg-[#151311]">
+            <img
+              src="assets/storefront.jpg"
+              alt="Whiskey Barrel Storefront Location"
+              class="w-full h-auto max-h-[520px] object-contain rounded-xl shadow-2xl transition-transform duration-700 hover:scale-[1.02]"
+            >
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-border px-6 py-8">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-[0.65rem] uppercase tracking-[0.25em] text-muted-foreground sm:flex-row">
+        <span>© 2026 Whiskey Barrel Distillery</span>
+        <span>Please savour responsibly</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Cart Drawer Component Markup -->
+  <div id="cart-drawer-overlay" class="fixed inset-0 z-[100] bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm"></div>
+  <aside id="cart-drawer" class="fixed right-0 top-0 bottom-0 z-[101] flex h-full w-full translate-x-full flex-col bg-card sm:max-w-lg transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border-l border-border">
+    <div class="flex items-center justify-between px-6 py-6 border-b border-border">
+      <div>
+        <h2 class="font-display text-2xl">Your Cart</h2>
+        <p id="cart-description" class="text-xs text-muted-foreground">Your cart is empty</p>
+      </div>
+      <button type="button" id="cart-close-btn" aria-label="Close cart" class="text-muted-foreground hover:text-foreground transition-colors p-1">
+        <i data-lucide="x" class="h-6 w-6"></i>
+      </button>
+    </div>
+
+    <div class="flex min-h-0 flex-1 flex-col px-6 pt-6 overflow-y-auto">
+      <!-- Empty Cart State -->
+      <div id="cart-empty-state" class="flex flex-1 items-center justify-center">
+        <div class="text-center">
+          <i data-lucide="shopping-cart" class="mx-auto mb-4 h-12 w-12 text-muted-foreground"></i>
+          <p class="text-muted-foreground">Your cart is empty</p>
+        </div>
+      </div>
+
+      <!-- Cart Items State -->
+      <div id="cart-items-container" class="hidden flex-1 overflow-y-auto pr-2 space-y-4">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Cart Footer -->
+      <div id="cart-footer" class="hidden flex-shrink-0 space-y-4 border-t border-border bg-card pt-4 pb-6">
+        <div class="flex items-center justify-between">
+          <span class="text-sm uppercase tracking-[0.2em] text-muted-foreground">Total</span>
+          <span id="cart-total-price" class="font-display text-2xl text-ember">$0.00</span>
+        </div>
+        <button type="button" id="cart-checkout-btn" class="flex w-full items-center justify-center gap-2 rounded-sm bg-[image:var(--gradient-ember)] px-6 py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-all duration-500 hover:shadow-ember disabled:opacity-60">
+          <i data-lucide="external-link" class="h-4 w-4"></i>
+          Checkout with Shopify
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
+
