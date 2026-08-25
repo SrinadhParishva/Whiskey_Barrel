@@ -2640,6 +2640,134 @@ function getGlassIconSVG(typeStr) {
   </svg>`;
 }
 
+// Reusable Wine Category Product Grid Card Renderer (Light Cream Theme)
+function createWineProductCardHTML(p, priceStr, image, ratingBadge) {
+  const wineTitlesMap = {
+    "domaines-des-etoiles-pinot-noir": "Domaines des Étoiles Pinot Noir<br>2021",
+    "chateau-margaux-cabernet-sauvignon": "Château Margaux Cabernet<br>Sauvignon 2016",
+    "veuve-clicquot-la-grande-dame": "Veuve Clicquot La Grande Dame",
+    "chateau-miraval-rose": "Château Miraval Côtes Rosé",
+    "domaine-de-la-mer-chardonnay": "Domaine de la Mer Chardonnay",
+    "sun-drenched-marble-chardonnay": "Sun-Drenched Marble Chardonnay",
+    "mahogany-table-cabernet-2018": "Mahogany Table Cabernet 2018",
+    "textured-label-pinot-noir": "Textured Label Pinot Noir",
+    "gold-foil-vintage-champagne-2012": "Gold Foil Vintage Champagne 2012",
+    "silver-bucket-provence-rose": "Silver Bucket Provence Rosé",
+    "grand-cru-bordeaux-reserve-2015": "Grand Cru Bordeaux Reserve 2015",
+    "tuscan-reserve-sangiovese-2019": "Tuscan Reserve Sangiovese 2019",
+    "barossa-valley-shiraz-reserve": "Barossa Valley Shiraz Reserve",
+    "mendoza-malbec-gran-reserva": "Mendoza Malbec Gran Reserva",
+    "sancerre-blanc-les-monts-2022": "Sancerre Blanc Les Monts 2022",
+    "chateau-prestige-pauillac-2018": "Château Prestige Pauillac 2018"
+  };
+
+  const wineTagsMap = {
+    "domaines-des-etoiles-pinot-noir": ["RED", "WINE", "UNITED STATES", "WILLAMETTE VALLEY"],
+    "chateau-margaux-cabernet-sauvignon": ["RED WINE", "(GRAND VIN)", "FRANCE", "BORDEAUX"],
+    "veuve-clicquot-la-grande-dame": ["SPARKLING", "CHAMPAGNE", "FRANCE", "CHAMPAGNE"],
+    "chateau-miraval-rose": ["ROSÉ WINE", "WINE", "FRANCE", "PROVENCE"],
+    "domaine-de-la-mer-chardonnay": ["WHITE WINE", "RESERVE", "FRANCE", "MEDITERRANEAN"],
+    "sun-drenched-marble-chardonnay": ["WHITE WINE", "NAPA VALLEY", "UNITED STATES", "CHARDONNAY"],
+    "mahogany-table-cabernet-2018": ["RED WINE", "OAKVILLE", "UNITED STATES", "CABERNET"],
+    "textured-label-pinot-noir": ["RED WINE", "BURGUNDY", "FRANCE", "PINOT NOIR"],
+    "gold-foil-vintage-champagne-2012": ["PRESTIGE", "CHAMPAGNE", "FRANCE", "VINTAGE"],
+    "silver-bucket-provence-rose": ["ROSÉ WINE", "PRESTIGE", "FRANCE", "PROVENCE"],
+    "grand-cru-bordeaux-reserve-2015": ["RED WINE", "BORDEAUX", "FRANCE", "GRAND CRU"],
+    "tuscan-reserve-sangiovese-2019": ["RED WINE", "BRUNELLO", "ITALY", "SANGIOVESE"],
+    "barossa-valley-shiraz-reserve": ["RED WINE", "BAROSSA VALLEY", "AUSTRALIA", "SHIRAZ"],
+    "mendoza-malbec-gran-reserva": ["RED WINE", "UCO VALLEY", "ARGENTINA", "MALBEC"],
+    "sancerre-blanc-les-monts-2022": ["WHITE WINE", "LOIRE VALLEY", "FRANCE", "SANCERRE"],
+    "chateau-prestige-pauillac-2018": ["RED WINE", "BORDEAUX", "FRANCE", "PAUILLAC"]
+  };
+
+  const titleHtml = wineTitlesMap[p.handle] || p.title;
+  const displayedTags = wineTagsMap[p.handle] || [p.category];
+
+  // Determine if transparent bottle or lifestyle background image is used
+  const isTransparentBottle = 
+    p.handle === "domaines-des-etoiles-pinot-noir" || 
+    p.handle === "chateau-margaux-cabernet-sauvignon" ||
+    p.handle === "tuscan-reserve-sangiovese-2019" ||
+    p.handle === "barossa-valley-shiraz-reserve" ||
+    p.handle === "mendoza-malbec-gran-reserva";
+
+  return `
+    <article class="product-grid-card wine-card">
+      
+      <!-- Backdrop decorator for lifestyle photos -->
+      ${!isTransparentBottle ? `<div class="wine-decor-backdrop"></div>` : ""}
+
+      <!-- Top Arched Image Container -->
+      <div class="product-card-arch wine-card-arch">
+        
+        <!-- Base decorator for transparent bottles -->
+        ${isTransparentBottle ? `<div class="wine-decor-base"></div>` : ""}
+
+        <a href="product.html?handle=${p.handle}" class="h-full w-full flex items-center justify-center relative z-10">
+          ${image ? `
+            <img
+              src="${image.url}"
+              alt="${image.altText ?? p.title}"
+              class="wine-card-img"
+              loading="lazy"
+            >
+          ` : `
+            <div class="flex h-full items-center justify-center text-xs text-[#78716c]">
+              No image
+            </div>
+          `}
+        </a>
+
+        <!-- Floating Wishlist Heart Button -->
+        <button
+          type="button"
+          onclick="handleAddToCart('${p.handle}')"
+          class="product-card-heart-btn wine-card-heart-btn"
+          title="Add to Cart"
+          aria-label="Add to cart"
+        >
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Middle Content: Centered Serif Title & Soft Lavender Pill Badges -->
+      <div class="flex flex-col items-center text-center relative z-10">
+        <a href="product.html?handle=${p.handle}" class="hover:opacity-80 transition-opacity">
+          <h3 class="product-card-title wine-card-title">
+            ${titleHtml}
+          </h3>
+        </a>
+
+        <!-- Soft Lavender Pills -->
+        <div class="flex flex-wrap items-center justify-center gap-1.5 mt-1 mb-2">
+          ${displayedTags.map(tag => `
+            <span class="product-card-pill wine-card-pill">
+              ${tag}
+            </span>
+          `).join("")}
+        </div>
+      </div>
+
+      <!-- Bottom Bar: MRP Price & Dark Rating Badge Pill -->
+      <div class="product-card-footer wine-card-footer">
+        <div class="flex items-baseline">
+          <span class="product-card-mrp-label wine-card-mrp-label">MRP</span>
+          <span class="product-card-mrp-price wine-card-mrp-price">
+            ${priceStr}
+          </span>
+        </div>
+
+        <div class="product-card-rating-badge wine-card-rating-badge">
+          ${ratingBadge}
+        </div>
+      </div>
+
+    </article>
+  `;
+}
+
 // Reusable Exact Reference Product Item Row Renderer (Dark Luxury Website Theme)
 // Reusable Product Grid Card Renderer (Exact Match to Reference Image)
 function createProductCardHTML(product) {
@@ -2653,6 +2781,11 @@ function createProductCardHTML(product) {
   
   // Rating badge (e.g. 4.8 VIVINO)
   const ratingBadge = p.badges && p.badges[0] ? `${p.badges[0].score} ${p.badges[0].label}` : "4.8 VIVINO";
+
+  // Check if it is wine category
+  if (p.category === "WINE") {
+    return createWineProductCardHTML(p, priceStr, image, ratingBadge);
+  }
 
   // Build pill tags
   const tags = [];

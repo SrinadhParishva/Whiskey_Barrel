@@ -2465,3 +2465,120 @@
   border-radius: 9999px !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) !important;
 }
+
+/* --- WINE CATEGORY CUSTOM STYLES (Light Cream/Beige Theme) --- */
+
+.product-grid-card.wine-card {
+  position: relative !important;
+  background-color: #f5efe6 !important; /* Elegant light cream/beige card background */
+  color: #110e0b !important; /* Dark text color */
+  border: 1px solid rgba(0, 0, 0, 0.05) !important; /* Faint outline border */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
+}
+
+.product-grid-card.wine-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Arched image container background overrides */
+.product-card-arch.wine-card-arch {
+  background-color: #ffffff !important; /* Pure white/clean off-white background inside the arch */
+  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Floating wishlist button override */
+.product-card-heart-btn.wine-card-heart-btn {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+  color: #5a4d41 !important; /* Dark brown/grey icon */
+}
+
+.product-card-heart-btn.wine-card-heart-btn:hover {
+  background-color: #110e0b !important;
+  color: #ffffff !important;
+}
+
+/* Title text color overrides */
+.wine-card-title {
+  color: #110e0b !important; /* Dark serif text */
+  margin-top: 1.25rem !important;
+  margin-bottom: 0.75rem !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  min-height: 4.2rem !important;
+}
+
+/* Soft Lavender pills */
+.product-card-pill.wine-card-pill {
+  background-color: #ebe5f9 !important; /* Soft light purple/lavender background */
+  color: #654ea3 !important; /* Deep lavender text color */
+  border: none !important;
+  padding: 0.25rem 0.75rem !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+}
+
+/* Footer layout */
+.product-card-footer.wine-card-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important; /* Clean light separator instead of gold */
+}
+
+.product-card-mrp-label.wine-card-mrp-label {
+  color: #6b5a4b !important; /* Medium-dark brown label */
+}
+
+.product-card-mrp-price.wine-card-mrp-price {
+  color: #110e0b !important; /* Bold black/dark brown price */
+}
+
+/* Rating badge override */
+.product-card-rating-badge.wine-card-rating-badge {
+  background-color: #382f3d !important; /* Dark purple-charcoal background */
+  color: #f5efe6 !important; /* Soft white/cream text */
+  border: none !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Decorative Base for Transparent Bottle Images */
+.wine-decor-base {
+  position: absolute !important;
+  bottom: 1.5rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 82% !important;
+  height: 1.25rem !important;
+  background-color: #d7c9f8 !important; /* soft lavender/purple shape */
+  border-radius: 50% !important;
+  z-index: 1 !important;
+  opacity: 0.75 !important;
+  pointer-events: none !important;
+}
+
+/* Decorative Circle Backdrop for lifestyle arched images */
+.wine-decor-backdrop {
+  position: absolute !important;
+  top: 9.5rem !important; /* Align around the bottom edge of the image arch */
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 13.5rem !important;
+  height: 13.5rem !important;
+  background-color: #d7c9f8 !important; /* soft lavender/purple shape */
+  border-radius: 50% !important;
+  z-index: 0 !important;
+  opacity: 0.8 !important;
+  pointer-events: none !important;
+}
+
+/* Ensure images have proper layering and containment */
+.product-card-arch.wine-card-arch img.wine-card-img {
+  position: relative !important;
+  z-index: 2 !important;
+  filter: none !important;
+  mix-blend-mode: multiply !important;
+}
