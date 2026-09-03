@@ -1793,7 +1793,7 @@
 /* About Section Custom Sizing & Upward Alignment */
 #about {
   padding-top: 4.5rem !important;
-  padding-bottom: 4.5rem !important;
+  padding-bottom: 2rem !important;
 }
 
 #about > div {
@@ -1822,8 +1822,44 @@
 
 /* Expressions Section Custom Upward Positioning */
 #expressions {
-  padding-top: 0.5rem !important;
+  padding-top: 4rem !important;
   padding-bottom: 5rem !important;
+}
+
+/* Category Page Hero & Expressions Tight Spacing */
+#category-hero-banner {
+  padding-top: 5.5rem !important;
+  padding-bottom: 0 !important;
+}
+
+#category-hero-banner #category-hero-title {
+  margin-bottom: 0.15rem !important;
+}
+
+#category-hero-banner #category-hero-subtitle {
+  margin-top: 0.15rem !important;
+  margin-bottom: 0 !important;
+}
+
+#category-hero-banner [style*="height: 1px"] {
+  margin-top: 4px !important;
+  margin-bottom: 0 !important;
+}
+
+#category-hero-banner + #expressions,
+section#category-hero-banner + section#expressions {
+  padding-top: 0 !important;
+}
+
+#category-hero-banner + #expressions .home-filter-bar,
+section#category-hero-banner + section#expressions .home-filter-bar {
+  margin-top: 1rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Home Page Explore Collection Title & Filter Bar Tight Spacing */
+#expressions .text-center.flex.flex-col.items-center {
+  margin-bottom: 0.5rem !important;
 }
 
 /* Category Tab Buttons (Matching Category Bar Reference Image) */
