@@ -46,11 +46,66 @@
         <ul class="hidden items-center gap-9 text-xs uppercase tracking-[0.2em] text-muted-foreground md:flex">
           <li>
             <a href="category.html?category=WHISKEY"
-              class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">Expressions</a>
+              class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">The House</a>
           </li>
-          <li>
+          <li class="relative group">
             <a href="visit.html"
-              class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">Visit</a>
+              class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100 flex items-center gap-1">Visit</a>
+
+            <!-- Navbar Visit Dropdown Popover matching image -->
+            <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-80 sm:w-96 rounded-xl bg-[#12100e] border border-[#2d2620] p-6 sm:p-7 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pointer-events-none group-hover:pointer-events-auto normal-case tracking-normal">
+              <div class="space-y-6 text-[#eae3d9]">
+                <!-- Address -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="map-pin" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Address</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      12205 Shawnee Mission PKWY<br>
+                      Shawnee, KS 66216
+                    </p>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Store Hours -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="clock" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Store Hours</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      Monday - Thursday : 10 AM - 10 PM<br>
+                      Friday - Saturday : 9 AM - 11 PM<br>
+                      Sunday : 9 AM - 8 PM
+                    </p>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Phone -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="phone" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Phone</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      <a href="tel:+19135550199" class="hover:text-ember transition-colors">+1 (913) 555-0199</a>
+                    </p>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Email -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="mail" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Email</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      <a href="mailto:info@whiskeybarrel.com" class="hover:text-ember transition-colors">info@whiskeybarrel.com</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
         <div class="flex items-center gap-3">
@@ -65,7 +120,7 @@
     <!-- 1. Hero -->
     <section id="top" class="relative w-full overflow-hidden pt-[68px] bg-[#0d0a08]">
       <div class="relative mx-auto w-full max-w-full overflow-hidden flex items-center justify-center">
-        <img src="assets/hero-wooden-sign.png" alt="Whisky Barrel Illuminated Wooden Banner" width="1024" height="329"
+        <img src="assets/whiskey-barrel-banner.png" alt="Whiskey Barrel Banner" width="2172" height="724"
           class="w-full h-auto max-h-[calc(100vh-68px)] object-contain block mx-auto">
       </div>
     </section>
@@ -82,7 +137,8 @@
             </h2>
             <span class="h-px w-14 bg-border/40"></span>
           </div>
-          <h3 class="mt-3 font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#1c1917] tracking-wide max-w-2xl mx-auto">
+          <h3
+            class="mt-3 font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#1c1917] tracking-wide max-w-2xl mx-auto">
             A Place to Discover What’s Worth Pouring.
           </h3>
         </div>
@@ -90,18 +146,27 @@
         <div data-reveal="up" data-delay="100"
           class="mt-8 space-y-6 text-base sm:text-lg leading-relaxed text-[#44403c] font-body">
           <p>
-            Whiskey Barrel is built around a simple idea: discovering a great bottle should be an experience. With an extensive selection spanning whiskey, wine, and more, we bring together variety, quality, and thoughtful presentation under one roof — giving customers a place to explore familiar favorites and discover something new.
+            Whiskey Barrel is built around a simple idea: discovering a great bottle should be an experience. With an
+            extensive selection spanning whiskey, wine, and more, we bring together variety, quality, and thoughtful
+            presentation under one roof giving customers a place to explore familiar favorites and discover something
+            new.
           </p>
 
           <div id="about-expanded-content" class="hidden space-y-6 pt-1">
             <p>
-              Our approach comes from years of hands-on experience building businesses around people and the experiences they remember. We believe that a great selection is more than having plenty of choices; it is about making those choices easier to discover, understand, and appreciate.
+              Our approach comes from years of hands-on experience building businesses around people and the experiences
+              they remember. We believe that a great selection is more than having plenty of choices; it is about making
+              those choices easier to discover, understand, and appreciate.
             </p>
             <p>
-              From bourbon and Scotch to Irish whiskey, rye, wine, and ready-to-drink selections, Whiskey Barrel is designed for both the curious newcomer and the experienced enthusiast. We continually look for products that deserve attention, while keeping the experience approachable, organized, and personal.
+              From bourbon and Scotch to Irish whiskey, rye, wine, and ready-to-drink selections, Whiskey Barrel is
+              designed for both the curious newcomer and the experienced enthusiast. We continually look for products
+              that deserve attention, while keeping the experience approachable, organized, and personal.
             </p>
             <p>
-              We are building Whiskey Barrel with a long-term vision — not simply as a place to find a bottle, but as a destination where selection meets experience, and every visit has the possibility of discovering something worth taking home.
+              We are building Whiskey Barrel with a long-term vision not simply as a place to find a bottle, but as a
+              destination where selection meets experience, and every visit has the possibility of discovering something
+              worth taking home.
             </p>
           </div>
         </div>
@@ -132,7 +197,7 @@
 
 
         <!-- Section Header -->
-        <div data-reveal="up" class="text-center flex flex-col items-center mb-10">
+        <div data-reveal="up" class="text-center flex flex-col items-center mb-6">
 
           <!-- Section Title -->
           <h2
@@ -142,19 +207,55 @@
 
           <!-- Subtitle -->
           <p class="mt-2.5 text-xs sm:text-sm font-serif italic text-[#c4b5a0] tracking-wide max-w-md">
-            <br>Finest spirits from around the world<br>
+            Finest spirits from around the world
           </p>
 
           <!-- Decorative Golden Flourish Divider -->
           <div
-            class="mt-4 w-full max-w-xs mx-auto h-px bg-gradient-to-r from-transparent via-[#8c6d46]/70 to-transparent opacity-80">
+            style="margin-top: 12px; margin-bottom: 8px; width: 100%; max-width: 300px; height: 1px; background: linear-gradient(to right, transparent, rgba(140, 109, 70, 0.7), transparent); opacity: 0.8;"
+            class="mx-auto">
           </div>
 
         </div>
 
-        <!-- 7 Category Cards Row (Reference Image - Contained Vertical Cards Grid) -->
+        <!-- Filter Bar Container inside Categories Section -->
+        <div data-reveal="up" data-delay="50" class="home-filter-bar mb-7 mx-auto max-w-7xl px-2">
+          <!-- Staff Pick Pill -->
+          <button type="button" id="filter-staff-pick" class="home-filter-pill">
+            <span class="home-filter-pill-dot"></span> Staff Pick
+          </button>
+
+          <!-- New Arrivals Pill -->
+          <button type="button" id="filter-new-arrivals" class="home-filter-pill">
+            <span class="home-filter-pill-dot"></span> New Arrivals
+          </button>
+
+          <!-- Price Range Dropdown Pill -->
+          <div class="home-price-dropdown-wrapper" id="price-filter-container">
+            <button type="button" id="price-filter-btn" class="price-filter-pill-btn">
+              <span id="price-filter-label">PRICE RANGE</span> <span id="price-chevron" class="price-chevron-icon">▼</span>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div id="price-dropdown" class="home-price-dropdown hidden">
+              <a href="#" class="price-dropdown-item" data-price-range="all">ALL PRICES</a>
+              <a href="#" class="price-dropdown-item" data-price-range="under-50">UNDER $50</a>
+              <a href="#" class="price-dropdown-item" data-price-range="50-100">$50 - $100</a>
+              <a href="#" class="price-dropdown-item" data-price-range="100-200">$100 - $200</a>
+              <a href="#" class="price-dropdown-item" data-price-range="200-500">$200 - $500</a>
+              <a href="#" class="price-dropdown-item" data-price-range="above-500">ABOVE $500</a>
+            </div>
+          </div>
+
+          <!-- On Sale Pill -->
+          <button type="button" id="filter-on-sale" class="home-filter-pill">
+            <span class="home-filter-pill-dot"></span> On Sale
+          </button>
+        </div>
+
+        <!-- 4x2 Category Cards Grid (4 Columns x 2 Rows) -->
         <div id="category-cards-grid"
-          class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 max-w-7xl mx-auto px-2">
+          class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4 max-w-5xl mx-auto px-2">
 
           <!-- 1. WHISKEY -->
           <div data-category-card="WHISKEY" class="category-card group cursor-pointer">
@@ -254,6 +355,7 @@
                   </div>
                   <span class="category-card-label">VODKA</span>
                   <div class="category-card-divider"></div>
+
                 </div>
               </div>
             </div>
@@ -311,7 +413,35 @@
             <div class="category-card-glow"></div>
           </div>
 
-          <!-- 7. CIGAR -->
+          <!-- 7. TEQUILA -->
+          <div data-category-card="TEQUILA" class="category-card group cursor-pointer">
+            <div class="category-card-frame">
+              <div class="category-card-content">
+                <div class="category-card-img-wrapper">
+                  <img src="assets/cat-tequila.jpg" alt="Tequila" class="category-card-img">
+                  <div class="category-card-img-overlay"></div>
+                </div>
+                <div class="category-card-footer">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22V10" />
+                      <path d="M12 10c-3-2-7-1-9 3 2 4 6 4 9-3z" />
+                      <path d="M12 10c3-2 7-1 9 3-2 4-6 4-9-3z" />
+                      <path d="M12 15c-4-1-6 2-7 4 3 2 6 0 7-4z" />
+                      <path d="M12 15c4-1 6 2 7 4-3 2-6 0-7-4z" />
+                      <path d="M12 6V2" />
+                    </svg>
+                  </div>
+                  <span class="category-card-label">TEQUILA</span>
+                  <div class="category-card-divider"></div>
+                </div>
+              </div>
+            </div>
+            <div class="category-card-glow"></div>
+          </div>
+
+          <!-- 8. CIGAR -->
           <div data-category-card="CIGAR" class="category-card group cursor-pointer">
             <div class="category-card-frame">
               <div class="category-card-content">
@@ -337,6 +467,82 @@
 
         </div>
 
+        <!-- Collections Grid Section -->
+        <div data-reveal="up" data-delay="100" class="mt-8 sm:mt-10 mx-auto max-w-7xl px-2">
+
+          <!-- Section 1: Grand Cru Cellar Reserves -->
+          <div class="home-card-featured">
+            <!-- Background Image -->
+            <img src="assets/grand_cru_wine.png" alt="Grand Cru Cellar Reserves" class="home-card-bg-img">
+            <!-- Overlay -->
+            <div class="home-card-overlay-featured"></div>
+            <!-- Content -->
+            <div class="home-card-content featured-padding">
+              <h3 class="home-card-title">
+                Grand Cru Cellar Reserves
+              </h3>
+              <p class="home-card-subtitle">
+                Sommelier's Selection
+              </p>
+              <p class="home-card-body">
+                Rare vintages. Limited releases. Handpicked by our sommeliers for the truly discerning.
+              </p>
+              <div>
+                <a href="category.html?category=WINE" class="home-card-btn">
+                  Explore Collection
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2 & 3: Two-Column Row -->
+          <div class="home-card-half-grid">
+            <!-- 1982 Vintage Vault -->
+            <div class="home-card-half">
+              <!-- Background Image -->
+              <img src="assets/vintage_vault_whiskey.png" alt="1982 Vintage Vault" class="home-card-bg-img">
+              <!-- Overlay -->
+              <div class="home-card-overlay-half"></div>
+              <!-- Content -->
+              <div class="home-card-content">
+                <h3 class="home-card-title">
+                  1982 Vintage Vault
+                </h3>
+                <p class="home-card-body">
+                  Timeless vintages from an exceptional year. Discover history in every bottle.
+                </p>
+                <div>
+                  <a href="category.html?category=WHISKEY" class="home-card-btn">
+                    Explore Vault
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Estate Tastings & Cuvées -->
+            <div class="home-card-half">
+              <!-- Background Image -->
+              <img src="assets/estate_tastings_wine.png" alt="Estate Tastings & Cuvées" class="home-card-bg-img">
+              <!-- Overlay -->
+              <div class="home-card-overlay-half"></div>
+              <!-- Content -->
+              <div class="home-card-content">
+                <h3 class="home-card-title">
+                  Estate Tastings & Cuvées
+                </h3>
+                <p class="home-card-body">
+                  Exclusive estate selections and curated tastings for refined palates.
+                </p>
+                <div>
+                  <a href="visit.html" class="home-card-btn">
+                    Discover More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -352,37 +558,56 @@
               Visit Our Store
             </h2>
             <p class="mt-4 text-sm sm:text-base leading-relaxed text-[#a3998e] font-body">
-              Experience the atmosphere and let our knowledgeable staff guide you to your next favorite bottle.
+              Explore our selection, discover something new, and let our knowledgeable team help you find your next favorite bottle.
             </p>
 
             <div class="mt-10 space-y-7">
               <!-- Address Item -->
               <div class="flex items-start gap-4">
-                <span
-                  class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#3d3125] text-[#d49959] shadow-sm">
-                  <i data-lucide="map-pin" class="h-4 w-4"></i>
-                </span>
-                <div>
-                  <h3 class="font-semibold text-sm sm:text-base text-[#e6ded5] font-body">Address</h3>
-                  <p class="mt-1 text-sm sm:text-base text-[#a3998e] font-body leading-relaxed">
-                    12205 W. 63rd St<br>
+                <i data-lucide="map-pin" class="h-5 w-5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                <div class="space-y-1">
+                  <h3 class="font-bold text-base text-[#ffffff] font-body">Address</h3>
+                  <p class="text-sm sm:text-base text-[#eae3d9]/90 font-body leading-relaxed">
+                    12205 Shawnee Mission PKWY<br>
                     Shawnee, KS 66216
                   </p>
                 </div>
               </div>
+              <br>
 
-              <!-- Hours Item -->
+              <!-- Store Hours Item -->
               <div class="flex items-start gap-4">
-                <span
-                  class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#3d3125] text-[#d49959] shadow-sm">
-                  <i data-lucide="clock" class="h-4 w-4"></i>
-                </span>
-                <div>
-                  <h3 class="font-semibold text-sm sm:text-base text-[#e6ded5] font-body">Hours</h3>
-                  <p class="mt-1 text-sm sm:text-base text-[#a3998e] font-body leading-relaxed">
-                    Mon - Thu: 10am - 9pm<br>
-                    Fri - Sat: 10am - 10pm<br>
-                    Sun: 11am - 6pm
+                <i data-lucide="clock" class="h-5 w-5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                <div class="space-y-1">
+                  <h3 class="font-bold text-base text-[#ffffff] font-body">Store Hours</h3>
+                  <p class="text-sm sm:text-base text-[#eae3d9]/90 font-body leading-relaxed">
+                    Monday - Thursday : 10 AM - 10 PM<br>
+                    Friday - Saturday : 9 AM - 11 PM<br>
+                    Sunday : 9 AM - 8 PM
+                  </p>
+                </div>
+              </div>
+              <br>
+
+              <!-- Phone Item -->
+              <div class="flex items-start gap-4">
+                <i data-lucide="phone" class="h-5 w-5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                <div class="space-y-1">
+                  <h3 class="font-bold text-base text-[#ffffff] font-body">Phone</h3>
+                  <p class="text-sm sm:text-base text-[#eae3d9]/90 font-body leading-relaxed">
+                    <a href="tel:+19135550199" class="hover:text-ember transition-colors">+1 (913) 555-0199</a>
+                  </p>
+                </div>
+              </div>
+              <br>
+
+              <!-- Email Item -->
+              <div class="flex items-start gap-4">
+                <i data-lucide="mail" class="h-5 w-5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                <div class="space-y-1">
+                  <h3 class="font-bold text-base text-[#ffffff] font-body">Email</h3>
+                  <p class="text-sm sm:text-base text-[#eae3d9]/90 font-body leading-relaxed">
+                    <a href="mailto:info@whiskeybarrel.com" class="hover:text-ember transition-colors">info@whiskeybarrel.com</a>
                   </p>
                 </div>
               </div>

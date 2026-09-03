@@ -1822,22 +1822,22 @@
 
 /* Expressions Section Custom Upward Positioning */
 #expressions {
-  padding-top: 4rem !important;
-  padding-bottom: 7rem !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 5rem !important;
 }
 
 /* Category Tab Buttons (Matching Category Bar Reference Image) */
 .category-tab {
-  background-color: #ffffff !important;
-  color: #0f0d0b !important;
-  border: 1px solid #ffffff !important;
+  background-color: #16120e !important;
+  color: #c4b5a0 !important;
+  border: 1px solid #382f27 !important;
   font-family: var(--font-body, sans-serif) !important;
   font-weight: 700 !important;
-  font-size: 0.75rem !important;
-  letter-spacing: 0.22em !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.2em !important;
   text-transform: uppercase !important;
-  padding: 14px 28px !important;
-  min-width: 115px !important;
+  padding: 10px 22px !important;
+  min-width: 95px !important;
   text-align: center !important;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -1850,7 +1850,7 @@
 
 .category-tab:hover {
   background-color: #f8f6f0 !important;
-  color: #000000 !important;
+  color: #362a21 !important;
   border-color: #d49959 !important;
   box-shadow: 0 6px 20px rgba(212, 153, 89, 0.35) !important;
   transform: translateY(-2px) !important;
@@ -1858,37 +1858,179 @@
 
 .category-tab.active-tab {
   background-color: #d49959 !important;
-  color: #ffffff !important;
+  color: #362a21 !important;
   border-color: #d49959 !important;
   box-shadow: 0 0 0 1px #d49959, 0 8px 24px rgba(212, 153, 89, 0.5) !important;
   transform: translateY(-1px) !important;
 }
 
 /* ==========================================================================
-   7 CATEGORY CARDS GRID LAYOUT (STRICT HORIZONTAL ROW ON DESKTOP)
+   UNIFIED CATEGORY BAR & PILL STYLING (#362a21 text color, 800 weight & 16px gap)
+   ========================================================================== */
+.home-filter-bar,
+.category-filter-bar,
+.category-tabs-bar,
+.category-bar,
+.product-card-tags-container,
+div:has(> .product-card-pill),
+div:has(> .wine-card-pill) {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  row-gap: 16px !important;
+  column-gap: 16px !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.home-filter-pill,
+.product-card-pill,
+.wine-card-pill,
+.category-pill,
+.category-label {
+  color: #362a21 !important;
+  font-weight: 800 !important;
+}
+
+.home-filter-pill:hover {
+  color: #362a21 !important;
+  font-weight: 800 !important;
+}
+
+.home-filter-pill-dot {
+  background-color: #362a21 !important;
+}
+
+/* ==========================================================================
+   PRICE RANGE DROPDOWN STYLING (MATCHING EXACT SCREENSHOT DESIGN)
+   ========================================================================== */
+.home-price-dropdown-wrapper {
+  position: relative !important;
+  display: inline-block !important;
+}
+
+.price-filter-pill-btn,
+#price-filter-btn {
+  background-color: #eee6dc !important;
+  color: #211c18 !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 12px 28px !important;
+  font-family: var(--font-body, sans-serif) !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.price-filter-pill-btn:hover,
+#price-filter-btn:hover {
+  background-color: #e5dccf !important;
+  color: #120f0c !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+.price-chevron-icon,
+#price-chevron {
+  display: inline-block !important;
+  font-size: 0.65rem !important;
+  color: #211c18 !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.home-price-dropdown,
+#price-dropdown {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 250px !important;
+  background-color: #eee6dc !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45) !important;
+  z-index: 100 !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.home-price-dropdown.hidden,
+#price-dropdown.hidden {
+  display: none !important;
+}
+
+.price-dropdown-item {
+  display: block !important;
+  width: 100% !important;
+  padding: 14px 20px !important;
+  text-align: center !important;
+  font-family: var(--font-body, sans-serif) !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #211c18 !important;
+  text-decoration: none !important;
+  border-bottom: 1px solid #e0d7cb !important;
+  transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+.price-dropdown-item:last-child {
+  border-bottom: none !important;
+}
+
+.price-dropdown-item:hover,
+.price-dropdown-item.active {
+  background-color: #d8cdbe !important;
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+/* ==========================================================================
+   4x2 CATEGORY CARDS GRID LAYOUT (4 COLUMNS x 2 ROWS ON DESKTOP & TABLET)
    ========================================================================== */
 #category-cards-grid {
   display: grid !important;
-  grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
-  gap: 14px !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 16px 14px !important;
   width: 100% !important;
-  max-width: 1240px !important;
+  max-width: 960px !important;
+  margin-top: 16px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding-left: 8px !important;
-  padding-right: 8px !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  justify-items: center !important;
 }
 
 @media (max-width: 1023px) {
   #category-cards-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 12px 10px !important;
+    max-width: 800px !important;
   }
 }
 
-@media (max-width: 639px) {
+@media (max-width: 767px) {
   #category-cards-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 10px !important;
+    gap: 12px 10px !important;
+    max-width: 390px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #category-cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px 6px !important;
+    max-width: 330px !important;
   }
 }
 
@@ -1898,7 +2040,7 @@
   display: flex;
   flex-direction: column;
   width: 100% !important;
-  max-width: 165px !important;
+  max-width: 215px !important;
   height: 250px !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -1910,6 +2052,27 @@
 
 .category-card:hover {
   transform: translateY(-6px);
+}
+
+@media (max-width: 1023px) {
+  .category-card {
+    max-width: 185px !important;
+    height: 235px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .category-card {
+    max-width: 175px !important;
+    height: 220px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card {
+    max-width: 155px !important;
+    height: 205px !important;
+  }
 }
 
 /* Gold Chamfered Outer Border Frame (Clipped strictly to card boundary) */
@@ -1960,7 +2123,7 @@
   position: relative;
 }
 
-/* Image Wrapper inside top portion of card (~165px height) */
+/* Image Wrapper inside top portion of card */
 .category-card-img-wrapper {
   position: relative;
   width: 100%;
@@ -1970,6 +2133,24 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 1023px) {
+  .category-card-img-wrapper {
+    height: 155px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .category-card-img-wrapper {
+    height: 145px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card-img-wrapper {
+    height: 135px !important;
+  }
+}
+
 /* Category Image strictly constrained INSIDE card */
 .category-card-img {
   width: 100% !important;
@@ -1977,11 +2158,12 @@
   object-fit: cover !important;
   object-position: center !important;
   display: block !important;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease !important;
+  filter: brightness(1.35) !important;
 }
 
 .category-card:hover .category-card-img {
-  transform: scale(1.06) !important;
+  transform: scale(1.08) !important;
 }
 
 /* Dark Gradient Overlay at Bottom of Image */
@@ -1992,115 +2174,160 @@
   pointer-events: none;
 }
 
-/* Footer Section inside Card (~83px height) */
+/* Footer Section inside Card - Warm Parchment / Ivory Gold Gradient */
 .category-card-footer {
   width: 100%;
-  height: 83px !important;
-  background: linear-gradient(180deg, #0d0a08 0%, #15110d 100%);
-  border-top: 1px solid rgba(212, 153, 89, 0.25);
-  padding: 6px 4px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  transition: background 0.35s ease;
-  flex-shrink: 0;
+  height: 85px !important;
+  background: linear-gradient(180deg, #ede3cb 0%, #e0d0b2 55%, #caa97b 100%) !important;
+  border-top: 1px solid rgba(80, 55, 25, 0.4) !important;
+  padding: 6px 4px 5px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  transition: background 0.35s ease, border-color 0.35s ease !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 1023px) {
+  .category-card-footer {
+    height: 80px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .category-card-footer {
+    height: 75px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card-footer {
+    height: 70px !important;
+  }
 }
 
 .category-card.active-card .category-card-footer,
 .category-card:hover .category-card-footer {
-  background: linear-gradient(180deg, #140e0a 0%, #201710 100%);
-  border-top-color: rgba(247, 210, 153, 0.6);
+  background: linear-gradient(180deg, #f7efe0 0%, #ecddc2 55%, #d4b588 100%) !important;
+  border-top-color: rgba(90, 60, 30, 0.6) !important;
 }
 
-/* Gold Emblem Icon */
+/* Dark Medallion Icon on Parchment */
 .category-card-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 9999px;
-  border: 1px solid rgba(212, 153, 89, 0.5);
-  background-color: #120e0a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #d49959;
-  margin-bottom: 4px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  width: 26px !important;
+  height: 26px !important;
+  border-radius: 9999px !important;
+  border: 1px solid #5a3e20 !important;
+  background: radial-gradient(circle, #2d2015 0%, #150e08 100%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #dfb776 !important;
+  margin-bottom: 3px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4) !important;
+}
+
+@media (max-width: 480px) {
+  .category-card-icon {
+    width: 22px !important;
+    height: 22px !important;
+    margin-bottom: 2px !important;
+  }
 }
 
 .category-card:hover .category-card-icon {
-  border-color: #f7d299;
-  color: #f7d299;
-  transform: scale(1.06);
-  box-shadow: 0 0 10px rgba(247, 210, 153, 0.4);
+  border-color: #7d572d !important;
+  color: #f3cb88 !important;
+  transform: scale(1.08) !important;
+  box-shadow: 0 0 8px rgba(90, 60, 25, 0.4) !important;
 }
 
 .category-card.active-card .category-card-icon {
-  border-color: #ffe2b3;
-  background: linear-gradient(135deg, #d49959 0%, #8c5b24 100%);
-  color: #ffffff;
-  transform: scale(1.08);
-  box-shadow: 0 0 14px rgba(247, 210, 153, 0.6);
+  border-color: #8c5b24 !important;
+  background: radial-gradient(circle, #3d2a1a 0%, #1a1009 100%) !important;
+  color: #ffdf9f !important;
+  transform: scale(1.08) !important;
+  box-shadow: 0 0 10px rgba(140, 91, 36, 0.5) !important;
 }
 
-/* Category Label Text */
+/* Category Label Text - Elegant Serif Dark Typography */
 .category-card-label {
-  font-family: var(--font-display, Playfair Display, serif);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #d6cbbe;
-  transition: color 0.3s ease;
+  display: block !important;
+  font-family: var(--font-display, 'Domine', Georgia, serif) !important;
+  font-size: 0.76rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #1f160e !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) !important;
+  transition: all 0.25s ease !important;
+}
+
+@media (max-width: 1023px) {
+  .category-card-label {
+    font-size: 0.72rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card-label {
+    font-size: 0.68rem !important;
+    letter-spacing: 0.14em !important;
+  }
 }
 
 .category-card:hover .category-card-label,
 .category-card.active-card .category-card-label {
-  color: #ffffff;
-  text-shadow: 0 0 8px rgba(247, 210, 153, 0.5);
+  color: #0d0905 !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
 
-/* Small Gold Decorative Line Below Category Name */
+/* Dark Solid Dash Below Category Name */
 .category-card-divider {
-  width: 14px;
-  height: 1px;
-  background-color: rgba(212, 153, 89, 0.4);
-  margin-top: 4px;
-  transition: all 0.3s ease;
+  width: 16px !important;
+  height: 2px !important;
+  background-color: #2b1d12 !important;
+  border-radius: 2px !important;
+  margin-top: 4px !important;
+  transition: all 0.3s ease !important;
 }
 
 .category-card.active-card .category-card-divider,
 .category-card:hover .category-card-divider {
-  width: 22px;
-  background-color: #d49959;
-  box-shadow: 0 0 6px #d49959;
+  width: 20px !important;
+  background-color: #1a1008 !important;
+  box-shadow: 0 0 4px rgba(40, 25, 12, 0.5) !important;
 }
 
-/* Subtle Golden Glow Below Active/Hovered Card */
+/* Golden Amber Ambient Glow Radiating Beneath Card */
 .category-card-glow {
-  position: absolute;
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 16px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(247, 210, 153, 0.8) 0%, rgba(212, 153, 89, 0.4) 40%, transparent 75%);
-  opacity: 0;
-  filter: blur(5px);
-  transition: opacity 0.35s ease;
-  pointer-events: none;
+  position: absolute !important;
+  bottom: -10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 85% !important;
+  height: 18px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(ellipse at center, rgba(235, 180, 100, 0.8) 0%, rgba(185, 125, 50, 0.4) 45%, transparent 75%) !important;
+  opacity: 0.65 !important;
+  filter: blur(6px) !important;
+  transition: opacity 0.35s ease, filter 0.35s ease, transform 0.35s ease !important;
+  pointer-events: none !important;
 }
 
 .category-card:hover .category-card-glow {
-  opacity: 0.7;
+  opacity: 1 !important;
+  filter: blur(8px) !important;
+  transform: translateX(-50%) scale(1.1) !important;
 }
 
 .category-card.active-card .category-card-glow {
-  opacity: 1;
-  width: 90%;
+  opacity: 1 !important;
+  width: 95% !important;
+  filter: blur(8px) !important;
 }
 
 /* Product Item Row - Dark Luxury Website Theme (Matching Site Background) */
@@ -2343,15 +2570,16 @@
 
 .product-card-arch {
   position: relative !important;
-  width: 100% !important;
-  height: 16.5rem !important;
-  border-top-left-radius: 90px !important;
-  border-top-right-radius: 90px !important;
-  border-bottom-left-radius: 0.75rem !important;
-  border-bottom-right-radius: 0.75rem !important;
+  width: calc(100% + 2.5rem) !important;
+  height: 18rem !important;
+  border-top-left-radius: 1.25rem !important;
+  border-top-right-radius: 1.25rem !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
   background-color: #1c1611 !important;
-  border: 1px solid rgba(212, 153, 89, 0.15) !important;
-  padding: 0.5rem !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: -1.25rem -1.25rem 0 -1.25rem !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -2362,12 +2590,16 @@
   width: 100% !important;
   height: 100% !important;
   max-height: 100% !important;
-  max-width: 95% !important;
-  object-fit: contain !important;
+  max-width: 100% !important;
+  object-fit: cover !important;
   margin: 0 auto !important;
   display: block !important;
   filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.85)) !important;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border-top-left-radius: 1.25rem !important;
+  border-top-right-radius: 1.25rem !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 
 .product-grid-card:hover .product-card-arch img {
@@ -2417,10 +2649,10 @@
 
 .product-card-pill {
   background-color: rgba(212, 153, 89, 0.15) !important;
-  color: #d49959 !important;
+  color: #362a21 !important;
   border: 1px solid rgba(212, 153, 89, 0.3) !important;
   font-size: 0.65rem !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
   padding: 0.25rem 0.75rem !important;
@@ -2483,10 +2715,27 @@
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08) !important;
 }
 
-/* Arched image container background overrides */
+/* Remove shapes and borders from the image background, and span edge-to-edge */
 .product-card-arch.wine-card-arch {
-  background-color: #ffffff !important; /* Pure white/clean off-white background inside the arch */
-  border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  background-color: #f5efe6 !important;
+  border: none !important;
+  border-top-left-radius: 1.25rem !important;
+  border-top-right-radius: 1.25rem !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  max-width: none !important;
+  width: calc(100% + 2.5rem) !important;
+  margin: -1.25rem -1.25rem 0 -1.25rem !important;
+  height: 18rem !important;
+  padding: 0 !important;
+}
+
+.product-card-arch.wine-card-arch a {
+  background-color: #f5efe6 !important;
+}
+
+.wine-card-link-multiply {
+  mix-blend-mode: multiply !important;
 }
 
 /* Floating wishlist button override */
@@ -2516,12 +2765,12 @@
 
 /* Soft Lavender pills */
 .product-card-pill.wine-card-pill {
-  background-color: #ebe5f9 !important; /* Soft light purple/lavender background */
-  color: #654ea3 !important; /* Deep lavender text color */
-  border: none !important;
+  background-color: rgba(212, 153, 89, 0.15) !important; /* Soft light amber/gold background */
+  color: #362a21 !important; /* #362a21 text color */
+  border: 1px solid rgba(212, 153, 89, 0.3) !important;
   padding: 0.25rem 0.75rem !important;
   font-size: 0.65rem !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
 }
 
 /* Footer layout */
@@ -2545,40 +2794,456 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
 }
 
-/* Decorative Base for Transparent Bottle Images */
+/* Hide decorative background shapes in the wine category */
 .wine-decor-base {
-  position: absolute !important;
-  bottom: 1.5rem !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 82% !important;
-  height: 1.25rem !important;
-  background-color: #d7c9f8 !important; /* soft lavender/purple shape */
-  border-radius: 50% !important;
-  z-index: 1 !important;
-  opacity: 0.75 !important;
-  pointer-events: none !important;
+  display: none !important;
 }
 
-/* Decorative Circle Backdrop for lifestyle arched images */
 .wine-decor-backdrop {
-  position: absolute !important;
-  top: 9.5rem !important; /* Align around the bottom edge of the image arch */
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  width: 13.5rem !important;
-  height: 13.5rem !important;
-  background-color: #d7c9f8 !important; /* soft lavender/purple shape */
-  border-radius: 50% !important;
-  z-index: 0 !important;
-  opacity: 0.8 !important;
-  pointer-events: none !important;
+  display: none !important;
 }
 
 /* Ensure images have proper layering and containment */
-.product-card-arch.wine-card-arch img.wine-card-img {
+img.wine-card-img {
   position: relative !important;
   z-index: 2 !important;
   filter: none !important;
   mix-blend-mode: multiply !important;
+  max-width: 100% !important;
+  height: 95% !important;
+}
+
+img.wine-card-img-lifestyle {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  object-fit: cover !important;
+  mix-blend-mode: normal !important;
+  border-top-left-radius: 1.25rem !important;
+  border-top-right-radius: 1.25rem !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+/* About Us paragraph gap styles */
+#about p {
+  margin-bottom: 1.5rem !important;
+}
+
+#about p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Category Page Hero Section custom styling to prevent fixed navigation overlap */
+#category-hero-banner {
+  padding-top: 8.5rem !important;
+  padding-bottom: 3.5rem !important;
+}
+
+/* Visit Page Main Container custom styling to prevent fixed navigation overlap */
+#visit-page-container {
+  padding-top: 7.5rem !important;
+  padding-bottom: 8rem !important;
+}
+
+
+/* --- CUSTOM SECTIONS STYLES (Explore Collection, Vault, Tastings) --- */
+
+.home-filter-bar {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  row-gap: 16px !important;
+  column-gap: 16px !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border-radius: 9999px !important;
+  border: 1px solid #382f27 !important;
+  background-color: rgba(18, 16, 14, 0.9) !important;
+  padding: 0.65rem 1.5rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5) !important;
+  margin-bottom: 2.5rem !important;
+}
+
+@media (max-width: 767px) {
+  .home-filter-bar {
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    border-radius: 0.75rem !important;
+    gap: 16px !important;
+    row-gap: 16px !important;
+    column-gap: 16px !important;
+    padding: 0.75rem 1rem !important;
+  }
+}
+
+.home-filter-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  gap: 0.5rem !important;
+  border-radius: 9999px !important;
+  background-color: #f5efe6 !important;
+  padding: 0.5rem 1.25rem !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.2em !important;
+  color: #362a21 !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.home-filter-pill:hover {
+  background-color: #e6ded5 !important;
+  color: #362a21 !important;
+}
+
+.home-filter-pill-dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 9999px !important;
+  background-color: #362a21 !important;
+  display: inline-block !important;
+}
+
+.home-price-dropdown-wrapper {
+  position: relative !important;
+  display: inline-block !important;
+}
+
+.home-price-dropdown {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin-top: 0.75rem !important;
+  width: 12rem !important;
+  border-radius: 0.5rem !important;
+  background-color: #f5efe6 !important;
+  color: #0a0806 !important;
+  border: 1px solid #c4b5a0 !important;
+  padding: 0.5rem 0 !important;
+  z-index: 60 !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4) !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+}
+
+.home-price-dropdown a {
+  display: block !important;
+  padding: 0.625rem 1rem !important;
+  text-align: center !important;
+  transition: background-color 0.2s ease !important;
+  border-bottom: 1px solid #e6ded5 !important;
+}
+
+.home-price-dropdown a:last-child {
+  border-bottom: none !important;
+}
+
+.home-price-dropdown a:hover {
+  background-color: #e6ded5 !important;
+}
+
+/* Featured Card (Grand Cru) */
+.home-card-featured {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  border-radius: 1rem !important;
+  border: 1px solid #382f27 !important;
+  background-color: #12100e !important;
+  overflow: hidden !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.5s ease !important;
+  margin-bottom: 1.5rem !important;
+  min-height: 28rem !important;
+}
+
+/* Half-width Cards Grid */
+.home-card-half-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 1.5rem !important;
+  margin-top: 1.5rem !important;
+}
+
+@media (min-width: 768px) {
+  .home-card-half-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* Half Card (Vintage Vault, Estate Tastings) */
+.home-card-half {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  border-radius: 1rem !important;
+  border: 1px solid #382f27 !important;
+  background-color: #12100e !important;
+  overflow: hidden !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.5s ease !important;
+  min-height: 22rem !important;
+}
+
+.home-card-featured:hover, .home-card-half:hover {
+  border-color: rgba(212, 153, 89, 0.5) !important;
+  box-shadow: 0 25px 50px -12px rgba(212, 153, 89, 0.15) !important;
+}
+
+/* Card Background Image */
+.home-card-bg-img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  opacity: 1 !important;
+  filter: brightness(1.1) contrast(1.05) !important;
+  z-index: 1 !important;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease !important;
+}
+
+.home-card-featured:hover .home-card-bg-img,
+.home-card-half:hover .home-card-bg-img {
+  transform: scale(1.04) !important;
+  filter: brightness(1.18) contrast(1.08) !important;
+}
+
+/* Card Overlays - Lightened to maximize background image visibility & opacity */
+.home-card-overlay-featured {
+  position: absolute !important;
+  inset: 0 !important;
+  /* Left to right soft gradient: clear image on the right, light shade on the left for text contrast */
+  background: linear-gradient(90deg, rgba(10, 8, 6, 0.55) 0%, rgba(10, 8, 6, 0.25) 50%, rgba(10, 8, 6, 0.05) 100%) !important;
+  z-index: 2 !important;
+}
+
+/* Mobile overlay for featured card */
+@media (max-width: 768px) {
+  .home-card-overlay-featured {
+    background: linear-gradient(180deg, rgba(10, 8, 6, 0.6) 0%, rgba(10, 8, 6, 0.25) 100%) !important;
+  }
+}
+
+.home-card-overlay-half {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(10, 8, 6, 0.45) 0%, rgba(10, 8, 6, 0.2) 100%) !important;
+  z-index: 2 !important;
+}
+
+/* Card Content Container */
+.home-card-content {
+  position: relative !important;
+  z-index: 3 !important;
+  padding: 2.25rem !important;
+  text-align: left !important;
+}
+
+@media (min-width: 768px) {
+  .home-card-content.featured-padding {
+    padding: 4rem 5rem !important;
+    max-width: 32rem !important;
+  }
+}
+
+.home-card-title {
+  font-family: 'Domine', Georgia, serif !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: #d49959 !important;
+  letter-spacing: 0.15em !important;
+  line-height: 1.3 !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.9) !important;
+}
+
+.home-card-featured .home-card-title {
+  font-size: 1.6rem !important;
+}
+
+@media (min-width: 640px) {
+  .home-card-featured .home-card-title {
+    font-size: 2.25rem !important;
+  }
+}
+
+.home-card-half .home-card-title {
+  font-size: 1.35rem !important;
+}
+
+@media (min-width: 640px) {
+  .home-card-half .home-card-title {
+    font-size: 1.6rem !important;
+  }
+}
+
+.home-card-subtitle {
+  font-family: 'Domine', Georgia, serif !important;
+  font-style: italic !important;
+  color: #c4b5a0 !important;
+  letter-spacing: 0.05em !important;
+  margin-top: 0.5rem !important;
+  font-size: 1.125rem !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85), 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+}
+
+.home-card-body {
+  font-family: 'Hanken Grotesk', system-ui, sans-serif !important;
+  color: #f0e6da !important; /* Lighter crisper white-cream for dark background readability */
+  line-height: 1.65 !important;
+  margin-top: 1rem !important;
+  font-size: 0.9rem !important;
+  max-width: 28rem !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 1px 3px rgba(0, 0, 0, 0.9) !important;
+}
+
+@media (min-width: 640px) {
+  .home-card-body {
+    font-size: 1rem !important;
+  }
+}
+
+.home-card-half .home-card-body {
+  font-size: 0.875rem !important;
+}
+
+.home-card-btn {
+  display: inline-block !important;
+  border-radius: 2px !important;
+  border: 1px solid rgba(212, 153, 89, 0.7) !important;
+  padding: 0.75rem 1.75rem !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.2em !important;
+  color: #d49959 !important;
+  transition: all 0.5s ease !important;
+  text-decoration: none !important;
+  margin-top: 2rem !important;
+  cursor: pointer !important;
+  background-color: rgba(10, 8, 6, 0.55) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.home-filter-bar {
+  position: relative !important;
+  z-index: 50 !important;
+}
+
+.home-price-dropdown-wrapper {
+  position: relative !important;
+  display: inline-block !important;
+  z-index: 60 !important;
+}
+
+.price-filter-pill-btn,
+#price-filter-btn {
+  background-color: #eee6dc !important;
+  color: #211c18 !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 12px 28px !important;
+  font-family: var(--font-body, sans-serif) !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.price-filter-pill-btn:hover,
+#price-filter-btn:hover {
+  background-color: #e5dccf !important;
+  color: #120f0c !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+.price-chevron-icon,
+#price-chevron {
+  display: inline-block !important;
+  font-size: 0.65rem !important;
+  color: #211c18 !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.home-price-dropdown,
+#price-dropdown {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 250px !important;
+  background-color: #eee6dc !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45) !important;
+  z-index: 9999 !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+.home-price-dropdown.hidden,
+#price-dropdown.hidden {
+  display: none !important;
+}
+
+.home-card-half .home-card-btn {
+  padding: 0.65rem 1.5rem !important;
+  margin-top: 1.75rem !important;
+}
+
+.home-card-btn:hover {
+  background-color: #d49959 !important;
+  color: #0a0806 !important;
+  box-shadow: 0 0 15px rgba(212, 153, 89, 0.4) !important;
+  border-color: #d49959 !important;
+}
+
+/* UNIFIED CATEGORY BAR & PILL STYLING (#362a21 text color & 16px gap) */
+.category-filter-bar,
+.category-tabs-bar,
+.category-bar,
+.product-card-tags-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  row-gap: 16px !important;
+  column-gap: 16px !important;
+}
+
+.home-filter-pill,
+.category-tab,
+.product-card-pill,
+.wine-card-pill,
+.category-pill,
+.category-label {
+  color: #362a21 !important;
+}
+
+.home-filter-pill:hover,
+.category-tab:hover,
+.category-tab.active-tab {
+  color: #362a21 !important;
+}
+
+.home-filter-pill-dot {
+  background-color: #362a21 !important;
 }

@@ -32,10 +32,65 @@
         </a>
         <ul class="hidden items-center gap-9 text-xs uppercase tracking-[0.2em] text-muted-foreground md:flex">
           <li>
-            <a href="index.html#expressions" class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">Expressions</a>
+            <a href="category.html?category=WHISKEY" class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">The House</a>
           </li>
-          <li>
-            <a href="visit.html" class="relative py-2 text-ember font-semibold after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-ember">Visit</a>
+          <li class="relative group">
+            <a href="visit.html" class="relative py-2 text-ember font-semibold after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-ember flex items-center gap-1">Visit</a>
+
+            <!-- Navbar Visit Dropdown Popover matching image -->
+            <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-80 sm:w-96 rounded-xl bg-[#12100e] border border-[#2d2620] p-6 sm:p-7 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pointer-events-none group-hover:pointer-events-auto normal-case tracking-normal">
+              <div class="space-y-6 text-[#eae3d9]">
+                <!-- Address -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="map-pin" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Address</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      12205 Shawnee Mission PKWY<br>
+                      Shawnee, KS 66216
+                    </p>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Store Hours -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="clock" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Store Hours</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      Monday - Thursday : 10 AM - 10 PM<br>
+                      Friday - Saturday : 9 AM - 11 PM<br>
+                      Sunday : 9 AM - 8 PM
+                    </p>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Phone -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="phone" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Phone</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      <a href="tel:+19135550199" class="hover:text-ember transition-colors">+1 (913) 555-0199</a>
+                    </p>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Email -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="mail" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Email</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      <a href="mailto:info@whiskeybarrel.com" class="hover:text-ember transition-colors">info@whiskeybarrel.com</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
         <div class="flex items-center gap-3">
@@ -53,7 +108,7 @@
     </header>
 
     <!-- Visit Main Container -->
-    <section class="flex-1 flex items-center justify-center px-6 pt-24 pb-32 bg-[#12100e]">
+    <section id="visit-page-container" class="flex-1 flex items-center justify-center px-6 pt-24 pb-32 bg-[#12100e]">
       <div data-reveal="scale" class="mx-auto max-w-6xl w-full rounded-2xl overflow-hidden bg-[#1d1a17] border border-[#382f27] shadow-2xl transition-all duration-500">
         <div class="grid grid-cols-1 items-center lg:grid-cols-2">
 
@@ -69,29 +124,50 @@
             <div class="mt-10 space-y-7">
               <!-- Address Item -->
               <div class="flex items-start gap-4">
-                <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#3d3125] text-[#d49959] shadow-sm">
-                  <i data-lucide="map-pin" class="h-4 w-4"></i>
-                </span>
-                <div>
-                  <h2 class="font-semibold text-sm sm:text-base text-[#e6ded5] font-body">Address</h2>
-                  <p class="mt-1 text-sm sm:text-base text-[#a3998e] font-body leading-relaxed">
-                    12205 W. 63rd St<br>
+                <i data-lucide="map-pin" class="h-5 w-5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                <div class="space-y-1">
+                  <h2 class="font-bold text-base text-[#ffffff] font-body">Address</h2>
+                  <p class="text-sm sm:text-base text-[#eae3d9]/90 font-body leading-relaxed">
+                    12205 Shawnee Mission PKWY<br>
                     Shawnee, KS 66216
                   </p>
                 </div>
               </div>
+              <br>
 
-              <!-- Hours Item -->
+              <!-- Store Hours Item -->
               <div class="flex items-start gap-4">
-                <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#3d3125] text-[#d49959] shadow-sm">
-                  <i data-lucide="clock" class="h-4 w-4"></i>
-                </span>
-                <div>
-                  <h2 class="font-semibold text-sm sm:text-base text-[#e6ded5] font-body">Hours</h2>
-                  <p class="mt-1 text-sm sm:text-base text-[#a3998e] font-body leading-relaxed">
-                    Mon - Thu: 10am - 9pm<br>
-                    Fri - Sat: 10am - 10pm<br>
-                    Sun: 11am - 6pm
+                <i data-lucide="clock" class="h-5 w-5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                <div class="space-y-1">
+                  <h2 class="font-bold text-base text-[#ffffff] font-body">Store Hours</h2>
+                  <p class="text-sm sm:text-base text-[#eae3d9]/90 font-body leading-relaxed">
+                    Monday - Thursday : 10 AM - 10 PM<br>
+                    Friday - Saturday : 9 AM - 11 PM<br>
+                    Sunday : 9 AM - 8 PM
+                  </p>
+                </div>
+              </div>
+              <br>
+
+              <!-- Phone Item -->
+              <div class="flex items-start gap-4">
+                <i data-lucide="phone" class="h-5 w-5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                <div class="space-y-1">
+                  <h2 class="font-bold text-base text-[#ffffff] font-body">Phone</h2>
+                  <p class="text-sm sm:text-base text-[#eae3d9]/90 font-body leading-relaxed">
+                    <a href="tel:+19135550199" class="hover:text-ember transition-colors">+1 (913) 555-0199</a>
+                  </p>
+                </div>
+              </div>
+              <br>
+
+              <!-- Email Item -->
+              <div class="flex items-start gap-4">
+                <i data-lucide="mail" class="h-5 w-5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                <div class="space-y-1">
+                  <h2 class="font-bold text-base text-[#ffffff] font-body">Email</h2>
+                  <p class="text-sm sm:text-base text-[#eae3d9]/90 font-body leading-relaxed">
+                    <a href="mailto:info@whiskeybarrel.com" class="hover:text-ember transition-colors">info@whiskeybarrel.com</a>
                   </p>
                 </div>
               </div>

@@ -1988,6 +1988,265 @@ const CIGAR_PRODUCTS = [
   }
 ];
 
+const TEQUILA_PRODUCTS = [
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-1",
+      title: "Clase Azul Reposado Agave",
+      handle: "clase-azul-reposado-agave",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 100% Blue Weber Agave",
+      type: "🥃 Reposado Tequila",
+      badges: [{ label: "VIVINO", score: "4.9" }, { label: "AGED", score: "RESERVE" }],
+      description: "Masterfully aged in American oak barrels for 8 months. Iconic hand-painted ceramic decanter with vanilla, hazelnut, and agave nectar notes.",
+      priceRange: { minVariantPrice: { amount: "195.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-clase-azul-reposado.jpg", altText: "Clase Azul Reposado Agave" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila1", title: "700ml Bottle", price: { amount: "195.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-2",
+      title: "Don Julio 1942 Extra Añejo",
+      handle: "don-julio-1942-extra-anejo",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 Highland Blue Agave",
+      type: "🥃 Extra Añejo Tequila",
+      badges: [{ label: "WE", score: "98" }, { label: "AGED", score: "RESERVE" }],
+      description: "Handcrafted in small batches and aged for a minimum of two and a half years in charred American white oak casks. Rich caramel and chocolate finish.",
+      priceRange: { minVariantPrice: { amount: "220.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-don-julio-1942.jpg", altText: "Don Julio 1942 Extra Añejo" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila2", title: "700ml Bottle", price: { amount: "220.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-3",
+      title: "Fortaleza Blanco Still Strength",
+      handle: "fortaleza-blanco-still-strength",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 Stone Tahona Crushed Agave",
+      type: "🍸 Still Strength Blanco",
+      badges: [{ label: "RP", score: "96" }, { label: "AGED", score: "RESERVE" }],
+      description: "Unfiltered 46% ABV artisanal blanco with explosive citrus, green olive, earthy minerals, and sweet slow-roasted agave profile.",
+      priceRange: { minVariantPrice: { amount: "95.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-fortaleza-blanco.jpg", altText: "Fortaleza Blanco Still Strength" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila3", title: "700ml Bottle", price: { amount: "95.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-4",
+      title: "Herradura Selección Suprema",
+      handle: "herradura-seleccion-suprema",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 100% Blue Agave, Oak Cask",
+      type: "🥃 Ultra Extra Añejo",
+      badges: [{ label: "VIVINO", score: "5.0" }, { label: "AGED", score: "RESERVE" }],
+      description: "Aged for 49 months in American white oak barrels. Mahogany color with deep aromas of dried fruit, cinnamon, rose petals, and spicy cedar.",
+      priceRange: { minVariantPrice: { amount: "380.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-herradura-suprema.jpg", altText: "Herradura Selección Suprema" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila4", title: "700ml Bottle", price: { amount: "380.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-5",
+      title: "Casamigos Añejo Highland Reserve",
+      handle: "casamigos-anejo-highland-reserve",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 Slow-Cooked Blue Agave",
+      type: "🥃 Highland Añejo",
+      badges: [{ label: "WE", score: "92" }, { label: "AGED", score: "RESERVE" }],
+      description: "Aged 14 months in premium oak barrels. Soft caramel, toasted vanilla, cocoa, and subtle spice with an exceptionally velvety lingering finish.",
+      priceRange: { minVariantPrice: { amount: "75.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-casamigos-anejo.jpg", altText: "Casamigos Añejo Highland Reserve" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila5", title: "700ml Bottle", price: { amount: "75.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-6",
+      title: "Tequila Ocho Single Estate Plata",
+      handle: "tequila-ocho-single-estate-plata",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 Single Terroir Agave",
+      type: "🍸 Single Estate Plata",
+      badges: [{ label: "RP", score: "94" }, { label: "AGED", score: "RESERVE" }],
+      description: "Harvested from a single highland field estate. Unmatched purity, white pepper, fresh lime zest, and sweet roasted agave heart notes.",
+      priceRange: { minVariantPrice: { amount: "62.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-ocho-plata.jpg", altText: "Tequila Ocho Single Estate Plata" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila6", title: "700ml Bottle", price: { amount: "62.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-7",
+      title: "Gran Patrón Piedra Extra Añejo",
+      handle: "gran-patron-piedra-extra-anejo",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 Tahona-Crafted Agave",
+      type: "🥃 Prestige Decanter Tequila",
+      badges: [{ label: "VIVINO", score: "4.9" }, { label: "AGED", score: "RESERVE" }],
+      description: "Aged for more than three years in new American and French oak barrels. Presented in an elegant crystal decanter with toasted oak and vanilla notes.",
+      priceRange: { minVariantPrice: { amount: "420.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-gran-patron-piedra.jpg", altText: "Gran Patrón Piedra Extra Añejo" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila7", title: "700ml Bottle", price: { amount: "420.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-8",
+      title: "El Tesoro Paradiso Cognac Cask",
+      handle: "el-tesoro-paradiso-cognac-cask",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 100% Estate Agave",
+      type: "🥃 Cognac Cask Añejo",
+      badges: [{ label: "WE", score: "97" }, { label: "AGED", score: "RESERVE" }],
+      description: "Created in collaboration with Alain Royer of A. de Fussigny Cognac. Aged 5 years in French oak ex-cognac casks for complex stone fruit finish.",
+      priceRange: { minVariantPrice: { amount: "185.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-el-tesoro-paradiso.jpg", altText: "El Tesoro Paradiso Cognac Cask" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila8", title: "700ml Bottle", price: { amount: "185.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-9",
+      title: "Don José Luis Reserva Especial",
+      handle: "don-jose-luis-reserva-especial",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 100% Blue Weber Agave",
+      type: "🥃 Extra Añejo Crystal",
+      badges: [{ label: "VIVINO", score: "4.9" }, { label: "AGED", score: "RESERVE" }],
+      description: "Artisanal luxury decanter tequila aged 36 months in charred white oak casks with hints of golden honey, toasted almond, and smoked vanilla.",
+      priceRange: { minVariantPrice: { amount: "260.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/cat-tequila.jpg", altText: "Don José Luis Reserva Especial" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila9", title: "700ml Bottle", price: { amount: "260.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-10",
+      title: "1800 Cristalino Añejo Diamond",
+      handle: "1800-cristalino-anejo-diamond",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 Port Cask Finished Agave",
+      type: "🍸 Cristalino Añejo",
+      badges: [{ label: "WE", score: "93" }, { label: "AGED", score: "RESERVE" }],
+      description: "Aged in French and American oak, finished in port wine casks, then filtered to crystal clarity. Notes of roasted nuts and silky dark berries.",
+      priceRange: { minVariantPrice: { amount: "80.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-1800-cristalino.jpg", altText: "1800 Cristalino Añejo Diamond" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila10", title: "700ml Bottle", price: { amount: "80.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-11",
+      title: "Siete Leguas D'Antaño Extra Añejo",
+      handle: "siete-leguas-d-antano-extra-anejo",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 Mule-Driven Tahona Agave",
+      type: "🥃 Rare Extra Añejo",
+      badges: [{ label: "RP", score: "98" }, { label: "AGED", score: "RESERVE" }],
+      description: "Aged 5 years in historic cellars. Rich amber tone with aromas of dried fig, pipe tobacco, toasted oak, dark chocolate, and candied orange peel.",
+      priceRange: { minVariantPrice: { amount: "295.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-siete-leguas.jpg", altText: "Siete Leguas D'Antaño Extra Añejo" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila11", title: "700ml Bottle", price: { amount: "295.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-12",
+      title: "Clase Azul Gold Edition",
+      handle: "clase-azul-gold-edition",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 Plata & 8-Year Extra Añejo",
+      type: "🥃 Joven Prestige Decanter",
+      badges: [{ label: "VIVINO", score: "5.0" }, { label: "AGED", score: "RESERVE" }],
+      description: "An exceptional joven blend combining Clase Azul Plata with special 8-year extra añejo aged in French oak casks and finished in sherry barrels.",
+      priceRange: { minVariantPrice: { amount: "360.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-clase-azul-gold.jpg", altText: "Clase Azul Gold Edition" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila12", title: "700ml Bottle", price: { amount: "360.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-13",
+      title: "Código 1530 Origen Extra Añejo",
+      handle: "codigo-1530-origen-extra-anejo",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 Napa Cabernet French White Oak",
+      type: "🥃 6-Year Reserve Añejo",
+      badges: [{ label: "WE", score: "96" }, { label: "AGED", score: "RESERVE" }],
+      description: "Aged 6 years in Napa Valley Cabernet French White Oak barrels. Complex notes of dried fruit, cinnamon, and caramel with exceptional smoothness.",
+      priceRange: { minVariantPrice: { amount: "330.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-codigo-1530.jpg", altText: "Código 1530 Origen Extra Añejo" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila13", title: "700ml Bottle", price: { amount: "330.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-14",
+      title: "Rey Sol Extra Añejo Handcrafted",
+      handle: "rey-sol-extra-anejo-handcrafted",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 Highland Blue Weber Agave",
+      type: "🥃 Sun Decanter Extra Añejo",
+      badges: [{ label: "RP", score: "97" }, { label: "AGED", score: "RESERVE" }],
+      description: "Aged 6 years in French oak barrels. Housed in a sun-shaped bottle designed by artist Sergio Bustamante with vanilla, oak, and warm cinnamon notes.",
+      priceRange: { minVariantPrice: { amount: "310.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-don-jose-luis-decanter.jpg", altText: "Rey Sol Extra Añejo Handcrafted" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila14", title: "700ml Bottle", price: { amount: "310.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-15",
+      title: "Montelobos Mezcal Artesanal Tobalá",
+      handle: "montelobos-mezcal-artesanal-tobala",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 Wild Agave Potatorum (Tobalá)",
+      type: "🍸 Artisanal Smoky Mezcal",
+      badges: [{ label: "VIVINO", score: "4.8" }, { label: "AGED", score: "RESERVE" }],
+      description: "Distilled from rare wild Tobalá agave in copper pot stills. Subtle smoke with aromas of roasted macadamia, green pepper, nutmeg, and damp earth.",
+      priceRange: { minVariantPrice: { amount: "125.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-siete-leguas.jpg", altText: "Montelobos Mezcal Artesanal Tobalá" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila15", title: "700ml Bottle", price: { amount: "125.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  },
+  {
+    node: {
+      id: "gid://shopify/Product/custom-tequila-16",
+      title: "Del Maguey Single Village Pechuga",
+      handle: "del-maguey-single-village-pechuga",
+      category: "TEQUILA",
+      country: "🇲🇽 Mexico",
+      composition: "🌵 Santa Catarina Minas Agave",
+      type: "🍸 Traditional Village Mezcal",
+      badges: [{ label: "WE", score: "99" }, { label: "AGED", score: "RESERVE" }],
+      description: "Third distillation with wild mountain apples, plums, plantains, almonds, and raw chicken breast suspended in the still. Pure artisanal masterpiece.",
+      priceRange: { minVariantPrice: { amount: "240.00", currencyCode: "USD" } },
+      images: { edges: [{ node: { url: "assets/tequila-fortaleza-blanco.jpg", altText: "Del Maguey Single Village Pechuga" } }] },
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila16", title: "700ml Bottle", price: { amount: "240.00", currencyCode: "USD" }, availableForSale: true } }] }
+    }
+  }
+];
+
 
 async function fetchProducts(first = 24) {
   let shopifyProducts = [];
@@ -1999,11 +2258,11 @@ async function fetchProducts(first = 24) {
   } catch (error) {
     console.warn("Shopify fetch failed, using local products catalog:", error);
   }
-  return [...WHISKEY_PRODUCTS, ...RUM_PRODUCTS, ...BEER_PRODUCTS, ...WINE_PRODUCTS, ...VODKA_PRODUCTS, ...GIN_PRODUCTS, ...CIGAR_PRODUCTS, ...shopifyProducts];
+  return [...WHISKEY_PRODUCTS, ...RUM_PRODUCTS, ...BEER_PRODUCTS, ...WINE_PRODUCTS, ...VODKA_PRODUCTS, ...GIN_PRODUCTS, ...TEQUILA_PRODUCTS, ...CIGAR_PRODUCTS, ...shopifyProducts];
 }
 
 async function fetchProductByHandle(handle) {
-  const localMatch = [...WHISKEY_PRODUCTS, ...RUM_PRODUCTS, ...BEER_PRODUCTS, ...WINE_PRODUCTS, ...VODKA_PRODUCTS, ...GIN_PRODUCTS, ...CIGAR_PRODUCTS].find((p) => p.node.handle === handle);
+  const localMatch = [...WHISKEY_PRODUCTS, ...RUM_PRODUCTS, ...BEER_PRODUCTS, ...WINE_PRODUCTS, ...VODKA_PRODUCTS, ...GIN_PRODUCTS, ...TEQUILA_PRODUCTS, ...CIGAR_PRODUCTS].find((p) => p.node.handle === handle);
   if (localMatch) {
     return localMatch;
   }
@@ -2524,6 +2783,7 @@ window.handleAddToCart = function(handle, variantId) {
     ...VODKA_PRODUCTS,
     ...WINE_PRODUCTS,
     ...GIN_PRODUCTS,
+    ...TEQUILA_PRODUCTS,
     ...CIGAR_PRODUCTS
   ];
   const found = allProducts.find(p => p.node.handle === handle);
@@ -2641,7 +2901,7 @@ function getGlassIconSVG(typeStr) {
 }
 
 // Reusable Wine Category Product Grid Card Renderer (Light Cream Theme)
-function createWineProductCardHTML(p, priceStr, image, ratingBadge) {
+function createWineProductCardHTML(p, priceStr, image, ratingBadge, customTags) {
   const wineTitlesMap = {
     "domaines-des-etoiles-pinot-noir": "Domaines des Étoiles Pinot Noir<br>2021",
     "chateau-margaux-cabernet-sauvignon": "Château Margaux Cabernet<br>Sauvignon 2016",
@@ -2681,7 +2941,7 @@ function createWineProductCardHTML(p, priceStr, image, ratingBadge) {
   };
 
   const titleHtml = wineTitlesMap[p.handle] || p.title;
-  const displayedTags = wineTagsMap[p.handle] || [p.category];
+  const displayedTags = customTags || wineTagsMap[p.handle] || [p.category];
 
   // Determine if transparent bottle or lifestyle background image is used
   const isTransparentBottle = 
@@ -2703,12 +2963,12 @@ function createWineProductCardHTML(p, priceStr, image, ratingBadge) {
         <!-- Base decorator for transparent bottles -->
         ${isTransparentBottle ? `<div class="wine-decor-base"></div>` : ""}
 
-        <a href="product.html?handle=${p.handle}" class="h-full w-full flex items-center justify-center relative z-10">
+        <a href="product.html?handle=${p.handle}" class="h-full w-full flex items-center justify-center relative z-10${isTransparentBottle ? ' wine-card-link-multiply' : ''}">
           ${image ? `
             <img
               src="${image.url}"
               alt="${image.altText ?? p.title}"
-              class="wine-card-img"
+              class="wine-card-img${!isTransparentBottle ? ' wine-card-img-lifestyle' : ''}"
               loading="lazy"
             >
           ` : `
@@ -2741,7 +3001,7 @@ function createWineProductCardHTML(p, priceStr, image, ratingBadge) {
         </a>
 
         <!-- Soft Lavender Pills -->
-        <div class="flex flex-wrap items-center justify-center gap-1.5 mt-1 mb-2">
+        <div class="flex flex-wrap items-center justify-center gap-4 mt-2 mb-3">
           ${displayedTags.map(tag => `
             <span class="product-card-pill wine-card-pill">
               ${tag}
@@ -2782,11 +3042,6 @@ function createProductCardHTML(product) {
   // Rating badge (e.g. 4.8 VIVINO)
   const ratingBadge = p.badges && p.badges[0] ? `${p.badges[0].score} ${p.badges[0].label}` : "4.8 VIVINO";
 
-  // Check if it is wine category
-  if (p.category === "WINE") {
-    return createWineProductCardHTML(p, priceStr, image, ratingBadge);
-  }
-
   // Build pill tags
   const tags = [];
   if (cleanType) {
@@ -2807,73 +3062,8 @@ function createProductCardHTML(product) {
 
   const displayedTags = tags.slice(0, 4);
 
-  return `
-    <article class="product-grid-card">
-      
-      <!-- Top Arched Image Container -->
-      <div class="product-card-arch">
-        <a href="product.html?handle=${p.handle}" class="h-full w-full flex items-center justify-center">
-          ${image ? `
-            <img
-              src="${image.url}"
-              alt="${image.altText ?? p.title}"
-              loading="lazy"
-            >
-          ` : `
-            <div class="flex h-full items-center justify-center text-xs text-[#78716c]">
-              No image
-            </div>
-          `}
-        </a>
-
-        <!-- Floating Wishlist Heart Button -->
-        <button
-          type="button"
-          onclick="handleAddToCart('${p.handle}')"
-          class="product-card-heart-btn"
-          title="Add to Cart"
-          aria-label="Add to cart"
-        >
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Middle Content: Centered Serif Title & Soft Lavender Pill Badges -->
-      <div class="flex flex-col items-center text-center">
-        <a href="product.html?handle=${p.handle}" class="hover:opacity-80 transition-opacity">
-          <h3 class="product-card-title">
-            ${p.title}
-          </h3>
-        </a>
-
-        <!-- Soft Lavender Pills -->
-        <div class="flex flex-wrap items-center justify-center gap-1.5 mt-1 mb-2">
-          ${displayedTags.map(tag => `
-            <span class="product-card-pill">
-              ${tag}
-            </span>
-          `).join("")}
-        </div>
-      </div>
-
-      <!-- Bottom Bar: MRP Price & Dark Rating Badge Pill -->
-      <div class="product-card-footer">
-        <div class="flex items-baseline">
-          <span class="product-card-mrp-label">MRP</span>
-          <span class="product-card-mrp-price">
-            ${priceStr}
-          </span>
-        </div>
-
-        <div class="product-card-rating-badge">
-          ${ratingBadge}
-        </div>
-      </div>
-
-    </article>
-  `;
+  // Return wine-styled card for all categories to maintain consistency
+  return createWineProductCardHTML(p, priceStr, image, ratingBadge, displayedTags);
 }
 
 // Page Specific Route Logics
@@ -2981,6 +3171,10 @@ async function handleIndexPage() {
         updateBreadcrumb(categoryLabel || "Gin");
         if (updateUrl) history.pushState({ category: "GIN" }, "", "#gin");
         renderProductList(GIN_PRODUCTS);
+      } else if (categoryKey === "TEQUILA") {
+        updateBreadcrumb(categoryLabel || "Tequila");
+        if (updateUrl) history.pushState({ category: "TEQUILA" }, "", "#tequila");
+        renderProductList(TEQUILA_PRODUCTS);
       } else if (categoryKey === "CIGAR") {
         updateBreadcrumb(categoryLabel || "Cigar");
         if (updateUrl) history.pushState({ category: "CIGAR" }, "", "#cigar");
@@ -3073,6 +3267,11 @@ async function handleCategoryPage() {
       subtitle: "Handcrafted small-batch gin distilled with rare mountain juniper, citrus peel, and wild lavender.",
       products: GIN_PRODUCTS
     },
+    TEQUILA: {
+      title: "Tequila & Mezcal Collection",
+      subtitle: "Handcrafted 100% blue agave highland tequilas and artisanal smoky mezcals aged in charred white oak.",
+      products: TEQUILA_PRODUCTS
+    },
     CIGAR: {
       title: "Artisanal Cigar Collection",
       subtitle: "Hand-rolled Nicaraguan long-filler cigars presented in engraved solid mahogany humidor boxes.",
@@ -3080,28 +3279,38 @@ async function handleCategoryPage() {
     }
   };
 
+  let currentCategoryProducts = [];
+
+  const filterAndRenderProducts = (filteredList) => {
+    if (!productsGrid) return;
+    if (productsLoading) productsLoading.classList.add("hidden");
+
+    if (!filteredList || filteredList.length === 0) {
+      productsGrid.classList.add("hidden");
+      if (productsEmpty) {
+        productsEmpty.classList.remove("hidden");
+        const emptyTitle = document.getElementById("products-empty-title");
+        const emptyDesc = document.getElementById("products-empty-desc");
+        if (emptyTitle) emptyTitle.textContent = "No Products Found";
+        if (emptyDesc) emptyDesc.textContent = "No items match your selected price filter. Try selecting another filter option.";
+      }
+      return;
+    }
+
+    productsEmpty?.classList.add("hidden");
+    productsGrid.classList.remove("hidden");
+    productsGrid.innerHTML = filteredList.map((product) => createProductCardHTML(product)).join("");
+  };
+
   const renderCategory = (catKey, updateUrl = false) => {
     const key = (catKey || "WHISKEY").toUpperCase();
     const meta = CATEGORY_META[key] || CATEGORY_META.WHISKEY;
 
-    // Update active tab buttons & category cards
-    const categoryTabs = document.querySelectorAll(".category-tab");
-    categoryTabs.forEach((t) => {
-      if (t.getAttribute("data-category") === key) {
-        t.classList.add("active-tab");
-      } else {
-        t.classList.remove("active-tab");
-      }
-    });
-
-    const categoryCards = document.querySelectorAll(".category-card");
-    categoryCards.forEach((c) => {
-      if (c.getAttribute("data-category-card") === key) {
-        c.classList.add("active-card");
-      } else {
-        c.classList.remove("active-card");
-      }
-    });
+    // Ensure category cards grid (category pile) is hidden on category page
+    const categoryCardsGrid = document.getElementById("category-cards-grid");
+    if (categoryCardsGrid) {
+      categoryCardsGrid.style.display = "none";
+    }
 
     // Update Title, Subtitle, Breadcrumbs, Page Title
     document.title = `${meta.title} — Whiskey Barrel`;
@@ -3112,50 +3321,99 @@ async function handleCategoryPage() {
     }
 
     if (updateUrl) {
-      history.pushState({ category: key }, "", `category.html?category=${key}`);
+      const url = new URL(window.location);
+      url.searchParams.set("category", key);
+      history.pushState({ category: key }, "", url);
     }
 
-    if (productsLoading) productsLoading.classList.add("hidden");
-
-    const productList = meta.products || [];
-    if (productList.length === 0) {
-      productsGrid?.classList.add("hidden");
-      if (productsEmpty) {
-        productsEmpty.classList.remove("hidden");
-        const emptyTitle = document.getElementById("products-empty-title");
-        const emptyDesc = document.getElementById("products-empty-desc");
-        if (emptyTitle) emptyTitle.textContent = `No items found in ${key}`;
-        if (emptyDesc) emptyDesc.textContent = `Check back soon for new additions.`;
-      }
-      return;
-    }
-
-    productsEmpty?.classList.add("hidden");
-    productsGrid?.classList.remove("hidden");
-
-    productsGrid.innerHTML = productList.map((product) => createProductCardHTML(product)).join("");
+    currentCategoryProducts = meta.products || [];
+    filterAndRenderProducts(currentCategoryProducts);
   };
 
-  // Bind category button & card clicks on category.html
-  const categoryTabs = document.querySelectorAll(".category-tab");
-  categoryTabs.forEach((tab) => {
-    tab.addEventListener("click", (e) => {
+  // Bind Category Page Filter Bar options
+  const staffPickBtn = document.getElementById("filter-staff-pick");
+  const newArrivalsBtn = document.getElementById("filter-new-arrivals");
+  const onSaleBtn = document.getElementById("filter-on-sale");
+  const priceFilterBtn = document.getElementById("price-filter-btn");
+  const priceDropdown = document.getElementById("price-dropdown");
+  const priceChevron = document.getElementById("price-chevron");
+  const priceFilterLabel = document.getElementById("price-filter-label");
+  const priceItems = document.querySelectorAll("#price-dropdown .price-dropdown-item");
+
+  const applyPriceRangeFilter = (range, labelText) => {
+    // Update button text & active item class
+    if (priceFilterLabel) {
+      priceFilterLabel.textContent = !range || range === "all" ? "PRICE RANGE" : (labelText || range.toUpperCase());
+    }
+
+    priceItems.forEach((item) => {
+      const itemRange = item.getAttribute("data-price-range");
+      if (itemRange === range) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    });
+
+    let filtered = currentCategoryProducts;
+    if (range === "under-50") {
+      filtered = currentCategoryProducts.filter((p) => parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0) < 50);
+    } else if (range === "50-100") {
+      filtered = currentCategoryProducts.filter((p) => {
+        const amt = parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0);
+        return amt >= 50 && amt <= 100;
+      });
+    } else if (range === "100-200") {
+      filtered = currentCategoryProducts.filter((p) => {
+        const amt = parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0);
+        return amt >= 100 && amt <= 200;
+      });
+    } else if (range === "200-500") {
+      filtered = currentCategoryProducts.filter((p) => {
+        const amt = parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0);
+        return amt >= 200 && amt <= 500;
+      });
+    } else if (range === "above-500") {
+      filtered = currentCategoryProducts.filter((p) => parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0) > 500);
+    }
+
+    filterAndRenderProducts(filtered);
+  };
+
+  priceItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-      const cat = tab.getAttribute("data-category");
-      renderCategory(cat, true);
+      const range = item.getAttribute("data-price-range");
+      const labelText = item.textContent.trim();
+      priceDropdown?.classList.add("hidden");
+      if (priceChevron) priceChevron.textContent = "▼";
+      applyPriceRangeFilter(range, labelText);
     });
   });
 
-  const categoryCards = document.querySelectorAll(".category-card");
-  categoryCards.forEach((card) => {
-    card.addEventListener("click", (e) => {
+  if (staffPickBtn) {
+    staffPickBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      e.stopPropagation();
-      const cat = card.getAttribute("data-category-card");
-      renderCategory(cat, true);
+      const filtered = currentCategoryProducts.filter((p) => p.node?.badges?.some((b) => b.label === "VIVINO" || b.label === "WE" || parseFloat(b.score) >= 90));
+      filterAndRenderProducts(filtered.length ? filtered : currentCategoryProducts);
     });
-  });
+  }
+
+  if (newArrivalsBtn) {
+    newArrivalsBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      filterAndRenderProducts([...currentCategoryProducts].reverse());
+    });
+  }
+
+  if (onSaleBtn) {
+    onSaleBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const filtered = currentCategoryProducts.filter((p) => p.node?.badges?.some((b) => b.label === "AGED" || b.label === "LIMITED" || b.label === "RESERVE"));
+      filterAndRenderProducts(filtered.length ? filtered : currentCategoryProducts);
+    });
+  }
 
   // Get initial category from query parameter or hash
   const getInitialCategory = () => {
@@ -3167,10 +3425,30 @@ async function handleCategoryPage() {
     return cat ? cat.toUpperCase() : "WHISKEY";
   };
 
+  const applyInitialFiltersFromUrl = () => {
+    const params = new URLSearchParams(window.location.search);
+    const initialPrice = params.get("price");
+    const initialFilter = params.get("filter");
+
+    if (initialPrice) {
+      const matchingItem = Array.from(priceItems).find((i) => i.getAttribute("data-price-range") === initialPrice);
+      const label = matchingItem ? matchingItem.textContent.trim() : (initialPrice === "all" ? "ALL PRICES" : initialPrice.toUpperCase());
+      applyPriceRangeFilter(initialPrice, label);
+    } else if (initialFilter === "staff-pick") {
+      staffPickBtn?.click();
+    } else if (initialFilter === "new-arrivals") {
+      newArrivalsBtn?.click();
+    } else if (initialFilter === "on-sale") {
+      onSaleBtn?.click();
+    }
+  };
+
   renderCategory(getInitialCategory(), false);
+  applyInitialFiltersFromUrl();
 
   window.addEventListener("popstate", () => {
     renderCategory(getInitialCategory(), false);
+    applyInitialFiltersFromUrl();
   });
 }
 
@@ -3334,6 +3612,82 @@ function initAboutToggle() {
   }
 }
 
+// Price Range filter dropdown toggle
+function initPriceFilterDropdown() {
+  const priceFilterBtn = document.getElementById("price-filter-btn");
+  const priceDropdown = document.getElementById("price-dropdown");
+  const priceChevron = document.getElementById("price-chevron");
+
+  if (priceFilterBtn && priceDropdown) {
+    priceFilterBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isHidden = priceDropdown.classList.contains("hidden");
+      if (isHidden) {
+        priceDropdown.classList.remove("hidden");
+        if (priceChevron) {
+          priceChevron.textContent = "▲";
+        }
+      } else {
+        priceDropdown.classList.add("hidden");
+        if (priceChevron) {
+          priceChevron.textContent = "▼";
+        }
+      }
+    });
+
+    // Close the dropdown when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!priceDropdown.classList.contains("hidden") && !priceDropdown.contains(e.target) && !priceFilterBtn.contains(e.target)) {
+        priceDropdown.classList.add("hidden");
+        if (priceChevron) {
+          priceChevron.textContent = "▼";
+        }
+      }
+    });
+  }
+}
+
+// Binds redirect logic to filter bar options on index/home page
+function initFilterRedirections() {
+  const isCategoryPage = window.location.pathname.includes("category.html") || window.location.pathname.includes("/category");
+  if (isCategoryPage) return; // category page manages its own interactive category products filtering
+
+  const staffPickBtn = document.getElementById("filter-staff-pick");
+  const newArrivalsBtn = document.getElementById("filter-new-arrivals");
+  const onSaleBtn = document.getElementById("filter-on-sale");
+  const dropdownItems = document.querySelectorAll(".price-dropdown-item");
+
+  if (staffPickBtn) {
+    staffPickBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = "category.html?filter=staff-pick";
+    });
+  }
+
+  if (newArrivalsBtn) {
+    newArrivalsBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = "category.html?filter=new-arrivals";
+    });
+  }
+
+  if (onSaleBtn) {
+    onSaleBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = "category.html?filter=on-sale";
+    });
+  }
+
+  dropdownItems.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const range = item.getAttribute("data-price-range") || "all";
+      window.location.href = `category.html?price=${range}`;
+    });
+  });
+}
+
 // Global initialization
 window.addEventListener("DOMContentLoaded", () => {
   // 1. Initialize Cart
@@ -3344,6 +3698,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // 3. Initialize About Toggle
   initAboutToggle();
+
+  // 3b. Initialize Price Filter Dropdown
+  initPriceFilterDropdown();
+
+  // 3c. Initialize Filter Redirections
+  initFilterRedirections();
 
   // 4. Render Lucide icons
   if (window.lucide) {

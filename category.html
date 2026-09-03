@@ -44,11 +44,66 @@
           </li>
           <li>
             <a href="category.html?category=WHISKEY"
-              class="relative py-2 text-ember font-semibold transition-colors duration-300">Expressions</a>
+              class="relative py-2 text-ember font-semibold transition-colors duration-300">The House</a>
           </li>
-          <li>
+          <li class="relative group">
             <a href="visit.html"
-              class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">Visit</a>
+              class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100 flex items-center gap-1">Visit</a>
+
+            <!-- Navbar Visit Dropdown Popover matching image -->
+            <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-80 sm:w-96 rounded-xl bg-[#12100e] border border-[#2d2620] p-6 sm:p-7 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pointer-events-none group-hover:pointer-events-auto normal-case tracking-normal">
+              <div class="space-y-6 text-[#eae3d9]">
+                <!-- Address -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="map-pin" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Address</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      12205 Shawnee Mission PKWY<br>
+                      Shawnee, KS 66216
+                    </p>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Store Hours -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="clock" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Store Hours</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      Monday - Thursday : 10 AM - 10 PM<br>
+                      Friday - Saturday : 9 AM - 11 PM<br>
+                      Sunday : 9 AM - 8 PM
+                    </p>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Phone -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="phone" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Phone</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      <a href="tel:+19135550199" class="hover:text-ember transition-colors">+1 (913) 555-0199</a>
+                    </p>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Email -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="mail" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Email</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      <a href="mailto:info@whiskeybarrel.com" class="hover:text-ember transition-colors">info@whiskeybarrel.com</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
         <div class="flex items-center gap-3">
@@ -61,32 +116,23 @@
     </header>
 
     <!-- Category Header Hero Banner -->
-    <section class="relative w-full overflow-hidden pt-28 pb-14 bg-[#0a0806] border-b border-[#382f27]/40 text-center">
+    <section id="category-hero-banner" class="relative w-full overflow-hidden pt-28 pb-0 bg-[#0a0806] text-center">
       <!-- Ambient Radial Background Glow -->
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#5e4324]/20 via-[#1f150b]/10 to-transparent pointer-events-none blur-3xl"></div>
 
       <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
 
-
-
         <!-- Section Header -->
-        <div data-reveal="up" class="text-center flex flex-col items-center mb-10">
+        <div data-reveal="up" class="text-center flex flex-col items-center mb-0">
           <!-- Breadcrumb Navigation -->
           <nav aria-label="Breadcrumb"
-            class="flex items-center justify-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#c4b5a0] font-semibold mb-3">
+            class="flex items-center justify-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#c4b5a0] font-semibold mb-4">
             <a href="index.html" class="hover:text-[#d49959] transition-colors">HOME</a>
             <span class="text-[#7c6342] font-serif">/</span>
             <span class="text-[#c4b5a0]">SPIRITS</span>
             <span class="text-[#7c6342] font-serif">/</span>
             <span id="breadcrumb-current-category" class="font-bold text-[#ffffff]">WHISKEY</span>
           </nav>
-
-          <!-- Breadcrumb Accent Flourish -->
-          <div class="flex items-center justify-center gap-2 mb-4 opacity-75">
-            <span class="h-px w-6 bg-gradient-to-r from-transparent to-[#7c6342]"></span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#b08d57" stroke-width="1.5"><path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z"/></svg>
-            <span class="h-px w-6 bg-gradient-to-l from-transparent to-[#7c6342]"></span>
-          </div>
 
           <h1 id="category-hero-title" class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[0.2em] text-[#f7f3eb] drop-shadow-md">
             EXPLORE OUR COLLECTION
@@ -96,160 +142,50 @@
           </p>
 
           <!-- Decorative Golden Flourish Divider -->
-          <div class="mt-4 w-full max-w-xs mx-auto h-px bg-gradient-to-r from-transparent via-[#8c6d46]/70 to-transparent opacity-80"></div>
-        </div>
-
-        <!-- 7 Category Cards Row (Reference Image - Contained Vertical Cards Grid) -->
-        <div id="category-cards-grid" class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4 max-w-7xl mx-auto px-2">
-
-          <!-- 1. WHISKEY -->
-          <div data-category-card="WHISKEY" class="category-card active-card group cursor-pointer">
-            <div class="category-card-frame">
-              <div class="category-card-content">
-                <div class="category-card-img-wrapper">
-                  <img src="assets/cat-whiskey.jpg" alt="Whiskey" class="category-card-img">
-                  <div class="category-card-img-overlay"></div>
-                </div>
-                <div class="category-card-footer">
-                  <div class="category-card-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14l-1.5 14a2 2 0 0 1-2 1.8H8.5A2 2 0 0 1 6.5 18L5 4z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="8" y1="14" x2="16" y2="14"/></svg>
-                  </div>
-                  <span class="category-card-label">WHISKEY</span>
-                  <div class="category-card-divider"></div>
-                </div>
-              </div>
-            </div>
-            <div class="category-card-glow"></div>
-          </div>
-
-          <!-- 2. RUM -->
-          <div data-category-card="RUM" class="category-card group cursor-pointer">
-            <div class="category-card-frame">
-              <div class="category-card-content">
-                <div class="category-card-img-wrapper">
-                  <img src="assets/cat-rum.jpg" alt="Rum" class="category-card-img">
-                  <div class="category-card-img-overlay"></div>
-                </div>
-                <div class="category-card-footer">
-                  <div class="category-card-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12c-2-3-6-4-9-3 0 4 3 7 9 3z"/><path d="M12 12c2-3 6-4 9-3 0 4-3 7-9 3z"/><path d="M12 15c-3-2-7-1-9 2 2 3 6 3 9-2z"/><path d="M12 15c3-2 7-1 9 2-2 3-6 3-9-2z"/></svg>
-                  </div>
-                  <span class="category-card-label">RUM</span>
-                  <div class="category-card-divider"></div>
-                </div>
-              </div>
-            </div>
-            <div class="category-card-glow"></div>
-          </div>
-
-          <!-- 3. BEER -->
-          <div data-category-card="BEER" class="category-card group cursor-pointer">
-            <div class="category-card-frame">
-              <div class="category-card-content">
-                <div class="category-card-img-wrapper">
-                  <img src="assets/cat-beer.jpg" alt="Beer" class="category-card-img">
-                  <div class="category-card-img-overlay"></div>
-                </div>
-                <div class="category-card-footer">
-                  <div class="category-card-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M12 4c-2 1.5-3.5 3-3.5 5 2 0 3.5-1.5 3.5-5z"/><path d="M12 4c2 1.5 3.5 3 3.5 5-2 0-3.5-1.5-3.5-5z"/><path d="M12 9c-2.5 1.5-4 3.5-4 5.5 2.5 0 4-1.5 4-5.5z"/><path d="M12 9c2.5 1.5 4 3.5 4 5.5-2.5 0-4-1.5-4-5.5z"/><path d="M12 14.5c-3 1.5-4.5 3.5-4.5 5.5 3 0 4.5-1.5 4.5-5.5z"/><path d="M12 14.5c3 1.5 4.5 3.5 4.5 5.5-3 0-4.5-1.5-4.5-5.5z"/></svg>
-                  </div>
-                  <span class="category-card-label">BEER</span>
-                  <div class="category-card-divider"></div>
-                </div>
-              </div>
-            </div>
-            <div class="category-card-glow"></div>
-          </div>
-
-          <!-- 4. VODKA -->
-          <div data-category-card="VODKA" class="category-card group cursor-pointer">
-            <div class="category-card-frame">
-              <div class="category-card-content">
-                <div class="category-card-img-wrapper">
-                  <img src="assets/cat-vodka.jpg" alt="Vodka" class="category-card-img">
-                  <div class="category-card-img-overlay"></div>
-                </div>
-                <div class="category-card-footer">
-                  <div class="category-card-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-                  </div>
-                  <span class="category-card-label">VODKA</span>
-                  <div class="category-card-divider"></div>
-                </div>
-              </div>
-            </div>
-            <div class="category-card-glow"></div>
-          </div>
-
-          <!-- 5. WINE -->
-          <div data-category-card="WINE" class="category-card group cursor-pointer">
-            <div class="category-card-frame">
-              <div class="category-card-content">
-                <div class="category-card-img-wrapper">
-                  <img src="assets/cat-wine.jpg" alt="Wine" class="category-card-img">
-                  <div class="category-card-img-overlay"></div>
-                </div>
-                <div class="category-card-footer">
-                  <div class="category-card-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="2.5"/><circle cx="8.5" cy="11.5" r="2.5"/><circle cx="15.5" cy="11.5" r="2.5"/><circle cx="12" cy="16" r="2.5"/><circle cx="12" cy="20.5" r="1.5"/><path d="M12 2v2.5"/></svg>
-                  </div>
-                  <span class="category-card-label">WINE</span>
-                  <div class="category-card-divider"></div>
-                </div>
-              </div>
-            </div>
-            <div class="category-card-glow"></div>
-          </div>
-
-          <!-- 6. GIN -->
-          <div data-category-card="GIN" class="category-card group cursor-pointer">
-            <div class="category-card-frame">
-              <div class="category-card-content">
-                <div class="category-card-img-wrapper">
-                  <img src="assets/cat-gin.jpg" alt="Gin" class="category-card-img">
-                  <div class="category-card-img-overlay"></div>
-                </div>
-                <div class="category-card-footer">
-                  <div class="category-card-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14"/></svg>
-                  </div>
-                  <span class="category-card-label">GIN</span>
-                  <div class="category-card-divider"></div>
-                </div>
-              </div>
-            </div>
-            <div class="category-card-glow"></div>
-          </div>
-
-          <!-- 7. CIGAR -->
-          <div data-category-card="CIGAR" class="category-card group cursor-pointer">
-            <div class="category-card-frame">
-              <div class="category-card-content">
-                <div class="category-card-img-wrapper">
-                  <img src="assets/cat-cigar.jpg" alt="Cigar" class="category-card-img">
-                  <div class="category-card-img-overlay"></div>
-                </div>
-                <div class="category-card-footer">
-                  <div class="category-card-icon">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.1 2 9a9 9 0 0 1-10 9z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
-                  </div>
-                  <span class="category-card-label">CIGAR</span>
-                  <div class="category-card-divider"></div>
-                </div>
-              </div>
-            </div>
-            <div class="category-card-glow"></div>
-          </div>
-
+          <div style="margin-top: 12px; margin-bottom: 8px; width: 100%; max-width: 300px; height: 1px; background: linear-gradient(to right, transparent, rgba(140, 109, 70, 0.7), transparent); opacity: 0.8;" class="mx-auto"></div>
         </div>
 
       </div>
     </section>
 
     <!-- Dedicated Category Products Section -->
-    <section id="expressions" class="bg-[#0a0806] px-6 py-16">
+    <section id="expressions" class="bg-[#0a0806] px-6 pt-1 pb-16">
       <div class="mx-auto max-w-6xl">
+
+        <!-- Category Filter Bar Container -->
+        <div class="home-filter-bar mb-10">
+          <!-- Staff Pick Pill -->
+          <button type="button" id="filter-staff-pick" class="home-filter-pill">
+            <span class="home-filter-pill-dot"></span> Staff Pick
+          </button>
+
+          <!-- New Arrivals Pill -->
+          <button type="button" id="filter-new-arrivals" class="home-filter-pill">
+            <span class="home-filter-pill-dot"></span> New Arrivals
+          </button>
+
+          <!-- Price Range Dropdown Pill -->
+          <div class="home-price-dropdown-wrapper" id="price-filter-container">
+            <button type="button" id="price-filter-btn" class="price-filter-pill-btn">
+              <span id="price-filter-label">PRICE RANGE</span> <span id="price-chevron" class="price-chevron-icon">▼</span>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <div id="price-dropdown" class="home-price-dropdown hidden">
+              <a href="#" class="price-dropdown-item" data-price-range="all">ALL PRICES</a>
+              <a href="#" class="price-dropdown-item" data-price-range="under-50">UNDER $50</a>
+              <a href="#" class="price-dropdown-item" data-price-range="50-100">$50 - $100</a>
+              <a href="#" class="price-dropdown-item" data-price-range="100-200">$100 - $200</a>
+              <a href="#" class="price-dropdown-item" data-price-range="200-500">$200 - $500</a>
+              <a href="#" class="price-dropdown-item" data-price-range="above-500">ABOVE $500</a>
+            </div>
+          </div>
+
+          <!-- On Sale Pill -->
+          <button type="button" id="filter-on-sale" class="home-filter-pill">
+            <span class="home-filter-pill-dot"></span> On Sale
+          </button>
+        </div>
 
         <!-- Products Loading Indicator -->
         <div id="products-loading" class="my-16 flex justify-center">
