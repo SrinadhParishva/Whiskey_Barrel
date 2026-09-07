@@ -1824,6 +1824,7 @@
 #expressions {
   padding-top: 4rem !important;
   padding-bottom: 5rem !important;
+  scroll-margin-top: 5rem;
 }
 
 /* Category Page Hero & Expressions Tight Spacing */
