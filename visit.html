@@ -32,7 +32,16 @@
         </a>
         <ul class="hidden items-center gap-9 text-xs uppercase tracking-[0.2em] text-muted-foreground md:flex">
           <li>
-            <a href="category.html?category=WHISKEY" class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">The House</a>
+            <a href="index.html" class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">Home</a>
+          </li>
+          <li>
+            <a href="index.html#about" class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">About</a>
+          </li>
+          <li>
+            <a href="index.html#expressions" class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">Collection</a>
+          </li>
+          <li>
+            <a href="index.html#experience" class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">Experience</a>
           </li>
           <li class="relative group">
             <a href="visit.html" class="relative py-2 text-ember font-semibold after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-ember flex items-center gap-1">Visit</a>
@@ -93,104 +102,183 @@
             </div>
           </li>
         </ul>
-        <div class="flex items-center gap-3">
-          <a href="index.html#expressions" class="hidden rounded-sm border border-ember/50 px-5 py-2 text-xs uppercase tracking-[0.2em] text-ember transition-all duration-500 hover:bg-ember hover:text-primary-foreground hover:shadow-ember sm:inline-block">
-            Shop
-          </a>
+        <div class="flex items-center gap-4">
+          <!-- Search Trigger -->
+          <button type="button" aria-label="Search" class="p-2 text-foreground/80 hover:text-ember transition-colors">
+            <i data-lucide="search" class="h-4 w-4"></i>
+          </button>
 
           <!-- Cart Trigger -->
-          <button type="button" id="cart-trigger-btn" aria-label="Open cart" class="relative rounded-sm border border-border p-2.5 text-foreground transition-all duration-500 hover:border-ember hover:text-ember">
+          <button type="button" id="cart-trigger-btn" aria-label="Open cart" class="relative p-2 text-foreground/80 hover:text-ember transition-colors">
             <i data-lucide="shopping-cart" class="h-4 w-4"></i>
-            <span id="cart-badge" class="hidden absolute -right-2 -top-2 flex h-5 min-w-5 items-center justify-center rounded-full bg-[image:var(--gradient-ember)] px-1 text-[0.6rem] font-medium text-primary-foreground">0</span>
+            <span id="cart-badge" class="hidden absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[image:var(--gradient-ember)] px-1 text-[0.6rem] font-medium text-primary-foreground">0</span>
           </button>
+
+          <!-- Plan Your Visit Action Button -->
+          <a href="#visit" class="nav-plan-btn hidden sm:inline-flex">
+            <span>PLAN YOUR VISIT</span>
+            <span>→</span>
+          </a>
         </div>
       </nav>
     </header>
 
-    <!-- Visit Main Container -->
-    <section id="visit-page-container" class="flex-1 flex items-center justify-center px-6 pt-24 pb-32 bg-[#12100e]">
-      <div data-reveal="scale" class="mx-auto max-w-6xl w-full rounded-2xl overflow-hidden bg-[#1d1a17] border border-[#382f27] shadow-2xl transition-all duration-500">
-        <div class="grid grid-cols-1 items-center lg:grid-cols-2">
-
-          <!-- LEFT COLUMN: Store Info -->
-          <div class="p-8 sm:p-12 lg:p-14 flex flex-col justify-center">
-            <h1 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-[#d49959] leading-tight">
-              Visit Our Store
-            </h1>
-            <p class="mt-4 text-sm sm:text-base leading-relaxed text-[#a3998e] font-body">
-              Experience the atmosphere and let our knowledgeable staff guide you to your next favorite bottle.
+    <!-- 5. Visit Our Store ("COME TO THE HOUSE") -->
+    <section id="visit" class="visit-section pt-16">
+      <!-- Top Flagship Storefront Showcase Banner -->
+      <div class="visit-showcase-banner">
+        <img src="assets/visit-house-storefront.jpg" alt="Whiskey Barrel Flagship Storefront" class="visit-banner-bg" loading="lazy">
+        <div class="visit-banner-overlay"></div>
+        <div class="visit-banner-container">
+          <div data-reveal="fade" class="visit-banner-content">
+            <span class="visit-eyebrow">VISIT THE HOUSE</span>
+            <h1 class="visit-main-title">COME TO<br>THE HOUSE</h1>
+            <p class="visit-banner-sub">
+              More than a store. A place to discover your next favorite bottle.
             </p>
+            <div class="visit-actions-row">
+              <a href="https://maps.google.com/?q=12205+Shawnee+Mission+PKWY+Shawnee+KS+66216" target="_blank" rel="noopener noreferrer" class="visit-btn-primary">
+                <span>GET DIRECTIONS</span>
+                <span class="hero-btn-arrow">→</span>
+              </a>
+              <a href="tel:+19135550123" class="visit-btn-secondary">
+                <span>CALL THE HOUSE</span>
+                <span class="hero-btn-arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            <div class="mt-10 space-y-7">
-              <!-- Address Item -->
-              <div class="flex items-start gap-4">
-                <i data-lucide="map-pin" class="h-5 w-5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
-                <div class="space-y-1">
-                  <h2 class="font-bold text-base text-[#ffffff] font-body">Address</h2>
-                  <p class="text-sm sm:text-base text-[#eae3d9]/90 font-body leading-relaxed">
-                    12205 Shawnee Mission PKWY<br>
-                    Shawnee, KS 66216
-                  </p>
-                </div>
-              </div>
-              <br>
-
-              <!-- Store Hours Item -->
-              <div class="flex items-start gap-4">
-                <i data-lucide="clock" class="h-5 w-5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
-                <div class="space-y-1">
-                  <h2 class="font-bold text-base text-[#ffffff] font-body">Store Hours</h2>
-                  <p class="text-sm sm:text-base text-[#eae3d9]/90 font-body leading-relaxed">
-                    Monday - Thursday : 10 AM - 10 PM<br>
-                    Friday - Saturday : 9 AM - 11 PM<br>
-                    Sunday : 9 AM - 8 PM
-                  </p>
-                </div>
-              </div>
-              <br>
-
-              <!-- Phone Item -->
-              <div class="flex items-start gap-4">
-                <i data-lucide="phone" class="h-5 w-5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
-                <div class="space-y-1">
-                  <h2 class="font-bold text-base text-[#ffffff] font-body">Phone</h2>
-                  <p class="text-sm sm:text-base text-[#eae3d9]/90 font-body leading-relaxed">
-                    <a href="tel:+19135550199" class="hover:text-ember transition-colors">+1 (913) 555-0199</a>
-                  </p>
-                </div>
-              </div>
-              <br>
-
-              <!-- Email Item -->
-              <div class="flex items-start gap-4">
-                <i data-lucide="mail" class="h-5 w-5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
-                <div class="space-y-1">
-                  <h2 class="font-bold text-base text-[#ffffff] font-body">Email</h2>
-                  <p class="text-sm sm:text-base text-[#eae3d9]/90 font-body leading-relaxed">
-                    <a href="mailto:info@whiskeybarrel.com" class="hover:text-ember transition-colors">info@whiskeybarrel.com</a>
-                  </p>
-                </div>
-              </div>
+      <!-- Middle 3-Column Information Strip -->
+      <div class="visit-info-strip">
+        <div data-reveal="up" class="visit-info-grid">
+          <!-- Col 1: FIND US -->
+          <div class="visit-info-col">
+            <div class="visit-info-icon-wrap">
+              <svg class="visit-info-icon" viewBox="0 0 24 24" fill="#d4a86a" stroke="none">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+              </svg>
+            </div>
+            <div class="visit-info-text-wrap">
+              <h2 class="visit-info-title">FIND US</h2>
+              <p class="visit-info-line">12205 Shawnee Mission PKWY</p>
+              <p class="visit-info-subline">Shawnee, KS 66216</p>
             </div>
           </div>
 
-          <!-- RIGHT COLUMN: Complete Storefront Image -->
-          <div class="relative h-full w-full p-4 sm:p-6 lg:p-8 flex items-center justify-center bg-[#151311]">
-            <img
-              src="assets/storefront.jpg"
-              alt="Whiskey Barrel Storefront Location"
-              class="w-full h-auto max-h-[520px] object-contain rounded-xl shadow-2xl transition-transform duration-700 hover:scale-[1.02]"
-            >
+          <!-- Col 2: STORE HOURS -->
+          <div class="visit-info-col">
+            <div class="visit-info-icon-wrap">
+              <svg class="visit-info-icon" viewBox="0 0 24 24" fill="none" stroke="#d4a86a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="visit-info-text-wrap">
+              <h2 class="visit-info-title">STORE HOURS</h2>
+              <table class="visit-hours-table">
+                <tbody>
+                  <tr>
+                    <td class="visit-hours-day">Mon – Thu</td>
+                    <td class="visit-hours-time">10 AM – 10 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="visit-hours-day">Fri – Sat</td>
+                    <td class="visit-hours-time">9 AM – 11 PM</td>
+                  </tr>
+                  <tr>
+                    <td class="visit-hours-day">Sun</td>
+                    <td class="visit-hours-time">9 AM – 8 PM</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
 
+          <!-- Col 3: CONTACT -->
+          <div class="visit-info-col">
+            <div class="visit-info-icon-wrap">
+              <svg class="visit-info-icon" viewBox="0 0 24 24" fill="#d4a86a" stroke="none">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.053 15.053 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 3.92c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.54c0-.55-.45-1-1-1z"/>
+              </svg>
+            </div>
+            <div class="visit-info-text-wrap">
+              <h2 class="visit-info-title">CONTACT</h2>
+              <p class="visit-info-line">
+                <a href="tel:+19135550123" class="visit-info-link">+1 (913) 555-0123</a>
+              </p>
+              <p class="visit-info-subline">
+                <a href="mailto:hello@whiskeybarrel.com" class="visit-info-sublink">hello@whiskeybarrel.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Map & Directions Card -->
+      <div class="visit-map-section">
+        <div data-reveal="scale" class="visit-map-card">
+          <!-- Left Map Graphic -->
+          <div class="visit-map-visual">
+            <img src="assets/visit-dark-map.jpg" alt="Whiskey Barrel Map Location" class="visit-map-bg-img" loading="lazy">
+            <div class="visit-map-overlay-pin">
+              <svg class="visit-map-pin-svg" viewBox="0 0 24 24" fill="#d4a86a">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+              </svg>
+              <span class="visit-map-pin-label">Shawnee Mission PKWY</span>
+            </div>
+          </div>
+
+          <!-- Right Directions Panel -->
+          <div class="visit-map-directions-panel">
+            <h3 class="visit-map-directions-title">GET DIRECTIONS</h3>
+            <p class="visit-map-directions-sub">Find us easily and plan your visit.</p>
+            <a href="https://maps.google.com/?q=12205+Shawnee+Mission+PKWY+Shawnee+KS+66216" target="_blank" rel="noopener noreferrer" class="visit-btn-map-open">
+              <span>OPEN IN MAPS</span>
+              <span class="hero-btn-arrow">→</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="border-t border-border px-6 py-8">
-      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-[0.65rem] uppercase tracking-[0.25em] text-muted-foreground sm:flex-row">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 text-[0.65rem] uppercase tracking-[0.25em] text-muted-foreground sm:flex-row">
         <span>© 2026 Whiskey Barrel Distillery</span>
+
+        <!-- Social / Contact Buttons -->
+        <div class="footer-social-group">
+          <a
+            href="https://wa.me/19135550199"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Connect with Whiskey Barrel on WhatsApp"
+            class="footer-social-btn footer-social-whatsapp">
+            <svg class="footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.484-8.414z" />
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+
+          <a
+            href="https://instagram.com/whiskeybarrel"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow Whiskey Barrel on Instagram"
+            class="footer-social-btn footer-social-instagram">
+            <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+            <span>Instagram</span>
+          </a>
+        </div>
+
         <span>Please savour responsibly</span>
       </div>
     </footer>
