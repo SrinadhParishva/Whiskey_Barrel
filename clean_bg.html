@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clean Background Generator</title>
+</head>
+<body style="background:#111; color:#fff; font-family:sans-serif; padding:20px;">
+  <h2>Generating Clean Background...</h2>
+  <canvas id="canvas" width="1920" height="1080" style="max-width:100%; border:1px solid #444;"></canvas>
+  <div id="status" style="margin-top:20px; font-size:18px; color:#d4a86a;">Processing...</div>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.src = '/assets/experience-ref.jpg';
+
+    img.onload = () => {
+      // 1. Draw original high-res reference image
+      ctx.drawImage(img, 0, 0, 1920, 1080);
+
+      // 2. Seamlessly blend and cover text on upper-left (x: 0 to 1100, y: 0 to 620)
+      // The background in this region is the dark distillery atmosphere with warm golden bokeh
+      const gradLeft = ctx.createLinearGradient(0, 0, 1100, 0);
+      gradLeft.addColorStop(0, 'rgba(8, 6, 5, 1.0)');
+      gradLeft.addColorStop(0.42, 'rgba(8, 6, 5, 0.99)');
+      gradLeft.addColorStop(0.68, 'rgba(14, 9, 6, 0.94)');
+      gradLeft.addColorStop(0.86, 'rgba(22, 14, 9, 0.65)');
+      gradLeft.addColorStop(1.0, 'rgba(26, 16, 10, 0)');
+
+      ctx.fillStyle = gradLeft;
+      ctx.fillRect(0, 0, 1100, 620);
+
+      // Add warm ambient bokeh glow on upper-left to match authentic distillery lighting
+      const bokeh1 = ctx.createRadialGradient(420, 180, 0, 420, 180, 380);
+      bokeh1.addColorStop(0, 'rgba(175, 110, 40, 0.18)');
+      bokeh1.addColorStop(0.55, 'rgba(120, 68, 22, 0.08)');
+      bokeh1.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = bokeh1;
+      ctx.fillRect(0, 0, 1000, 560);
+
+      const bokeh2 = ctx.createRadialGradient(740, 220, 0, 740, 220, 300);
+      bokeh2.addColorStop(0, 'rgba(215, 145, 55, 0.18)');
+      bokeh2.addColorStop(0.5, 'rgba(140, 80, 25, 0.07)');
+      bokeh2.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = bokeh2;
+      ctx.fillRect(350, 0, 720, 560);
+
+      // 3. Cover card area across the bottom (x: 0 to 1920, y: 560 to 1080)
+      const gradBottom = ctx.createLinearGradient(0, 520, 0, 1080);
+      gradBottom.addColorStop(0, 'rgba(8, 6, 5, 0.0)');
+      gradBottom.addColorStop(0.15, 'rgba(8, 6, 5, 0.85)');
+      gradBottom.addColorStop(0.32, 'rgba(8, 6, 5, 0.98)');
+      gradBottom.addColorStop(0.55, 'rgba(8, 6, 5, 1.0)');
+      gradBottom.addColorStop(1.0, 'rgba(8, 6, 5, 1.0)');
+
+      ctx.fillStyle = gradBottom;
+      ctx.fillRect(0, 520, 1920, 560);
+
+      // Add subtle warm wooden warmth at bottom right barrel transition
+      const barrelWarmth = ctx.createRadialGradient(1400, 650, 50, 1400, 650, 600);
+      barrelWarmth.addColorStop(0, 'rgba(110, 65, 25, 0.16)');
+      barrelWarmth.addColorStop(0.7, 'rgba(40, 22, 10, 0.08)');
+      barrelWarmth.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = barrelWarmth;
+      ctx.fillRect(900, 520, 1020, 560);
+
+      const dataUrl = canvas.toDataURL('image/jpeg', 0.94);
+      
+      fetch('http://localhost:9879/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ data: dataUrl })
+      })
+      .then(r => r.json())
+      .then(data => {
+        document.getElementById('status').innerText = 'Clean background saved successfully!';
+      })
+      .catch(err => {
+        document.getElementById('status').innerText = 'Error sending to server: ' + err.message;
+      });
+    };
+  </script>
+</body>
+</html>

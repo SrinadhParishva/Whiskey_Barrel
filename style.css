@@ -1853,10 +1853,6 @@ section#category-hero-banner + section#expressions {
 }
 
 #category-hero-banner + #expressions .home-filter-bar,
-section#category-hero-banner + section#expressions .home-filter-bar {
-  margin-top: 1rem !important;
-  margin-bottom: 2rem !important;
-}
 
 /* Home Page Explore Collection Title & Filter Bar Tight Spacing */
 #expressions .text-center.flex.flex-col.items-center {
@@ -1899,135 +1895,6 @@ section#category-hero-banner + section#expressions .home-filter-bar {
   border-color: #d49959 !important;
   box-shadow: 0 0 0 1px #d49959, 0 8px 24px rgba(212, 153, 89, 0.5) !important;
   transform: translateY(-1px) !important;
-}
-
-/* ==========================================================================
-   UNIFIED CATEGORY BAR & PILL STYLING (#362a21 text color, 800 weight & 16px gap)
-   ========================================================================== */
-.home-filter-bar,
-.category-filter-bar,
-.category-tabs-bar,
-.category-bar,
-.product-card-tags-container,
-div:has(> .product-card-pill),
-div:has(> .wine-card-pill) {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 16px !important;
-  row-gap: 16px !important;
-  column-gap: 16px !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.home-filter-pill,
-.product-card-pill,
-.wine-card-pill,
-.category-pill,
-.category-label {
-  color: #362a21 !important;
-  font-weight: 800 !important;
-}
-
-.home-filter-pill:hover {
-  color: #362a21 !important;
-  font-weight: 800 !important;
-}
-
-.home-filter-pill-dot {
-  background-color: #362a21 !important;
-}
-
-/* ==========================================================================
-   PRICE RANGE DROPDOWN STYLING (MATCHING EXACT SCREENSHOT DESIGN)
-   ========================================================================== */
-.home-price-dropdown-wrapper {
-  position: relative !important;
-  display: inline-block !important;
-}
-
-.price-filter-pill-btn,
-#price-filter-btn {
-  background-color: #eee6dc !important;
-  color: #211c18 !important;
-  border: none !important;
-  border-radius: 9999px !important;
-  padding: 12px 28px !important;
-  font-family: var(--font-body, sans-serif) !important;
-  font-size: 0.75rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.22em !important;
-  text-transform: uppercase !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 12px !important;
-  cursor: pointer !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.price-filter-pill-btn:hover,
-#price-filter-btn:hover {
-  background-color: #e5dccf !important;
-  color: #120f0c !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35) !important;
-}
-
-.price-chevron-icon,
-#price-chevron {
-  display: inline-block !important;
-  font-size: 0.65rem !important;
-  color: #211c18 !important;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.home-price-dropdown,
-#price-dropdown {
-  position: absolute !important;
-  top: calc(100% + 8px) !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 250px !important;
-  background-color: #eee6dc !important;
-  border-radius: 18px !important;
-  overflow: hidden !important;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45) !important;
-  z-index: 100 !important;
-  border: 1px solid rgba(0, 0, 0, 0.05) !important;
-}
-
-.home-price-dropdown.hidden,
-#price-dropdown.hidden {
-  display: none !important;
-}
-
-.price-dropdown-item {
-  display: block !important;
-  width: 100% !important;
-  padding: 14px 20px !important;
-  text-align: center !important;
-  font-family: var(--font-body, sans-serif) !important;
-  font-size: 0.75rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.2em !important;
-  text-transform: uppercase !important;
-  color: #211c18 !important;
-  text-decoration: none !important;
-  border-bottom: 1px solid #e0d7cb !important;
-  transition: background-color 0.2s ease, color 0.2s ease !important;
-}
-
-.price-dropdown-item:last-child {
-  border-bottom: none !important;
-}
-
-.price-dropdown-item:hover,
-.price-dropdown-item.active {
-  background-color: #d8cdbe !important;
-  color: #000000 !important;
-  font-weight: 900 !important;
 }
 
 /* ==========================================================================
@@ -2587,6 +2454,200 @@ div:has(> .wine-card-pill) {
   display: none !important;
 }
 
+.product-item-row:hover {
+  background-color: #161311 !important;
+}
+
+@media (min-width: 768px) {
+  .product-item-row {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 2.75rem 3rem !important;
+    gap: 3.5rem !important;
+  }
+}
+
+/* TALLER Standing Bottle Image Box (Dominant vertical feature) */
+.product-item-img-box {
+  width: 100% !important;
+  height: 420px !important;
+  flex-shrink: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: transparent !important;
+  border-radius: 0.5rem !important;
+  padding: 0.5rem !important;
+  border: none !important;
+}
+
+@media (min-width: 768px) {
+  .product-item-img-box {
+    width: 320px !important;
+    min-width: 320px !important;
+    max-width: 320px !important;
+    height: 520px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-item-img-box {
+    width: 350px !important;
+    min-width: 350px !important;
+    max-width: 350px !important;
+    height: 550px !important;
+  }
+}
+
+.product-item-img-box img {
+  max-height: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  transition: none !important;
+  margin: 0 auto !important;
+  display: block !important;
+  filter: drop-shadow(0 20px 32px rgba(0, 0, 0, 0.85)) !important;
+}
+
+.product-item-img-box:hover img {
+  transform: none !important;
+  filter: drop-shadow(0 20px 32px rgba(0, 0, 0, 0.85)) !important;
+}
+
+/* COMPACT Details Container Next to Image (Height is strictly LESS than the bottle image) */
+.product-item-info {
+  flex: 1 1 0% !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 0.75rem !important;
+}
+
+@media (min-width: 768px) {
+  .product-item-info {
+    max-height: 390px !important; /* Strictly less than bottle height of 520px - 550px */
+  }
+}
+
+.product-item-info h3 {
+  line-height: 1.3 !important;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 0.15rem !important;
+}
+
+.product-item-details-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.6rem !important;
+}
+
+.product-item-details-list > div {
+  line-height: 1.5 !important;
+}
+
+.product-item-description {
+  line-height: 1.55 !important;
+  color: #a1a1aa !important;
+}
+
+.product-item-actions-col {
+  flex-shrink: 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 1.5rem !important;
+  padding-top: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  .product-item-actions-col {
+    width: auto !important;
+    align-items: flex-end !important;
+    align-self: stretch !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* Rating Badges in Dark Gold/Ember Theme */
+.badge-pill-container {
+  display: inline-flex !important;
+  align-items: center !important;
+  border-radius: 6px !important;
+  border: 1px solid rgba(212, 153, 89, 0.5) !important;
+  background-color: rgba(212, 153, 89, 0.1) !important;
+  overflow: hidden !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2) !important;
+}
+
+.badge-pill-label {
+  padding: 3px 9px !important;
+  color: #d49959 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-size: 0.7rem !important;
+}
+
+.badge-pill-score {
+  padding: 3px 9px !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  background-color: rgba(212, 153, 89, 0.3) !important;
+  border-left: 1px solid rgba(212, 153, 89, 0.4) !important;
+  font-size: 0.75rem !important;
+}
+
+/* Quantity Box on Dark Theme */
+.qty-counter-box {
+  display: inline-flex !important;
+  align-items: center !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  background-color: #1a1715 !important;
+}
+
+.qty-counter-btn {
+  padding: 7px 12px !important;
+  background: transparent !important;
+  color: #a1a1aa !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+  user-select: none !important;
+}
+
+.qty-counter-btn:hover {
+  background-color: rgba(212, 153, 89, 0.2) !important;
+  color: #d49959 !important;
+}
+
+.qty-counter-input {
+  width: 36px !important;
+  text-align: center !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  border: none !important;
+  background: transparent !important;
+  outline: none !important;
+}
+
+/* Hide Add To Cart Button Across Whole Website */
+.btn-add-to-cart-pill {
+  display: none !important;
+}
+
 .nav-logo-icon {
   width: 40px;
   height: 40px;
@@ -2615,7 +2676,7 @@ div:has(> .wine-card-pill) {
 .product-card-arch {
   position: relative !important;
   width: calc(100% + 2.5rem) !important;
-  height: 18rem !important;
+  height: 18.5rem !important;
   border-top-left-radius: 1.25rem !important;
   border-top-right-radius: 1.25rem !important;
   border-bottom-left-radius: 0 !important;
@@ -2624,21 +2685,34 @@ div:has(> .wine-card-pill) {
   border: none !important;
   padding: 0 !important;
   margin: -1.25rem -1.25rem 0 -1.25rem !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  display: block !important;
   overflow: hidden !important;
+}
+
+.product-card-img-link,
+.product-card-arch a {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-top-left-radius: 1.25rem !important;
+  border-top-right-radius: 1.25rem !important;
 }
 
 .product-card-arch img {
   width: 100% !important;
   height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
   max-height: 100% !important;
   max-width: 100% !important;
   object-fit: cover !important;
-  margin: 0 auto !important;
+  object-position: center top !important;
+  margin: 0 !important;
+  padding: 0 !important;
   display: block !important;
-  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.85)) !important;
+  filter: none !important;
   transition: none !important;
   border-top-left-radius: 1.25rem !important;
   border-top-right-radius: 1.25rem !important;
@@ -2672,7 +2746,7 @@ div:has(> .wine-card-pill) {
 .product-card-heart-btn:hover {
   background-color: #d49959 !important;
   color: #000000 !important;
-  transform: scale(1.1) !important;
+  transform: scale(1.08) !important;
 }
 
 .product-card-title {
@@ -2682,50 +2756,50 @@ div:has(> .wine-card-pill) {
   color: #f7f3eb !important;
   text-align: center !important;
   line-height: 1.3 !important;
-  margin-top: 1rem !important;
-  margin-bottom: 0.75rem !important;
+  margin-top: 0.95rem !important;
+  margin-bottom: 0.5rem !important;
   display: -webkit-box !important;
   -webkit-line-clamp: 2 !important;
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
-  min-height: 2.8rem !important;
+  min-height: 2.75rem !important;
 }
 
 .product-card-pill {
   background-color: rgba(212, 153, 89, 0.15) !important;
   color: #362a21 !important;
   border: 1px solid rgba(212, 153, 89, 0.3) !important;
-  font-size: 0.65rem !important;
+  font-size: 0.64rem !important;
   font-weight: 800 !important;
-  letter-spacing: 0.08em !important;
+  letter-spacing: 0.06em !important;
   text-transform: uppercase !important;
-  padding: 0.25rem 0.75rem !important;
+  padding: 0.25rem 0.65rem !important;
   border-radius: 9999px !important;
   display: inline-block !important;
 }
 
 .product-card-footer {
-  padding-top: 0.75rem !important;
+  padding-top: 0.65rem !important;
   border-top: 1px solid rgba(212, 153, 89, 0.2) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   width: 100% !important;
-  margin-top: 0.75rem !important;
+  margin-top: 0.65rem !important;
 }
 
 .product-card-mrp-label {
-  font-size: 0.65rem !important;
+  font-size: 0.66rem !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.05em !important;
   color: #c4b5a0 !important;
-  margin-right: 0.35rem !important;
+  margin-right: 0.3rem !important;
 }
 
 .product-card-mrp-price {
   font-weight: 700 !important;
-  font-size: 1.1rem !important;
+  font-size: 1.05rem !important;
   color: #f7f3eb !important;
 }
 
@@ -2733,11 +2807,11 @@ div:has(> .wine-card-pill) {
   background-color: #2a2017 !important;
   color: #d49959 !important;
   border: 1px solid rgba(212, 153, 89, 0.4) !important;
-  font-size: 0.68rem !important;
+  font-size: 0.66rem !important;
   font-weight: 700 !important;
-  letter-spacing: 0.06em !important;
+  letter-spacing: 0.05em !important;
   text-transform: uppercase !important;
-  padding: 0.25rem 0.75rem !important;
+  padding: 0.25rem 0.65rem !important;
   border-radius: 9999px !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) !important;
 }
@@ -2750,6 +2824,8 @@ div:has(> .wine-card-pill) {
   color: #110e0b !important;
   border: 1px solid rgba(0, 0, 0, 0.05) !important;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+  border-radius: 1.25rem !important;
+  padding: 1.25rem !important;
   transition: none !important;
 }
 
@@ -2770,146 +2846,109 @@ div:has(> .wine-card-pill) {
   max-width: none !important;
   width: calc(100% + 2.5rem) !important;
   margin: -1.25rem -1.25rem 0 -1.25rem !important;
-  height: 18rem !important;
+  height: 18.5rem !important;
   padding: 0 !important;
+  overflow: hidden !important;
+  display: block !important;
 }
 
 .product-card-arch.wine-card-arch a {
   background-color: #f5efe6 !important;
+  border-top-left-radius: 1.25rem !important;
+  border-top-right-radius: 1.25rem !important;
 }
 
-.wine-card-link-multiply {
-  mix-blend-mode: multiply !important;
-}
+.wine-card .product-card-heart-btn,
 .product-card-heart-btn.wine-card-heart-btn {
   background-color: #ffffff !important;
   border: 1px solid rgba(0, 0, 0, 0.06) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
-  color: #5a4d41 !important; /* Dark brown/grey icon */
+  color: #5a4d41 !important;
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  bottom: 0.75rem !important;
+  right: 0.75rem !important;
 }
 
+.wine-card .product-card-heart-btn:hover,
 .product-card-heart-btn.wine-card-heart-btn:hover {
   background-color: #110e0b !important;
   color: #ffffff !important;
 }
 
-/* Title text color overrides */
+.wine-card .product-card-title,
 .wine-card-title {
-  color: #110e0b !important; /* Dark serif text */
-  margin-top: 1.25rem !important;
-  margin-bottom: 0.75rem !important;
+  color: #110e0b !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  margin-top: 0.95rem !important;
+  margin-bottom: 0.45rem !important;
   display: -webkit-box !important;
-  -webkit-line-clamp: 3 !important;
+  -webkit-line-clamp: 2 !important;
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
-  min-height: 4.2rem !important;
+  min-height: 2.75rem !important;
 }
 
-/* Soft Lavender pills */
+.wine-card .product-card-pill,
 .product-card-pill.wine-card-pill {
-  background-color: rgba(212, 153, 89, 0.15) !important; /* Soft light amber/gold background */
-  color: #362a21 !important; /* #362a21 text color */
+  background-color: rgba(212, 153, 89, 0.15) !important;
+  color: #362a21 !important;
   border: 1px solid rgba(212, 153, 89, 0.3) !important;
-  padding: 0.25rem 0.75rem !important;
-  font-size: 0.65rem !important;
+  padding: 0.25rem 0.65rem !important;
+  font-size: 0.64rem !important;
   font-weight: 800 !important;
 }
 
-/* Footer layout */
+.wine-card .product-card-footer,
 .product-card-footer.wine-card-footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.08) !important; /* Clean light separator instead of gold */
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  padding-top: 0.65rem !important;
+  margin-top: 0.65rem !important;
 }
 
+.wine-card .product-card-mrp-label,
 .product-card-mrp-label.wine-card-mrp-label {
-  color: #6b5a4b !important; /* Medium-dark brown label */
+  color: #6b5a4b !important;
+  font-size: 0.66rem !important;
 }
 
+.wine-card .product-card-mrp-price,
 .product-card-mrp-price.wine-card-mrp-price {
-  color: #110e0b !important; /* Bold black/dark brown price */
+  color: #110e0b !important;
+  font-size: 1.05rem !important;
 }
 
-/* Rating badge override */
+.wine-card .product-card-rating-badge,
 .product-card-rating-badge.wine-card-rating-badge {
-  background-color: #382f3d !important; /* Dark purple-charcoal background */
-  color: #f5efe6 !important; /* Soft white/cream text */
+  background-color: #382f3d !important;
+  color: #f5efe6 !important;
   border: none !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+  font-size: 0.66rem !important;
+  padding: 0.25rem 0.65rem !important;
 }
 
-/* Hide decorative background shapes in the wine category */
-.wine-decor-base {
-  display: none !important;
-}
-
-.wine-decor-backdrop {
-  display: none !important;
-}
-
-/* Ensure images have proper layering and containment */
-img.wine-card-img {
+/* Ensure images have proper layering and containment, fully filling dedicated arch space */
+img.wine-card-img,
+.wine-card-img,
+.wine-card-img-lifestyle {
   position: relative !important;
   z-index: 2 !important;
   filter: none !important;
-  mix-blend-mode: multiply !important;
+  mix-blend-mode: normal !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
   max-width: 100% !important;
-  height: 95% !important;
-}
-
-img.wine-card-img-lifestyle {
-  transform: translateX(-50%) !important;
-  margin-top: 0.75rem !important;
-  width: 12rem !important;
-  border-radius: 0.5rem !important;
-  background-color: #f5efe6 !important;
-  color: #0a0806 !important;
-  border: 1px solid #c4b5a0 !important;
-  padding: 0.5rem 0 !important;
-  z-index: 60 !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4) !important;
-  font-size: 0.75rem !important;
-  font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.1em !important;
-}
-
-.home-price-dropdown a {
+  max-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
   display: block !important;
-  padding: 0.625rem 1rem !important;
-  text-align: center !important;
-  transition: background-color 0.2s ease !important;
-  border-bottom: 1px solid #e6ded5 !important;
-}
-
-.home-price-dropdown a:last-child {
-  border-bottom: none !important;
-}
-
-.home-price-dropdown a:hover {
-  background-color: #e6ded5 !important;
-}
-
-/* Featured Card (Grand Cru) */
-.home-card-featured {
-  position: relative !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  border-radius: 1rem !important;
-  border: 1px solid #382f27 !important;
-  background-color: #12100e !important;
-  overflow: hidden !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
-  transition: all 0.5s ease !important;
-  margin-bottom: 1.5rem !important;
-  min-height: 28rem !important;
-}
-
-/* Half-width Cards Grid */
-.home-card-half-grid {
-  display: grid !important;
-  grid-template-columns: 1fr !important;
-  gap: 1.5rem !important;
-  margin-top: 1.5rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 @media (min-width: 768px) {
@@ -3082,75 +3121,29 @@ img.wine-card-img-lifestyle {
   box-shadow: 0 0 20px rgba(229, 167, 100, 0.5) !important;
 }
 
-.home-filter-bar {
-  position: relative !important;
-  z-index: 50 !important;
-}
 
 /* ==========================================================================
-   PRICE RANGE DROPDOWN STYLING (MATCHING EXACT SCREENSHOT DESIGN)
+   UNIFIED CATEGORY BAR & PILL STYLING (#362a21 text color, 800 weight & 16px gap)
    ========================================================================== */
-.home-price-dropdown-wrapper {
-  position: relative !important;
-  display: inline-block !important;
-}
-
-.price-filter-pill-btn,
-#price-filter-btn {
-  background-color: #eee6dc !important;
-  color: #211c18 !important;
-  border: 1px solid rgba(212, 168, 106, 0.55) !important;
-  border-radius: 9999px !important;
-  padding: 12px 28px !important;
-  font-family: var(--font-body, sans-serif) !important;
-  font-size: 0.75rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.22em !important;
-  text-transform: uppercase !important;
-  display: inline-flex !important;
+.category-tabs-bar,
+.category-bar,
+.product-card-tags-container,
+div:has(> .product-card-pill),
+div:has(> .wine-card-pill) {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  row-gap: 16px !important;
+  column-gap: 16px !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 12px !important;
-  cursor: pointer !important;
-  box-shadow: 0 0 10px rgba(212, 168, 106, 0.2), 0 4px 14px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.6) !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.price-filter-pill-btn:hover,
-#price-filter-btn:hover {
-  background-color: #fbf7f0 !important;
-  color: #120f0c !important;
-  border-color: rgba(240, 195, 125, 0.95) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 0 0 1px rgba(212, 168, 106, 0.35), 0 0 22px rgba(212, 168, 106, 0.55), 0 0 38px rgba(212, 168, 106, 0.25), 0 6px 18px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.8) !important;
-}
-
-.price-chevron-icon,
-#price-chevron {
-  display: inline-block !important;
-  font-size: 0.65rem !important;
-  color: #211c18 !important;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.home-price-dropdown,
-#price-dropdown {
-  position: absolute !important;
-  top: calc(100% + 8px) !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 250px !important;
-  background-color: #eee6dc !important;
-  border-radius: 18px !important;
-  overflow: hidden !important;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45) !important;
-  z-index: 9999 !important;
-  border: 1px solid rgba(0, 0, 0, 0.05) !important;
-}
-
-.home-price-dropdown.hidden,
-#price-dropdown.hidden {
-  display: none !important;
+.product-card-pill,
+.wine-card-pill,
+.category-label {
+  color: #362a21 !important;
+  font-weight: 800 !important;
 }
 
 .home-card-half .home-card-btn {
@@ -3158,42 +3151,17 @@ img.wine-card-img-lifestyle {
   margin-top: 1.75rem !important;
 }
 
-.home-card-btn:hover {
-  background-color: #d49959 !important;
-  color: #0a0806 !important;
-  box-shadow: 0 0 15px rgba(212, 153, 89, 0.4) !important;
-  border-color: #d49959 !important;
-}
 
-/* UNIFIED CATEGORY BAR & PILL STYLING (#362a21 text color & 16px gap) */
-.category-filter-bar,
-.category-tabs-bar,
-.category-bar,
-.product-card-tags-container {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 16px !important;
-  row-gap: 16px !important;
-  column-gap: 16px !important;
-}
-
-.home-filter-pill,
 .category-tab,
 .product-card-pill,
 .wine-card-pill,
-.category-pill,
 .category-label {
   color: #362a21 !important;
 }
 
-.home-filter-pill:hover,
 .category-tab:hover,
 .category-tab.active-tab {
   color: #362a21 !important;
-}
-
-.home-filter-pill-dot {
-  background-color: #362a21 !important;
 }
 
 /* About Us paragraph gap styles */
@@ -3217,58 +3185,6 @@ img.wine-card-img-lifestyle {
   padding-bottom: 8rem !important;
 }
 
-/* --- CUSTOM SECTIONS STYLES (Explore Collection, Vault, Tastings) --- */
-
-.home-filter-bar {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 16px !important;
-  row-gap: 16px !important;
-  column-gap: 16px !important;
-  width: fit-content !important;
-  max-width: 100% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  border-radius: 9999px !important;
-  border: 1px solid rgba(212, 168, 106, 0.45) !important;
-  background-color: rgba(18, 16, 14, 0.92) !important;
-  padding: 0.65rem 1.5rem !important;
-  box-shadow: 0 0 0 1px rgba(212, 168, 106, 0.15), 0 0 24px rgba(212, 168, 106, 0.22), 0 0 45px rgba(212, 168, 106, 0.08), inset 0 0 16px rgba(212, 168, 106, 0.06), 0 12px 30px rgba(0, 0, 0, 0.65) !important;
-  margin-bottom: 2.5rem !important;
-  transition: all 0.35s ease !important;
-}
-
-.home-filter-bar:hover {
-  border-color: rgba(224, 180, 118, 0.65) !important;
-  box-shadow: 0 0 0 1px rgba(212, 168, 106, 0.25), 0 0 30px rgba(212, 168, 106, 0.32), 0 0 55px rgba(212, 168, 106, 0.14), inset 0 0 20px rgba(212, 168, 106, 0.1), 0 14px 34px rgba(0, 0, 0, 0.75) !important;
-}
-
-@media (max-width: 767px) {
-  .home-filter-bar {
-    flex-wrap: wrap !important;
-    width: 100% !important;
-    border-radius: 1.25rem !important;
-    gap: 16px !important;
-    row-gap: 16px !important;
-    column-gap: 16px !important;
-    padding: 0.75rem 1rem !important;
-  }
-}
-
-.wine-card-img-lifestyle {
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 100% !important;
-  object-fit: cover !important;
-  mix-blend-mode: normal !important;
-  border-top-left-radius: 1.25rem !important;
-  border-top-right-radius: 1.25rem !important;
-  border-bottom-left-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-}
-
 /* About Us paragraph gap styles */
 #about p {
   margin-bottom: 1.5rem !important;
@@ -3278,66 +3194,7 @@ img.wine-card-img-lifestyle {
   margin-bottom: 0 !important;
 }
 
-.home-price-dropdown-wrapper {
-  position: relative !important;
-  display: inline-block !important;
-}
 
-.home-price-dropdown {
-  position: absolute !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  margin-top: 0.75rem !important;
-  width: 12rem !important;
-  border-radius: 0.5rem !important;
-  background-color: #f5efe6 !important;
-  color: #0a0806 !important;
-  border: 1px solid #c4b5a0 !important;
-  padding: 0.5rem 0 !important;
-  z-index: 60 !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4) !important;
-  font-size: 0.75rem !important;
-  font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.1em !important;
-}
-
-.home-filter-pill {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  white-space: nowrap !important;
-  gap: 0.5rem !important;
-  border-radius: 9999px !important;
-  background-color: #f5efe6 !important;
-  border: 1px solid rgba(212, 168, 106, 0.55) !important;
-  padding: 0.5rem 1.25rem !important;
-  font-size: 0.75rem !important;
-  font-weight: 600 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.2em !important;
-  color: #362a21 !important;
-  box-shadow: 0 0 10px rgba(212, 168, 106, 0.2), 0 2px 8px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.6) !important;
-  transition: all 0.3s ease !important;
-  cursor: pointer !important;
-}
-
-.home-filter-pill:hover,
-.home-filter-pill.active-pill {
-  background-color: #fcf8f2 !important;
-  color: #362a21 !important;
-  border-color: rgba(240, 195, 125, 0.95) !important;
-  box-shadow: 0 0 0 1px rgba(212, 168, 106, 0.35), 0 0 20px rgba(212, 168, 106, 0.5), 0 0 35px rgba(212, 168, 106, 0.22), 0 4px 14px rgba(0, 0, 0, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.8) !important;
-  transform: translateY(-2px) !important;
-}
-
-.home-filter-pill-dot {
-  width: 6px !important;
-  height: 6px !important;
-  border-radius: 9999px !important;
-  background-color: #362a21 !important;
-  display: inline-block !important;
-}
 
 /* ==========================================================================
    HERO SECTION LUXURY DESIGN (Pixel-perfect matching of reference)
@@ -4387,41 +4244,44 @@ img.wine-card-img-lifestyle {
 }
 
 /* ==========================================================================
-   CATEGORY SECTION PILES & OUTER LAYER - PERMANENT BORDER LIGHTING HIGHLIGHT
+   PERFECT LUXURY CATEGORY FILTER BAR & PILLS (No harsh highlights)
    ========================================================================== */
 
-/* 1. Category Filter Outer Container (Pills Bar Capsule) - Always Highlighted */
+/* 1. Category Filter Outer Container (Pills Bar Capsule) */
 .home-filter-bar,
-.category-filter-bar,
-.category-tabs-bar {
+.category-filter-bar {
   position: relative !important;
+  display: inline-flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  row-gap: 10px !important;
+  column-gap: 10px !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 1rem !important;
+  margin-bottom: 2.25rem !important;
+  padding: 6px 8px !important;
   border-radius: 9999px !important;
-  border: 2px solid #ffd488 !important;
-  background-color: rgba(18, 16, 14, 0.94) !important;
-  backdrop-filter: blur(12px) !important;
-  box-shadow: 
-    0 0 0 2px rgba(255, 215, 130, 0.65),
-    0 0 35px rgba(255, 195, 80, 0.6),
-    0 0 75px rgba(230, 155, 45, 0.35),
-    0 0 110px rgba(212, 135, 30, 0.2),
-    inset 0 0 25px rgba(255, 210, 120, 0.2),
-    0 16px 40px rgba(0, 0, 0, 0.9) !important;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background: rgba(18, 14, 11, 0.82) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(212, 168, 106, 0.22) !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.65), inset 0 1px 1px rgba(255, 255, 255, 0.05) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  z-index: 50 !important;
 }
 
 .home-filter-bar:hover,
-.category-filter-bar:hover,
-.category-tabs-bar:hover {
-  border-color: #fff0be !important;
-  box-shadow: 
-    0 0 0 2.5px rgba(255, 225, 150, 0.85),
-    0 0 45px rgba(255, 205, 90, 0.8),
-    0 0 95px rgba(240, 165, 50, 0.45),
-    inset 0 0 30px rgba(255, 220, 130, 0.25),
-    0 18px 45px rgba(0, 0, 0, 0.95) !important;
+.category-filter-bar:hover {
+  border-color: rgba(212, 168, 106, 0.4) !important;
+  box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.75), 0 0 20px rgba(212, 168, 106, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.08) !important;
 }
 
-/* 2. Category Section Filter Pills (.home-filter-pill) - Always Glowing */
+/* 2. Category Section Filter Pills (.home-filter-pill) */
 .home-filter-pill,
 .category-pill {
   position: relative !important;
@@ -4429,83 +4289,207 @@ img.wine-card-img-lifestyle {
   align-items: center !important;
   justify-content: center !important;
   white-space: nowrap !important;
-  gap: 0.5rem !important;
+  gap: 8px !important;
   border-radius: 9999px !important;
-  background: linear-gradient(180deg, #ffffff 0%, #fdf5ea 100%) !important;
-  border: 2px solid #ffd488 !important;
-  padding: 0.55rem 1.35rem !important;
-  font-size: 0.75rem !important;
-  font-weight: 700 !important;
+  background: rgba(28, 22, 17, 0.65) !important;
+  border: 1px solid rgba(212, 168, 106, 0.18) !important;
+  padding: 8px 20px !important;
+  font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.2em !important;
-  color: #1a130b !important;
-  box-shadow: 
-    0 0 0 2px rgba(255, 220, 140, 0.9),
-    0 0 22px rgba(255, 195, 75, 0.8),
-    0 0 48px rgba(230, 155, 45, 0.55),
-    0 0 80px rgba(212, 135, 30, 0.35),
-    0 4px 14px rgba(0, 0, 0, 0.3),
-    inset 0 1px 3px #ffffff !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  letter-spacing: 0.16em !important;
+  color: #c4b5a0 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
   cursor: pointer !important;
+  outline: none !important;
+  user-select: none !important;
 }
 
 .home-filter-pill:hover,
-.home-filter-pill.active-pill,
-.category-pill:hover,
-.category-pill.active {
-  background: linear-gradient(180deg, #ffffff 0%, #fffbf5 100%) !important;
-  color: #120d07 !important;
-  border-color: #fff2c4 !important;
-  transform: translateY(-2px) scale(1.02) !important;
-  box-shadow: 
-    0 0 0 2.5px rgba(255, 230, 160, 0.95),
-    0 0 32px rgba(255, 205, 85, 0.9),
-    0 0 60px rgba(240, 165, 50, 0.6),
-    0 6px 18px rgba(0, 0, 0, 0.35),
-    inset 0 1px 3px #ffffff !important;
+.category-pill:hover {
+  background: rgba(46, 36, 28, 0.9) !important;
+  color: #f7f3eb !important;
+  border-color: rgba(212, 168, 106, 0.48) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), 0 0 14px rgba(212, 168, 106, 0.15) !important;
 }
 
-/* 3. Category Price Dropdown Pill Button - Always Glowing */
+.home-filter-pill.active-pill,
+.home-filter-pill.active,
+.category-pill.active {
+  background: linear-gradient(135deg, #d49959 0%, #b38048 100%) !important;
+  color: #0c0907 !important;
+  font-weight: 700 !important;
+  border-color: #f0be84 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 16px rgba(212, 153, 89, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.4) !important;
+}
+
+.home-filter-pill-dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 9999px !important;
+  background-color: #d4a86a !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 0 4px rgba(212, 168, 106, 0.5) !important;
+}
+
+.home-filter-pill:hover .home-filter-pill-dot {
+  background-color: #f5c88c !important;
+  box-shadow: 0 0 8px rgba(245, 200, 140, 0.8) !important;
+  transform: scale(1.15) !important;
+}
+
+.home-filter-pill.active-pill .home-filter-pill-dot,
+.home-filter-pill.active .home-filter-pill-dot {
+  background-color: #0c0907 !important;
+  box-shadow: none !important;
+}
+
+/* 3. Category Price Dropdown Pill Button */
+.home-price-dropdown-wrapper {
+  position: relative !important;
+  display: inline-block !important;
+}
+
 .price-filter-pill-btn,
 #price-filter-btn {
-  background: linear-gradient(180deg, #ffffff 0%, #fdf5ea 100%) !important;
-  color: #120f0c !important;
-  border: 2px solid #ffd488 !important;
-  border-radius: 9999px !important;
-  padding: 12px 28px !important;
-  font-family: var(--font-body, sans-serif) !important;
-  font-size: 0.75rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.22em !important;
-  text-transform: uppercase !important;
+  position: relative !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 12px !important;
+  white-space: nowrap !important;
+  gap: 8px !important;
+  border-radius: 9999px !important;
+  background: rgba(28, 22, 17, 0.65) !important;
+  border: 1px solid rgba(212, 168, 106, 0.18) !important;
+  padding: 8px 20px !important;
+  font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: #c4b5a0 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
   cursor: pointer !important;
-  box-shadow: 
-    0 0 0 2px rgba(255, 220, 140, 0.9),
-    0 0 22px rgba(255, 195, 75, 0.8),
-    0 0 48px rgba(230, 155, 45, 0.55),
-    0 0 80px rgba(212, 135, 30, 0.35),
-    0 4px 14px rgba(0, 0, 0, 0.25),
-    inset 0 1px 3px #ffffff !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  outline: none !important;
+  user-select: none !important;
 }
 
 .price-filter-pill-btn:hover,
 #price-filter-btn:hover {
-  background: linear-gradient(180deg, #ffffff 0%, #fffbf5 100%) !important;
-  color: #000000 !important;
-  border-color: #fff2c4 !important;
-  transform: translateY(-2px) scale(1.02) !important;
-  box-shadow: 
-    0 0 0 2.5px rgba(255, 230, 160, 0.95),
-    0 0 34px rgba(255, 205, 85, 0.9),
-    0 0 62px rgba(240, 165, 50, 0.6),
-    0 6px 18px rgba(0, 0, 0, 0.35),
-    inset 0 1px 3px #ffffff !important;
+  background: rgba(46, 36, 28, 0.9) !important;
+  color: #f7f3eb !important;
+  border-color: rgba(212, 168, 106, 0.48) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), 0 0 14px rgba(212, 168, 106, 0.15) !important;
+}
+
+.price-filter-pill-btn.active-pill,
+.price-filter-pill-btn.active,
+#price-filter-btn.active-pill,
+#price-filter-btn.active {
+  background: linear-gradient(135deg, #d49959 0%, #b38048 100%) !important;
+  color: #0c0907 !important;
+  font-weight: 700 !important;
+  border-color: #f0be84 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 16px rgba(212, 153, 89, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.4) !important;
+}
+
+.price-chevron-icon,
+#price-chevron {
+  display: inline-block !important;
+  font-size: 0.55rem !important;
+  margin-left: 2px !important;
+  color: currentColor !important;
+  opacity: 0.85 !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 4. Luxury Dark Price Dropdown Menu */
+.home-price-dropdown,
+#price-dropdown {
+  position: absolute !important;
+  top: calc(100% + 10px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 210px !important;
+  background: rgba(18, 14, 11, 0.96) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(212, 168, 106, 0.25) !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 20px rgba(212, 168, 106, 0.08) !important;
+  padding: 6px !important;
+  z-index: 100 !important;
+}
+
+.home-price-dropdown.hidden,
+#price-dropdown.hidden {
+  display: none !important;
+}
+
+.price-dropdown-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  padding: 10px 14px !important;
+  border-radius: 8px !important;
+  text-align: center !important;
+  font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: #c4b5a0 !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  background: transparent !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.price-dropdown-item:hover {
+  background: rgba(212, 168, 106, 0.14) !important;
+  color: #ffffff !important;
+  transform: translateX(2px) !important;
+}
+
+.price-dropdown-item.active {
+  background: rgba(212, 168, 106, 0.24) !important;
+  color: #d4a86a !important;
+  font-weight: 700 !important;
+}
+
+/* 5. Mobile Responsive Adjustments */
+@media (max-width: 767px) {
+  .home-filter-bar,
+  .category-filter-bar {
+    gap: 8px !important;
+    row-gap: 10px !important;
+    column-gap: 8px !important;
+    padding: 10px 14px !important;
+    border-radius: 1.25rem !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+
+  .home-filter-pill,
+  .category-pill,
+  .price-filter-pill-btn,
+  #price-filter-btn {
+    padding: 7px 14px !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.12em !important;
+  }
 }
 
 /* 4. Category Tabs (.category-tab) - Always Glowing */
@@ -4631,16 +4615,13 @@ img.wine-card-img-lifestyle {
 .footer-social-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0.95rem;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
   border-radius: 9999px;
   background: rgba(22, 18, 15, 0.75);
   border: 1px solid rgba(212, 168, 106, 0.22);
   color: #c8beaf;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   text-decoration: none;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -4650,8 +4631,8 @@ img.wine-card-img-lifestyle {
 }
 
 .footer-social-btn .footer-social-icon {
-  width: 1rem;
-  height: 1rem;
+  width: 1.15rem;
+  height: 1.15rem;
   flex-shrink: 0;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -4677,6 +4658,211 @@ img.wine-card-img-lifestyle {
   color: #f56565;
   box-shadow: 0 4px 18px rgba(225, 48, 108, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.15);
 }
+
+/* ==========================================================================
+   10. Experience Section ("MORE THAN A TASTE. A LASTING EXPERIENCE.")
+   ========================================================================== */
+
+.experience-section {
+  position: relative;
+  background-color: #080605;
+  overflow: hidden;
+  scroll-margin-top: 5rem;
+}
+
+.experience-bg-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.experience-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  opacity: 1;
+}
+
+.experience-overlay-left {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(8, 6, 5, 0.94) 0%,
+    rgba(8, 6, 5, 0.86) 32%,
+    rgba(8, 6, 5, 0.5) 54%,
+    rgba(8, 6, 5, 0.12) 72%,
+    rgba(8, 6, 5, 0) 88%
+  );
+  z-index: 1;
+}
+
+.experience-overlay-bottom {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(8, 6, 5, 0.88) 0%,
+    rgba(8, 6, 5, 0.45) 28%,
+    rgba(8, 6, 5, 0) 58%
+  );
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .experience-overlay-left {
+    background: linear-gradient(
+      to bottom,
+      rgba(8, 6, 5, 0.94) 0%,
+      rgba(8, 6, 5, 0.88) 45%,
+      rgba(8, 6, 5, 0.98) 100%
+    );
+  }
+}
+
+.experience-eyebrow {
+  letter-spacing: 0.28em;
+  color: #d4a86a;
+}
+
+.experience-eyebrow-line {
+  background-color: rgba(212, 168, 106, 0.75);
+}
+
+.experience-title {
+  font-family: var(--font-serif, "Domine", Georgia, serif);
+  letter-spacing: 0.025em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+}
+
+.experience-title-accent {
+  color: #d4a86a;
+}
+
+.experience-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.35rem 1.4rem 2.15rem;
+  border-radius: 0.85rem;
+  background: rgba(14, 10, 8, 0.68);
+  border: 1px solid rgba(212, 168, 106, 0.24);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.04);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(212, 168, 106, 0.65);
+  background: rgba(22, 16, 12, 0.9);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.7), 0 0 24px rgba(212, 168, 106, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.08);
+}
+
+.experience-card-icon-wrap {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(212, 168, 106, 0.52);
+  background: rgba(26, 18, 13, 0.62);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  color: #d4a86a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35), inset 0 1px 2px rgba(212, 168, 106, 0.15);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-card:hover .experience-card-icon-wrap {
+  border-color: rgba(212, 168, 106, 0.95);
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(212, 168, 106, 0.32), inset 0 1px 3px rgba(255, 255, 255, 0.2);
+}
+
+.experience-card-icon {
+  width: 1.65rem;
+  height: 1.65rem;
+  stroke: #d4a86a;
+}
+
+.experience-card-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #d4a86a;
+  margin-top: 0.1rem;
+}
+
+.experience-card-divider {
+  width: 1.35rem;
+  height: 2px;
+  background-color: #d4a86a;
+  opacity: 0.85;
+  border-radius: 9999px;
+  margin: 0.75rem auto 0.85rem;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.experience-card:hover .experience-card-divider {
+  width: 2.2rem;
+  opacity: 1;
+}
+
+.experience-card-desc {
+  font-size: 0.8rem;
+  line-height: 1.65;
+  color: #c0b5a8;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Standalone Experience Page Hero and Sections */
+.experience-hero-standalone {
+  min-height: 100vh;
+  padding-top: 105px !important;
+  padding-bottom: 4rem !important;
+}
+
+@media (min-width: 640px) {
+  .experience-hero-standalone {
+    padding-top: 120px !important;
+    padding-bottom: 4.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .experience-hero-standalone {
+    padding-top: 135px !important;
+    padding-bottom: 5rem !important;
+  }
+}
+
+.experience-detail-card {
+  position: relative;
+  border-radius: 0.85rem;
+  background: rgba(20, 15, 12, 0.85);
+  border: 1px solid rgba(212, 168, 106, 0.22);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 2.25rem;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.experience-detail-card:hover {
+  border-color: rgba(212, 168, 106, 0.55);
+  background: rgba(26, 20, 16, 0.94);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 24px rgba(212, 168, 106, 0.15);
+  transform: translateY(-3px);
+}
+
+
 
 
 

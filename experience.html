@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-behavior-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Experience — Whiskey Barrel</title>
+  <meta name="description" content="Discover the Whiskey Barrel experience in Shawnee, KS. From curated tastings and private masterclasses to expert spirits guidance and welcoming atmosphere.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts: Domine (Serif Headings) & Hanken Grotesk (Sans-Serif Body & UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="overflow-x-hidden bg-background text-foreground font-body">
+
+  <main class="min-h-screen flex flex-col justify-between overflow-x-hidden">
+    <!-- Header/Navigation -->
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-border/40 bg-background/70 backdrop-blur-xl">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="index.html" class="group flex items-center gap-3">
+          <span
+            class="relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-ember/60 bg-background/90 overflow-hidden shadow-sm transition-transform duration-500 group-hover:scale-105 nav-logo-icon">
+            <img src="assets/wb-icon.png" alt="WB Logo Icon" class="h-full w-full object-cover rounded-full">
+          </span>
+          <span class="font-display text-base sm:text-lg tracking-[0.25em] uppercase font-bold text-foreground">Whiskey Barrel</span>
+        </a>
+        <ul class="hidden items-center gap-9 text-xs uppercase tracking-[0.2em] text-muted-foreground md:flex">
+          <li>
+            <a href="index.html" class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">Home</a>
+          </li>
+          <li>
+            <a href="index.html#about" class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">About</a>
+          </li>
+          <li>
+            <a href="index.html#expressions" class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100">Collection</a>
+          </li>
+          <li>
+            <a href="experience.html" class="relative py-2 text-ember font-semibold after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-ember">Experience</a>
+          </li>
+          <li class="relative group">
+            <a href="visit.html" class="relative py-2 transition-colors duration-300 hover:text-ember after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-right after:scale-x-0 after:bg-ember after:transition-transform after:duration-500 hover:after:origin-left hover:after:scale-x-100 flex items-center gap-1">Visit</a>
+
+            <!-- Navbar Visit Dropdown Popover matching image -->
+            <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-80 sm:w-96 rounded-xl bg-[#12100e] border border-[#2d2620] p-6 sm:p-7 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pointer-events-none group-hover:pointer-events-auto normal-case tracking-normal">
+              <div class="space-y-6 text-[#eae3d9]">
+                <!-- Address -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="map-pin" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Address</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      12205 Shawnee Mission PKWY<br>
+                      Shawnee, KS 66216
+                    </p>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Store Hours -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="clock" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Store Hours</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      Monday - Thursday : 10 AM - 10 PM<br>
+                      Friday - Saturday : 9 AM - 11 PM<br>
+                      Sunday : 9 AM - 8 PM
+                    </p>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Phone -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="phone" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Phone</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      <a href="tel:+19135550199" class="hover:text-ember transition-colors">+1 (913) 555-0199</a>
+                    </p>
+                  </div>
+                </div>
+                <br>
+
+                <!-- Email -->
+                <div class="flex items-start gap-4 text-left">
+                  <i data-lucide="mail" class="h-4.5 w-4.5 text-[#eae3d9] shrink-0 mt-0.5 stroke-[1.75]"></i>
+                  <div class="space-y-1">
+                    <h3 class="font-bold text-sm text-[#ffffff] tracking-normal">Email</h3>
+                    <p class="text-xs sm:text-sm leading-relaxed text-[#eae3d9]/90 font-normal">
+                      <a href="mailto:whiskeybarrel@parishva.in" class="hover:text-ember transition-colors">whiskeybarrel@parishva.in</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="flex items-center gap-4">
+          <!-- Search Trigger -->
+          <button type="button" aria-label="Search" class="p-2 text-foreground/80 hover:text-ember transition-colors">
+            <i data-lucide="search" class="h-4 w-4"></i>
+          </button>
+
+          <!-- Cart Trigger -->
+          <button type="button" id="cart-trigger-btn" aria-label="Open cart" class="relative p-2 text-foreground/80 hover:text-ember transition-colors">
+            <i data-lucide="shopping-cart" class="h-4 w-4"></i>
+            <span id="cart-badge" class="hidden absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[image:var(--gradient-ember)] px-1 text-[0.6rem] font-medium text-primary-foreground">0</span>
+          </button>
+
+          <!-- Plan Your Visit Action Button -->
+          <a href="visit.html" class="nav-plan-btn hidden sm:inline-flex">
+            <span>PLAN YOUR VISIT</span>
+            <span>→</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Experience Showcase Hero Section -->
+    <section class="experience-section experience-hero-standalone relative bg-[#080605] px-6 sm:px-10 lg:px-16 overflow-hidden">
+      
+      <!-- Atmospheric Background Image with Glencairn Glass & Oak Barrel -->
+      <div class="experience-bg-wrap absolute inset-0 pointer-events-none">
+        <img src="assets/experience-bg.jpg" alt="Whiskey Barrel Experience" class="experience-bg-img w-full h-full object-cover object-right sm:object-center" loading="eager">
+        <!-- Multi-layer Gradient Overlays for Extreme Legibility & Warm Glow -->
+        <div class="experience-overlay-left absolute inset-0"></div>
+        <div class="experience-overlay-bottom absolute inset-0"></div>
+      </div>
+
+      <!-- Content Container -->
+      <div class="relative z-10 mx-auto max-w-7xl flex flex-col justify-between h-full min-h-[calc(100vh-80px)] pt-6 sm:pt-8 pb-10 sm:pb-14">
+        
+        <!-- Top Text Block -->
+        <div class="experience-header max-w-2xl text-left pt-6 sm:pt-10">
+          <!-- Eyebrow with gold horizontal accent line -->
+          <div class="experience-eyebrow-row flex items-center gap-3.5 mb-4 sm:mb-5">
+            <span class="experience-eyebrow text-xs sm:text-[0.8rem] font-bold tracking-[0.28em] uppercase text-[#D4A86A]">
+              EXPERIENCE
+            </span>
+            <span class="experience-eyebrow-line h-[1.5px] w-12 sm:w-16 bg-[#D4A86A]/80"></span>
+          </div>
+
+          <!-- Main Title (2 Lines) -->
+          <h1 class="experience-title font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[3.35rem] font-medium tracking-[0.02em] uppercase leading-[1.12] mb-5 sm:mb-6">
+            <span class="text-[#FAF5EE]">MORE THAN A TASTE.</span><br>
+            <span class="experience-title-accent text-[#D4A86A]">A LASTING EXPERIENCE.</span>
+          </h1>
+
+          <!-- Subtitle Paragraph -->
+          <p class="experience-description font-body text-sm sm:text-[0.98rem] md:text-base text-[#BFB4A7] leading-[1.75] max-w-xl font-normal">
+            At Whiskey Barrel, every visit is an invitation to slow down, explore, and enjoy. From curated tastings to expert guidance, we create memorable moments around every bottle.
+          </p>
+        </div>
+
+        <!-- 4 Experience Feature Cards Grid -->
+        <div id="pillars" class="experience-cards-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 mt-12 sm:mt-16 lg:mt-20">
+          
+          <!-- Card 1: Tastings & Events -->
+          <div class="experience-card group">
+            <div class="experience-card-icon-wrap">
+              <!-- 3 stemmed tasting glasses SVG icon -->
+              <svg class="experience-card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Left Glass -->
+                <path d="M7 9 C7 12.5 10.5 12.5 10.5 9 V7 H7 Z" />
+                <line x1="8.75" y1="12.5" x2="8.75" y2="16.5" />
+                <line x1="7" y1="16.5" x2="10.5" y2="16.5" />
+                <!-- Center Glass (Taller) -->
+                <path d="M13.5 6 C13.5 10.5 18.5 10.5 18.5 6 V4 H13.5 Z" />
+                <line x1="16" y1="10.5" x2="16" y2="17.5" />
+                <line x1="13.5" y1="17.5" x2="18.5" y2="17.5" />
+                <!-- Right Glass -->
+                <path d="M21.5 9 C21.5 12.5 25 12.5 25 9 V7 H21.5 Z" />
+                <line x1="23.25" y1="12.5" x2="23.25" y2="16.5" />
+                <line x1="21.5" y1="16.5" x2="25" y2="16.5" />
+              </svg>
+            </div>
+            <h3 class="experience-card-title">TASTINGS &amp; EVENTS</h3>
+            <div class="experience-card-divider"></div>
+            <p class="experience-card-desc">
+              Curated tastings, special releases, and exclusive events to deepen your appreciation.
+            </p>
+          </div>
+
+          <!-- Card 2: Expert Guidance -->
+          <div class="experience-card group">
+            <div class="experience-card-icon-wrap">
+              <!-- Expert / Sommelier with bowtie icon -->
+              <svg class="experience-card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="16" cy="9.5" r="4" />
+                <path d="M7.5 25 C7.5 19 11.5 17.5 14 17" />
+                <path d="M24.5 25 C24.5 19 20.5 17.5 18 17" />
+                <path d="M14 17 L16 20.5 L18 17" />
+                <polygon points="12.5,17.5 16,19 12.5,20.5" fill="currentColor" />
+                <polygon points="19.5,17.5 16,19 19.5,20.5" fill="currentColor" />
+                <circle cx="16" cy="19" r="0.8" fill="currentColor" />
+              </svg>
+            </div>
+            <h3 class="experience-card-title">EXPERT GUIDANCE</h3>
+            <div class="experience-card-divider"></div>
+            <p class="experience-card-desc">
+              Our knowledgeable team helps you discover new favorites and find the perfect bottle.
+            </p>
+          </div>
+
+          <!-- Card 3: Curated Selection -->
+          <div class="experience-card group">
+            <div class="experience-card-icon-wrap">
+              <!-- Whiskey Barrel Icon -->
+              <svg class="experience-card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="16" cy="7" rx="6" ry="1.6" />
+                <ellipse cx="16" cy="25" rx="6" ry="1.6" />
+                <path d="M10 7 C7.5 12 7.5 20 10 25" />
+                <path d="M22 7 C24.5 12 24.5 20 22 25" />
+                <path d="M8.3 12.5 C12 13.8 20 13.8 23.7 12.5" />
+                <path d="M8.3 19.5 C12 20.8 20 20.8 23.7 19.5" />
+                <path d="M13.5 7 C12.5 12 12.5 20 13.5 25" />
+                <path d="M18.5 7 C19.5 12 19.5 20 18.5 25" />
+              </svg>
+            </div>
+            <h3 class="experience-card-title">CURATED SELECTION</h3>
+            <div class="experience-card-divider"></div>
+            <p class="experience-card-desc">
+              A thoughtfully chosen collection of whiskeys, wines, beers, and more from around the world.
+            </p>
+          </div>
+
+          <!-- Card 4: A Welcoming Space -->
+          <div class="experience-card group">
+            <div class="experience-card-icon-wrap">
+              <!-- Community / 3 figures icon -->
+              <svg class="experience-card-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="16" cy="9.5" r="3.2" />
+                <path d="M11 24.5 C11 20 13.2 18 16 18 C18.8 18 21 20 21 24.5" />
+                <circle cx="9.5" cy="12.5" r="2.4" />
+                <path d="M5.5 24.5 C5.5 21.2 7.5 19.8 9.5 19.5" />
+                <circle cx="22.5" cy="12.5" r="2.4" />
+                <path d="M26.5 24.5 C26.5 21.2 24.5 19.8 22.5 19.5" />
+              </svg>
+            </div>
+            <h3 class="experience-card-title">A WELCOMING SPACE</h3>
+            <div class="experience-card-divider"></div>
+            <p class="experience-card-desc">
+              A relaxed and inviting atmosphere to enjoy great drinks and better company.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- In-Depth Experience Highlights Section -->
+    <section class="py-24 sm:py-32 px-6 sm:px-10 lg:px-16 bg-[#0c0907] relative overflow-hidden border-b border-border/40">
+      <div class="mx-auto max-w-6xl">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 sm:mb-20">
+          <span class="text-xs uppercase tracking-[0.28em] text-[#D4A86A] font-bold block mb-3">CURATED OFFERINGS</span>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl uppercase tracking-[0.02em] font-medium text-[#FAF6F0]">
+            EXPLORE THE CRAFT
+          </h2>
+          <div class="w-12 h-0.5 bg-[#D4A86A]/70 mx-auto my-5"></div>
+          <p class="text-sm sm:text-base text-[#BFB4A7] leading-relaxed font-normal">
+            Whether you are expanding your cellar or beginning your tasting journey, our bespoke experiences are crafted to elevate every pour.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          
+          <!-- Experience Module 1: Guided Tasting Flights -->
+          <div class="experience-detail-card group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-[#D4A86A] font-semibold mb-4">
+                <i data-lucide="sparkles" class="h-4 w-4"></i>
+                <span>Sensory Discovery</span>
+              </div>
+              <h3 class="font-serif text-2xl sm:text-3xl text-[#FAF6F0] mb-4">Guided Tasting Flights</h3>
+              <p class="text-[#BFB4A7] text-sm sm:text-[0.95rem] leading-relaxed mb-6 font-normal">
+                Immerse yourself in thematic flights comparing single malt age statements, high-rye bourbons, peated Scotch, or rare agave distillations. Led by our certified spirits guides.
+              </p>
+              <ul class="space-y-3 text-xs sm:text-sm text-[#EAE3D9]/90 font-medium">
+                <li class="flex items-center gap-2.5">
+                  <span class="h-1.5 w-1.5 rounded-full bg-[#D4A86A]"></span>
+                  <span>Four curated half-ounce pours per session</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="h-1.5 w-1.5 rounded-full bg-[#D4A86A]"></span>
+                  <span>Palate cleansers &amp; aroma notes booklet included</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="h-1.5 w-1.5 rounded-full bg-[#D4A86A]"></span>
+                  <span>Available on select evenings &amp; private reservations</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-8 pt-6 border-t border-[#2d241c] flex items-center justify-between">
+              <span class="text-xs uppercase tracking-[0.2em] text-[#9E9285]">Every Weekend</span>
+              <a href="visit.html" class="text-xs uppercase tracking-[0.2em] text-[#D4A86A] hover:text-white transition-colors flex items-center gap-1.5 font-bold">
+                Learn More <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Experience Module 2: Barrel Pick Program -->
+          <div class="experience-detail-card group flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-[#D4A86A] font-semibold mb-4">
+                <i data-lucide="award" class="h-4 w-4"></i>
+                <span>Exclusive Allocations</span>
+              </div>
+              <h3 class="font-serif text-2xl sm:text-3xl text-[#FAF6F0] mb-4">Private Barrel Picks</h3>
+              <p class="text-[#BFB4A7] text-sm sm:text-[0.95rem] leading-relaxed mb-6 font-normal">
+                Our team travels directly to partner distilleries across Kentucky, Scotland, and Jalisco to hand-select individual barrels bottled exclusively for Whiskey Barrel patrons.
+              </p>
+              <ul class="space-y-3 text-xs sm:text-sm text-[#EAE3D9]/90 font-medium">
+                <li class="flex items-center gap-2.5">
+                  <span class="h-1.5 w-1.5 rounded-full bg-[#D4A86A]"></span>
+                  <span>Uncut, unfiltered single barrel expressions</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="h-1.5 w-1.5 rounded-full bg-[#D4A86A]"></span>
+                  <span>Custom label &amp; individual bottle numbering</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="h-1.5 w-1.5 rounded-full bg-[#D4A86A]"></span>
+                  <span>First access provided to store club members</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-8 pt-6 border-t border-[#2d241c] flex items-center justify-between">
+              <span class="text-xs uppercase tracking-[0.2em] text-[#9E9285]">Limited Quantity</span>
+              <a href="visit.html" class="text-xs uppercase tracking-[0.2em] text-[#D4A86A] hover:text-white transition-colors flex items-center gap-1.5 font-bold">
+                Inquire Bottles <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Visit / Reserve Invitation CTA Banner -->
+    <section class="relative py-20 sm:py-28 px-6 sm:px-10 lg:px-16 bg-[#080605] overflow-hidden">
+      <div class="mx-auto max-w-4xl text-center relative z-10">
+        <span class="text-xs uppercase tracking-[0.28em] text-[#D4A86A] font-bold block mb-4">JOIN US IN PERSON</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl uppercase tracking-[0.02em] font-medium text-[#FAF6F0] mb-6">
+          EXPERIENCE IT FOR YOURSELF
+        </h2>
+        <p class="text-sm sm:text-base text-[#BFB4A7] max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+          Stop by our Shawnee location to discover exceptional bottles, sample seasonal features, and converse with passionate connoisseurs.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="visit.html" class="hero-btn-primary">
+            <span>PLAN YOUR VISIT</span>
+            <span class="hero-btn-arrow">&rarr;</span>
+          </a>
+          <a href="tel:+19135550199" class="hero-btn-secondary">
+            <span>CALL (913) 555-0199</span>
+            <span class="hero-btn-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-border px-6 py-10">
+      <div
+        class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 text-[0.65rem] uppercase tracking-[0.25em] text-muted-foreground sm:flex-row">
+        <span>© 2026 Whiskey Barrel Distillery</span>
+
+        <!-- Social / Contact Buttons -->
+        <div class="footer-social-group">
+          <a
+            href="https://wa.me/19135550199"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Connect with Whiskey Barrel on WhatsApp"
+            class="footer-social-btn footer-social-whatsapp">
+            <svg class="footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.484-8.414z" />
+            </svg>
+          </a>
+
+          <a
+            href="https://www.instagram.com/whiskeybarrelusa?stkn=MTczeDAzcjF1Z2FpdA=="
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow Whiskey Barrel on Instagram"
+            class="footer-social-btn footer-social-instagram">
+            <svg class="footer-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+          </a>
+        </div>
+
+        <span>Please savour responsibly</span>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Cart Drawer Component Markup -->
+  <div id="cart-drawer-overlay" class="fixed inset-0 z-[100] bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm"></div>
+  <aside id="cart-drawer" class="fixed right-0 top-0 bottom-0 z-[101] flex h-full w-full translate-x-full flex-col bg-card sm:max-w-lg transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border-l border-border">
+    <div class="flex items-center justify-between px-6 py-6 border-b border-border">
+      <div>
+        <h2 class="font-display text-2xl">Your Cart</h2>
+        <p id="cart-description" class="text-xs text-muted-foreground">Your cart is empty</p>
+      </div>
+      <button type="button" id="cart-close-btn" aria-label="Close cart" class="text-muted-foreground hover:text-foreground transition-colors p-1">
+        <i data-lucide="x" class="h-6 w-6"></i>
+      </button>
+    </div>
+
+    <div class="flex min-h-0 flex-1 flex-col px-6 pt-6 overflow-y-auto">
+      <!-- Empty Cart State -->
+      <div id="cart-empty-state" class="flex flex-1 items-center justify-center">
+        <div class="text-center">
+          <i data-lucide="shopping-cart" class="mx-auto mb-4 h-12 w-12 text-muted-foreground"></i>
+          <p class="text-muted-foreground">Your cart is empty</p>
+        </div>
+      </div>
+
+      <!-- Cart Items State -->
+      <div id="cart-items-container" class="hidden flex-1 overflow-y-auto pr-2 space-y-4">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Cart Footer -->
+      <div id="cart-footer" class="hidden flex-shrink-0 space-y-4 border-t border-border bg-card pt-4 pb-6">
+        <div class="flex items-center justify-between">
+          <span class="text-sm uppercase tracking-[0.2em] text-muted-foreground">Total</span>
+          <span id="cart-total-price" class="font-display text-2xl text-ember">$0.00</span>
+        </div>
+        <button type="button" id="cart-checkout-btn" class="flex w-full items-center justify-center gap-2 rounded-sm bg-[image:var(--gradient-ember)] px-6 py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-all duration-500 hover:shadow-ember disabled:opacity-60">
+          <i data-lucide="external-link" class="h-4 w-4"></i>
+          Checkout with Shopify
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>

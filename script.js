@@ -2943,32 +2943,17 @@ function createWineProductCardHTML(p, priceStr, image, ratingBadge, customTags) 
   const titleHtml = wineTitlesMap[p.handle] || p.title;
   const displayedTags = customTags || wineTagsMap[p.handle] || [p.category];
 
-  // Determine if transparent bottle or lifestyle background image is used
-  const isTransparentBottle = 
-    p.handle === "domaines-des-etoiles-pinot-noir" || 
-    p.handle === "chateau-margaux-cabernet-sauvignon" ||
-    p.handle === "tuscan-reserve-sangiovese-2019" ||
-    p.handle === "barossa-valley-shiraz-reserve" ||
-    p.handle === "mendoza-malbec-gran-reserva";
-
   return `
     <article class="product-grid-card wine-card">
       
-      <!-- Backdrop decorator for lifestyle photos -->
-      ${!isTransparentBottle ? `<div class="wine-decor-backdrop"></div>` : ""}
-
       <!-- Top Arched Image Container -->
       <div class="product-card-arch wine-card-arch">
-        
-        <!-- Base decorator for transparent bottles -->
-        ${isTransparentBottle ? `<div class="wine-decor-base"></div>` : ""}
-
-        <a href="product.html?handle=${p.handle}" class="h-full w-full flex items-center justify-center relative z-10${isTransparentBottle ? ' wine-card-link-multiply' : ''}">
+        <a href="product.html?handle=${p.handle}" class="h-full w-full block relative z-10 overflow-hidden" aria-label="${p.title}">
           ${image ? `
             <img
               src="${image.url}"
               alt="${image.altText ?? p.title}"
-              class="wine-card-img${!isTransparentBottle ? ' wine-card-img-lifestyle' : ''}"
+              class="wine-card-img"
               loading="lazy"
             >
           ` : `
@@ -3001,7 +2986,7 @@ function createWineProductCardHTML(p, priceStr, image, ratingBadge, customTags) 
         </a>
 
         <!-- Soft Lavender Pills -->
-        <div class="flex flex-wrap items-center justify-center gap-4 mt-2 mb-3">
+        <div class="flex flex-wrap items-center justify-center gap-1.5 mt-1.5 mb-2">
           ${displayedTags.map(tag => `
             <span class="product-card-pill wine-card-pill">
               ${tag}
@@ -3327,7 +3312,7 @@ async function handleCategoryPage() {
     }
 
     currentCategoryProducts = meta.products || [];
-    filterAndRenderProducts(currentCategoryProducts);
+    resetAllFilters();
   };
 
   // Bind Category Page Filter Bar options
@@ -3340,44 +3325,98 @@ async function handleCategoryPage() {
   const priceFilterLabel = document.getElementById("price-filter-label");
   const priceItems = document.querySelectorAll("#price-dropdown .price-dropdown-item");
 
+  let activeQuickFilter = null; // 'staff-pick' | 'new-arrivals' | 'on-sale' | null
+  let activePriceRange = "all";
+
+  const clearQuickFilterPills = () => {
+    staffPickBtn?.classList.remove("active-pill");
+    newArrivalsBtn?.classList.remove("active-pill");
+    onSaleBtn?.classList.remove("active-pill");
+  };
+
+  const applyCombinedFilters = () => {
+    let filtered = [...currentCategoryProducts];
+
+    // 1. Apply quick filter
+    if (activeQuickFilter === "staff-pick") {
+      const sp = filtered.filter((p) => p.node?.badges?.some((b) => b.label === "VIVINO" || b.label === "WE" || parseFloat(b.score) >= 90));
+      filtered = sp.length ? sp : filtered;
+    } else if (activeQuickFilter === "new-arrivals") {
+      filtered = [...filtered].reverse();
+    } else if (activeQuickFilter === "on-sale") {
+      const os = filtered.filter((p) => p.node?.badges?.some((b) => b.label === "AGED" || b.label === "LIMITED" || b.label === "RESERVE"));
+      filtered = os.length ? os : filtered;
+    }
+
+    // 2. Apply price filter
+    if (activePriceRange && activePriceRange !== "all") {
+      if (activePriceRange === "under-50") {
+        filtered = filtered.filter((p) => parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0) < 50);
+      } else if (activePriceRange === "50-100") {
+        filtered = filtered.filter((p) => {
+          const amt = parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0);
+          return amt >= 50 && amt <= 100;
+        });
+      } else if (activePriceRange === "100-200") {
+        filtered = filtered.filter((p) => {
+          const amt = parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0);
+          return amt >= 100 && amt <= 200;
+        });
+      } else if (activePriceRange === "200-500") {
+        filtered = filtered.filter((p) => {
+          const amt = parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0);
+          return amt >= 200 && amt <= 500;
+        });
+      } else if (activePriceRange === "above-500") {
+        filtered = filtered.filter((p) => parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0) > 500);
+      }
+    }
+
+    filterAndRenderProducts(filtered);
+  };
+
+  const resetAllFilters = () => {
+    activeQuickFilter = null;
+    activePriceRange = "all";
+    clearQuickFilterPills();
+    if (priceFilterBtn) priceFilterBtn.classList.remove("active-pill");
+    if (priceFilterLabel) priceFilterLabel.textContent = "PRICE RANGE";
+    priceItems.forEach((item) => {
+      if (item.getAttribute("data-price-range") === "all") {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    });
+    applyCombinedFilters();
+  };
+
   const applyPriceRangeFilter = (range, labelText) => {
-    // Update button text & active item class
+    activePriceRange = range || "all";
+
+    // Update button text & active button pill state
     if (priceFilterLabel) {
       priceFilterLabel.textContent = !range || range === "all" ? "PRICE RANGE" : (labelText || range.toUpperCase());
     }
 
+    if (priceFilterBtn) {
+      if (range && range !== "all") {
+        priceFilterBtn.classList.add("active-pill");
+      } else {
+        priceFilterBtn.classList.remove("active-pill");
+      }
+    }
+
     priceItems.forEach((item) => {
       const itemRange = item.getAttribute("data-price-range");
-      if (itemRange === range) {
+      if (itemRange === activePriceRange) {
         item.classList.add("active");
       } else {
         item.classList.remove("active");
       }
     });
 
-    let filtered = currentCategoryProducts;
-    if (range === "under-50") {
-      filtered = currentCategoryProducts.filter((p) => parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0) < 50);
-    } else if (range === "50-100") {
-      filtered = currentCategoryProducts.filter((p) => {
-        const amt = parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0);
-        return amt >= 50 && amt <= 100;
-      });
-    } else if (range === "100-200") {
-      filtered = currentCategoryProducts.filter((p) => {
-        const amt = parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0);
-        return amt >= 100 && amt <= 200;
-      });
-    } else if (range === "200-500") {
-      filtered = currentCategoryProducts.filter((p) => {
-        const amt = parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0);
-        return amt >= 200 && amt <= 500;
-      });
-    } else if (range === "above-500") {
-      filtered = currentCategoryProducts.filter((p) => parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0) > 500);
-    }
-
-    filterAndRenderProducts(filtered);
+    applyCombinedFilters();
   };
 
   priceItems.forEach((item) => {
@@ -3395,23 +3434,45 @@ async function handleCategoryPage() {
   if (staffPickBtn) {
     staffPickBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      const filtered = currentCategoryProducts.filter((p) => p.node?.badges?.some((b) => b.label === "VIVINO" || b.label === "WE" || parseFloat(b.score) >= 90));
-      filterAndRenderProducts(filtered.length ? filtered : currentCategoryProducts);
+      if (activeQuickFilter === "staff-pick") {
+        activeQuickFilter = null;
+        staffPickBtn.classList.remove("active-pill");
+      } else {
+        clearQuickFilterPills();
+        activeQuickFilter = "staff-pick";
+        staffPickBtn.classList.add("active-pill");
+      }
+      applyCombinedFilters();
     });
   }
 
   if (newArrivalsBtn) {
     newArrivalsBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      filterAndRenderProducts([...currentCategoryProducts].reverse());
+      if (activeQuickFilter === "new-arrivals") {
+        activeQuickFilter = null;
+        newArrivalsBtn.classList.remove("active-pill");
+      } else {
+        clearQuickFilterPills();
+        activeQuickFilter = "new-arrivals";
+        newArrivalsBtn.classList.add("active-pill");
+      }
+      applyCombinedFilters();
     });
   }
 
   if (onSaleBtn) {
     onSaleBtn.addEventListener("click", (e) => {
       e.preventDefault();
-      const filtered = currentCategoryProducts.filter((p) => p.node?.badges?.some((b) => b.label === "AGED" || b.label === "LIMITED" || b.label === "RESERVE"));
-      filterAndRenderProducts(filtered.length ? filtered : currentCategoryProducts);
+      if (activeQuickFilter === "on-sale") {
+        activeQuickFilter = null;
+        onSaleBtn.classList.remove("active-pill");
+      } else {
+        clearQuickFilterPills();
+        activeQuickFilter = "on-sale";
+        onSaleBtn.classList.add("active-pill");
+      }
+      applyCombinedFilters();
     });
   }
 
