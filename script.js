@@ -363,9 +363,9 @@ const WHISKEY_PRODUCTS = [
       type: "🥃 Straight Bourbon",
       badges: [{ label: "WE", score: "91" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged in deep heavy charred Alligator oak barrels. Sweet campfire smoke, molasses, and toasted pecan.",
-      priceRange: { minVariantPrice: { amount: "75.00", currencyCode: "USD" } },
+      priceRange: { minVariantPrice: { amount: "45.00", currencyCode: "USD" } },
       images: { edges: [{ node: { url: "assets/cask-12.jpg", altText: "Charred American Cask 10" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey12", title: "700ml Bottle", price: { amount: "75.00", currencyCode: "USD" }, availableForSale: true } }] }
+      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey12", title: "700ml Bottle", price: { amount: "45.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
   {
@@ -2275,278 +2275,178 @@ async function fetchProductByHandle(handle) {
   }
 }
 
-// Shopping Cart Core
-const Cart = {
+// Wishlist Core
+const Wishlist = {
   items: [],
-  cartId: null,
-  checkoutUrl: null,
-  isLoading: false,
-  isSyncing: false,
 
   init() {
     this.load();
     this.setupEventListeners();
-    this.syncCart();
     this.render();
   },
 
   load() {
     try {
-      const stored = localStorage.getItem("shopify-cart-vanilla");
+      const stored = localStorage.getItem("whiskey-barrel-wishlist") || localStorage.getItem("shopify-cart-vanilla");
       if (stored) {
         const parsed = JSON.parse(stored);
         this.items = parsed.items || [];
-        this.cartId = parsed.cartId || null;
-        this.checkoutUrl = parsed.checkoutUrl || null;
       }
     } catch (error) {
-      console.error("Failed to load cart from localStorage", error);
+      console.error("Failed to load wishlist from localStorage", error);
     }
   },
 
   save() {
     try {
-      localStorage.setItem("shopify-cart-vanilla", JSON.stringify({
-        items: this.items,
-        cartId: this.cartId,
-        checkoutUrl: this.checkoutUrl
+      localStorage.setItem("whiskey-barrel-wishlist", JSON.stringify({
+        items: this.items
       }));
     } catch (error) {
-      console.error("Failed to save cart to localStorage", error);
+      console.error("Failed to save wishlist to localStorage", error);
     }
   },
 
-  setLoading(val) {
-    this.isLoading = val;
-    this.updateCheckoutButtonState();
+  isInWishlist(handle) {
+    return this.items.some((item) => (item.product?.node?.handle === handle || item.handle === handle));
   },
 
-  formatCheckoutUrl(checkoutUrl) {
-    try {
-      const url = new URL(checkoutUrl);
-      url.searchParams.set("channel", "online_store");
-      return url.toString();
-    } catch {
-      return checkoutUrl;
-    }
-  },
+  toggleItem(handle, variantId) {
+    const allProducts = [
+      ...WHISKEY_PRODUCTS,
+      ...RUM_PRODUCTS,
+      ...BEER_PRODUCTS,
+      ...VODKA_PRODUCTS,
+      ...WINE_PRODUCTS,
+      ...GIN_PRODUCTS,
+      ...TEQUILA_PRODUCTS,
+      ...CIGAR_PRODUCTS
+    ];
+    const found = allProducts.find(p => p.node.handle === handle);
+    if (!found) return;
 
-  isCartNotFoundError(userErrors) {
-    return (userErrors || []).some(
-      (e) =>
-        e.message.toLowerCase().includes("cart not found") ||
-        e.message.toLowerCase().includes("does not exist")
-    );
-  },
+    const p = found.node;
+    const existingIndex = this.items.findIndex(i => (i.product?.node?.handle === handle || i.handle === handle));
 
-  async addItem(item) {
-    const existingItem = this.items.find((i) => i.variantId === item.variantId);
-    this.setLoading(true);
-    
-    try {
-      if (!this.cartId) {
-        // Create a new cart
-        const data = await storefrontApiRequest(CART_CREATE_MUTATION, {
-          input: { lines: [{ quantity: item.quantity, merchandiseId: item.variantId }] },
-        });
-
-        if (data?.data?.cartCreate?.userErrors?.length > 0) {
-          console.error("Cart creation failed:", data.data.cartCreate.userErrors);
-          toast.error("Add item failed", data.data.cartCreate.userErrors[0].message);
-          return;
-        }
-
-        const cart = data?.data?.cartCreate?.cart;
-        if (cart?.checkoutUrl) {
-          this.cartId = cart.id;
-          this.checkoutUrl = this.formatCheckoutUrl(cart.checkoutUrl);
-          const lineId = cart.lines.edges[0]?.node?.id;
-          this.items = [{ ...item, lineId }];
-          this.save();
-          toast.success(`${item.product.node.title} added to cart`);
-        }
-      } else if (existingItem) {
-        // Update quantity
-        const newQuantity = existingItem.quantity + item.quantity;
-        if (!existingItem.lineId) {
-          console.error("Cannot update quantity for item without lineId:", existingItem);
-          return;
-        }
-        
-        const data = await storefrontApiRequest(CART_LINES_UPDATE_MUTATION, {
-          cartId: this.cartId,
-          lines: [{ id: existingItem.lineId, quantity: newQuantity }],
-        });
-
-        const userErrors = data?.data?.cartLinesUpdate?.userErrors || [];
-        if (this.isCartNotFoundError(userErrors)) {
-          this.clearCart();
-          await this.addItem(item); // retry
-          return;
-        }
-
-        if (userErrors.length > 0) {
-          console.error("Update line failed:", userErrors);
-          toast.error("Add item failed", userErrors[0].message);
-          return;
-        }
-
-        existingItem.quantity = newQuantity;
-        this.save();
-        toast.success(`${item.product.node.title} added to cart`);
-      } else {
-        // Add new line
-        const data = await storefrontApiRequest(CART_LINES_ADD_MUTATION, {
-          cartId: this.cartId,
-          lines: [{ quantity: item.quantity, merchandiseId: item.variantId }],
-        });
-
-        const userErrors = data?.data?.cartLinesAdd?.userErrors || [];
-        if (this.isCartNotFoundError(userErrors)) {
-          this.clearCart();
-          await this.addItem(item); // retry
-          return;
-        }
-
-        if (userErrors.length > 0) {
-          console.error("Add line failed:", userErrors);
-          toast.error("Add item failed", userErrors[0].message);
-          return;
-        }
-
-        const lines = data?.data?.cartLinesAdd?.cart?.lines?.edges || [];
-        const newLine = lines.find((l) => l.node.merchandise.id === item.variantId);
-        this.items.push({ ...item, lineId: newLine?.node?.id ?? null });
-        this.save();
-        toast.success(`${item.product.node.title} added to cart`);
-      }
-      this.render();
-      this.openDrawer();
-    } catch (error) {
-      console.error("Failed to add item:", error);
-      toast.error("Add item failed");
-    } finally {
-      this.setLoading(false);
-    }
-  },
-
-  async updateQuantity(variantId, quantity) {
-    if (quantity <= 0) {
-      await this.removeItem(variantId);
-      return;
-    }
-
-    const item = this.items.find((i) => i.variantId === variantId);
-    if (!item?.lineId || !this.cartId) return;
-
-    this.setLoading(true);
-    try {
-      const data = await storefrontApiRequest(CART_LINES_UPDATE_MUTATION, {
-        cartId: this.cartId,
-        lines: [{ id: item.lineId, quantity }],
-      });
-
-      const userErrors = data?.data?.cartLinesUpdate?.userErrors || [];
-      if (this.isCartNotFoundError(userErrors)) {
-        this.clearCart();
-        this.render();
-        return;
-      }
-
-      if (userErrors.length > 0) {
-        console.error("Update line failed:", userErrors);
-        toast.error("Update quantity failed");
-        return;
-      }
-
-      item.quantity = quantity;
+    if (existingIndex > -1) {
+      // Remove from wishlist
+      this.items.splice(existingIndex, 1);
       this.save();
       this.render();
-    } catch (error) {
-      console.error("Failed to update quantity:", error);
-    } finally {
-      this.setLoading(false);
-    }
-  },
+      this.updateHeartButtons(handle, false);
+      toast.info("Removed from Wishlist", `${p.title} removed from your wishlist.`);
+    } else {
+      // Add to wishlist
+      const vId = variantId || p.variants.edges[0]?.node?.id;
+      const selectedOptions = p.variants.edges[0]?.node?.selectedOptions || [];
+      const price = p.priceRange?.minVariantPrice || { amount: "0.00", currencyCode: "USD" };
 
-  async removeItem(variantId) {
-    const item = this.items.find((i) => i.variantId === variantId);
-    if (!item?.lineId || !this.cartId) return;
-
-    this.setLoading(true);
-    try {
-      const data = await storefrontApiRequest(CART_LINES_REMOVE_MUTATION, {
-        cartId: this.cartId,
-        lineIds: [item.lineId],
+      this.items.push({
+        handle: p.handle,
+        product: found,
+        variantId: vId,
+        selectedOptions: selectedOptions,
+        price: price,
+        quantity: 1
       });
-
-      const userErrors = data?.data?.cartLinesRemove?.userErrors || [];
-      if (this.isCartNotFoundError(userErrors)) {
-        this.clearCart();
-        this.render();
-        return;
-      }
-
-      if (userErrors.length > 0) {
-        console.error("Remove line failed:", userErrors);
-        toast.error("Remove item failed");
-        return;
-      }
-
-      this.items = this.items.filter((i) => i.variantId !== variantId);
-      if (this.items.length === 0) {
-        this.clearCart();
-      } else {
-        this.save();
-      }
+      this.save();
       this.render();
-    } catch (error) {
-      console.error("Failed to remove item:", error);
-    } finally {
-      this.setLoading(false);
+      this.updateHeartButtons(handle, true);
+      toast.success("Saved to Wishlist", `${p.title} added to your wishlist.`);
     }
   },
 
-  clearCart() {
-    this.items = [];
-    this.cartId = null;
-    this.checkoutUrl = null;
+  addItem(item) {
+    const handle = item.product?.node?.handle || item.handle;
+    if (!this.isInWishlist(handle)) {
+      this.items.push({
+        handle: handle,
+        product: item.product,
+        variantId: item.variantId || item.product?.node?.variants?.edges?.[0]?.node?.id,
+        selectedOptions: item.selectedOptions || [],
+        price: item.price || item.product?.node?.priceRange?.minVariantPrice || { amount: "0.00", currencyCode: "USD" },
+        quantity: 1
+      });
+      this.save();
+      this.render();
+      this.updateHeartButtons(handle, true);
+      toast.success("Saved to Wishlist", `${item.product?.node?.title || "Item"} saved to your wishlist.`);
+    }
+    this.openDrawer();
+  },
+
+  removeItem(handleOrVariantId) {
+    const item = this.items.find(i => i.variantId === handleOrVariantId || i.handle === handleOrVariantId || i.product?.node?.handle === handleOrVariantId);
+    const title = item?.product?.node?.title || "Item";
+    const handle = item?.handle || item?.product?.node?.handle;
+
+    this.items = this.items.filter(i => i.variantId !== handleOrVariantId && i.handle !== handleOrVariantId && i.product?.node?.handle !== handleOrVariantId);
     this.save();
-  },
-
-  async syncCart() {
-    if (!this.cartId || this.isSyncing) return;
-    this.isSyncing = true;
-    
-    try {
-      const data = await storefrontApiRequest(CART_QUERY, { id: this.cartId });
-      if (data) {
-        const cart = data?.data?.cart;
-        if (!cart || cart.totalQuantity === 0) {
-          this.clearCart();
-          this.render();
-        }
-      }
-    } catch (error) {
-      console.error("Failed to sync cart with Shopify:", error);
-    } finally {
-      this.isSyncing = false;
+    this.render();
+    if (handle) {
+      this.updateHeartButtons(handle, false);
     }
+    toast.info("Removed from Wishlist", `${title} removed from your wishlist.`);
   },
 
-  getCheckoutUrl() {
-    return this.checkoutUrl;
+  clearWishlist() {
+    this.items = [];
+    this.save();
+    this.render();
+    document.querySelectorAll(".product-card-heart-btn").forEach(btn => {
+      btn.classList.remove("is-active");
+      const svg = btn.querySelector("svg");
+      if (svg) svg.setAttribute("fill", "none");
+    });
+  },
+
+  updateHeartButtons(handle, isActive) {
+    // Update all heart buttons for this handle on page
+    document.querySelectorAll(`[data-heart-handle="${handle}"]`).forEach(btn => {
+      if (isActive) {
+        btn.classList.add("is-active");
+        const svg = btn.querySelector("svg");
+        if (svg) svg.setAttribute("fill", "currentColor");
+        btn.setAttribute("title", "Remove from Wishlist");
+        btn.setAttribute("aria-label", "Remove from Wishlist");
+      } else {
+        btn.classList.remove("is-active");
+        const svg = btn.querySelector("svg");
+        if (svg) svg.setAttribute("fill", "none");
+        btn.setAttribute("title", "Save to Wishlist");
+        btn.setAttribute("aria-label", "Save to Wishlist");
+      }
+    });
+
+    // Update product page button if on product page
+    const prodWishlistBtn = document.getElementById("product-wishlist-btn");
+    const prodWishlistText = document.getElementById("product-wishlist-btn-text");
+    if (prodWishlistBtn && prodWishlistText) {
+      if (isActive) {
+        prodWishlistBtn.classList.add("bg-ember", "text-[#14100c]");
+        prodWishlistBtn.classList.remove("bg-ember/10", "text-ember");
+        const svg = prodWishlistBtn.querySelector("svg");
+        if (svg) svg.setAttribute("fill", "currentColor");
+        prodWishlistText.textContent = "In Wishlist";
+      } else {
+        prodWishlistBtn.classList.remove("bg-ember", "text-[#14100c]");
+        prodWishlistBtn.classList.add("bg-ember/10", "text-ember");
+        const svg = prodWishlistBtn.querySelector("svg");
+        if (svg) svg.setAttribute("fill", "none");
+        prodWishlistText.textContent = "Add to Wishlist";
+      }
+    }
   },
 
   render() {
-    const totalItems = this.items.reduce((sum, item) => sum + item.quantity, 0);
+    const totalItems = this.items.length;
     const totalPrice = this.items.reduce(
-      (sum, item) => sum + parseFloat(item.price.amount) * item.quantity,
+      (sum, item) => sum + parseFloat(item.price?.amount || item.product?.node?.priceRange?.minVariantPrice?.amount || 0),
       0
     );
-    const currency = this.items[0]?.price.currencyCode ?? "USD";
+    const currency = this.items[0]?.price?.currencyCode ?? "USD";
 
-    // Update badges
+    // Update badge
     const badge = document.getElementById("cart-badge");
     if (badge) {
       if (totalItems > 0) {
@@ -2561,16 +2461,16 @@ const Cart = {
     const desc = document.getElementById("cart-description");
     if (desc) {
       desc.textContent = totalItems === 0
-        ? "Your cart is empty"
-        : `${totalItems} bottle${totalItems !== 1 ? "s" : ""} reserved`;
+        ? "Your wishlist is empty"
+        : `${totalItems} bottle${totalItems !== 1 ? "s" : ""} saved in wishlist`;
     }
 
-    // Update empty state vs list
+    // Update empty state vs items list
     const emptyState = document.getElementById("cart-empty-state");
     const itemsContainer = document.getElementById("cart-items-container");
     const footer = document.getElementById("cart-footer");
 
-    if (this.items.length === 0) {
+    if (totalItems === 0) {
       emptyState?.classList.remove("hidden");
       emptyState?.classList.add("flex");
       itemsContainer?.classList.add("hidden");
@@ -2590,58 +2490,39 @@ const Cart = {
       // Render items
       if (itemsContainer) {
         itemsContainer.innerHTML = this.items.map((item) => {
-          const imgUrl = item.product.node.images?.edges?.[0]?.node?.url || "";
-          const optionsStr = item.selectedOptions.map((o) => o.value).join(" • ");
-          const itemPriceFormatted = formatMoney(parseFloat(item.price.amount), item.price.currencyCode);
+          const pNode = item.product?.node || item;
+          const imgUrl = pNode.images?.edges?.[0]?.node?.url || "";
+          const optionsStr = item.selectedOptions?.map((o) => o.value).join(" • ") || pNode.category || "Premium Spirit";
+          const itemPriceFormatted = formatMoney(parseFloat(item.price?.amount || pNode.priceRange?.minVariantPrice?.amount || 0), item.price?.currencyCode || "USD");
 
           return `
-            <div class="flex gap-4 rounded-sm border border-border p-3 transition-colors duration-500 hover:border-ember/50">
-              <div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-sm bg-secondary">
-                ${imgUrl ? `<img src="${imgUrl}" alt="${item.product.node.title}" class="h-full w-full object-cover">` : ""}
-              </div>
+            <div class="flex gap-4 rounded-sm border border-border/70 bg-card/80 p-3.5 transition-colors duration-300 hover:border-ember/50 items-center">
+              <a href="product.html?handle=${pNode.handle}" class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-sm bg-[#161310] border border-border/40 block">
+                ${imgUrl ? `<img src="${imgUrl}" alt="${pNode.title}" class="h-full w-full object-contain p-1">` : ""}
+              </a>
               <div class="min-w-0 flex-1">
-                <h4 class="truncate font-medium text-sm text-foreground">${item.product.node.title}</h4>
-                <p class="text-[10px] text-muted-foreground mt-0.5">${optionsStr}</p>
+                <a href="product.html?handle=${pNode.handle}" class="hover:text-ember transition-colors">
+                  <h4 class="truncate font-medium text-sm text-foreground">${pNode.title}</h4>
+                </a>
+                <p class="text-[11px] text-muted-foreground mt-0.5">${optionsStr}</p>
                 <p class="mt-1 font-semibold text-ember text-sm">${itemPriceFormatted}</p>
               </div>
               <div class="flex flex-shrink-0 flex-col items-end gap-2">
-                <button type="button" aria-label="Remove item" onclick="Cart.removeItem('${item.variantId}')" class="text-muted-foreground transition-colors duration-300 hover:text-destructive p-1">
-                  <i data-lucide="trash-2" class="h-3.5 w-3.5"></i>
+                <button type="button" aria-label="Remove from Wishlist" title="Remove" onclick="Wishlist.removeItem('${pNode.handle}')" class="text-muted-foreground transition-colors duration-300 hover:text-destructive p-1.5 rounded hover:bg-white/5">
+                  <i data-lucide="trash-2" class="h-4 w-4"></i>
                 </button>
-                <div class="flex items-center gap-1">
-                  <button type="button" aria-label="Decrease quantity" onclick="Cart.updateQuantity('${item.variantId}', ${item.quantity - 1})" class="rounded-sm border border-border p-1 transition-colors duration-300 hover:border-ember hover:text-ember">
-                    <i data-lucide="minus" class="h-2.5 w-2.5"></i>
-                  </button>
-                  <span class="w-7 text-center text-xs">${item.quantity}</span>
-                  <button type="button" aria-label="Increase quantity" onclick="Cart.updateQuantity('${item.variantId}', ${item.quantity + 1})" class="rounded-sm border border-border p-1 transition-colors duration-300 hover:border-ember hover:text-ember">
-                    <i data-lucide="plus" class="h-2.5 w-2.5"></i>
-                  </button>
-                </div>
+                <a href="product.html?handle=${pNode.handle}" class="text-[10px] uppercase tracking-wider text-ember hover:underline font-semibold">
+                  View &rarr;
+                </a>
               </div>
             </div>
           `;
         }).join("");
 
-        // Re-trigger lucide icons rendering inside cart drawer items
+        // Re-trigger lucide icons rendering inside wishlist items
         if (window.lucide) {
           window.lucide.createIcons();
         }
-      }
-    }
-  },
-
-  updateCheckoutButtonState() {
-    const btn = document.getElementById("cart-checkout-btn");
-    if (btn) {
-      if (this.isLoading || this.isSyncing) {
-        btn.disabled = true;
-        btn.innerHTML = `<i data-lucide="loader-2" class="h-4 w-4 animate-spin"></i>`;
-      } else {
-        btn.disabled = this.items.length === 0;
-        btn.innerHTML = `<i data-lucide="external-link" class="h-4 w-4"></i> Checkout with Shopify`;
-      }
-      if (window.lucide) {
-        window.lucide.createIcons();
       }
     }
   },
@@ -2655,7 +2536,6 @@ const Cart = {
       overlay.classList.remove("opacity-0", "pointer-events-none");
       overlay.classList.add("opacity-100", "pointer-events-auto");
     }
-    this.syncCart();
   },
 
   closeDrawer() {
@@ -2670,13 +2550,13 @@ const Cart = {
   },
 
   setupEventListeners() {
-    // Cart open
+    // Wishlist open
     const trigger = document.getElementById("cart-trigger-btn");
     if (trigger) {
       trigger.addEventListener("click", () => this.openDrawer());
     }
 
-    // Cart close
+    // Wishlist close
     const closeBtn = document.getElementById("cart-close-btn");
     if (closeBtn) {
       closeBtn.addEventListener("click", () => this.closeDrawer());
@@ -2694,27 +2574,10 @@ const Cart = {
         this.closeDrawer();
       }
     });
-
-    // Checkout redirect
-    const checkoutBtn = document.getElementById("cart-checkout-btn");
-    if (checkoutBtn) {
-      checkoutBtn.addEventListener("click", () => {
-        const url = this.getCheckoutUrl();
-        if (url) {
-          window.open(url, "_blank");
-          this.closeDrawer();
-        }
-      });
-    }
-
-    // Sync on page focus/visible
-    document.addEventListener("visibilitychange", () => {
-      if (document.visibilityState === "visible") {
-        this.syncCart();
-      }
-    });
   }
 };
+
+const Cart = Wishlist;
 
 // Reveal Animations using IntersectionObserver
 function initRevealAnimations() {
@@ -2753,7 +2616,8 @@ function initRevealAnimations() {
   });
 }
 
-// Global Quantity Counter & Add To Cart Handlers
+
+// Global Quantity Counter & Wishlist Handlers
 window.increaseQty = function(handle) {
   const input = document.getElementById(`qty-${handle}`);
   if (input) {
@@ -2773,32 +2637,11 @@ window.decreaseQty = function(handle) {
 };
 
 window.handleAddToCart = function(handle, variantId) {
-  const input = document.getElementById(`qty-${handle}`);
-  const quantity = input ? (parseInt(input.value, 10) || 1) : 1;
-  
-  const allProducts = [
-    ...WHISKEY_PRODUCTS,
-    ...RUM_PRODUCTS,
-    ...BEER_PRODUCTS,
-    ...VODKA_PRODUCTS,
-    ...WINE_PRODUCTS,
-    ...GIN_PRODUCTS,
-    ...TEQUILA_PRODUCTS,
-    ...CIGAR_PRODUCTS
-  ];
-  const found = allProducts.find(p => p.node.handle === handle);
-  
-  if (found) {
-    const p = found.node;
-    const vId = variantId || p.variants.edges[0]?.node?.id;
-    Cart.addItem({
-      product: found,
-      variantId: vId,
-      selectedOptions: p.variants.edges[0]?.node?.selectedOptions || [],
-      quantity: quantity
-    });
-    toast.success("Added to Cart", `${quantity}x ${p.title} added to cart.`);
-  }
+  Wishlist.toggleItem(handle, variantId);
+};
+
+window.handleWishlistToggle = function(handle, variantId) {
+  Wishlist.toggleItem(handle, variantId);
 };
 
 // Helper to get Flag SVG/Graphic based on country text
@@ -2943,6 +2786,11 @@ function createWineProductCardHTML(p, priceStr, image, ratingBadge, customTags) 
   const titleHtml = wineTitlesMap[p.handle] || p.title;
   const displayedTags = customTags || wineTagsMap[p.handle] || [p.category];
 
+  const isInWishlist = typeof Wishlist !== "undefined" && Wishlist.isInWishlist ? Wishlist.isInWishlist(p.handle) : false;
+  const heartActiveCls = isInWishlist ? "is-active" : "";
+  const heartFill = isInWishlist ? "currentColor" : "none";
+  const heartTitle = isInWishlist ? "Remove from Wishlist" : "Save to Wishlist";
+
   return `
     <article class="product-grid-card wine-card">
       
@@ -2966,12 +2814,13 @@ function createWineProductCardHTML(p, priceStr, image, ratingBadge, customTags) 
         <!-- Floating Wishlist Heart Button -->
         <button
           type="button"
-          onclick="handleAddToCart('${p.handle}')"
-          class="product-card-heart-btn wine-card-heart-btn"
-          title="Add to Cart"
-          aria-label="Add to cart"
+          data-heart-handle="${p.handle}"
+          onclick="handleWishlistToggle('${p.handle}')"
+          class="product-card-heart-btn wine-card-heart-btn ${heartActiveCls}"
+          title="${heartTitle}"
+          aria-label="${heartTitle}"
         >
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="${heartFill}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
           </svg>
         </button>
@@ -3285,6 +3134,9 @@ async function handleCategoryPage() {
     productsEmpty?.classList.add("hidden");
     productsGrid.classList.remove("hidden");
     productsGrid.innerHTML = filteredList.map((product) => createProductCardHTML(product)).join("");
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
   };
 
   const renderCategory = (catKey, updateUrl = false) => {
@@ -3313,12 +3165,16 @@ async function handleCategoryPage() {
 
     currentCategoryProducts = meta.products || [];
     resetAllFilters();
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
   };
 
   // Bind Category Page Filter Bar options
   const staffPickBtn = document.getElementById("filter-staff-pick");
   const newArrivalsBtn = document.getElementById("filter-new-arrivals");
   const onSaleBtn = document.getElementById("filter-on-sale");
+  const resetBtn = document.getElementById("filter-reset");
   const priceFilterBtn = document.getElementById("price-filter-btn");
   const priceDropdown = document.getElementById("price-dropdown");
   const priceChevron = document.getElementById("price-chevron");
@@ -3329,9 +3185,22 @@ async function handleCategoryPage() {
   let activePriceRange = "all";
 
   const clearQuickFilterPills = () => {
-    staffPickBtn?.classList.remove("active-pill");
-    newArrivalsBtn?.classList.remove("active-pill");
-    onSaleBtn?.classList.remove("active-pill");
+    staffPickBtn?.classList.remove("active-pill", "active");
+    newArrivalsBtn?.classList.remove("active-pill", "active");
+    onSaleBtn?.classList.remove("active-pill", "active");
+  };
+
+  const getProductPrice = (p) => {
+    const raw = p?.node?.priceRange?.minVariantPrice?.amount ??
+                p?.node?.variants?.edges?.[0]?.node?.price?.amount ??
+                p?.node?.price?.amount ??
+                p?.priceRange?.minVariantPrice?.amount ??
+                p?.price?.amount ??
+                p?.price ??
+                0;
+    if (typeof raw === "number") return raw;
+    const cleaned = String(raw).replace(/[^0-9.]/g, "");
+    return parseFloat(cleaned) || 0;
   };
 
   const applyCombinedFilters = () => {
@@ -3351,24 +3220,24 @@ async function handleCategoryPage() {
     // 2. Apply price filter
     if (activePriceRange && activePriceRange !== "all") {
       if (activePriceRange === "under-50") {
-        filtered = filtered.filter((p) => parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0) < 50);
+        filtered = filtered.filter((p) => getProductPrice(p) < 50);
       } else if (activePriceRange === "50-100") {
         filtered = filtered.filter((p) => {
-          const amt = parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0);
+          const amt = getProductPrice(p);
           return amt >= 50 && amt <= 100;
         });
       } else if (activePriceRange === "100-200") {
         filtered = filtered.filter((p) => {
-          const amt = parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0);
+          const amt = getProductPrice(p);
           return amt >= 100 && amt <= 200;
         });
       } else if (activePriceRange === "200-500") {
         filtered = filtered.filter((p) => {
-          const amt = parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0);
+          const amt = getProductPrice(p);
           return amt >= 200 && amt <= 500;
         });
       } else if (activePriceRange === "above-500") {
-        filtered = filtered.filter((p) => parseFloat(p.node?.priceRange?.minVariantPrice?.amount || 0) > 500);
+        filtered = filtered.filter((p) => getProductPrice(p) > 500);
       }
     }
 
@@ -3379,8 +3248,10 @@ async function handleCategoryPage() {
     activeQuickFilter = null;
     activePriceRange = "all";
     clearQuickFilterPills();
-    if (priceFilterBtn) priceFilterBtn.classList.remove("active-pill");
+    if (priceFilterBtn) priceFilterBtn.classList.remove("active-pill", "active");
     if (priceFilterLabel) priceFilterLabel.textContent = "PRICE RANGE";
+    if (priceChevron) priceChevron.textContent = "▼";
+    if (priceDropdown) priceDropdown.classList.add("hidden");
     priceItems.forEach((item) => {
       if (item.getAttribute("data-price-range") === "all") {
         item.classList.add("active");
@@ -3401,9 +3272,9 @@ async function handleCategoryPage() {
 
     if (priceFilterBtn) {
       if (range && range !== "all") {
-        priceFilterBtn.classList.add("active-pill");
+        priceFilterBtn.classList.add("active-pill", "active");
       } else {
-        priceFilterBtn.classList.remove("active-pill");
+        priceFilterBtn.classList.remove("active-pill", "active");
       }
     }
 
@@ -3436,11 +3307,11 @@ async function handleCategoryPage() {
       e.preventDefault();
       if (activeQuickFilter === "staff-pick") {
         activeQuickFilter = null;
-        staffPickBtn.classList.remove("active-pill");
+        staffPickBtn.classList.remove("active-pill", "active");
       } else {
         clearQuickFilterPills();
         activeQuickFilter = "staff-pick";
-        staffPickBtn.classList.add("active-pill");
+        staffPickBtn.classList.add("active-pill", "active");
       }
       applyCombinedFilters();
     });
@@ -3451,11 +3322,11 @@ async function handleCategoryPage() {
       e.preventDefault();
       if (activeQuickFilter === "new-arrivals") {
         activeQuickFilter = null;
-        newArrivalsBtn.classList.remove("active-pill");
+        newArrivalsBtn.classList.remove("active-pill", "active");
       } else {
         clearQuickFilterPills();
         activeQuickFilter = "new-arrivals";
-        newArrivalsBtn.classList.add("active-pill");
+        newArrivalsBtn.classList.add("active-pill", "active");
       }
       applyCombinedFilters();
     });
@@ -3466,13 +3337,20 @@ async function handleCategoryPage() {
       e.preventDefault();
       if (activeQuickFilter === "on-sale") {
         activeQuickFilter = null;
-        onSaleBtn.classList.remove("active-pill");
+        onSaleBtn.classList.remove("active-pill", "active");
       } else {
         clearQuickFilterPills();
         activeQuickFilter = "on-sale";
-        onSaleBtn.classList.add("active-pill");
+        onSaleBtn.classList.add("active-pill", "active");
       }
       applyCombinedFilters();
+    });
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      resetAllFilters();
     });
   }
 
@@ -3645,6 +3523,36 @@ async function handleProductPage() {
     // Set initial display
     updateSelectedVariantUI();
 
+    // Product page wishlist button integration
+    const prodWishlistBtn = document.getElementById("product-wishlist-btn");
+    const prodWishlistText = document.getElementById("product-wishlist-btn-text");
+    if (prodWishlistBtn) {
+      const updateProdWishlistUI = () => {
+        const inWishlist = Wishlist.isInWishlist(p.handle);
+        if (inWishlist) {
+          prodWishlistBtn.classList.add("bg-ember", "text-[#14100c]");
+          prodWishlistBtn.classList.remove("bg-ember/10", "text-ember");
+          const svg = prodWishlistBtn.querySelector("svg");
+          if (svg) svg.setAttribute("fill", "currentColor");
+          if (prodWishlistText) prodWishlistText.textContent = "In Wishlist";
+        } else {
+          prodWishlistBtn.classList.remove("bg-ember", "text-[#14100c]");
+          prodWishlistBtn.classList.add("bg-ember/10", "text-ember");
+          const svg = prodWishlistBtn.querySelector("svg");
+          if (svg) svg.setAttribute("fill", "none");
+          if (prodWishlistText) prodWishlistText.textContent = "Add to Wishlist";
+        }
+      };
+
+      updateProdWishlistUI();
+
+      prodWishlistBtn.addEventListener("click", () => {
+        const selectedVariant = p.variants.edges[activeVariantIndex]?.node;
+        Wishlist.toggleItem(p.handle, selectedVariant?.id);
+        updateProdWishlistUI();
+      });
+    }
+
     // Trigger reveal animations on details load
     initRevealAnimations();
   } catch (error) {
@@ -3680,7 +3588,11 @@ function initPriceFilterDropdown() {
   const priceChevron = document.getElementById("price-chevron");
 
   if (priceFilterBtn && priceDropdown) {
+    if (priceFilterBtn.dataset.boundDropdown === "true") return;
+    priceFilterBtn.dataset.boundDropdown = "true";
+
     priceFilterBtn.addEventListener("click", (e) => {
+      e.preventDefault();
       e.stopPropagation();
       const isHidden = priceDropdown.classList.contains("hidden");
       if (isHidden) {
@@ -3751,7 +3663,7 @@ function initFilterRedirections() {
 
 // Global initialization
 window.addEventListener("DOMContentLoaded", () => {
-  // 1. Initialize Cart
+  // 1. Initialize Wishlist & Cart
   Cart.init();
 
   // 2. Initialize Reveal Animations

@@ -115,14 +115,9 @@
           </li>
         </ul>
         <div class="flex items-center gap-4">
-          <!-- Search Trigger -->
-          <button type="button" aria-label="Search" class="p-2 text-foreground/80 hover:text-ember transition-colors">
-            <i data-lucide="search" class="h-4 w-4"></i>
-          </button>
-
-          <!-- Cart Trigger -->
-          <button type="button" id="cart-trigger-btn" aria-label="Open cart" class="relative p-2 text-foreground/80 hover:text-ember transition-colors">
-            <i data-lucide="shopping-cart" class="h-4 w-4"></i>
+          <!-- Wishlist Trigger -->
+          <button type="button" id="cart-trigger-btn" aria-label="Open Wishlist" title="Wishlist" class="relative p-2 text-foreground/80 hover:text-ember transition-colors">
+            <i data-lucide="heart" class="h-4 w-4"></i>
             <span id="cart-badge" class="hidden absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[image:var(--gradient-ember)] px-1 text-[0.6rem] font-medium text-primary-foreground">0</span>
           </button>
 
@@ -135,77 +130,108 @@
       </nav>
     </header>
 
-    <!-- Category Header Hero Banner -->
-    <section id="category-hero-banner" class="relative w-full overflow-hidden pt-28 pb-0 bg-[#0a0806] text-center">
-      <!-- Ambient Radial Background Glow -->
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#5e4324]/20 via-[#1f150b]/10 to-transparent pointer-events-none blur-3xl"></div>
+    <!-- Category Header Hero Banner with Barrel Ambient Background -->
+    <section id="category-hero-banner" class="category-hero-banner relative w-full pt-28 pb-10 bg-[#0a0806] text-center z-40">
+      <!-- Background Image with Whiskey Barrels on Left & Right -->
+      <div class="category-hero-bg-img"></div>
+      
+      <!-- Multi-layer Vignette and Dark Atmosphere Overlays -->
+      <div class="category-hero-vignette"></div>
+      <div class="category-hero-gradient-overlay"></div>
 
-      <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6">
 
-        <!-- Section Header -->
-        <div data-reveal="up" class="text-center flex flex-col items-center mb-0">
+        <!-- Section Header: Breadcrumb, Main Title, Subtitle -->
+        <div data-reveal="up" class="text-center flex flex-col items-center mb-8">
           <!-- Breadcrumb Navigation -->
           <nav aria-label="Breadcrumb"
-            class="flex items-center justify-center gap-2 text-[11px] sm:text-xs uppercase tracking-[0.25em] text-[#c4b5a0] font-semibold mb-4">
-            <a href="index.html" class="hover:text-[#d49959] transition-colors">HOME</a>
-            <span class="text-[#7c6342] font-serif">/</span>
-            <a href="index.html#expressions" class="hover:text-[#d49959] transition-colors">SPIRITS</a>
-            <span class="text-[#7c6342] font-serif">/</span>
+            class="flex items-center justify-center gap-2 text-[10px] sm:text-xs uppercase tracking-[0.28em] text-[#d4b996] font-semibold mb-3">
+            <a href="index.html" class="hover:text-ember transition-colors">HOME</a>
+            <span class="text-[#8c704f] font-serif">/</span>
+            <a href="index.html#expressions" class="hover:text-ember transition-colors">SPIRITS</a>
+            <span class="text-[#8c704f] font-serif">/</span>
             <span id="breadcrumb-current-category" class="font-bold text-[#ffffff]">WHISKEY</span>
           </nav>
 
-          <h1 id="category-hero-title" class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[0.2em] text-[#f7f3eb] drop-shadow-md">
-            EXPLORE OUR COLLECTION
+          <h1 id="category-hero-title" class="category-hero-main-title font-display text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-[0.2em] text-[#f7f3eb]">
+            WHISKEY COLLECTION
           </h1>
-          <p id="category-hero-subtitle" class="mt-1 text-xs sm:text-sm font-serif italic text-[#c4b5a0] tracking-wide max-w-md mx-auto">
-            Finest spirits from around the world
+          <p id="category-hero-subtitle" class="category-hero-sub mt-2 text-xs sm:text-sm font-serif italic text-[#c4b5a0] tracking-wide max-w-xl mx-auto">
+            Explore our hand-selected single malts and small-batch reserve bourbons aged in charred oak.
           </p>
+        </div>
 
-          <!-- Decorative Golden Flourish Divider -->
-          <div style="margin-top: 5px; margin-bottom: 0px; width: 100%; max-width: 300px; height: 1px; background: linear-gradient(to right, transparent, rgba(140, 109, 70, 0.7), transparent); opacity: 0.8;" class="mx-auto"></div>
+        <!-- Cask Stave Wood Beam Filter Bar -->
+        <div class="cask-filter-beam-wrapper">
+          <div class="cask-filter-beam">
+            <!-- Left Riveted Metal Bracket -->
+            <div class="cask-metal-bracket bracket-left">
+              <span class="cask-rivet"></span>
+              <span class="cask-rivet"></span>
+              <span class="cask-rivet"></span>
+            </div>
+
+            <!-- Filter Buttons Container -->
+            <div class="cask-filter-items">
+              <!-- Staff Pick Button -->
+              <button type="button" id="filter-staff-pick" class="cask-filter-btn" title="Staff Pick">
+                <i data-lucide="star" class="cask-btn-icon"></i>
+                <span>STAFF PICK</span>
+              </button>
+
+              <!-- New Arrivals Button -->
+              <button type="button" id="filter-new-arrivals" class="cask-filter-btn" title="New Arrivals">
+                <i data-lucide="sparkles" class="cask-btn-icon"></i>
+                <span>NEW ARRIVALS</span>
+              </button>
+
+              <!-- Price Range Dropdown -->
+              <div class="cask-dropdown-wrapper" id="price-filter-container">
+                <button type="button" id="price-filter-btn" class="cask-filter-btn" title="Filter by Price">
+                  <i data-lucide="coins" class="cask-btn-icon"></i>
+                  <span id="price-filter-label">PRICE RANGE</span>
+                  <span id="price-chevron" class="cask-chevron-icon">▼</span>
+                </button>
+
+                <!-- Dropdown Menu -->
+                <div id="price-dropdown" class="home-price-dropdown hidden">
+                  <a href="#" class="price-dropdown-item" data-price-range="all">ALL PRICES</a>
+                  <a href="#" class="price-dropdown-item" data-price-range="under-50">UNDER $50</a>
+                  <a href="#" class="price-dropdown-item" data-price-range="50-100">$50 - $100</a>
+                  <a href="#" class="price-dropdown-item" data-price-range="100-200">$100 - $200</a>
+                  <a href="#" class="price-dropdown-item" data-price-range="200-500">$200 - $500</a>
+                  <a href="#" class="price-dropdown-item" data-price-range="above-500">ABOVE $500</a>
+                </div>
+              </div>
+
+              <!-- On Sale Button -->
+              <button type="button" id="filter-on-sale" class="cask-filter-btn" title="On Sale">
+                <i data-lucide="tag" class="cask-btn-icon"></i>
+                <span>ON SALE</span>
+              </button>
+
+              <!-- Reset Button -->
+              <button type="button" id="filter-reset" class="cask-filter-btn" title="Reset Filters">
+                <i data-lucide="rotate-ccw" class="cask-btn-icon"></i>
+                <span>RESET</span>
+              </button>
+            </div>
+
+            <!-- Right Riveted Metal Bracket -->
+            <div class="cask-metal-bracket bracket-right">
+              <span class="cask-rivet"></span>
+              <span class="cask-rivet"></span>
+              <span class="cask-rivet"></span>
+            </div>
+          </div>
         </div>
 
       </div>
     </section>
 
     <!-- Dedicated Category Products Section -->
-    <section id="expressions" class="bg-[#0a0806] px-6 pt-0 pb-16">
+    <section id="expressions" class="bg-[#0a0806] px-6 pt-4 pb-16">
       <div class="mx-auto max-w-6xl">
-
-        <!-- Category Filter Bar Container -->
-        <div class="home-filter-bar mb-10">
-          <!-- Staff Pick Pill -->
-          <button type="button" id="filter-staff-pick" class="home-filter-pill">
-            <span class="home-filter-pill-dot"></span> Staff Pick
-          </button>
-
-          <!-- New Arrivals Pill -->
-          <button type="button" id="filter-new-arrivals" class="home-filter-pill">
-            <span class="home-filter-pill-dot"></span> New Arrivals
-          </button>
-
-          <!-- Price Range Dropdown Pill -->
-          <div class="home-price-dropdown-wrapper" id="price-filter-container">
-            <button type="button" id="price-filter-btn" class="price-filter-pill-btn">
-              <span id="price-filter-label">PRICE RANGE</span> <span id="price-chevron" class="price-chevron-icon">▼</span>
-            </button>
-
-            <!-- Dropdown Menu -->
-            <div id="price-dropdown" class="home-price-dropdown hidden">
-              <a href="#" class="price-dropdown-item" data-price-range="all">ALL PRICES</a>
-              <a href="#" class="price-dropdown-item" data-price-range="under-50">UNDER $50</a>
-              <a href="#" class="price-dropdown-item" data-price-range="50-100">$50 - $100</a>
-              <a href="#" class="price-dropdown-item" data-price-range="100-200">$100 - $200</a>
-              <a href="#" class="price-dropdown-item" data-price-range="200-500">$200 - $500</a>
-              <a href="#" class="price-dropdown-item" data-price-range="above-500">ABOVE $500</a>
-            </div>
-          </div>
-
-          <!-- On Sale Pill -->
-          <button type="button" id="filter-on-sale" class="home-filter-pill">
-            <span class="home-filter-pill-dot"></span> On Sale
-          </button>
-        </div>
 
         <!-- Products Loading Indicator -->
         <div id="products-loading" class="my-16 flex justify-center">
@@ -270,48 +296,53 @@
     </footer>
   </main>
 
-  <!-- Cart Drawer Component Markup -->
+
+  <!-- Wishlist Drawer Component Markup -->
   <div id="cart-drawer-overlay"
     class="fixed inset-0 z-[100] bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm">
   </div>
   <aside id="cart-drawer"
     class="fixed right-0 top-0 bottom-0 z-[101] flex h-full w-full translate-x-full flex-col bg-card sm:max-w-lg transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border-l border-border">
     <div class="flex items-center justify-between px-6 py-6 border-b border-border">
-      <div>
-        <h2 class="font-display text-2xl">Your Cart</h2>
-        <p id="cart-description" class="text-xs text-muted-foreground">Your cart is empty</p>
+      <div class="flex items-center gap-3">
+        <i data-lucide="heart" class="h-5 w-5 text-ember"></i>
+        <div>
+          <h2 class="font-display text-2xl">Your Wishlist</h2>
+          <p id="cart-description" class="text-xs text-muted-foreground">Your wishlist is empty</p>
+        </div>
       </div>
-      <button type="button" id="cart-close-btn" aria-label="Close cart"
+      <button type="button" id="cart-close-btn" aria-label="Close Wishlist"
         class="text-muted-foreground hover:text-foreground transition-colors p-1">
         <i data-lucide="x" class="h-6 w-6"></i>
       </button>
     </div>
 
     <div class="flex min-h-0 flex-1 flex-col px-6 pt-6 overflow-y-auto">
-      <!-- Empty Cart State -->
+      <!-- Empty Wishlist State -->
       <div id="cart-empty-state" class="flex flex-1 items-center justify-center">
         <div class="text-center">
-          <i data-lucide="shopping-cart" class="mx-auto mb-4 h-12 w-12 text-muted-foreground"></i>
-          <p class="text-muted-foreground">Your cart is empty</p>
+          <i data-lucide="heart" class="mx-auto mb-4 h-12 w-12 text-muted-foreground stroke-1"></i>
+          <p class="text-muted-foreground font-medium">Your wishlist is empty</p>
+          <p class="text-xs text-muted-foreground/70 mt-1">Explore our spirits and save your favorite bottles</p>
         </div>
       </div>
 
-      <!-- Cart Items State -->
+      <!-- Wishlist Items State -->
       <div id="cart-items-container" class="hidden flex-1 overflow-y-auto pr-2 space-y-4">
         <!-- Rendered dynamically -->
       </div>
 
-      <!-- Cart Footer -->
+      <!-- Wishlist Footer -->
       <div id="cart-footer" class="hidden flex-shrink-0 space-y-4 border-t border-border bg-card pt-4 pb-6">
         <div class="flex items-center justify-between">
-          <span class="text-sm uppercase tracking-[0.2em] text-muted-foreground">Total</span>
+          <span class="text-sm uppercase tracking-[0.2em] text-muted-foreground">Total Value</span>
           <span id="cart-total-price" class="font-display text-2xl text-ember">$0.00</span>
         </div>
-        <button type="button" id="cart-checkout-btn"
-          class="flex w-full items-center justify-center gap-2 rounded-sm bg-[image:var(--gradient-ember)] px-6 py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-all duration-500 hover:shadow-ember disabled:opacity-60">
-          <i data-lucide="external-link" class="h-4 w-4"></i>
-          Checkout with Shopify
-        </button>
+        <a href="index.html#expressions" onclick="Cart.closeDrawer()"
+          class="flex w-full items-center justify-center gap-2 rounded-sm bg-[image:var(--gradient-ember)] px-6 py-4 text-xs uppercase tracking-[0.25em] font-semibold text-primary-foreground transition-all duration-500 hover:shadow-ember text-center">
+          <i data-lucide="sparkles" class="h-4 w-4"></i>
+          Explore More Spirits
+        </a>
       </div>
     </div>
   </aside>

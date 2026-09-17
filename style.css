@@ -2876,6 +2876,20 @@ section#category-hero-banner + section#expressions {
   color: #ffffff !important;
 }
 
+.product-card-heart-btn.is-active,
+.wine-card .product-card-heart-btn.is-active,
+.product-card-heart-btn.wine-card-heart-btn.is-active {
+  background-color: #d49959 !important;
+  color: #110e0b !important;
+  border-color: #d49959 !important;
+}
+
+.product-card-heart-btn.is-active svg,
+.wine-card .product-card-heart-btn.is-active svg,
+.product-card-heart-btn.wine-card-heart-btn.is-active svg {
+  fill: currentColor !important;
+}
+
 .wine-card .product-card-title,
 .wine-card-title {
   color: #110e0b !important;
@@ -2949,6 +2963,37 @@ img.wine-card-img,
   display: block !important;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+/* Featured Card (Grand Cru Cellar Reserves) - Full width image hero card */
+.home-card-featured {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-height: 26rem !important;
+  border-radius: 1rem !important;
+  border: 1px solid #382f27 !important;
+  background-color: #12100e !important;
+  overflow: hidden !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.5s ease !important;
+  margin-bottom: 1.5rem !important;
+}
+
+@media (min-width: 768px) {
+  .home-card-featured {
+    min-height: 28rem !important;
+  }
+}
+
+/* 2-Column Grid Row for 2nd and 3rd Cards */
+.home-card-half-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 1.5rem !important;
+  width: 100% !important;
 }
 
 @media (min-width: 768px) {
@@ -4244,172 +4289,254 @@ div:has(> .wine-card-pill) {
 }
 
 /* ==========================================================================
-   PERFECT LUXURY CATEGORY FILTER BAR & PILLS (No harsh highlights)
+   AUTHENTIC RUSTIC CASK STAVE WOOD BEAM FILTER BAR & HERO BANNER
    ========================================================================== */
 
-/* 1. Category Filter Outer Container (Pills Bar Capsule) */
-.home-filter-bar,
-.category-filter-bar {
+/* 1. Category Hero Banner Background with Whiskey Barrels */
+.category-hero-banner {
   position: relative !important;
-  display: inline-flex !important;
-  flex-wrap: wrap !important;
-  align-items: center !important;
+  width: 100% !important;
+  overflow: visible !important;
+  z-index: 40 !important;
+  padding-top: 7rem !important;
+  padding-bottom: 2.75rem !important;
+  background-color: #0a0806 !important;
+  text-align: center !important;
+}
+
+.category-hero-bg-img {
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: url('assets/category-barrels-bg.jpg') !important;
+  background-size: cover !important;
+  background-position: center 25% !important;
+  background-repeat: no-repeat !important;
+  opacity: 0.95 !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.category-hero-vignette {
+  position: absolute !important;
+  inset: 0 !important;
+  background: radial-gradient(ellipse at 50% 45%, rgba(10, 8, 6, 0.25) 0%, rgba(10, 8, 6, 0.65) 55%, rgba(10, 8, 6, 0.98) 95%) !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+.category-hero-gradient-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(180deg, rgba(10, 8, 6, 0.85) 0%, rgba(10, 8, 6, 0.2) 30%, rgba(10, 8, 6, 0.5) 70%, #0a0806 100%) !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+.category-hero-main-title {
+  font-family: var(--font-display, 'Domine', serif) !important;
+  letter-spacing: 0.2em !important;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.9), 0 1px 2px rgba(0, 0, 0, 0.9) !important;
+}
+
+.category-hero-sub {
+  font-family: var(--font-display, 'Domine', serif) !important;
+  font-style: italic !important;
+  color: #d6c6b2 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+}
+
+/* 2. Cask Stave Wood Beam Filter Bar Container */
+.cask-filter-beam-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  display: flex !important;
   justify-content: center !important;
-  gap: 10px !important;
-  row-gap: 10px !important;
-  column-gap: 10px !important;
-  width: fit-content !important;
-  max-width: 100% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  margin-top: 1rem !important;
-  margin-bottom: 2.25rem !important;
-  padding: 6px 8px !important;
-  border-radius: 9999px !important;
-  background: rgba(18, 14, 11, 0.82) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border: 1px solid rgba(212, 168, 106, 0.22) !important;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.65), inset 0 1px 1px rgba(255, 255, 255, 0.05) !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  align-items: center !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
+  padding: 0 1rem !important;
   z-index: 50 !important;
 }
 
-.home-filter-bar:hover,
-.category-filter-bar:hover {
-  border-color: rgba(212, 168, 106, 0.4) !important;
-  box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.75), 0 0 20px rgba(212, 168, 106, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.08) !important;
+.cask-filter-beam {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #23160d !important;
+  background-image: 
+    linear-gradient(180deg, rgba(255, 230, 180, 0.12) 0%, rgba(0, 0, 0, 0.15) 30%, rgba(0, 0, 0, 0.65) 100%),
+    url('assets/wood-filter-beam.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 12px !important;
+  padding: 10px 48px !important;
+  border-top: 1px solid rgba(255, 215, 140, 0.3) !important;
+  border-bottom: 1.5px solid rgba(12, 8, 5, 0.95) !important;
+  border-left: 1px solid rgba(70, 45, 25, 0.85) !important;
+  border-right: 1px solid rgba(70, 45, 25, 0.85) !important;
+  box-shadow: 
+    0 18px 45px -8px rgba(0, 0, 0, 0.95),
+    0 6px 16px rgba(0, 0, 0, 0.8),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.15),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.6) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-/* 2. Category Section Filter Pills (.home-filter-pill) */
-.home-filter-pill,
-.category-pill {
+.cask-filter-beam:hover {
+  box-shadow: 
+    0 22px 50px -8px rgba(0, 0, 0, 0.98),
+    0 0 25px rgba(212, 168, 106, 0.12),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.2),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Metal Clamping Brackets with Rivets on Ends */
+.cask-metal-bracket {
+  position: absolute !important;
+  top: -4px !important;
+  bottom: -4px !important;
+  width: 22px !important;
+  background: linear-gradient(90deg, #18181a 0%, #3e3f45 35%, #4a4b52 50%, #2f3035 75%, #18181a 100%) !important;
+  border: 1px solid #141416 !important;
+  border-radius: 3px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: space-evenly !important;
+  padding: 4px 0 !important;
+  box-shadow: 
+    2px 0 8px rgba(0, 0, 0, 0.85),
+    -2px 0 8px rgba(0, 0, 0, 0.85),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.8) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+.cask-metal-bracket.bracket-left {
+  left: 18px !important;
+}
+
+.cask-metal-bracket.bracket-right {
+  right: 18px !important;
+}
+
+/* Metallic Bolt Rivets */
+.cask-rivet {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle at 35% 35%, #e6e6ec 0%, #8a8c96 45%, #35363b 85%, #18181a 100%) !important;
+  border: 0.5px solid rgba(0, 0, 0, 0.9) !important;
+  box-shadow: 
+    0 1.5px 3px rgba(0, 0, 0, 0.9),
+    inset 0 1px 1px rgba(255, 255, 255, 0.7),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.9) !important;
+  display: block !important;
+}
+
+/* Filter Items Container inside Beam */
+.cask-filter-items {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  row-gap: 10px !important;
+  column-gap: 12px !important;
+}
+
+/* Filter Button Pills */
+.cask-filter-btn {
   position: relative !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   white-space: nowrap !important;
   gap: 8px !important;
+  background: rgba(12, 10, 8, 0.88) !important;
+  border: 1px solid rgba(212, 168, 106, 0.22) !important;
   border-radius: 9999px !important;
-  background: rgba(28, 22, 17, 0.65) !important;
-  border: 1px solid rgba(212, 168, 106, 0.18) !important;
-  padding: 8px 20px !important;
+  padding: 8px 18px !important;
   font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
   font-size: 0.72rem !important;
   font-weight: 600 !important;
+  letter-spacing: 0.15em !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.16em !important;
-  color: #c4b5a0 !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  color: #d1c5b4 !important;
   cursor: pointer !important;
   outline: none !important;
   user-select: none !important;
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.85),
+    0 1px 0 rgba(255, 255, 255, 0.06) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.home-filter-pill:hover,
-.category-pill:hover {
-  background: rgba(46, 36, 28, 0.9) !important;
-  color: #f7f3eb !important;
-  border-color: rgba(212, 168, 106, 0.48) !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), 0 0 14px rgba(212, 168, 106, 0.15) !important;
-}
-
-.home-filter-pill.active-pill,
-.home-filter-pill.active,
-.category-pill.active {
-  background: linear-gradient(135deg, #d49959 0%, #b38048 100%) !important;
-  color: #0c0907 !important;
-  font-weight: 700 !important;
-  border-color: #f0be84 !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 16px rgba(212, 153, 89, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.4) !important;
-}
-
-.home-filter-pill-dot {
-  width: 6px !important;
-  height: 6px !important;
-  border-radius: 9999px !important;
-  background-color: #d4a86a !important;
-  display: inline-block !important;
+.cask-filter-btn .cask-btn-icon {
+  width: 14px !important;
+  height: 14px !important;
+  color: inherit !important;
+  transition: transform 0.2s ease !important;
   flex-shrink: 0 !important;
-  transition: all 0.25s ease !important;
-  box-shadow: 0 0 4px rgba(212, 168, 106, 0.5) !important;
 }
 
-.home-filter-pill:hover .home-filter-pill-dot {
-  background-color: #f5c88c !important;
-  box-shadow: 0 0 8px rgba(245, 200, 140, 0.8) !important;
+.cask-filter-btn:hover {
+  background: rgba(24, 18, 14, 0.96) !important;
+  color: #ffffff !important;
+  border-color: rgba(212, 168, 106, 0.55) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 
+    0 4px 14px rgba(0, 0, 0, 0.5),
+    0 0 14px rgba(212, 168, 106, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.08) !important;
+}
+
+.cask-filter-btn:hover .cask-btn-icon {
   transform: scale(1.15) !important;
 }
 
-.home-filter-pill.active-pill .home-filter-pill-dot,
-.home-filter-pill.active .home-filter-pill-dot {
-  background-color: #0c0907 !important;
-  box-shadow: none !important;
-}
-
-/* 3. Category Price Dropdown Pill Button */
-.home-price-dropdown-wrapper {
-  position: relative !important;
-  display: inline-block !important;
-}
-
-.price-filter-pill-btn,
-#price-filter-btn {
-  position: relative !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  white-space: nowrap !important;
-  gap: 8px !important;
-  border-radius: 9999px !important;
-  background: rgba(28, 22, 17, 0.65) !important;
-  border: 1px solid rgba(212, 168, 106, 0.18) !important;
-  padding: 8px 20px !important;
-  font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
-  font-size: 0.72rem !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.16em !important;
-  text-transform: uppercase !important;
-  color: #c4b5a0 !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  cursor: pointer !important;
-  outline: none !important;
-  user-select: none !important;
-}
-
-.price-filter-pill-btn:hover,
-#price-filter-btn:hover {
-  background: rgba(46, 36, 28, 0.9) !important;
-  color: #f7f3eb !important;
-  border-color: rgba(212, 168, 106, 0.48) !important;
+/* Active State - Matches Amber Glow in Reference Image */
+.cask-filter-btn.active-pill,
+.cask-filter-btn.active {
+  background: rgba(16, 12, 9, 0.96) !important;
+  color: #f7e6c4 !important;
+  border-color: #d4a86a !important;
+  box-shadow: 
+    0 0 18px rgba(212, 168, 106, 0.45),
+    inset 0 0 12px rgba(212, 168, 106, 0.22),
+    0 2px 6px rgba(0, 0, 0, 0.6) !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4), 0 0 14px rgba(212, 168, 106, 0.15) !important;
 }
 
-.price-filter-pill-btn.active-pill,
-.price-filter-pill-btn.active,
-#price-filter-btn.active-pill,
-#price-filter-btn.active {
-  background: linear-gradient(135deg, #d49959 0%, #b38048 100%) !important;
-  color: #0c0907 !important;
-  font-weight: 700 !important;
-  border-color: #f0be84 !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 16px rgba(212, 153, 89, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.4) !important;
+.cask-filter-btn.active-pill .cask-btn-icon,
+.cask-filter-btn.active .cask-btn-icon {
+  color: #d4a86a !important;
 }
 
-.price-chevron-icon,
-#price-chevron {
+#filter-staff-pick.active-pill .cask-btn-icon,
+#filter-staff-pick.active .cask-btn-icon,
+#filter-staff-pick.active-pill svg,
+#filter-staff-pick.active svg {
+  fill: #d4a86a !important;
+  color: #d4a86a !important;
+}
+
+.cask-chevron-icon {
   display: inline-block !important;
   font-size: 0.55rem !important;
   margin-left: 2px !important;
   color: currentColor !important;
-  opacity: 0.85 !important;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  opacity: 0.8 !important;
+  transition: transform 0.2s ease !important;
+}
+
+.cask-dropdown-wrapper {
+  position: relative !important;
+  display: inline-block !important;
+  z-index: 100 !important;
 }
 
 /* 4. Luxury Dark Price Dropdown Menu */
@@ -4419,16 +4546,17 @@ div:has(> .wine-card-pill) {
   top: calc(100% + 10px) !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
-  width: 210px !important;
-  background: rgba(18, 14, 11, 0.96) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
+  width: 220px !important;
+  background: rgba(18, 14, 11, 0.98) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
   border-radius: 12px !important;
-  border: 1px solid rgba(212, 168, 106, 0.25) !important;
+  border: 1px solid rgba(212, 168, 106, 0.35) !important;
   overflow: hidden !important;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 20px rgba(212, 168, 106, 0.08) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.95), 0 0 25px rgba(212, 168, 106, 0.15) !important;
   padding: 6px !important;
-  z-index: 100 !important;
+  z-index: 99999 !important;
+  pointer-events: auto !important;
 }
 
 .home-price-dropdown.hidden,
@@ -4455,40 +4583,61 @@ div:has(> .wine-card-pill) {
   background: transparent !important;
   transition: all 0.2s ease !important;
   cursor: pointer !important;
+  position: relative !important;
+  z-index: 100000 !important;
+  user-select: none !important;
 }
 
 .price-dropdown-item:hover {
-  background: rgba(212, 168, 106, 0.14) !important;
+  background: rgba(212, 168, 106, 0.18) !important;
   color: #ffffff !important;
   transform: translateX(2px) !important;
 }
 
 .price-dropdown-item.active {
-  background: rgba(212, 168, 106, 0.24) !important;
+  background: rgba(212, 168, 106, 0.28) !important;
   color: #d4a86a !important;
   font-weight: 700 !important;
 }
 
 /* 5. Mobile Responsive Adjustments */
-@media (max-width: 767px) {
-  .home-filter-bar,
-  .category-filter-bar {
-    gap: 8px !important;
-    row-gap: 10px !important;
-    column-gap: 8px !important;
-    padding: 10px 14px !important;
-    border-radius: 1.25rem !important;
-    width: auto !important;
-    max-width: 100% !important;
+@media (max-width: 900px) {
+  .cask-filter-beam {
+    padding: 10px 36px !important;
   }
+  .cask-metal-bracket.bracket-left {
+    left: 10px !important;
+  }
+  .cask-metal-bracket.bracket-right {
+    right: 10px !important;
+  }
+}
 
-  .home-filter-pill,
-  .category-pill,
-  .price-filter-pill-btn,
-  #price-filter-btn {
-    padding: 7px 14px !important;
-    font-size: 0.68rem !important;
-    letter-spacing: 0.12em !important;
+@media (max-width: 767px) {
+  .category-hero-banner {
+    padding-top: 5.5rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .cask-filter-beam {
+    padding: 12px 16px !important;
+    border-radius: 14px !important;
+  }
+  .cask-metal-bracket {
+    display: none !important; /* Hide edge brackets on small screens for clean spacing */
+  }
+  .cask-filter-items {
+    gap: 8px !important;
+    row-gap: 8px !important;
+  }
+  .cask-filter-btn {
+    padding: 7px 12px !important;
+    font-size: 0.66rem !important;
+    letter-spacing: 0.1em !important;
+    gap: 6px !important;
+  }
+  .cask-filter-btn .cask-btn-icon {
+    width: 12px !important;
+    height: 12px !important;
   }
 }
 

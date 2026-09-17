@@ -103,14 +103,9 @@
           </li>
         </ul>
         <div class="flex items-center gap-4">
-          <!-- Search Trigger -->
-          <button type="button" aria-label="Search" class="p-2 text-foreground/80 hover:text-ember transition-colors">
-            <i data-lucide="search" class="h-4 w-4"></i>
-          </button>
-
-          <!-- Cart Trigger -->
-          <button type="button" id="cart-trigger-btn" aria-label="Open cart" class="relative p-2 text-foreground/80 hover:text-ember transition-colors">
-            <i data-lucide="shopping-cart" class="h-4 w-4"></i>
+          <!-- Wishlist Trigger -->
+          <button type="button" id="cart-trigger-btn" aria-label="Open Wishlist" title="Wishlist" class="relative p-2 text-foreground/80 hover:text-ember transition-colors">
+            <i data-lucide="heart" class="h-4 w-4"></i>
             <span id="cart-badge" class="hidden absolute -right-1 -top-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-[image:var(--gradient-ember)] px-1 text-[0.6rem] font-medium text-primary-foreground">0</span>
           </button>
 
@@ -282,43 +277,48 @@
     </footer>
   </main>
 
-  <!-- Cart Drawer Component Markup -->
+
+  <!-- Wishlist Drawer Component Markup -->
   <div id="cart-drawer-overlay" class="fixed inset-0 z-[100] bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm"></div>
   <aside id="cart-drawer" class="fixed right-0 top-0 bottom-0 z-[101] flex h-full w-full translate-x-full flex-col bg-card sm:max-w-lg transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] border-l border-border">
     <div class="flex items-center justify-between px-6 py-6 border-b border-border">
-      <div>
-        <h2 class="font-display text-2xl">Your Cart</h2>
-        <p id="cart-description" class="text-xs text-muted-foreground">Your cart is empty</p>
+      <div class="flex items-center gap-3">
+        <i data-lucide="heart" class="h-5 w-5 text-ember"></i>
+        <div>
+          <h2 class="font-display text-2xl">Your Wishlist</h2>
+          <p id="cart-description" class="text-xs text-muted-foreground">Your wishlist is empty</p>
+        </div>
       </div>
-      <button type="button" id="cart-close-btn" aria-label="Close cart" class="text-muted-foreground hover:text-foreground transition-colors p-1">
+      <button type="button" id="cart-close-btn" aria-label="Close Wishlist" class="text-muted-foreground hover:text-foreground transition-colors p-1">
         <i data-lucide="x" class="h-6 w-6"></i>
       </button>
     </div>
 
     <div class="flex min-h-0 flex-1 flex-col px-6 pt-6 overflow-y-auto">
-      <!-- Empty Cart State -->
+      <!-- Empty Wishlist State -->
       <div id="cart-empty-state" class="flex flex-1 items-center justify-center">
         <div class="text-center">
-          <i data-lucide="shopping-cart" class="mx-auto mb-4 h-12 w-12 text-muted-foreground"></i>
-          <p class="text-muted-foreground">Your cart is empty</p>
+          <i data-lucide="heart" class="mx-auto mb-4 h-12 w-12 text-muted-foreground stroke-1"></i>
+          <p class="text-muted-foreground font-medium">Your wishlist is empty</p>
+          <p class="text-xs text-muted-foreground/70 mt-1">Explore our spirits and save your favorite bottles</p>
         </div>
       </div>
 
-      <!-- Cart Items State -->
+      <!-- Wishlist Items State -->
       <div id="cart-items-container" class="hidden flex-1 overflow-y-auto pr-2 space-y-4">
         <!-- Rendered dynamically -->
       </div>
 
-      <!-- Cart Footer -->
+      <!-- Wishlist Footer -->
       <div id="cart-footer" class="hidden flex-shrink-0 space-y-4 border-t border-border bg-card pt-4 pb-6">
         <div class="flex items-center justify-between">
-          <span class="text-sm uppercase tracking-[0.2em] text-muted-foreground">Total</span>
+          <span class="text-sm uppercase tracking-[0.2em] text-muted-foreground">Total Value</span>
           <span id="cart-total-price" class="font-display text-2xl text-ember">$0.00</span>
         </div>
-        <button type="button" id="cart-checkout-btn" class="flex w-full items-center justify-center gap-2 rounded-sm bg-[image:var(--gradient-ember)] px-6 py-4 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-all duration-500 hover:shadow-ember disabled:opacity-60">
-          <i data-lucide="external-link" class="h-4 w-4"></i>
-          Checkout with Shopify
-        </button>
+        <a href="index.html#expressions" onclick="Cart.closeDrawer()" class="flex w-full items-center justify-center gap-2 rounded-sm bg-[image:var(--gradient-ember)] px-6 py-4 text-xs uppercase tracking-[0.25em] font-semibold text-primary-foreground transition-all duration-500 hover:shadow-ember text-center">
+          <i data-lucide="sparkles" class="h-4 w-4"></i>
+          Explore More Spirits
+        </a>
       </div>
     </div>
   </aside>
