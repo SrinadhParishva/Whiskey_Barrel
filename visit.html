@@ -15,8 +15,8 @@
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Lucide Icons CDN (Deferred for non-blocking rendering) -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 <body class="overflow-x-hidden bg-background text-foreground font-body">
 
@@ -122,23 +122,35 @@
     <section id="visit" class="visit-section pt-16">
       <!-- Top Flagship Storefront Showcase Banner -->
       <div class="visit-showcase-banner">
-        <img src="assets/visit-house-storefront.jpg" alt="Whiskey Barrel Flagship Storefront" class="visit-banner-bg" loading="lazy">
-        <div class="visit-banner-overlay"></div>
+        <!-- Visit Dynamic Ambient Torchlight Overlay -->
+        <div class="visit-torch-glow"></div>
+
+        <!-- Visit Background Image & Cinematic Lighting Overlay -->
+        <div class="visit-banner-bg-wrapper">
+          <img src="assets/visit-house-storefront.jpg" alt="Whiskey Barrel Flagship Storefront" class="visit-banner-bg" loading="lazy" decoding="async">
+          <div class="visit-banner-overlay"></div>
+        </div>
+
         <div class="visit-banner-container">
-          <div data-reveal="fade" class="visit-banner-content">
-            <span class="visit-eyebrow">VISIT THE HOUSE</span>
-            <h1 class="visit-main-title">COME TO<br>THE HOUSE</h1>
+          <div class="visit-banner-content">
+            <div class="visit-eyebrow-wrap">
+              <span class="visit-eyebrow">VISIT THE HOUSE</span>
+            </div>
+            <h1 class="visit-main-title">
+              <span class="visit-title-line-wrap"><span class="visit-title-ivory visit-line-1 block">COME TO</span></span>
+              <span class="visit-title-line-wrap"><span class="visit-title-gold visit-line-2 block">THE HOUSE.</span></span>
+            </h1>
             <p class="visit-banner-sub">
               More than a store. A place to discover your next favorite bottle.
             </p>
             <div class="visit-actions-row">
               <a href="https://maps.google.com/?q=12205+Shawnee+Mission+PKWY+Shawnee+KS+66216" target="_blank" rel="noopener noreferrer" class="visit-btn-primary">
                 <span>GET DIRECTIONS</span>
-                <span class="hero-btn-arrow">→</span>
+                <span class="hero-btn-arrow">&rarr;</span>
               </a>
               <a href="tel:+19135550123" class="visit-btn-secondary">
                 <span>CALL THE HOUSE</span>
-                <span class="hero-btn-arrow">→</span>
+                <span class="hero-btn-arrow">&rarr;</span>
               </a>
             </div>
           </div>
@@ -147,9 +159,9 @@
 
       <!-- Middle 3-Column Information Strip -->
       <div class="visit-info-strip">
-        <div data-reveal="up" class="visit-info-grid">
+        <div class="visit-info-grid">
           <!-- Col 1: FIND US -->
-          <div class="visit-info-col">
+          <div data-reveal="up" data-delay="100" class="visit-info-col">
             <div class="visit-info-icon-wrap">
               <svg class="visit-info-icon" viewBox="0 0 24 24" fill="#d4a86a" stroke="none">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
@@ -163,7 +175,7 @@
           </div>
 
           <!-- Col 2: STORE HOURS -->
-          <div class="visit-info-col">
+          <div data-reveal="up" data-delay="220" class="visit-info-col">
             <div class="visit-info-icon-wrap">
               <svg class="visit-info-icon" viewBox="0 0 24 24" fill="none" stroke="#d4a86a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -192,7 +204,7 @@
           </div>
 
           <!-- Col 3: CONTACT -->
-          <div class="visit-info-col">
+          <div data-reveal="up" data-delay="340" class="visit-info-col">
             <div class="visit-info-icon-wrap">
               <svg class="visit-info-icon" viewBox="0 0 24 24" fill="#d4a86a" stroke="none">
                 <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.053 15.053 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 3.92c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.54c0-.55-.45-1-1-1z"/>
@@ -213,10 +225,10 @@
 
       <!-- Bottom Map & Directions Card -->
       <div class="visit-map-section">
-        <div data-reveal="scale" class="visit-map-card">
+        <div data-reveal="scale" data-delay="150" class="visit-map-card">
           <!-- Left Map Graphic -->
           <div class="visit-map-visual">
-            <img src="assets/visit-dark-map.jpg" alt="Whiskey Barrel Map Location" class="visit-map-bg-img" loading="lazy">
+            <img src="assets/visit-dark-map.jpg" alt="Whiskey Barrel Map Location" class="visit-map-bg-img" loading="lazy" decoding="async">
             <div class="visit-map-overlay-pin">
               <svg class="visit-map-pin-svg" viewBox="0 0 24 24" fill="#d4a86a">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>

@@ -2249,30 +2249,17 @@ const TEQUILA_PRODUCTS = [
 
 
 async function fetchProducts(first = 24) {
-  let shopifyProducts = [];
-  try {
-    const data = await storefrontApiRequest(STOREFRONT_QUERY, { first });
-    if (data?.data?.products?.edges) {
-      shopifyProducts = data.data.products.edges;
-    }
-  } catch (error) {
-    console.warn("Shopify fetch failed, using local products catalog:", error);
-  }
-  return [...WHISKEY_PRODUCTS, ...RUM_PRODUCTS, ...BEER_PRODUCTS, ...WINE_PRODUCTS, ...VODKA_PRODUCTS, ...GIN_PRODUCTS, ...TEQUILA_PRODUCTS, ...CIGAR_PRODUCTS, ...shopifyProducts];
+  // Instant synchronous/resolved catalog for blazing fast page load
+  return [...WHISKEY_PRODUCTS, ...RUM_PRODUCTS, ...BEER_PRODUCTS, ...WINE_PRODUCTS, ...VODKA_PRODUCTS, ...GIN_PRODUCTS, ...TEQUILA_PRODUCTS, ...CIGAR_PRODUCTS];
 }
 
 async function fetchProductByHandle(handle) {
-  const localMatch = [...WHISKEY_PRODUCTS, ...RUM_PRODUCTS, ...BEER_PRODUCTS, ...WINE_PRODUCTS, ...VODKA_PRODUCTS, ...GIN_PRODUCTS, ...TEQUILA_PRODUCTS, ...CIGAR_PRODUCTS].find((p) => p.node.handle === handle);
+  const allProducts = [...WHISKEY_PRODUCTS, ...RUM_PRODUCTS, ...BEER_PRODUCTS, ...WINE_PRODUCTS, ...VODKA_PRODUCTS, ...GIN_PRODUCTS, ...TEQUILA_PRODUCTS, ...CIGAR_PRODUCTS];
+  const localMatch = allProducts.find((p) => p.node.handle === handle);
   if (localMatch) {
     return localMatch;
   }
-  try {
-    const data = await storefrontApiRequest(PRODUCT_BY_HANDLE_QUERY, { handle });
-    const node = data?.data?.productByHandle;
-    return node ? { node } : null;
-  } catch {
-    return null;
-  }
+  return null;
 }
 
 // Wishlist Core
@@ -2579,15 +2566,16 @@ const Wishlist = {
 
 const Cart = Wishlist;
 
-// Reveal Animations using IntersectionObserver
+// Reveal Animations using IntersectionObserver with GPU-accelerated opacity/transform
 function initRevealAnimations() {
-  const revealElements = document.querySelectorAll('[data-reveal]');
-  
+  const revealElements = document.querySelectorAll('[data-reveal]:not(.reveal-init)');
+  if (revealElements.length === 0) return;
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const el = entry.target;
-        const delay = el.getAttribute('data-delay') || 0;
+        const delay = parseInt(el.getAttribute('data-delay') || 0, 10);
         
         el.style.transitionDelay = `${delay}ms`;
         // Apply end state classes
@@ -2595,16 +2583,23 @@ function initRevealAnimations() {
         // Remove start state classes
         el.classList.remove('opacity-0', 'translate-y-10', '-translate-x-12', 'translate-x-12', 'scale-95');
         
+        // Clear transition-delay after entrance completes so hover interactions are immediate
+        setTimeout(() => {
+          el.style.transitionDelay = '';
+          el.classList.add('reveal-completed');
+        }, delay + 500);
+        
         observer.unobserve(el);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.08, rootMargin: '50px 0px 50px 0px' });
 
   revealElements.forEach((el) => {
+    el.classList.add('reveal-init');
     const type = el.getAttribute('data-reveal') || 'up';
     
-    // Set base setup
-    el.classList.add('transition-all', 'duration-[900ms]', 'ease-[cubic-bezier(0.16,1,0.3,1)]', 'will-change-transform', 'opacity-0');
+    // Set base setup with focused transform and opacity transitions
+    el.classList.add('transition-[opacity,transform]', 'duration-500', 'ease-[cubic-bezier(0.16,1,0.3,1)]', 'opacity-0');
     
     // Set starting transforms
     if (type === 'up') el.classList.add('translate-y-10');
@@ -2744,7 +2739,8 @@ function getGlassIconSVG(typeStr) {
 }
 
 // Reusable Wine Category Product Grid Card Renderer (Light Cream Theme)
-function createWineProductCardHTML(p, priceStr, image, ratingBadge, customTags) {
+function createWineProductCardHTML(p, priceStr, image, ratingBadge, customTags, index = 0) {
+  const catKey = (p.category || "WHISKEY").toUpperCase();
   const wineTitlesMap = {
     "domaines-des-etoiles-pinot-noir": "Domaines des Étoiles Pinot Noir<br>2021",
     "chateau-margaux-cabernet-sauvignon": "Château Margaux Cabernet<br>Sauvignon 2016",
@@ -2792,7 +2788,7 @@ function createWineProductCardHTML(p, priceStr, image, ratingBadge, customTags) 
   const heartTitle = isInWishlist ? "Remove from Wishlist" : "Save to Wishlist";
 
   return `
-    <article class="product-grid-card wine-card">
+    <article class="product-grid-card wine-card" data-category="${catKey}" style="--prod-index: ${index};">
       
       <!-- Top Arched Image Container -->
       <div class="product-card-arch wine-card-arch">
@@ -2864,7 +2860,7 @@ function createWineProductCardHTML(p, priceStr, image, ratingBadge, customTags) 
 
 // Reusable Exact Reference Product Item Row Renderer (Dark Luxury Website Theme)
 // Reusable Product Grid Card Renderer (Exact Match to Reference Image)
-function createProductCardHTML(product) {
+function createProductCardHTML(product, index = 0) {
   const p = product.node;
   const priceStr = formatMoney(p.priceRange.minVariantPrice.amount, p.priceRange.minVariantPrice.currencyCode);
   const image = p.images.edges[0]?.node;
@@ -2897,7 +2893,7 @@ function createProductCardHTML(product) {
   const displayedTags = tags.slice(0, 4);
 
   // Return wine-styled card for all categories to maintain consistency
-  return createWineProductCardHTML(p, priceStr, image, ratingBadge, displayedTags);
+  return createWineProductCardHTML(p, priceStr, image, ratingBadge, displayedTags, index);
 }
 
 // Page Specific Route Logics
@@ -2937,7 +2933,7 @@ async function handleIndexPage() {
       productsEmpty?.classList.add("hidden");
       productsGrid.classList.remove("hidden");
       
-      productsGrid.innerHTML = productList.map((product) => createProductCardHTML(product)).join("");
+      productsGrid.innerHTML = productList.map((product, idx) => createProductCardHTML(product, idx)).join("");
     };
 
     // Dynamic Breadcrumb Category Updater & Strict Category Routing
@@ -3133,7 +3129,7 @@ async function handleCategoryPage() {
 
     productsEmpty?.classList.add("hidden");
     productsGrid.classList.remove("hidden");
-    productsGrid.innerHTML = filteredList.map((product) => createProductCardHTML(product)).join("");
+    productsGrid.innerHTML = filteredList.map((product, idx) => createProductCardHTML(product, idx)).join("");
     if (window.lucide) {
       window.lucide.createIcons();
     }
@@ -3661,6 +3657,460 @@ function initFilterRedirections() {
   });
 }
 
+// Hero Section Entrance & Next-Level Atmospheric Parallax Transitions
+function initHeroTransitions() {
+  const heroSection = document.getElementById("top");
+  if (!heroSection || !heroSection.classList.contains("hero-section")) return;
+
+  // 1. Trigger hero entrance transition on load
+  const triggerEntrance = () => {
+    requestAnimationFrame(() => {
+      heroSection.classList.add("hero-loaded");
+    });
+  };
+
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+    setTimeout(triggerEntrance, 20);
+  } else {
+    window.addEventListener("load", triggerEntrance, { passive: true });
+  }
+
+  const heroBgWrapper = heroSection.querySelector(".hero-bg-wrapper");
+  const heroTextBlock = heroSection.querySelector(".hero-text-block");
+  const isReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // 2. High-Performance Event-Driven Mouse Spotlight & 3D Depth
+  let mouseTargetX = window.innerWidth * 0.5;
+  let mouseTargetY = window.innerHeight * 0.38;
+  let currentMouseX = mouseTargetX;
+  let currentMouseY = mouseTargetY;
+  let isMouseInside = false;
+  let isHeroVisible = true;
+  let rafId = null;
+  let heroRect = heroSection.getBoundingClientRect();
+  let heroHeight = heroSection.offsetHeight || window.innerHeight;
+
+  const updateHeroDimensions = () => {
+    heroRect = heroSection.getBoundingClientRect();
+    heroHeight = heroSection.offsetHeight || window.innerHeight;
+  };
+  window.addEventListener("resize", updateHeroDimensions, { passive: true });
+
+  function updateHeroPhysics() {
+    if (!isHeroVisible || isReducedMotion()) {
+      rafId = null;
+      return;
+    }
+
+    const dx = mouseTargetX - currentMouseX;
+    const dy = mouseTargetY - currentMouseY;
+
+    // Exponential lerp damping (0.12 factor for ultra snappy tracking)
+    currentMouseX += dx * 0.12;
+    currentMouseY += dy * 0.12;
+
+    heroSection.style.setProperty("--hero-mouse-x", `${currentMouseX.toFixed(1)}px`);
+    heroSection.style.setProperty("--hero-mouse-y", `${currentMouseY.toFixed(1)}px`);
+
+    if (heroTextBlock && window.innerWidth >= 768) {
+      const normX = ((currentMouseX - heroRect.left) / (heroRect.width || window.innerWidth) - 0.5) * 2;
+      const normY = ((currentMouseY - heroRect.top) / (heroRect.height || window.innerHeight) - 0.5) * 2;
+      if (isMouseInside) {
+        heroTextBlock.style.transform = `translate3d(${(normX * -6).toFixed(2)}px, ${(normY * -4).toFixed(2)}px, 0)`;
+      }
+    }
+
+    // Auto-sleep rAF loop once physics settle and mouse is idle
+    if (Math.abs(dx) > 0.4 || Math.abs(dy) > 0.4 || isMouseInside) {
+      rafId = requestAnimationFrame(updateHeroPhysics);
+    } else {
+      rafId = null;
+    }
+  }
+
+  function startHeroPhysics() {
+    if (!rafId && isHeroVisible) {
+      rafId = requestAnimationFrame(updateHeroPhysics);
+    }
+  }
+
+  heroSection.addEventListener("mouseenter", () => {
+    updateHeroDimensions();
+    isMouseInside = true;
+    startHeroPhysics();
+  }, { passive: true });
+
+  heroSection.addEventListener("mousemove", (e) => {
+    mouseTargetX = e.clientX - heroRect.left;
+    mouseTargetY = e.clientY - heroRect.top;
+    isMouseInside = true;
+    startHeroPhysics();
+  }, { passive: true });
+
+  heroSection.addEventListener("mouseleave", () => {
+    isMouseInside = false;
+    mouseTargetX = heroRect.width * 0.5;
+    mouseTargetY = heroHeight * 0.38;
+    if (heroTextBlock) {
+      heroTextBlock.style.transform = `translate3d(0, 0, 0)`;
+    }
+    startHeroPhysics();
+  }, { passive: true });
+
+  // Pause physics when hero is scrolled out of viewport
+  const heroVisibilityObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      isHeroVisible = entry.isIntersecting;
+      if (isHeroVisible && isMouseInside) {
+        startHeroPhysics();
+      } else if (!isHeroVisible && rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    });
+  }, { threshold: 0.05 });
+
+  heroVisibilityObserver.observe(heroSection);
+
+  // 3. Scroll-driven Depth Parallax with rAF throttling
+  let scrollTicking = false;
+  window.addEventListener("scroll", () => {
+    if (!scrollTicking && isHeroVisible) {
+      window.requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+
+        if (scrollY <= heroHeight + 80 && !isReducedMotion()) {
+          const ratio = Math.min(1, scrollY / heroHeight);
+          if (heroBgWrapper) {
+            heroBgWrapper.style.transform = `translate3d(0, ${(scrollY * 0.28).toFixed(1)}px, 0)`;
+          }
+          if (heroTextBlock && scrollY > 0) {
+            heroTextBlock.style.opacity = Math.max(0, 1 - ratio * 1.35).toFixed(3);
+            heroTextBlock.style.transform = `translate3d(0, ${(scrollY * 0.2).toFixed(1)}px, 0)`;
+          } else if (heroTextBlock && scrollY === 0 && !isMouseInside) {
+            heroTextBlock.style.opacity = "1";
+            heroTextBlock.style.transform = "translate3d(0, 0, 0)";
+          }
+        }
+        scrollTicking = false;
+      });
+      scrollTicking = true;
+    }
+  }, { passive: true });
+}
+
+// Collection Section Entrance & High-Performance Interactive Handlers
+function initCollectionTransitions() {
+  const collectionSection = document.getElementById("expressions");
+  if (!collectionSection) return;
+
+  const categoryCardsGrid = document.getElementById("category-cards-grid");
+  const categoryCards = collectionSection.querySelectorAll(".category-card");
+
+  // 1. Intersection Observer for Section Header Entrance (Eyebrow, Title, Subtitle)
+  const headerObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        collectionSection.classList.add("collection-in-view");
+        headerObserver.unobserve(collectionSection);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: "50px" });
+
+  headerObserver.observe(collectionSection);
+
+  // 2. Staggered Sequential Entrance for Category Piles
+  if (categoryCards.length > 0) {
+    const isReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (isReduced) {
+      categoryCards.forEach((card) => {
+        card.classList.add("card-in-view", "reveal-completed");
+      });
+    } else {
+      let triggered = false;
+      const triggerCascade = () => {
+        if (triggered) return;
+        triggered = true;
+
+        categoryCards.forEach((card) => {
+          card.classList.add("card-in-view");
+        });
+
+        const totalDuration = (categoryCards.length * 80) + 500;
+        setTimeout(() => {
+          categoryCards.forEach((card) => {
+            card.classList.add("reveal-completed");
+          });
+        }, totalDuration);
+      };
+
+      const targetElement = categoryCardsGrid || collectionSection;
+      const cascadeObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            triggerCascade();
+            obs.disconnect();
+          }
+        });
+      }, {
+        rootMargin: "60px 0px -4% 0px",
+        threshold: 0.05
+      });
+
+      cascadeObserver.observe(targetElement);
+
+      const isCollectionHash = window.location.hash === "#expressions" || window.location.hash === "#collection";
+      if (isCollectionHash) {
+        setTimeout(triggerCascade, 50);
+      }
+    }
+  }
+
+  // 3. Subtle Spotlight Tracking for Featured / Vault Bento Cards (Cached Bounding Rect)
+  const featuredCards = collectionSection.querySelectorAll(".home-card-featured, .home-card-half");
+  featuredCards.forEach((card) => {
+    let cardRaf = null;
+    let cardRect = null;
+
+    card.addEventListener("mouseenter", () => {
+      cardRect = card.getBoundingClientRect();
+    }, { passive: true });
+
+    card.addEventListener("mousemove", (e) => {
+      if (cardRaf) return;
+      cardRaf = requestAnimationFrame(() => {
+        if (!cardRect) cardRect = card.getBoundingClientRect();
+        const x = ((e.clientX - cardRect.left) / cardRect.width) * 100;
+        const y = ((e.clientY - cardRect.top) / cardRect.height) * 100;
+        card.style.setProperty("--card-mouse-x", `${x.toFixed(1)}%`);
+        card.style.setProperty("--card-mouse-y", `${y.toFixed(1)}%`);
+        cardRaf = null;
+      });
+    }, { passive: true });
+
+    card.addEventListener("mouseleave", () => {
+      if (cardRaf) { cancelAnimationFrame(cardRaf); cardRaf = null; }
+      cardRect = null;
+      card.style.setProperty("--card-mouse-x", "50%");
+      card.style.setProperty("--card-mouse-y", "50%");
+    }, { passive: true });
+  });
+}
+
+// Visit Section Smooth Hero-Grade Transitions & Atmospheric Depth
+function initVisitTransitions() {
+  const visitSection = document.getElementById("visit") || document.querySelector(".visit-section");
+  if (!visitSection) return;
+
+  const isReducedMotion = () => window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const banner = visitSection.querySelector(".visit-showcase-banner");
+  const bannerBgWrapper = visitSection.querySelector(".visit-banner-bg-wrapper");
+  const bannerContent = visitSection.querySelector(".visit-banner-content");
+  const isVisitPage = window.location.pathname.includes("visit.html") || window.location.pathname.includes("/visit") || window.location.hash === "#visit";
+
+  // 1. Entrance Activation
+  const triggerVisitEntrance = () => {
+    requestAnimationFrame(() => {
+      visitSection.classList.add("visit-loaded", "visit-in-view");
+    });
+  };
+
+  if (isVisitPage) {
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+      setTimeout(triggerVisitEntrance, 30);
+    } else {
+      window.addEventListener("load", triggerVisitEntrance, { passive: true });
+    }
+  } else {
+    const visitObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          triggerVisitEntrance();
+          observer.unobserve(visitSection);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "60px 0px -5% 0px" });
+
+    visitObserver.observe(visitSection);
+  }
+
+  // 2. High-Performance Event-Driven Mouse Spotlight & 3D Depth on Showcase Banner
+  if (banner) {
+    let bannerRect = null;
+    let mouseTargetX = (banner.offsetWidth || 1000) * 0.5;
+    let mouseTargetY = (banner.offsetHeight || 500) * 0.45;
+    let currentMouseX = mouseTargetX;
+    let currentMouseY = mouseTargetY;
+    let isMouseInside = false;
+    let isVisitVisible = true;
+    let visitRafId = null;
+
+    const updateBannerDimensions = () => {
+      bannerRect = banner.getBoundingClientRect();
+    };
+    window.addEventListener("resize", updateBannerDimensions, { passive: true });
+
+    function updateVisitPhysics() {
+      if (!isVisitVisible || isReducedMotion()) {
+        visitRafId = null;
+        return;
+      }
+
+      const dx = mouseTargetX - currentMouseX;
+      const dy = mouseTargetY - currentMouseY;
+
+      currentMouseX += dx * 0.12;
+      currentMouseY += dy * 0.12;
+
+      banner.style.setProperty("--visit-mouse-x", `${currentMouseX.toFixed(1)}px`);
+      banner.style.setProperty("--visit-mouse-y", `${currentMouseY.toFixed(1)}px`);
+
+      if (bannerContent && window.innerWidth >= 768 && bannerRect) {
+        const normX = ((currentMouseX - bannerRect.left) / bannerRect.width - 0.5) * 2;
+        const normY = ((currentMouseY - bannerRect.top) / bannerRect.height - 0.5) * 2;
+        if (isMouseInside) {
+          bannerContent.style.transform = `translate3d(${(normX * -5).toFixed(2)}px, ${(normY * -3.5).toFixed(2)}px, 0)`;
+        }
+      }
+
+      if (Math.abs(dx) > 0.4 || Math.abs(dy) > 0.4 || isMouseInside) {
+        visitRafId = requestAnimationFrame(updateVisitPhysics);
+      } else {
+        visitRafId = null;
+      }
+    }
+
+    function startVisitPhysics() {
+      if (!visitRafId && isVisitVisible) {
+        visitRafId = requestAnimationFrame(updateVisitPhysics);
+      }
+    }
+
+    banner.addEventListener("mouseenter", () => {
+      updateBannerDimensions();
+      isMouseInside = true;
+      startVisitPhysics();
+    }, { passive: true });
+
+    banner.addEventListener("mousemove", (e) => {
+      if (!bannerRect) updateBannerDimensions();
+      mouseTargetX = e.clientX - bannerRect.left;
+      mouseTargetY = e.clientY - bannerRect.top;
+      isMouseInside = true;
+      startVisitPhysics();
+    }, { passive: true });
+
+    banner.addEventListener("mouseleave", () => {
+      isMouseInside = false;
+      if (bannerRect) {
+        mouseTargetX = bannerRect.width * 0.5;
+        mouseTargetY = bannerRect.height * 0.45;
+      }
+      if (bannerContent) {
+        bannerContent.style.transform = `translate3d(0, 0, 0)`;
+      }
+      startVisitPhysics();
+    }, { passive: true });
+
+    const visitVisibilityObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        isVisitVisible = entry.isIntersecting;
+        if (isVisitVisible && isMouseInside) {
+          startVisitPhysics();
+        } else if (!isVisitVisible && visitRafId) {
+          cancelAnimationFrame(visitRafId);
+          visitRafId = null;
+        }
+      });
+    }, { threshold: 0.05 });
+
+    visitVisibilityObserver.observe(visitSection);
+
+    // 3. Scroll-Driven Depth Parallax for Banner Background
+    let scrollTicking = false;
+    let cachedWinHeight = window.innerHeight;
+    window.addEventListener("resize", () => { cachedWinHeight = window.innerHeight; }, { passive: true });
+
+    window.addEventListener("scroll", () => {
+      if (!scrollTicking && isVisitVisible) {
+        window.requestAnimationFrame(() => {
+          if (!isReducedMotion() && banner && bannerBgWrapper) {
+            if (!bannerRect) updateBannerDimensions();
+            const bTop = banner.getBoundingClientRect().top;
+            if (bTop < cachedWinHeight && bTop > -600) {
+              const offsetFromCenter = bTop - (cachedWinHeight * 0.5);
+              bannerBgWrapper.style.transform = `translate3d(0, ${(offsetFromCenter * -0.1).toFixed(1)}px, 0)`;
+            }
+          }
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    }, { passive: true });
+  }
+
+  // 4. Subtle Spotlight Tracking on Info Cards with Cached Rects
+  const infoCols = visitSection.querySelectorAll(".visit-info-col");
+  infoCols.forEach((col) => {
+    let colRaf = null;
+    let colRect = null;
+
+    col.addEventListener("mouseenter", () => {
+      colRect = col.getBoundingClientRect();
+    }, { passive: true });
+
+    col.addEventListener("mousemove", (e) => {
+      if (colRaf) return;
+      colRaf = requestAnimationFrame(() => {
+        if (!colRect) colRect = col.getBoundingClientRect();
+        const x = ((e.clientX - colRect.left) / colRect.width) * 100;
+        const y = ((e.clientY - colRect.top) / colRect.height) * 100;
+        col.style.setProperty("--card-mouse-x", `${x.toFixed(1)}%`);
+        col.style.setProperty("--card-mouse-y", `${y.toFixed(1)}%`);
+        colRaf = null;
+      });
+    }, { passive: true });
+
+    col.addEventListener("mouseleave", () => {
+      if (colRaf) { cancelAnimationFrame(colRaf); colRaf = null; }
+      colRect = null;
+      col.style.setProperty("--card-mouse-x", "50%");
+      col.style.setProperty("--card-mouse-y", "50%");
+    }, { passive: true });
+  });
+
+  // 5. Subtle Spotlight Tracking on Map Card
+  const mapCard = visitSection.querySelector(".visit-map-card");
+  if (mapCard && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    let mapRaf = null;
+    let mapRect = null;
+
+    mapCard.addEventListener("mouseenter", () => {
+      mapRect = mapCard.getBoundingClientRect();
+    }, { passive: true });
+
+    mapCard.addEventListener("mousemove", (e) => {
+      if (mapRaf) return;
+      mapRaf = requestAnimationFrame(() => {
+        if (!mapRect) mapRect = mapCard.getBoundingClientRect();
+        const x = ((e.clientX - mapRect.left) / mapRect.width) * 100;
+        const y = ((e.clientY - mapRect.top) / mapRect.height) * 100;
+        mapCard.style.setProperty("--map-mouse-x", `${x.toFixed(1)}%`);
+        mapCard.style.setProperty("--map-mouse-y", `${y.toFixed(1)}%`);
+        mapRaf = null;
+      });
+    }, { passive: true });
+
+    mapCard.addEventListener("mouseleave", () => {
+      if (mapRaf) { cancelAnimationFrame(mapRaf); mapRaf = null; }
+      mapRect = null;
+      mapCard.style.setProperty("--map-mouse-x", "50%");
+      mapCard.style.setProperty("--map-mouse-y", "50%");
+    }, { passive: true });
+  }
+}
+
 // Global initialization
 window.addEventListener("DOMContentLoaded", () => {
   // 1. Initialize Wishlist & Cart
@@ -3668,6 +4118,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // 2. Initialize Reveal Animations
   initRevealAnimations();
+
+  // 2b. Initialize Hero Transitions
+  initHeroTransitions();
+
+  // 2c. Initialize Collection Transitions
+  initCollectionTransitions();
+
+  // 2d. Initialize Visit Transitions
+  initVisitTransitions();
 
   // 3. Initialize About Toggle
   initAboutToggle();
@@ -3697,3 +4156,4 @@ window.addEventListener("DOMContentLoaded", () => {
     handleIndexPage();
   }
 });
+

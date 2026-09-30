@@ -2653,45 +2653,118 @@ section#category-hero-banner + section#expressions {
   height: 40px;
 }
 
-/* Exact Reference Image Product Grid Card Styles - Dark Luxury Theme (Matching Homepage) */
+/* ==========================================================================
+   PRODUCT IMAGE & CATEGORY ENHANCED TRANSITIONS (WHISKEY, RUM, BEER, VODKA)
+   ========================================================================== */
+
+/* Keyframe Animations for Category Specific Light Refraction Glints */
+@keyframes whiskeyAmberGleam {
+  0% { transform: translateX(-150%) skewX(-25deg); opacity: 0; }
+  25% { opacity: 0.85; }
+  100% { transform: translateX(200%) skewX(-25deg); opacity: 0; }
+}
+
+@keyframes rumCopperGleam {
+  0% { transform: translateX(-150%) skewX(-25deg); opacity: 0; }
+  30% { opacity: 0.9; }
+  100% { transform: translateX(200%) skewX(-25deg); opacity: 0; }
+}
+
+@keyframes beerMaltGlint {
+  0% { transform: translateX(-150%) skewX(-25deg); opacity: 0; }
+  30% { opacity: 0.95; }
+  100% { transform: translateX(200%) skewX(-25deg); opacity: 0; }
+}
+
+@keyframes vodkaDiamondGleam {
+  0% { transform: translateX(-150%) skewX(-30deg); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateX(220%) skewX(-30deg); opacity: 0; }
+}
+
+@keyframes productCardCascade {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================================================
+   PRODUCT GRID CARDS & PRODUCT BOTTLE IMAGES
+   ========================================================================== */
 .product-grid-card {
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
   border-radius: 1.25rem !important;
   padding: 1.25rem !important;
-  background-color: #14100c !important;
+  background: linear-gradient(180deg, #16120e 0%, #100d0a 100%) !important;
   color: #f7f3eb !important;
-  border: 1px solid rgba(212, 153, 89, 0.25) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
-  transition: none !important;
+  border: 1px solid rgba(212, 153, 89, 0.22) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease,
+              box-shadow 0.45s ease,
+              background-color 0.4s ease !important;
+  animation: productCardCascade 0.5s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  animation-delay: calc(var(--prod-index, 0) * 45ms);
+  position: relative !important;
 }
 
 .product-grid-card:hover {
-  transform: none !important;
-  border-color: rgba(212, 153, 89, 0.25) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  transform: translateY(-8px) scale(1.01) !important;
+  border-color: rgba(212, 168, 106, 0.65) !important;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(212, 168, 106, 0.22) !important;
 }
 
+/* Product Card Arched Image Housing */
 .product-card-arch {
   position: relative !important;
   width: calc(100% + 2.5rem) !important;
-  height: 18.5rem !important;
+  height: 19rem !important;
   border-top-left-radius: 1.25rem !important;
   border-top-right-radius: 1.25rem !important;
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
-  background-color: #1c1611 !important;
+  background: radial-gradient(circle at 50% 60%, #251d16 0%, #120e0b 100%) !important;
   border: none !important;
   padding: 0 !important;
   margin: -1.25rem -1.25rem 0 -1.25rem !important;
-  display: block !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   overflow: hidden !important;
+  transition: background 0.4s ease !important;
+}
+
+/* Glass Reflection Sweep Beam on Product Card Hover */
+.product-card-arch::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 80% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 235, 200, 0.35) 50%,
+    transparent 100%
+  ) !important;
+  transform: translateX(-150%) skewX(-25deg);
+  pointer-events: none !important;
+  z-index: 12 !important;
 }
 
 .product-card-img-link,
 .product-card-arch a {
-  display: block !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   width: 100% !important;
   height: 100% !important;
   position: relative !important;
@@ -2700,28 +2773,111 @@ section#category-hero-banner + section#expressions {
   border-top-right-radius: 1.25rem !important;
 }
 
-.product-card-arch img {
+/* Product Bottle Image - Unified Consistent Setup */
+.product-card-arch img,
+.wine-card-img {
   width: 100% !important;
   height: 100% !important;
-  min-width: 100% !important;
-  min-height: 100% !important;
   max-height: 100% !important;
   max-width: 100% !important;
   object-fit: cover !important;
-  object-position: center top !important;
-  margin: 0 !important;
+  object-position: center center !important;
+  margin: 0 auto !important;
   padding: 0 !important;
   display: block !important;
-  filter: none !important;
-  transition: none !important;
-  border-top-left-radius: 1.25rem !important;
-  border-top-right-radius: 1.25rem !important;
-  border-bottom-left-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
+  transform-origin: center center !important;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6)) !important;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, filter !important;
 }
 
-.product-grid-card:hover .product-card-arch img {
-  transform: none !important;
+/* ==========================================================================
+   UNIFIED LUXURY PRODUCT IMAGE HOVER TRANSITION (APPLIED ACROSS ALL CATEGORIES)
+   ========================================================================== */
+
+/* Arched Image Container Transition */
+.product-card-arch {
+  background: radial-gradient(circle at 50% 65%, #231b14 0%, #110d0a 100%) !important;
+  transition: background 0.45s ease, box-shadow 0.45s ease !important;
+}
+
+.product-grid-card:hover .product-card-arch,
+.product-grid-card[data-category="WHISKEY"]:hover .product-card-arch,
+.product-grid-card[data-category="RUM"]:hover .product-card-arch,
+.product-grid-card[data-category="BEER"]:hover .product-card-arch,
+.product-grid-card[data-category="VODKA"]:hover .product-card-arch,
+.product-grid-card[data-category="WINE"]:hover .product-card-arch,
+.product-grid-card[data-category="GIN"]:hover .product-card-arch,
+.product-grid-card[data-category="TEQUILA"]:hover .product-card-arch,
+.product-grid-card[data-category="CIGAR"]:hover .product-card-arch {
+  background: radial-gradient(circle at 50% 55%, rgba(100, 60, 30, 0.85) 0%, rgba(35, 20, 12, 0.95) 55%, #100b07 100%) !important;
+  box-shadow: inset 0 0 32px rgba(212, 168, 106, 0.28) !important;
+}
+
+/* Unified Product Image Hover Transition for ALL Categories */
+.product-grid-card:hover .wine-card-img,
+.product-grid-card:hover .product-card-arch img,
+.product-grid-card[data-category="WHISKEY"]:hover .wine-card-img,
+.product-grid-card[data-category="WHISKEY"]:hover .product-card-arch img,
+.product-grid-card[data-category="RUM"]:hover .wine-card-img,
+.product-grid-card[data-category="RUM"]:hover .product-card-arch img,
+.product-grid-card[data-category="BEER"]:hover .wine-card-img,
+.product-grid-card[data-category="BEER"]:hover .product-card-arch img,
+.product-grid-card[data-category="VODKA"]:hover .wine-card-img,
+.product-grid-card[data-category="VODKA"]:hover .product-card-arch img,
+.product-grid-card[data-category="WINE"]:hover .wine-card-img,
+.product-grid-card[data-category="WINE"]:hover .product-card-arch img,
+.product-grid-card[data-category="GIN"]:hover .wine-card-img,
+.product-grid-card[data-category="GIN"]:hover .product-card-arch img,
+.product-grid-card[data-category="TEQUILA"]:hover .wine-card-img,
+.product-grid-card[data-category="TEQUILA"]:hover .product-card-arch img,
+.product-grid-card[data-category="CIGAR"]:hover .wine-card-img,
+.product-grid-card[data-category="CIGAR"]:hover .product-card-arch img {
+  transform: scale(1.1) translateY(-6px) !important;
+  filter: brightness(1.2) contrast(1.12) drop-shadow(0 0 24px rgba(212, 168, 106, 0.55)) drop-shadow(0 16px 28px rgba(0, 0, 0, 0.9)) !important;
+}
+
+/* Unified Gleam Sweep for ALL Category Cards */
+.product-grid-card:hover .product-card-arch::after,
+.product-grid-card[data-category="WHISKEY"]:hover .product-card-arch::after,
+.product-grid-card[data-category="RUM"]:hover .product-card-arch::after,
+.product-grid-card[data-category="BEER"]:hover .product-card-arch::after,
+.product-grid-card[data-category="VODKA"]:hover .product-card-arch::after,
+.product-grid-card[data-category="WINE"]:hover .product-card-arch::after,
+.product-grid-card[data-category="GIN"]:hover .product-card-arch::after,
+.product-grid-card[data-category="TEQUILA"]:hover .product-card-arch::after,
+.product-grid-card[data-category="CIGAR"]:hover .product-card-arch::after {
+  animation: unifiedProductGleam 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 220, 160, 0.5) 50%, transparent 100%) !important;
+}
+
+@keyframes unifiedProductGleam {
+  0% {
+    transform: translateX(-150%) skewX(-25deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(250%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+/* Unified Card Container Hover Glow */
+.product-grid-card:hover,
+.product-grid-card[data-category="WHISKEY"]:hover,
+.product-grid-card[data-category="RUM"]:hover,
+.product-grid-card[data-category="BEER"]:hover,
+.product-grid-card[data-category="VODKA"]:hover,
+.product-grid-card[data-category="WINE"]:hover,
+.product-grid-card[data-category="GIN"]:hover,
+.product-grid-card[data-category="TEQUILA"]:hover,
+.product-grid-card[data-category="CIGAR"]:hover {
+  border-color: rgba(212, 168, 106, 0.8) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 168, 106, 0.28) !important;
 }
 
 .product-card-heart-btn {
@@ -2816,28 +2972,25 @@ section#category-hero-banner + section#expressions {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) !important;
 }
 
-/* --- WINE CATEGORY CUSTOM STYLES (Light Cream/Beige Theme) --- */
+/* --- PRODUCT GRID CARD DARK LUXURY STYLING & CONTRAST --- */
 
 .product-grid-card.wine-card {
   position: relative !important;
-  background-color: #f5efe6 !important;
-  color: #110e0b !important;
-  border: 1px solid rgba(0, 0, 0, 0.05) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+  background: linear-gradient(180deg, #16120e 0%, #100d0a 100%) !important;
+  color: #f7f3eb !important;
+  border: 1px solid rgba(212, 153, 89, 0.22) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
   border-radius: 1.25rem !important;
   padding: 1.25rem !important;
-  transition: none !important;
 }
 
 .product-grid-card.wine-card:hover {
-  transform: none !important;
-  border-color: rgba(0, 0, 0, 0.05) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(212, 168, 106, 0.65) !important;
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.85), 0 0 30px rgba(212, 168, 106, 0.22) !important;
 }
 
-/* Remove shapes and borders from the image background, and span edge-to-edge */
 .product-card-arch.wine-card-arch {
-  background-color: #f5efe6 !important;
+  background: radial-gradient(circle at 50% 60%, #251d16 0%, #120e0b 100%) !important;
   border: none !important;
   border-top-left-radius: 1.25rem !important;
   border-top-right-radius: 1.25rem !important;
@@ -2846,24 +2999,31 @@ section#category-hero-banner + section#expressions {
   max-width: none !important;
   width: calc(100% + 2.5rem) !important;
   margin: -1.25rem -1.25rem 0 -1.25rem !important;
-  height: 18.5rem !important;
+  height: 19rem !important;
   padding: 0 !important;
   overflow: hidden !important;
-  display: block !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .product-card-arch.wine-card-arch a {
-  background-color: #f5efe6 !important;
+  background: transparent !important;
   border-top-left-radius: 1.25rem !important;
   border-top-right-radius: 1.25rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .wine-card .product-card-heart-btn,
 .product-card-heart-btn.wine-card-heart-btn {
-  background-color: #ffffff !important;
-  border: 1px solid rgba(0, 0, 0, 0.06) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
-  color: #5a4d41 !important;
+  background-color: #1a140f !important;
+  border: 1px solid rgba(212, 153, 89, 0.35) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+  color: #d4a86a !important;
   width: 2.25rem !important;
   height: 2.25rem !important;
   bottom: 0.75rem !important;
@@ -2872,16 +3032,16 @@ section#category-hero-banner + section#expressions {
 
 .wine-card .product-card-heart-btn:hover,
 .product-card-heart-btn.wine-card-heart-btn:hover {
-  background-color: #110e0b !important;
-  color: #ffffff !important;
+  background-color: #d4a86a !important;
+  color: #000000 !important;
 }
 
 .product-card-heart-btn.is-active,
 .wine-card .product-card-heart-btn.is-active,
 .product-card-heart-btn.wine-card-heart-btn.is-active {
-  background-color: #d49959 !important;
+  background-color: #d4a86a !important;
   color: #110e0b !important;
-  border-color: #d49959 !important;
+  border-color: #d4a86a !important;
 }
 
 .product-card-heart-btn.is-active svg,
@@ -2892,10 +3052,11 @@ section#category-hero-banner + section#expressions {
 
 .wine-card .product-card-title,
 .wine-card-title {
-  color: #110e0b !important;
+  color: #f7f3eb !important;
+  font-family: 'Domine', Georgia, serif !important;
   font-size: 1.05rem !important;
   font-weight: 700 !important;
-  line-height: 1.3 !important;
+  line-height: 1.35 !important;
   margin-top: 0.95rem !important;
   margin-bottom: 0.45rem !important;
   display: -webkit-box !important;
@@ -2907,41 +3068,47 @@ section#category-hero-banner + section#expressions {
 
 .wine-card .product-card-pill,
 .product-card-pill.wine-card-pill {
-  background-color: rgba(212, 153, 89, 0.15) !important;
-  color: #362a21 !important;
-  border: 1px solid rgba(212, 153, 89, 0.3) !important;
+  background-color: rgba(212, 153, 89, 0.12) !important;
+  color: #e2c199 !important;
+  border: 1px solid rgba(212, 153, 89, 0.28) !important;
   padding: 0.25rem 0.65rem !important;
   font-size: 0.64rem !important;
   font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
 }
 
 .wine-card .product-card-footer,
 .product-card-footer.wine-card-footer {
-  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-top: 1px solid rgba(212, 153, 89, 0.18) !important;
   padding-top: 0.65rem !important;
   margin-top: 0.65rem !important;
 }
 
 .wine-card .product-card-mrp-label,
 .product-card-mrp-label.wine-card-mrp-label {
-  color: #6b5a4b !important;
+  color: #a89a8a !important;
   font-size: 0.66rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
 }
 
 .wine-card .product-card-mrp-price,
 .product-card-mrp-price.wine-card-mrp-price {
-  color: #110e0b !important;
-  font-size: 1.05rem !important;
+  color: #f7f3eb !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
 }
 
 .wine-card .product-card-rating-badge,
 .product-card-rating-badge.wine-card-rating-badge {
-  background-color: #382f3d !important;
-  color: #f5efe6 !important;
-  border: none !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+  background-color: #241b12 !important;
+  color: #d4a86a !important;
+  border: 1px solid rgba(212, 153, 89, 0.35) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4) !important;
   font-size: 0.66rem !important;
   padding: 0.25rem 0.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
 }
 
 /* Ensure images have proper layering and containment, fully filling dedicated arch space */
@@ -2950,8 +3117,6 @@ img.wine-card-img,
 .wine-card-img-lifestyle {
   position: relative !important;
   z-index: 2 !important;
-  filter: none !important;
-  mix-blend-mode: normal !important;
   width: 100% !important;
   height: 100% !important;
   min-width: 100% !important;
@@ -2962,7 +3127,7 @@ img.wine-card-img,
   object-position: center top !important;
   display: block !important;
   margin: 0 !important;
-  padding: 0 !important;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), filter 0.55s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 /* Featured Card (Grand Cru Cellar Reserves) - Full width image hero card */
@@ -2978,8 +3143,11 @@ img.wine-card-img,
   background-color: #12100e !important;
   overflow: hidden !important;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
-  transition: all 0.5s ease !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease !important;
   margin-bottom: 1.5rem !important;
+  will-change: transform, box-shadow, border-color !important;
+  transform: translateZ(0) !important;
+  backface-visibility: hidden !important;
 }
 
 @media (min-width: 768px) {
@@ -3013,16 +3181,43 @@ img.wine-card-img,
   background-color: #12100e !important;
   overflow: hidden !important;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
-  transition: all 0.5s ease !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease !important;
   min-height: 22rem !important;
+  will-change: transform, box-shadow, border-color !important;
+  transform: translateZ(0) !important;
+  backface-visibility: hidden !important;
+}
+
+/* Subtle Interactive Ambient Glow & Spotlight pseudo-element */
+.home-card-featured::before,
+.home-card-half::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  background: radial-gradient(
+    650px circle at var(--card-mouse-x, 50%) var(--card-mouse-y, 50%),
+    rgba(229, 167, 100, 0.13),
+    transparent 65%
+  ) !important;
+  opacity: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.home-card-featured:hover::before,
+.home-card-half:hover::before {
+  opacity: 1 !important;
 }
 
 .home-card-featured:hover, .home-card-half:hover {
-  border-color: rgba(212, 153, 89, 0.5) !important;
-  box-shadow: 0 25px 50px -12px rgba(212, 153, 89, 0.15) !important;
+  transform: translateY(-4px) translateZ(0) !important;
+  border-color: rgba(229, 167, 100, 0.55) !important;
+  box-shadow: 0 32px 64px -16px rgba(0, 0, 0, 0.8), 0 0 35px -5px rgba(212, 153, 89, 0.2) !important;
 }
 
-/* Card Background Image */
+/* Card Background Image with Smooth Cinematic Zoom */
 .home-card-bg-img {
   position: absolute !important;
   inset: 0 !important;
@@ -3032,14 +3227,17 @@ img.wine-card-img,
   opacity: 0.78 !important;
   filter: brightness(0.92) contrast(1.05) !important;
   z-index: 1 !important;
-  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease, filter 0.5s ease !important;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, opacity, filter !important;
+  transform: scale(1) translateZ(0) !important;
+  backface-visibility: hidden !important;
 }
 
 .home-card-featured:hover .home-card-bg-img,
 .home-card-half:hover .home-card-bg-img {
-  transform: scale(1.04) !important;
-  opacity: 0.90 !important;
-  filter: brightness(1.02) contrast(1.08) !important;
+  transform: scale(1.045) translateZ(0) !important;
+  opacity: 0.93 !important;
+  filter: brightness(1.03) contrast(1.08) !important;
 }
 
 /* Card Overlays - Focused gradient overlay for vibrant background images with clear text readability */
@@ -3049,6 +3247,11 @@ img.wine-card-img,
   /* Left to right gradient: dark shade on left under text, soft clear reveal on right for background artwork */
   background: linear-gradient(90deg, rgba(8, 6, 4, 0.78) 0%, rgba(8, 6, 4, 0.55) 45%, rgba(8, 6, 4, 0.15) 100%) !important;
   z-index: 2 !important;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.6s ease !important;
+}
+
+.home-card-featured:hover .home-card-overlay-featured {
+  opacity: 0.95 !important;
 }
 
 /* Mobile overlay for featured card */
@@ -3063,6 +3266,11 @@ img.wine-card-img,
   inset: 0 !important;
   background: linear-gradient(180deg, rgba(8, 6, 4, 0.68) 0%, rgba(8, 6, 4, 0.45) 55%, rgba(8, 6, 4, 0.25) 100%) !important;
   z-index: 2 !important;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.6s ease !important;
+}
+
+.home-card-half:hover .home-card-overlay-half {
+  opacity: 0.95 !important;
 }
 
 /* Card Content Container */
@@ -3071,6 +3279,13 @@ img.wine-card-img,
   z-index: 3 !important;
   padding: 2.25rem !important;
   text-align: left !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform !important;
+}
+
+.home-card-featured:hover .home-card-content,
+.home-card-half:hover .home-card-content {
+  transform: translateY(-2px) translateZ(0) !important;
 }
 
 @media (min-width: 768px) {
@@ -3080,6 +3295,7 @@ img.wine-card-img,
   }
 }
 
+/* Title Typography */
 .home-card-title {
   font-family: 'Domine', Georgia, serif !important;
   font-weight: 700 !important;
@@ -3088,6 +3304,15 @@ img.wine-card-img,
   letter-spacing: 0.15em !important;
   line-height: 1.3 !important;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 1px 5px rgba(0, 0, 0, 1) !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.4s ease, color 0.35s ease, letter-spacing 0.35s ease !important;
+  will-change: transform !important;
+}
+
+.home-card-featured:hover .home-card-title,
+.home-card-half:hover .home-card-title {
+  transform: translateY(-2.5px) translateZ(0) !important;
+  color: #f0b575 !important;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.98), 0 0 14px rgba(229, 167, 100, 0.3) !important;
 }
 
 .home-card-featured .home-card-title {
@@ -3110,6 +3335,7 @@ img.wine-card-img,
   }
 }
 
+/* Subtitle Typography */
 .home-card-subtitle {
   font-family: 'Domine', Georgia, serif !important;
   font-style: italic !important;
@@ -3118,8 +3344,17 @@ img.wine-card-img,
   margin-top: 0.5rem !important;
   font-size: 1.125rem !important;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 1) !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease, opacity 0.4s ease, text-shadow 0.4s ease !important;
+  will-change: transform !important;
 }
 
+.home-card-featured:hover .home-card-subtitle {
+  transform: translateY(-1.5px) translateZ(0) !important;
+  color: #ebe0d3 !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.98), 0 0 8px rgba(229, 167, 100, 0.2) !important;
+}
+
+/* Body / Description Typography */
 .home-card-body {
   font-family: 'Hanken Grotesk', system-ui, sans-serif !important;
   color: #f7f0e6 !important; /* High contrast bright cream for maximum readability */
@@ -3128,6 +3363,15 @@ img.wine-card-img,
   font-size: 0.9rem !important;
   max-width: 28rem !important;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 1px 4px rgba(0, 0, 0, 1) !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease, opacity 0.4s ease, text-shadow 0.4s ease !important;
+  will-change: transform !important;
+}
+
+.home-card-featured:hover .home-card-body,
+.home-card-half:hover .home-card-body {
+  transform: translateY(-1px) translateZ(0) !important;
+  color: #ffffff !important;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 1), 0 1px 4px rgba(0, 0, 0, 1) !important;
 }
 
 @media (min-width: 640px) {
@@ -3140,7 +3384,22 @@ img.wine-card-img,
   font-size: 0.875rem !important;
 }
 
+/* Button Container */
+.home-card-btn-container {
+  display: block !important;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform !important;
+}
+
+.home-card-featured:hover .home-card-btn-container,
+.home-card-half:hover .home-card-btn-container {
+  transform: translateY(-1px) translateZ(0) !important;
+}
+
+/* Button Individual Styling & Transitions */
 .home-card-btn {
+  position: relative !important;
+  overflow: hidden !important;
   display: inline-block !important;
   border-radius: 2px !important;
   border: 1px solid rgba(229, 167, 100, 0.85) !important;
@@ -3150,20 +3409,80 @@ img.wine-card-img,
   text-transform: uppercase !important;
   letter-spacing: 0.2em !important;
   color: #e5a764 !important;
-  transition: all 0.35s ease !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease, border-color 0.35s ease, box-shadow 0.35s ease, letter-spacing 0.35s ease !important;
   text-decoration: none !important;
   margin-top: 2rem !important;
   cursor: pointer !important;
   background-color: rgba(12, 9, 6, 0.85) !important;
   backdrop-filter: blur(8px) !important;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6) !important;
+  will-change: transform, box-shadow, background-color, border-color !important;
 }
 
+/* Subtle light sheen sweep ray across button on hover */
+.home-card-btn::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent) !important;
+  transform: skewX(-20deg) !important;
+  transition: left 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease !important;
+  pointer-events: none !important;
+}
+
+.home-card-btn:hover::before {
+  left: 120% !important;
+}
+
+/* Card hover reaction on button */
+.home-card-featured:hover .home-card-btn,
+.home-card-half:hover .home-card-btn {
+  border-color: rgba(229, 167, 100, 1) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.7), 0 0 12px rgba(229, 167, 100, 0.2) !important;
+}
+
+/* Direct hover on button */
 .home-card-btn:hover {
+  transform: translateY(-2.5px) !important;
   background-color: #e5a764 !important;
   color: #120e0a !important;
   border-color: #f0be84 !important;
-  box-shadow: 0 0 20px rgba(229, 167, 100, 0.5) !important;
+  box-shadow: 0 8px 26px rgba(229, 167, 100, 0.5), 0 2px 6px rgba(0, 0, 0, 0.4) !important;
+  letter-spacing: 0.22em !important;
+}
+
+.home-card-btn:active {
+  transform: translateY(0px) scale(0.97) !important;
+  transition-duration: 0.1s !important;
+}
+
+.home-card-half .home-card-btn {
+  padding: 0.65rem 1.5rem !important;
+  margin-top: 1.75rem !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-card-featured,
+  .home-card-half,
+  .home-card-featured::before,
+  .home-card-half::before,
+  .home-card-bg-img,
+  .home-card-overlay-featured,
+  .home-card-overlay-half,
+  .home-card-content,
+  .home-card-title,
+  .home-card-subtitle,
+  .home-card-body,
+  .home-card-btn-container,
+  .home-card-btn,
+  .home-card-btn::before {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
 }
 
 
@@ -3218,52 +3537,26 @@ div:has(> .wine-card-pill) {
   margin-bottom: 0 !important;
 }
 
-/* Category Page Hero Section custom styling to prevent fixed navigation overlap */
-#category-hero-banner {
-  padding-top: 8.5rem !important;
-  padding-bottom: 3.5rem !important;
-}
-
-/* Visit Page Main Container custom styling to prevent fixed navigation overlap */
-#visit-page-container {
-  padding-top: 7.5rem !important;
-  padding-bottom: 8rem !important;
-}
-
-/* About Us paragraph gap styles */
-#about p {
-  margin-bottom: 1.5rem !important;
-}
-
-#about p:last-child {
-  margin-bottom: 0 !important;
-}
-
 
 
 /* ==========================================================================
-   HERO SECTION LUXURY DESIGN (Pixel-perfect matching of reference)
+   HERO SECTION - NEXT-LEVEL LUXURY TRANSITIONS & ATMOSPHERIC PARALLAX
    ========================================================================== */
 .hero-section {
   position: relative !important;
   width: 100% !important;
   min-height: 100vh !important;
-  min-height: 100dvh !important;
+  min-height: 100svh !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
-  overflow: hidden !important;
   background-color: #0a0806 !important;
+  overflow: hidden !important;
   padding-top: 100px !important;
-  padding-bottom: 2rem !important;
-  box-sizing: border-box !important;
-}
-
-@media (min-width: 640px) {
-  .hero-section {
-    padding-top: 110px !important;
-    padding-bottom: 2.5rem !important;
-  }
+  padding-bottom: 2.5rem !important;
+  --hero-ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --hero-ease-molten: cubic-bezier(0.19, 1, 0.22, 1);
+  --hero-ease-slow: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 @media (min-width: 1024px) {
@@ -3273,20 +3566,44 @@ div:has(> .wine-card-pill) {
   }
 }
 
+/* Ambient Mouse-following Torch Glow Overlay */
+.hero-torch-glow {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background: radial-gradient(
+    800px circle at var(--hero-mouse-x, 50%) var(--hero-mouse-y, 38%),
+    rgba(212, 168, 106, 0.16) 0%,
+    rgba(212, 168, 106, 0.05) 42%,
+    transparent 72%
+  ) !important;
+  opacity: 0;
+  transition: opacity 2.4s var(--hero-ease-cinematic) !important;
+  will-change: background, opacity !important;
+}
+
+.hero-section.hero-loaded .hero-torch-glow {
+  opacity: 1 !important;
+}
+
 .hero-bg-wrapper {
   position: absolute !important;
   inset: 0 !important;
   z-index: 0 !important;
   pointer-events: none !important;
   user-select: none !important;
+  transition: transform 0.8s var(--hero-ease-cinematic) !important;
+  will-change: transform !important;
 }
 
 .hero-mobile-overlay {
   position: absolute !important;
   inset: 0 !important;
-  background: linear-gradient(180deg, rgba(10, 8, 6, 0.88) 0%, rgba(10, 8, 6, 0.65) 45%, rgba(10, 8, 6, 0.88) 100%) !important;
+  background: linear-gradient(180deg, rgba(10, 8, 6, 0.9) 0%, rgba(10, 8, 6, 0.65) 45%, rgba(10, 8, 6, 0.92) 100%) !important;
   z-index: 1 !important;
   display: block !important;
+  transition: opacity 1.5s ease !important;
 }
 
 @media (min-width: 640px) {
@@ -3300,11 +3617,37 @@ div:has(> .wine-card-pill) {
   height: 100% !important;
   object-fit: cover !important;
   object-position: 78% center !important;
+  transform: scale(1.12) translateZ(0);
+  filter: brightness(0.4) blur(8px) contrast(1.1);
+  opacity: 0;
+  transition: transform 3.0s var(--hero-ease-cinematic),
+              filter 2.6s var(--hero-ease-cinematic),
+              opacity 2.2s ease !important;
+  will-change: transform, filter, opacity !important;
 }
 
 @media (min-width: 1024px) {
   .hero-bg-img {
     object-position: right center !important;
+  }
+}
+
+.hero-section.hero-loaded .hero-bg-img {
+  transform: scale(1) translateZ(0);
+  filter: brightness(1) blur(0px) contrast(1.02);
+  opacity: 1;
+  animation: heroBgKenBurns 36s ease-in-out 3.2s infinite alternate;
+}
+
+@keyframes heroBgKenBurns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.045) translate(-0.8%, -0.6%);
+  }
+  100% {
+    transform: scale(1.025) translate(0.6%, 0.8%);
   }
 }
 
@@ -3339,47 +3682,161 @@ div:has(> .wine-card-pill) {
 }
 
 .hero-text-block {
-  max-width: 650px !important;
+  max-width: 680px !important;
   padding-top: 1rem !important;
   padding-bottom: 1.5rem !important;
   margin-top: auto !important;
   margin-bottom: auto !important;
+  transition: transform 0.7s var(--hero-ease-cinematic), opacity 0.7s ease !important;
+  will-change: transform, opacity !important;
 }
 
 .hero-main-title {
   font-family: var(--font-display, "Domine", Georgia, serif) !important;
-  font-size: clamp(2.2rem, 4.5vw, 4.4rem) !important;
+  font-size: clamp(2.3rem, 4.6vw, 4.5rem) !important;
   font-weight: 600 !important;
   line-height: 1.08 !important;
-  letter-spacing: 0.02em !important;
+  letter-spacing: 0.025em !important;
   text-transform: uppercase !important;
   text-align: left !important;
   margin: 0 !important;
+  cursor: default !important;
+}
+
+/* Line-by-line clip reveal container */
+.hero-title-line-wrap {
+  display: block !important;
+  overflow: hidden !important;
+  padding-bottom: 0.1em !important;
+  margin-bottom: -0.05em !important;
+}
+
+.hero-line-1,
+.hero-line-2,
+.hero-line-3,
+.hero-line-4 {
+  transform: translateY(125%) rotate(1.5deg);
+  opacity: 0;
+  transition: transform 1.35s var(--hero-ease-molten),
+              opacity 1.35s var(--hero-ease-molten),
+              letter-spacing 0.7s var(--hero-ease-cinematic),
+              text-shadow 0.7s var(--hero-ease-cinematic),
+              color 0.6s ease !important;
+  will-change: transform, opacity, letter-spacing, text-shadow !important;
+}
+
+.hero-section.hero-loaded .hero-line-1 {
+  transform: translateY(0) rotate(0deg);
+  opacity: 1;
+  transition-delay: 0.18s !important;
+}
+
+.hero-section.hero-loaded .hero-line-2 {
+  transform: translateY(0) rotate(0deg);
+  opacity: 1;
+  transition-delay: 0.35s !important;
+}
+
+.hero-section.hero-loaded .hero-line-3 {
+  transform: translateY(0) rotate(0deg);
+  opacity: 1;
+  transition-delay: 0.52s !important;
+}
+
+.hero-section.hero-loaded .hero-line-4 {
+  transform: translateY(0) rotate(0deg);
+  opacity: 1;
+  transition-delay: 0.69s !important;
 }
 
 .hero-title-ivory {
   display: block !important;
   color: #ede7de !important;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9) !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+  transition: color 0.6s ease,
+              text-shadow 0.65s var(--hero-ease-cinematic),
+              transform 0.65s var(--hero-ease-cinematic),
+              letter-spacing 0.65s var(--hero-ease-cinematic) !important;
+}
+
+.hero-title-ivory:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px) translateZ(0) !important;
+  letter-spacing: 0.035em !important;
+  text-shadow: 0 6px 30px rgba(0, 0, 0, 1), 0 0 20px rgba(255, 255, 255, 0.4) !important;
 }
 
 .hero-title-gold {
   display: block !important;
   color: #d4a86a !important;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9) !important;
+  background: linear-gradient(
+    115deg,
+    #d4a86a 0%,
+    #f8e2bc 25%,
+    #ffffff 48%,
+    #f8e2bc 70%,
+    #d4a86a 100%
+  ) !important;
+  background-size: 240% auto !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  animation: heroGoldShimmer 9s ease-in-out infinite !important;
+  transition: transform 0.65s var(--hero-ease-cinematic),
+              letter-spacing 0.65s var(--hero-ease-cinematic),
+              filter 0.65s var(--hero-ease-cinematic) !important;
+}
+
+.hero-title-gold:hover {
+  transform: translateY(-2px) translateZ(0) !important;
+  letter-spacing: 0.035em !important;
+  filter: drop-shadow(0 0 16px rgba(212, 168, 106, 0.65)) !important;
+}
+
+@keyframes heroGoldShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  38% {
+    background-position: 240% center;
+  }
+  100% {
+    background-position: 240% center;
+  }
 }
 
 .hero-subtitle {
   font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
   color: #b8ada3 !important;
-  font-size: clamp(0.95rem, 1.35vw, 1.12rem) !important;
-  line-height: 1.65 !important;
-  letter-spacing: 0.01em !important;
+  font-size: clamp(0.96rem, 1.35vw, 1.14rem) !important;
+  line-height: 1.68 !important;
+  letter-spacing: 0.012em !important;
   margin-top: 1.5rem !important;
   margin-bottom: 0 !important;
-  max-width: 540px !important;
+  max-width: 560px !important;
   font-weight: 400 !important;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.9) !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.95) !important;
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(4px);
+  transition: transform 1.25s var(--hero-ease-cinematic),
+              opacity 1.25s var(--hero-ease-cinematic),
+              filter 1.25s var(--hero-ease-cinematic),
+              color 0.65s ease,
+              text-shadow 0.65s ease !important;
+  will-change: transform, opacity, filter !important;
+}
+
+.hero-section.hero-loaded .hero-subtitle {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+  transition-delay: 0.85s !important;
+}
+
+.hero-text-block:hover .hero-subtitle {
+  color: #ede7de !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(212, 168, 106, 0.2) !important;
 }
 
 .hero-cta-group {
@@ -3387,118 +3844,245 @@ div:has(> .wine-card-pill) {
   display: flex !important;
   flex-wrap: wrap !important;
   align-items: center !important;
-  gap: 1rem !important;
+  gap: 1.15rem !important;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: transform 1.2s var(--hero-ease-cinematic),
+              opacity 1.2s var(--hero-ease-cinematic) !important;
+  will-change: transform, opacity !important;
 }
 
 @media (min-width: 640px) {
   .hero-cta-group {
-    gap: 1.25rem !important;
-    margin-top: 2.25rem !important;
+    gap: 1.35rem !important;
+    margin-top: 2.35rem !important;
   }
 }
 
+.hero-section.hero-loaded .hero-cta-group {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.02s !important;
+}
+
+/* Primary Action Button ("EXPLORE THE COLLECTION") */
 .hero-btn-primary {
+  position: relative !important;
+  overflow: hidden !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 0.75rem !important;
-  background-color: #d4a86a !important;
+  background: linear-gradient(135deg, #d4a86a 0%, #e2be86 50%, #d4a86a 100%) !important;
   color: #140f0b !important;
   font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
   font-size: 0.76rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.16em !important;
   text-transform: uppercase !important;
-  padding: 0.95rem 1.85rem !important;
+  padding: 1rem 2rem !important;
   border-radius: 2px !important;
   border: 1px solid #d4a86a !important;
-  box-shadow: 0 4px 20px rgba(212, 168, 106, 0.25) !important;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 20px rgba(212, 168, 106, 0.28), 0 2px 6px rgba(0, 0, 0, 0.4) !important;
+  transition: transform 0.65s var(--hero-ease-cinematic),
+              background 0.6s var(--hero-ease-cinematic),
+              border-color 0.6s var(--hero-ease-cinematic),
+              color 0.55s ease,
+              box-shadow 0.65s var(--hero-ease-cinematic),
+              letter-spacing 0.65s var(--hero-ease-cinematic) !important;
+  will-change: transform, box-shadow !important;
   text-decoration: none !important;
   cursor: pointer !important;
 }
 
-.hero-btn-primary:hover {
-  background-color: #e2ba7e !important;
-  color: #0a0806 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 30px rgba(212, 168, 106, 0.5) !important;
-  border-color: #e2ba7e !important;
+.hero-btn-primary::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -150% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 100%
+  ) !important;
+  transform: skewX(-25deg) !important;
+  transition: left 1.3s var(--hero-ease-cinematic) !important;
+  pointer-events: none !important;
 }
 
+.hero-btn-primary:hover::after {
+  left: 160% !important;
+}
+
+.hero-btn-primary:hover {
+  background: linear-gradient(135deg, #e5be85 0%, #fae6c6 50%, #e5be85 100%) !important;
+  color: #0a0806 !important;
+  transform: translateY(-3px) translateZ(0) !important;
+  box-shadow: 0 12px 36px rgba(212, 168, 106, 0.52), 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  border-color: #e5be85 !important;
+  letter-spacing: 0.19em !important;
+}
+
+.hero-btn-primary:active {
+  transform: translateY(-1px) scale(0.982) !important;
+  transition: transform 0.3s var(--hero-ease-cinematic), box-shadow 0.3s ease !important;
+}
+
+/* Secondary Action Button ("VISIT THE HOUSE") */
 .hero-btn-secondary {
+  position: relative !important;
+  overflow: hidden !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 0.75rem !important;
-  background-color: rgba(18, 14, 11, 0.6) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+  background-color: rgba(18, 14, 11, 0.65) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
   color: #ede7de !important;
   font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
   font-size: 0.76rem !important;
   font-weight: 600 !important;
   letter-spacing: 0.16em !important;
   text-transform: uppercase !important;
-  padding: 0.95rem 1.85rem !important;
+  padding: 1rem 2rem !important;
   border-radius: 2px !important;
   border: 1px solid rgba(212, 168, 106, 0.55) !important;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  transition: transform 0.65s var(--hero-ease-cinematic),
+              background-color 0.6s var(--hero-ease-cinematic),
+              border-color 0.6s var(--hero-ease-cinematic),
+              color 0.55s ease,
+              box-shadow 0.65s var(--hero-ease-cinematic),
+              letter-spacing 0.65s var(--hero-ease-cinematic) !important;
+  will-change: transform, box-shadow !important;
   text-decoration: none !important;
   cursor: pointer !important;
 }
 
+.hero-btn-secondary::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -150% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 168, 106, 0.3) 50%,
+    transparent 100%
+  ) !important;
+  transform: skewX(-25deg) !important;
+  transition: left 1.3s var(--hero-ease-cinematic) !important;
+  pointer-events: none !important;
+}
+
+.hero-btn-secondary:hover::after {
+  left: 160% !important;
+}
+
 .hero-btn-secondary:hover {
-  background-color: rgba(212, 168, 106, 0.16) !important;
+  background-color: rgba(212, 168, 106, 0.18) !important;
   border-color: #d4a86a !important;
   color: #d4a86a !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+  transform: translateY(-3px) translateZ(0) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 24px rgba(212, 168, 106, 0.28) !important;
+  letter-spacing: 0.19em !important;
+}
+
+.hero-btn-secondary:active {
+  transform: translateY(-1px) scale(0.982) !important;
+  transition: transform 0.3s var(--hero-ease-cinematic), box-shadow 0.3s ease !important;
 }
 
 .hero-btn-arrow {
   display: inline-block !important;
-  transition: transform 0.3s ease !important;
+  transition: transform 0.65s var(--hero-ease-cinematic) !important;
   font-size: 1.05rem !important;
   line-height: 1 !important;
 }
 
 .hero-btn-primary:hover .hero-btn-arrow,
 .hero-btn-secondary:hover .hero-btn-arrow {
-  transform: translateX(4px) !important;
+  transform: translateX(6px) !important;
 }
 
+/* Scroll Indicator (Bottom Left) */
 .hero-scroll-wrapper {
   padding-top: 1rem !important;
   padding-bottom: 0.25rem !important;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: transform 1.25s var(--hero-ease-cinematic),
+              opacity 1.25s var(--hero-ease-cinematic) !important;
+  will-change: transform, opacity !important;
+}
+
+.hero-section.hero-loaded .hero-scroll-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.18s !important;
 }
 
 .hero-scroll-btn {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 0.85rem !important;
+  gap: 0.95rem !important;
   text-decoration: none !important;
   cursor: pointer !important;
 }
 
 .hero-capsule-icon {
+  position: relative !important;
   display: flex !important;
-  align-items: center !important;
+  align-items: flex-start !important;
   justify-content: center !important;
-  width: 20px !important;
-  height: 34px !important;
+  width: 22px !important;
+  height: 36px !important;
+  padding-top: 5px !important;
   border-radius: 9999px !important;
-  border: 1px solid rgba(212, 168, 106, 0.75) !important;
-  background: rgba(10, 8, 6, 0.5) !important;
-  backdrop-filter: blur(6px) !important;
-  -webkit-backdrop-filter: blur(6px) !important;
-  transition: border-color 0.3s ease !important;
+  border: 1px solid rgba(212, 168, 106, 0.7) !important;
+  background: rgba(12, 9, 7, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  transition: border-color 0.65s var(--hero-ease-cinematic),
+              box-shadow 0.65s var(--hero-ease-cinematic),
+              transform 0.65s var(--hero-ease-cinematic) !important;
 }
 
-.hero-capsule-icon svg {
-  width: 12px !important;
-  height: 12px !important;
-  color: #d4a86a !important;
+.hero-capsule-pill {
+  display: block !important;
+  width: 4px !important;
+  height: 8px !important;
+  border-radius: 9999px !important;
+  background: #d4a86a !important;
+  box-shadow: 0 0 8px rgba(212, 168, 106, 0.9) !important;
+  animation: heroScrollPill 2.4s ease-in-out infinite !important;
+  will-change: transform, opacity !important;
+}
+
+@keyframes heroScrollPill {
+  0% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(212, 168, 106, 1);
+  }
+  80% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
 }
 
 .hero-scroll-text {
@@ -3508,20 +4092,50 @@ div:has(> .wine-card-pill) {
   letter-spacing: 0.24em !important;
   text-transform: uppercase !important;
   color: #a0958a !important;
-  transition: color 0.3s ease !important;
+  transition: color 0.6s ease,
+              letter-spacing 0.65s var(--hero-ease-cinematic),
+              text-shadow 0.65s ease !important;
   user-select: none !important;
 }
 
 .hero-scroll-btn:hover .hero-capsule-icon {
-  border-color: #d4a86a !important;
+  border-color: #e5be85 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 20px rgba(212, 168, 106, 0.45), inset 0 0 8px rgba(212, 168, 106, 0.25) !important;
 }
 
 .hero-scroll-btn:hover .hero-scroll-text {
-  color: #ede7de !important;
+  color: #f5efe6 !important;
+  letter-spacing: 0.28em !important;
+  text-shadow: 0 0 12px rgba(212, 168, 106, 0.4) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-img,
+  .hero-torch-glow,
+  .hero-line-1,
+  .hero-line-2,
+  .hero-line-3,
+  .hero-line-4,
+  .hero-subtitle,
+  .hero-cta-group,
+  .hero-btn-primary,
+  .hero-btn-secondary,
+  .hero-btn-arrow,
+  .hero-capsule-icon,
+  .hero-capsule-pill,
+  .hero-scroll-wrapper,
+  .hero-scroll-text {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    animation: none !important;
+  }
 }
 
 /* ==========================================================================
-   EXPLORE OUR COLLECTION (Luxury 4x2 Category Grid matching reference)
+   EXPLORE OUR COLLECTION (Luxury 4x2 Category Grid & Transitions)
    ========================================================================== */
 .collection-section {
   position: relative !important;
@@ -3530,6 +4144,7 @@ div:has(> .wine-card-pill) {
   border-bottom: 1px solid rgba(212, 168, 106, 0.1) !important;
   padding: 5rem 1.5rem !important;
   scroll-margin-top: 90px !important;
+  overflow: hidden !important;
 }
 
 @media (min-width: 640px) {
@@ -3542,6 +4157,21 @@ div:has(> .wine-card-pill) {
   .collection-section {
     padding: 6.5rem 4rem !important;
   }
+}
+
+/* Ambient Torch Glow for Collection Section */
+.collection-torch-glow {
+  position: absolute !important;
+  inset: 0 !important;
+  background: radial-gradient(
+    700px circle at var(--collection-mouse-x, 50%) var(--collection-mouse-y, 40%),
+    rgba(212, 168, 106, 0.09),
+    rgba(212, 168, 106, 0.02) 45%,
+    transparent 75%
+  ) !important;
+  transition: opacity 0.5s ease !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
 }
 
 .collection-header {
@@ -3565,6 +4195,15 @@ div:has(> .wine-card-pill) {
   font-weight: 700 !important;
   text-transform: uppercase !important;
   margin-bottom: 0.6rem !important;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 1s ease !important;
+  will-change: transform, opacity !important;
+}
+
+.collection-section.collection-in-view .collection-eyebrow {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .collection-main-title {
@@ -3576,6 +4215,16 @@ div:has(> .wine-card-pill) {
   color: #ede7de !important;
   line-height: 1.15 !important;
   margin: 0 !important;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.1s ease !important;
+  transition-delay: 0.12s !important;
+  will-change: transform, opacity !important;
+}
+
+.collection-section.collection-in-view .collection-main-title {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .collection-subtitle {
@@ -3586,6 +4235,16 @@ div:has(> .wine-card-pill) {
   margin-top: 0.85rem !important;
   margin-bottom: 0 !important;
   max-width: 580px !important;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.1s ease !important;
+  transition-delay: 0.22s !important;
+  will-change: transform, opacity !important;
+}
+
+.collection-section.collection-in-view .collection-subtitle {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .collection-grid {
@@ -3608,43 +4267,268 @@ div:has(> .wine-card-pill) {
   }
 }
 
-.collection-card {
+/* ==========================================================================
+   CATEGORY CARD SEQUENTIAL ENTRANCE CASCADE (ONE AFTER ANOTHER ON SCROLL)
+   ========================================================================== */
+.category-card {
   position: relative !important;
-  background-color: #0e0c0a !important;
-  border: 1px solid #241e18 !important;
-  border-radius: 2px !important;
-  overflow: hidden !important;
   display: flex !important;
   flex-direction: column !important;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  text-decoration: none !important;
-  cursor: pointer !important;
-}
-
-.collection-card:hover {
-  border-color: rgba(212, 168, 106, 0.6) !important;
-  transform: translateY(-3px) !important;
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.85), 0 0 20px rgba(212, 168, 106, 0.15) !important;
-}
-
-.collection-card-img-wrap {
-  position: relative !important;
   width: 100% !important;
-  aspect-ratio: 16 / 10 !important;
-  overflow: hidden !important;
-  background-color: #14100c !important;
+  max-width: 225px !important;
+  height: 270px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  cursor: pointer !important;
+  outline: none !important;
+  user-select: none !important;
+
+  /* Hidden initial entrance state */
+  opacity: 0 !important;
+  transform: translateY(28px) scale(0.96) !important;
+  will-change: transform, opacity !important;
+  
+  /* Staggered sequential delay based on card index (Whiskey -> Rum -> Beer -> etc.) */
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease !important;
+  transition-delay: calc(var(--card-index, 0) * 80ms) !important;
 }
 
-.collection-card-img {
+/* Revealed in-view state when category section is scrolled to */
+.category-card.card-in-view {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Clear transition delay once entrance cascade finishes for instant hover feel */
+.category-card.reveal-completed {
+  transition-delay: 0ms !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s ease,
+              opacity 0.3s ease !important;
+}
+
+.category-card:hover {
+  transition-delay: 0ms !important;
+  transform: translateY(-5px) scale(1.015) !important;
+}
+
+.category-card .category-card-glow {
+  opacity: 0 !important;
+  transform: translateX(-50%) scale(0.85) !important;
+  transition: opacity 0.5s ease, transform 0.5s ease !important;
+  transition-delay: calc(var(--card-index, 0) * 80ms + 40ms) !important;
+}
+
+.category-card.card-in-view .category-card-glow {
+  opacity: 0.75 !important;
+  filter: blur(8px) !important;
+  transform: translateX(-50%) scale(1) !important;
+}
+
+.category-card.reveal-completed .category-card-glow {
+  transition-delay: 0ms !important;
+  transition: opacity 0.3s ease, transform 0.3s ease !important;
+}
+
+.category-card:hover .category-card-glow {
+  transition-delay: 0ms !important;
+  opacity: 1 !important;
+  filter: blur(9px) !important;
+  transform: translateX(-50%) scale(1.1) !important;
+}
+
+.category-card-frame {
+  position: relative !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(212, 168, 106, 0.22) !important;
+  background: rgba(14, 11, 8, 0.88) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  transition: border-color 0.4s ease, background-color 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease !important;
+}
+
+/* Hover & Mid-Screen Light Reflection Shimmer Sweep */
+.category-card-img-wrapper {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+@keyframes midCardShimmer {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+.category-card-img-wrapper::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -150%;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 235, 200, 0.35) 50%,
+    transparent 100%
+  ) !important;
+  transform: skewX(-25deg) !important;
+  transition: left 0.75s ease !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+.category-card.card-in-view .category-card-img-wrapper::after {
+  animation: midCardShimmer 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--card-index, 0) * 110ms + 160ms);
+}
+
+.category-card:hover .category-card-img-wrapper::after {
+  animation: none !important;
+  left: 150% !important;
+}
+
+.category-card-img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
   object-position: center !important;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease !important;
+  will-change: transform, filter !important;
 }
 
-.collection-card:hover .collection-card-img {
-  transform: scale(1.06) !important;
+/* Category Card Image Transitions for the First 4 Categories */
+/* 1. WHISKEY */
+.category-card[data-category-card="WHISKEY"] .category-card-img {
+  transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.2), filter 0.5s ease !important;
+}
+
+.category-card[data-category-card="WHISKEY"]:hover .category-card-img {
+  transform: scale(1.15) translateY(-4px) rotate(1deg) !important;
+  filter: brightness(1.24) contrast(1.14) saturate(1.3) drop-shadow(0 0 20px rgba(212, 140, 50, 0.65)) drop-shadow(0 15px 25px rgba(0, 0, 0, 0.85)) !important;
+}
+
+.category-card[data-category-card="WHISKEY"] .category-card-img-wrapper::after {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 220, 160, 0.55) 50%, transparent 100%) !important;
+}
+
+/* 2. RUM */
+.category-card[data-category-card="RUM"] .category-card-img {
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.35, 1.25), filter 0.5s ease !important;
+}
+
+.category-card[data-category-card="RUM"]:hover .category-card-img {
+  transform: scale(1.16) translateY(-5px) rotate(-1.5deg) !important;
+  filter: brightness(1.22) contrast(1.18) saturate(1.4) drop-shadow(0 0 22px rgba(235, 90, 20, 0.7)) drop-shadow(0 15px 25px rgba(0, 0, 0, 0.85)) !important;
+}
+
+.category-card[data-category-card="RUM"] .category-card-img-wrapper::after {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 185, 120, 0.55) 50%, transparent 100%) !important;
+}
+
+/* 3. BEER */
+.category-card[data-category-card="BEER"] .category-card-img {
+  transition: transform 0.5s cubic-bezier(0.34, 1.75, 0.64, 1), filter 0.4s ease !important;
+}
+
+.category-card[data-category-card="BEER"]:hover .category-card-img {
+  transform: scale(1.16) translateY(-6px) rotate(2deg) !important;
+  filter: brightness(1.28) contrast(1.2) saturate(1.45) drop-shadow(0 0 25px rgba(255, 205, 30, 0.75)) drop-shadow(0 15px 25px rgba(0, 0, 0, 0.85)) !important;
+}
+
+.category-card[data-category-card="BEER"] .category-card-img-wrapper::after {
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 240, 160, 0.6) 50%, transparent 100%) !important;
+}
+
+/* 4. VODKA */
+.category-card[data-category-card="VODKA"] .category-card-img {
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), filter 0.45s ease !important;
+}
+
+.category-card[data-category-card="VODKA"]:hover .category-card-img {
+  transform: scale(1.18) translateY(-5px) perspective(600px) rotateY(-3deg) !important;
+  filter: brightness(1.32) contrast(1.25) saturate(0.9) drop-shadow(0 0 25px rgba(80, 210, 255, 0.8)) drop-shadow(0 0 40px rgba(160, 235, 255, 0.4)) drop-shadow(0 15px 25px rgba(0, 0, 0, 0.85)) !important;
+}
+
+.category-card[data-category-card="VODKA"] .category-card-img-wrapper::after {
+  background: linear-gradient(90deg, transparent 0%, rgba(195, 240, 255, 0.65) 50%, transparent 100%) !important;
+}
+
+/* Fallback for other category cards */
+.category-card:hover .category-card-img {
+  transform: scale(1.1) rotate(0.4deg);
+  filter: brightness(1.12) contrast(1.05);
+}
+
+.category-card:hover .category-card-frame {
+  border-color: rgba(212, 168, 106, 0.75) !important;
+  background: rgba(22, 16, 12, 0.95) !important;
+  transform: translateY(-6px) !important;
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.88),
+    0 0 30px rgba(212, 168, 106, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-card {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+    transition-delay: 0s !important;
+  }
+  .category-card-glow {
+    opacity: 0.75 !important;
+    transition: none !important;
+  }
+}
+
+.category-card-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 1rem 1.25rem !important;
+  border-top: 1px solid rgba(212, 168, 106, 0.15) !important;
+}
+
+.category-card-label {
+  transition: color 0.3s ease, transform 0.3s ease !important;
+}
+
+.category-card:hover .category-card-label {
+  color: #d4a86a !important;
+}
+
+.category-card-arrow-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 9999px !important;
+  border: 1px solid rgba(212, 168, 106, 0.4) !important;
+  background: rgba(212, 168, 106, 0.08) !important;
+  color: #d4a86a !important;
+  font-size: 0.9rem !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  opacity: 0.7;
+  transform: translateX(-3px) !important;
+}
+
+.category-card:hover .category-card-arrow-badge {
+  opacity: 1 !important;
+  border-color: #d4a86a !important;
+  background: #d4a86a !important;
+  color: #0a0806 !important;
+  transform: translateX(2px) scale(1.1) !important;
+  box-shadow: 0 4px 14px rgba(212, 168, 106, 0.4) !important;
 }
 
 .collection-card-gradient {
@@ -3767,10 +4651,14 @@ div:has(> .wine-card-pill) {
 }
 
 /* ==========================================================================
-   VISIT SECTION REDESIGN (MATCHING EXACT LUXURY REFERENCE DESIGN)
+   VISIT SECTION - HERO-INSPIRED LUXURY TRANSITIONS & ATMOSPHERIC DEPTH
    ========================================================================== */
 #visit,
 .visit-section {
+  --visit-ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --visit-ease-molten: cubic-bezier(0.19, 1, 0.22, 1);
+  --visit-ease-slow: cubic-bezier(0.2, 0.8, 0.2, 1);
+  
   background-color: #0a0806 !important;
   padding-top: 0 !important;
   padding-bottom: 5.5rem !important;
@@ -3787,14 +4675,49 @@ div:has(> .wine-card-pill) {
   align-items: center !important;
   background-color: #0c0a08 !important;
   overflow: hidden !important;
-  border-top: 1px solid rgba(212, 168, 106, 0.1) !important;
+  border-top: 1px solid rgba(212, 168, 106, 0.12) !important;
   border-bottom: 1px solid rgba(212, 168, 106, 0.12) !important;
+  transition: border-color 0.8s var(--visit-ease-cinematic),
+              box-shadow 0.8s var(--visit-ease-cinematic) !important;
 }
 
 @media (min-width: 1024px) {
   .visit-showcase-banner {
     min-height: 600px !important;
   }
+}
+
+/* Dynamic Ambient Torchlight Overlay across the Showcase Banner */
+.visit-torch-glow {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  background: radial-gradient(
+    750px circle at var(--visit-mouse-x, 50%) var(--visit-mouse-y, 45%),
+    rgba(212, 168, 106, 0.18) 0%,
+    rgba(212, 168, 106, 0.05) 42%,
+    transparent 72%
+  ) !important;
+  opacity: 0;
+  transition: opacity 2.4s var(--visit-ease-cinematic) !important;
+  will-change: background, opacity !important;
+}
+
+.visit-section.visit-loaded .visit-torch-glow {
+  opacity: 1 !important;
+}
+
+/* Storefront Background Image Wrapper & Ken Burns */
+.visit-banner-bg-wrapper {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  user-select: none !important;
+  overflow: hidden !important;
+  transition: transform 0.8s var(--visit-ease-cinematic) !important;
+  will-change: transform !important;
 }
 
 .visit-banner-bg {
@@ -3804,7 +4727,33 @@ div:has(> .wine-card-pill) {
   height: 100% !important;
   object-fit: cover !important;
   object-position: center right !important;
-  z-index: 1 !important;
+  transform: scale(1.12) translateZ(0);
+  filter: brightness(0.4) blur(8px) contrast(1.1);
+  opacity: 0;
+  transition: transform 2.8s var(--visit-ease-cinematic),
+              filter 2.4s var(--visit-ease-cinematic),
+              opacity 2.0s ease !important;
+  will-change: transform, filter, opacity !important;
+  backface-visibility: hidden !important;
+}
+
+.visit-section.visit-loaded .visit-banner-bg {
+  transform: scale(1) translateZ(0);
+  filter: brightness(1) blur(0px) contrast(1.02);
+  opacity: 1;
+  animation: visitBgKenBurns 36s ease-in-out 3s infinite alternate;
+}
+
+@keyframes visitBgKenBurns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.045) translate(-0.8%, -0.5%);
+  }
+  100% {
+    transform: scale(1.025) translate(0.6%, 0.7%);
+  }
 }
 
 .visit-banner-overlay {
@@ -3812,35 +4761,39 @@ div:has(> .wine-card-pill) {
   inset: 0 !important;
   background: linear-gradient(
     90deg,
-    rgba(8, 6, 5, 0.8) 0%,
-    rgba(8, 6, 5, 0.6) 26%,
-    rgba(8, 6, 5, 0.25) 50%,
-    rgba(8, 6, 5, 0.05) 75%,
-    rgba(8, 6, 5, 0) 100%
+    rgba(10, 8, 6, 0.92) 0%,
+    rgba(10, 8, 6, 0.78) 32%,
+    rgba(10, 8, 6, 0.45) 58%,
+    rgba(10, 8, 6, 0.15) 80%,
+    transparent 100%
   ) !important;
-  z-index: 2 !important;
+  z-index: 1 !important;
   pointer-events: none !important;
+  transition: opacity 1.5s ease !important;
 }
 
 @media (max-width: 767px) {
   .visit-banner-overlay {
     background: linear-gradient(
       180deg,
-      rgba(8, 6, 5, 0.8) 0%,
-      rgba(8, 6, 5, 0.55) 50%,
-      rgba(8, 6, 5, 0.35) 100%
+      rgba(10, 8, 6, 0.94) 0%,
+      rgba(10, 8, 6, 0.78) 45%,
+      rgba(10, 8, 6, 0.92) 100%
     ) !important;
   }
 }
 
 .visit-banner-container {
   position: relative !important;
-  z-index: 3 !important;
+  z-index: 10 !important;
   width: 100% !important;
   max-width: 1320px !important;
   margin-left: auto !important;
   margin-right: auto !important;
   padding: 4.5rem 1.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  min-height: 540px !important;
 }
 
 @media (min-width: 640px) {
@@ -3851,136 +4804,346 @@ div:has(> .wine-card-pill) {
 
 @media (min-width: 1024px) {
   .visit-banner-container {
-    padding: 6.5rem 4rem !important;
+    padding: 6rem 4rem !important;
+    min-height: 600px !important;
   }
 }
 
 .visit-banner-content {
-  max-width: 480px !important;
+  max-width: 560px !important;
   text-align: left !important;
+  transition: transform 0.7s var(--visit-ease-cinematic), opacity 0.7s ease !important;
+  will-change: transform, opacity !important;
+}
+
+/* Eyebrow entrance & hover glow */
+.visit-eyebrow-wrap {
+  overflow: hidden !important;
+  margin-bottom: 0.9rem !important;
 }
 
 .visit-eyebrow {
-  display: block !important;
+  display: inline-block !important;
   font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
-  font-size: 0.8rem !important;
+  font-size: 0.78rem !important;
   font-weight: 700 !important;
   letter-spacing: 0.28em !important;
   text-transform: uppercase !important;
   color: #d4a86a !important;
-  margin-bottom: 1.25rem !important;
+  margin: 0 !important;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
+  transform: translateY(110%);
+  opacity: 0;
+  transition: transform 1.2s var(--visit-ease-molten),
+              opacity 1.2s var(--visit-ease-molten),
+              letter-spacing 0.7s var(--visit-ease-cinematic),
+              text-shadow 0.7s var(--visit-ease-cinematic),
+              color 0.6s ease !important;
+  will-change: transform, opacity !important;
 }
 
+.visit-section.visit-loaded .visit-eyebrow {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.08s !important;
+}
+
+.visit-banner-content:hover .visit-eyebrow {
+  color: #e5be85 !important;
+  letter-spacing: 0.3em !important;
+  text-shadow: 0 0 16px rgba(212, 168, 106, 0.5) !important;
+}
+
+/* Line-by-line clip reveal title */
 .visit-main-title {
   font-family: var(--font-display, "Domine", Georgia, serif) !important;
-  font-size: clamp(2.3rem, 4.2vw, 3.8rem) !important;
+  font-size: clamp(2.3rem, 4.4vw, 4.2rem) !important;
   font-weight: 600 !important;
-  letter-spacing: 0.04em !important;
+  letter-spacing: 0.025em !important;
   text-transform: uppercase !important;
-  color: #ffffff !important;
-  line-height: 1.1 !important;
+  line-height: 1.08 !important;
   margin: 0 0 1.25rem 0 !important;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 2px 6px rgba(0, 0, 0, 0.9) !important;
+  cursor: default !important;
 }
 
+.visit-title-line-wrap {
+  display: block !important;
+  overflow: hidden !important;
+  padding-bottom: 0.08em !important;
+  margin-bottom: -0.04em !important;
+}
+
+.visit-line-1,
+.visit-line-2 {
+  transform: translateY(125%) rotate(1.5deg);
+  opacity: 0;
+  transition: transform 1.35s var(--visit-ease-molten),
+              opacity 1.35s var(--visit-ease-molten),
+              letter-spacing 0.7s var(--visit-ease-cinematic),
+              text-shadow 0.7s var(--visit-ease-cinematic),
+              color 0.6s ease !important;
+  will-change: transform, opacity, letter-spacing, text-shadow !important;
+}
+
+.visit-section.visit-loaded .visit-line-1 {
+  transform: translateY(0) rotate(0deg);
+  opacity: 1;
+  transition-delay: 0.18s !important;
+}
+
+.visit-section.visit-loaded .visit-line-2 {
+  transform: translateY(0) rotate(0deg);
+  opacity: 1;
+  transition-delay: 0.38s !important;
+}
+
+.visit-title-ivory {
+  display: block !important;
+  color: #ede7de !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.9) !important;
+  transition: color 0.6s ease,
+              text-shadow 0.65s var(--visit-ease-cinematic),
+              transform 0.65s var(--visit-ease-cinematic),
+              letter-spacing 0.65s var(--visit-ease-cinematic) !important;
+}
+
+.visit-title-ivory:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px) translateZ(0) !important;
+  letter-spacing: 0.035em !important;
+  text-shadow: 0 6px 30px rgba(0, 0, 0, 1), 0 0 20px rgba(255, 255, 255, 0.4) !important;
+}
+
+.visit-title-gold {
+  display: block !important;
+  color: #d4a86a !important;
+  background: linear-gradient(
+    115deg,
+    #d4a86a 0%,
+    #f8e2bc 25%,
+    #ffffff 48%,
+    #f8e2bc 70%,
+    #d4a86a 100%
+  ) !important;
+  background-size: 240% auto !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  animation: visitGoldShimmer 9s ease-in-out infinite !important;
+  transition: transform 0.65s var(--visit-ease-cinematic),
+              letter-spacing 0.65s var(--visit-ease-cinematic),
+              filter 0.65s var(--visit-ease-cinematic) !important;
+}
+
+.visit-title-gold:hover {
+  transform: translateY(-2px) translateZ(0) !important;
+  letter-spacing: 0.035em !important;
+  filter: drop-shadow(0 0 16px rgba(212, 168, 106, 0.65)) !important;
+}
+
+@keyframes visitGoldShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  38% {
+    background-position: 240% center;
+  }
+  100% {
+    background-position: 240% center;
+  }
+}
+
+/* Staggered Subtitle with cinematic unblur & text lift */
 .visit-banner-sub {
   font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
-  font-size: 1.02rem !important;
-  line-height: 1.55 !important;
-  color: #ded8cf !important;
-  margin-bottom: 2.25rem !important;
-  max-width: 420px !important;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95) !important;
+  color: #b8ada3 !important;
+  font-size: clamp(0.96rem, 1.3vw, 1.08rem) !important;
+  line-height: 1.65 !important;
+  letter-spacing: 0.012em !important;
+  margin-top: 1.25rem !important;
+  margin-bottom: 2rem !important;
+  max-width: 480px !important;
+  font-weight: 400 !important;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.95) !important;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.8s var(--visit-ease-cinematic),
+              opacity 0.8s var(--visit-ease-cinematic),
+              color 0.35s ease !important;
+  will-change: transform, opacity !important;
 }
 
-.nav-plan-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0.4rem !important;
-  border: 1px solid rgba(212, 168, 106, 0.6) !important;
-  padding: 0.5rem 1.1rem !important;
-  font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
-  font-size: 0.72rem !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.2em !important;
-  text-transform: uppercase !important;
-  color: #d4a86a !important;
-  border-radius: 2px !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  text-decoration: none !important;
+.visit-section.visit-loaded .visit-banner-sub {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.35s !important;
 }
 
-.nav-plan-btn:hover {
-  background-color: #d4a86a !important;
-  color: #14100c !important;
-  border-color: #d4a86a !important;
-  box-shadow: 0 0 16px rgba(212, 168, 106, 0.4) !important;
+.visit-banner-content:hover .visit-banner-sub {
+  color: #ede7de !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(212, 168, 106, 0.2) !important;
 }
 
+/* Staggered Actions Row */
 .visit-actions-row {
   display: flex !important;
   flex-wrap: wrap !important;
   align-items: center !important;
-  gap: 1rem !important;
+  gap: 1.15rem !important;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.8s var(--visit-ease-cinematic),
+              opacity 0.8s var(--visit-ease-cinematic) !important;
+  will-change: transform, opacity !important;
 }
 
+.visit-section.visit-loaded .visit-actions-row {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.45s !important;
+}
+
+/* Primary Action Button (GET DIRECTIONS) */
 .visit-btn-primary {
+  position: relative !important;
+  overflow: hidden !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 0.6rem !important;
-  background-color: #d4a86a !important;
-  color: #14100c !important;
+  gap: 0.75rem !important;
+  background: linear-gradient(135deg, #d4a86a 0%, #e2be86 50%, #d4a86a 100%) !important;
+  color: #140f0b !important;
   font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
-  font-size: 0.72rem !important;
+  font-size: 0.76rem !important;
   font-weight: 700 !important;
-  letter-spacing: 0.2em !important;
+  letter-spacing: 0.16em !important;
   text-transform: uppercase !important;
-  padding: 14px 28px !important;
+  padding: 1rem 2rem !important;
   border-radius: 2px !important;
   border: 1px solid #d4a86a !important;
+  box-shadow: 0 4px 20px rgba(212, 168, 106, 0.28), 0 2px 6px rgba(0, 0, 0, 0.4) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.3s ease,
+              border-color 0.3s ease,
+              color 0.3s ease,
+              box-shadow 0.3s ease !important;
+  will-change: transform !important;
   text-decoration: none !important;
   cursor: pointer !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.visit-btn-primary::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -150% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 100%
+  ) !important;
+  transform: skewX(-25deg) !important;
+  transition: left 0.9s var(--visit-ease-cinematic) !important;
+  pointer-events: none !important;
+}
+
+.visit-btn-primary:hover::after {
+  left: 160% !important;
 }
 
 .visit-btn-primary:hover {
-  background-color: #e5be85 !important;
+  background: linear-gradient(135deg, #e5be85 0%, #fae6c6 50%, #e5be85 100%) !important;
+  color: #0a0806 !important;
+  transform: translateY(-3px) translateZ(0) !important;
+  box-shadow: 0 12px 36px rgba(212, 168, 106, 0.52), 0 4px 12px rgba(0, 0, 0, 0.5) !important;
   border-color: #e5be85 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 24px rgba(212, 168, 106, 0.45) !important;
 }
 
+.visit-btn-primary:active {
+  transform: translateY(-1px) scale(0.982) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+/* Secondary Action Button (CALL THE HOUSE) */
 .visit-btn-secondary {
+  position: relative !important;
+  overflow: hidden !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  gap: 0.6rem !important;
-  background-color: rgba(10, 8, 6, 0.65) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+  gap: 0.75rem !important;
+  background-color: rgba(18, 14, 11, 0.65) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
   color: #ede7de !important;
   font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
-  font-size: 0.72rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.2em !important;
+  font-size: 0.76rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.16em !important;
   text-transform: uppercase !important;
-  padding: 14px 28px !important;
+  padding: 1rem 2rem !important;
   border-radius: 2px !important;
-  border: 1px solid rgba(212, 168, 106, 0.5) !important;
+  border: 1px solid rgba(212, 168, 106, 0.55) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s ease,
+              border-color 0.3s ease,
+              color 0.3s ease,
+              box-shadow 0.3s ease !important;
+  will-change: transform !important;
   text-decoration: none !important;
   cursor: pointer !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.visit-btn-secondary::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -150% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 168, 106, 0.3) 50%,
+    transparent 100%
+  ) !important;
+  transform: skewX(-25deg) !important;
+  transition: left 0.9s var(--visit-ease-cinematic) !important;
+  pointer-events: none !important;
+}
+
+.visit-btn-secondary:hover::after {
+  left: 160% !important;
 }
 
 .visit-btn-secondary:hover {
+  background-color: rgba(212, 168, 106, 0.18) !important;
   border-color: #d4a86a !important;
   color: #d4a86a !important;
-  background-color: rgba(212, 168, 106, 0.15) !important;
-  transform: translateY(-2px) !important;
+  transform: translateY(-3px) translateZ(0) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 24px rgba(212, 168, 106, 0.28) !important;
+}
+
+.visit-btn-secondary:active {
+  transform: translateY(-1px) scale(0.982) !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.visit-btn-primary .hero-btn-arrow,
+.visit-btn-secondary .hero-btn-arrow {
+  display: inline-block !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  font-size: 1.05rem !important;
+  line-height: 1 !important;
+}
+
+.visit-btn-primary:hover .hero-btn-arrow,
+.visit-btn-secondary:hover .hero-btn-arrow {
+  transform: translateX(6px) !important;
 }
 
 /* 2. Three-Column Information Strip */
@@ -3990,6 +5153,8 @@ div:has(> .wine-card-pill) {
   border-top: 1px solid #1f1913 !important;
   border-bottom: 1px solid #1f1913 !important;
   padding: 3rem 1.5rem !important;
+  transition: background-color 0.85s var(--visit-ease-cinematic),
+              border-color 0.85s var(--visit-ease-cinematic) !important;
 }
 
 @media (min-width: 640px) {
@@ -4022,35 +5187,121 @@ div:has(> .wine-card-pill) {
 
 @media (min-width: 1024px) {
   .visit-info-grid {
-    gap: 4rem !important;
+    gap: 3.5rem !important;
   }
 }
 
+/* Information Column Card */
 .visit-info-col {
+  position: relative !important;
+  overflow: hidden !important;
   display: flex !important;
   align-items: flex-start !important;
   gap: 1.15rem !important;
   text-align: left !important;
+  padding: 1.35rem 1.4rem !important;
+  border-radius: 6px !important;
+  border: 1px solid rgba(212, 168, 106, 0.12) !important;
+  background: linear-gradient(145deg, rgba(16, 12, 9, 0.75) 0%, rgba(10, 8, 6, 0.85) 100%) !important;
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.6) !important;
+  transition: transform 0.4s var(--visit-ease-cinematic),
+              background 0.4s ease,
+              border-color 0.4s ease,
+              box-shadow 0.4s var(--visit-ease-cinematic),
+              opacity 0.9s var(--visit-ease-cinematic) !important;
+  will-change: transform, box-shadow, border-color !important;
+  transform: translateZ(0) !important;
+  cursor: default !important;
+}
+
+/* Subtle Mouse Tracking Spotlight Effect */
+.visit-info-col::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: radial-gradient(circle 220px at var(--card-mouse-x, 50%) var(--card-mouse-y, 50%), rgba(212, 168, 106, 0.12), transparent 70%) !important;
+  opacity: 0 !important;
+  transition: opacity 0.4s ease !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.visit-info-col:hover::before {
+  opacity: 1 !important;
+}
+
+/* Golden Top Accent Line Shimmer */
+.visit-info-col::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, transparent, rgba(212, 168, 106, 0.75), transparent) !important;
+  opacity: 0 !important;
+  transform: scaleX(0.2) !important;
+  transition: transform 0.5s var(--visit-ease-cinematic), opacity 0.4s ease !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+.visit-info-col:hover::after {
+  opacity: 1 !important;
+  transform: scaleX(1) !important;
+}
+
+.visit-info-col:hover {
+  transform: translateY(-8px) scale(1.015) translateZ(0) !important;
+  background: linear-gradient(145deg, rgba(26, 20, 15, 0.95) 0%, rgba(16, 12, 9, 0.95) 100%) !important;
+  border-color: rgba(212, 168, 106, 0.5) !important;
+  box-shadow: 0 22px 45px -10px rgba(0, 0, 0, 0.9), 0 0 28px rgba(212, 168, 106, 0.16) !important;
 }
 
 .visit-info-icon-wrap {
+  position: relative !important;
+  z-index: 2 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 28px !important;
-  height: 28px !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  background-color: rgba(212, 168, 106, 0.08) !important;
+  border: 1px solid rgba(212, 168, 106, 0.22) !important;
   flex-shrink: 0 !important;
   color: #d4a86a !important;
   margin-top: 2px !important;
+  transition: transform 0.4s var(--visit-ease-cinematic),
+              background-color 0.4s ease,
+              border-color 0.4s ease,
+              box-shadow 0.4s var(--visit-ease-cinematic) !important;
+}
+
+.visit-info-col:hover .visit-info-icon-wrap {
+  transform: scale(1.15) rotate(4deg) !important;
+  background-color: rgba(212, 168, 106, 0.22) !important;
+  border-color: rgba(212, 168, 106, 0.75) !important;
+  box-shadow: 0 0 22px rgba(212, 168, 106, 0.5) !important;
 }
 
 .visit-info-icon {
-  width: 26px !important;
-  height: 26px !important;
+  width: 22px !important;
+  height: 22px !important;
   color: #d4a86a !important;
+  transition: transform 0.35s var(--visit-ease-cinematic),
+              filter 0.35s ease,
+              color 0.35s ease !important;
+}
+
+.visit-info-col:hover .visit-info-icon {
+  filter: drop-shadow(0 0 8px rgba(212, 168, 106, 0.85)) !important;
+  transform: scale(1.08) !important;
 }
 
 .visit-info-text-wrap {
+  position: relative !important;
+  z-index: 2 !important;
   flex: 1 1 auto !important;
 }
 
@@ -4062,6 +5313,18 @@ div:has(> .wine-card-pill) {
   text-transform: uppercase !important;
   color: #d4a86a !important;
   margin: 0 0 0.85rem 0 !important;
+  transition: transform 0.35s var(--visit-ease-cinematic),
+              color 0.35s ease,
+              letter-spacing 0.4s var(--visit-ease-cinematic),
+              text-shadow 0.35s ease !important;
+  will-change: transform !important;
+}
+
+.visit-info-col:hover .visit-info-title {
+  transform: translateY(-2px) translateZ(0) !important;
+  color: #f5d5a0 !important;
+  letter-spacing: 0.26em !important;
+  text-shadow: 0 0 12px rgba(212, 168, 106, 0.4) !important;
 }
 
 .visit-info-line {
@@ -4070,6 +5333,13 @@ div:has(> .wine-card-pill) {
   line-height: 1.55 !important;
   color: #ede7de !important;
   margin: 0 !important;
+  transition: color 0.35s ease,
+              transform 0.35s var(--visit-ease-cinematic) !important;
+}
+
+.visit-info-col:hover .visit-info-line {
+  color: #ffffff !important;
+  transform: translateX(3px) translateZ(0) !important;
 }
 
 .visit-info-subline {
@@ -4078,6 +5348,13 @@ div:has(> .wine-card-pill) {
   line-height: 1.55 !important;
   color: #9c9185 !important;
   margin: 0 !important;
+  transition: color 0.35s ease,
+              transform 0.35s var(--visit-ease-cinematic) !important;
+}
+
+.visit-info-col:hover .visit-info-subline {
+  color: #ded8cf !important;
+  transform: translateX(3px) translateZ(0) !important;
 }
 
 .visit-hours-table {
@@ -4086,11 +5363,25 @@ div:has(> .wine-card-pill) {
   border-collapse: collapse !important;
 }
 
+.visit-hours-table tr {
+  transition: background-color 0.3s var(--visit-ease-cinematic),
+              transform 0.35s var(--visit-ease-cinematic),
+              box-shadow 0.3s ease !important;
+  border-radius: 3px !important;
+}
+
+.visit-hours-table tr:hover {
+  background-color: rgba(212, 168, 106, 0.12) !important;
+  transform: translateX(6px) !important;
+  box-shadow: inset 3px 0 0 #d4a86a !important;
+}
+
 .visit-hours-table td {
-  padding: 1.5px 0 !important;
+  padding: 3px 6px !important;
   font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
   font-size: 0.92rem !important;
   line-height: 1.55 !important;
+  transition: color 0.3s var(--visit-ease-cinematic) !important;
 }
 
 .visit-hours-day {
@@ -4099,31 +5390,47 @@ div:has(> .wine-card-pill) {
   white-space: nowrap !important;
 }
 
+.visit-hours-table tr:hover .visit-hours-day {
+  color: #d4a86a !important;
+}
+
 .visit-hours-time {
   color: #ede7de !important;
   white-space: nowrap !important;
 }
 
+.visit-hours-table tr:hover .visit-hours-time {
+  color: #ffffff !important;
+}
+
 .visit-info-link {
   color: #ede7de !important;
   text-decoration: none !important;
-  display: block !important;
-  transition: color 0.25s ease !important;
+  display: inline-block !important;
+  transition: color 0.3s var(--visit-ease-cinematic),
+              transform 0.35s var(--visit-ease-cinematic),
+              text-shadow 0.3s ease !important;
 }
 
 .visit-info-link:hover {
   color: #d4a86a !important;
+  transform: translateX(5px) !important;
+  text-shadow: 0 0 10px rgba(212, 168, 106, 0.4) !important;
 }
 
 .visit-info-sublink {
   color: #9c9185 !important;
   text-decoration: none !important;
-  display: block !important;
-  transition: color 0.25s ease !important;
+  display: inline-block !important;
+  transition: color 0.3s var(--visit-ease-cinematic),
+              transform 0.35s var(--visit-ease-cinematic),
+              text-shadow 0.3s ease !important;
 }
 
 .visit-info-sublink:hover {
   color: #d4a86a !important;
+  transform: translateX(5px) !important;
+  text-shadow: 0 0 10px rgba(212, 168, 106, 0.4) !important;
 }
 
 /* 3. Map & Directions Card */
@@ -4148,12 +5455,47 @@ div:has(> .wine-card-pill) {
 }
 
 .visit-map-card {
+  position: relative !important;
   display: grid !important;
   grid-template-columns: 1fr !important;
   background-color: #080705 !important;
-  border: 1px solid #1f1913 !important;
-  border-radius: 2px !important;
+  border: 1px solid rgba(212, 168, 106, 0.18) !important;
+  border-radius: 6px !important;
   overflow: hidden !important;
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.65) !important;
+  transition: transform 0.45s var(--visit-ease-cinematic),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease,
+              opacity 0.6s ease !important;
+  will-change: transform !important;
+  transform: translateZ(0) !important;
+}
+
+/* Golden Top Accent Line on Map Card */
+.visit-map-card::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, transparent, rgba(212, 168, 106, 0.8), transparent) !important;
+  opacity: 0 !important;
+  transform: scaleX(0.25) !important;
+  transition: transform 0.4s var(--visit-ease-cinematic), opacity 0.3s ease !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+}
+
+.visit-map-card:hover::after {
+  opacity: 1 !important;
+  transform: scaleX(1) !important;
+}
+
+.visit-map-card:hover {
+  transform: translateY(-5px) translateZ(0) !important;
+  border-color: rgba(212, 168, 106, 0.5) !important;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 168, 106, 0.18) !important;
 }
 
 @media (min-width: 900px) {
@@ -4176,17 +5518,34 @@ div:has(> .wine-card-pill) {
   }
 }
 
+/* Subtle Glow on Map Visual on Hover */
+.visit-map-visual::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: radial-gradient(circle 350px at var(--map-mouse-x, 33%) var(--map-mouse-y, 48%), rgba(212, 168, 106, 0.12), transparent 70%) !important;
+  opacity: 0 !important;
+  transition: opacity 0.35s ease !important;
+  pointer-events: none !important;
+  z-index: 4 !important;
+}
+
+.visit-map-card:hover .visit-map-visual::after {
+  opacity: 1 !important;
+}
+
 .visit-map-bg-img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
   object-position: center !important;
   display: block !important;
-  transition: transform 0.6s ease !important;
+  transition: transform 0.8s var(--visit-ease-cinematic) !important;
+  will-change: transform !important;
 }
 
-.visit-map-visual:hover .visit-map-bg-img {
-  transform: scale(1.02) !important;
+.visit-map-card:hover .visit-map-bg-img {
+  transform: scale(1.04) translateZ(0) !important;
 }
 
 .visit-map-overlay-pin {
@@ -4199,18 +5558,25 @@ div:has(> .wine-card-pill) {
   align-items: center !important;
   pointer-events: none !important;
   z-index: 5 !important;
+  transition: transform 0.3s var(--visit-ease-cinematic) !important;
 }
 
 .visit-map-pin-svg {
   width: 24px !important;
   height: 24px !important;
   filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 10px rgba(212, 168, 106, 0.8)) !important;
-  animation: mapPinFloat 2.5s ease-in-out infinite alternate !important;
+  animation: mapPinFloat 3.2s ease-in-out infinite alternate !important;
+  transition: transform 0.3s var(--visit-ease-cinematic) !important;
+}
+
+.visit-map-card:hover .visit-map-pin-svg {
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 20px rgba(212, 168, 106, 1)) !important;
+  transform: scale(1.15) !important;
 }
 
 @keyframes mapPinFloat {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-3px); }
+  100% { transform: translateY(-4px); }
 }
 
 .visit-map-pin-label {
@@ -4222,6 +5588,13 @@ div:has(> .wine-card-pill) {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.95), 0 0 8px rgba(0, 0, 0, 0.9) !important;
   margin-top: 4px !important;
   white-space: nowrap !important;
+  transition: color 0.25s ease,
+              transform 0.3s var(--visit-ease-cinematic) !important;
+}
+
+.visit-map-card:hover .visit-map-pin-label {
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
 }
 
 .visit-map-directions-panel {
@@ -4232,6 +5605,8 @@ div:has(> .wine-card-pill) {
   justify-content: center !important;
   align-items: flex-start !important;
   border-top: 1px solid #1f1913 !important;
+  transition: background-color 0.3s ease,
+              border-color 0.3s ease !important;
 }
 
 @media (min-width: 900px) {
@@ -4242,6 +5617,11 @@ div:has(> .wine-card-pill) {
   }
 }
 
+.visit-map-card:hover .visit-map-directions-panel {
+  background-color: #0f0c09 !important;
+  border-color: rgba(212, 168, 106, 0.25) !important;
+}
+
 .visit-map-directions-title {
   font-family: var(--font-body, "Hanken Grotesk", sans-serif) !important;
   font-size: 0.8rem !important;
@@ -4250,6 +5630,15 @@ div:has(> .wine-card-pill) {
   text-transform: uppercase !important;
   color: #d4a86a !important;
   margin: 0 0 0.4rem 0 !important;
+  transition: transform 0.3s var(--visit-ease-cinematic),
+              color 0.25s ease,
+              text-shadow 0.25s ease !important;
+}
+
+.visit-map-card:hover .visit-map-directions-title {
+  transform: translateY(-1.5px) translateZ(0) !important;
+  color: #f5d5a0 !important;
+  text-shadow: 0 0 12px rgba(212, 168, 106, 0.4) !important;
 }
 
 .visit-map-directions-sub {
@@ -4258,9 +5647,16 @@ div:has(> .wine-card-pill) {
   line-height: 1.5 !important;
   color: #9c9185 !important;
   margin: 0 0 1.25rem 0 !important;
+  transition: color 0.25s ease !important;
+}
+
+.visit-map-card:hover .visit-map-directions-sub {
+  color: #ede7de !important;
 }
 
 .visit-btn-map-open {
+  position: relative !important;
+  overflow: hidden !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -4277,15 +5673,99 @@ div:has(> .wine-card-pill) {
   border: 1px solid rgba(212, 168, 106, 0.45) !important;
   text-decoration: none !important;
   cursor: pointer !important;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: transform 0.25s var(--visit-ease-cinematic),
+              background-color 0.25s ease,
+              border-color 0.25s ease,
+              color 0.25s ease,
+              box-shadow 0.25s ease !important;
+  will-change: transform !important;
+}
+
+/* Open in Maps Button Light Shimmer Sweep */
+.visit-btn-map-open::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -150% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 235, 200, 0.25), transparent) !important;
+  transform: skewX(-25deg) !important;
+  transition: left 0.6s ease !important;
+  pointer-events: none !important;
+}
+
+.visit-btn-map-open:hover::before {
+  left: 150% !important;
 }
 
 .visit-btn-map-open:hover {
-  background-color: rgba(212, 168, 106, 0.12) !important;
+  background-color: rgba(212, 168, 106, 0.16) !important;
   border-color: #d4a86a !important;
-  color: #ede7de !important;
+  color: #ffffff !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 6px 18px rgba(212, 168, 106, 0.35), 0 2px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+.visit-btn-map-open .hero-btn-arrow {
+  display: inline-block !important;
+  transition: transform 0.25s var(--visit-ease-cinematic) !important;
+}
+
+.visit-btn-map-open:hover .hero-btn-arrow {
+  transform: translateX(5px) !important;
+}
+
+.visit-btn-map-open:active {
+  transform: translateY(-0.5px) scale(0.985) !important;
+  transition: transform 0.15s ease,
+              box-shadow 0.15s ease !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visit-showcase-banner,
+  .visit-banner-bg,
+  .visit-banner-bg-wrapper,
+  .visit-torch-glow,
+  .visit-banner-overlay,
+  .visit-banner-container,
+  .visit-banner-content,
+  .visit-eyebrow,
+  .visit-main-title,
+  .visit-line-1,
+  .visit-line-2,
+  .visit-banner-sub,
+  .visit-actions-row,
+  .visit-btn-primary,
+  .visit-btn-secondary,
+  .visit-btn-primary::after,
+  .visit-btn-secondary::after,
+  .visit-btn-map-open::before,
+  .visit-btn-primary .hero-btn-arrow,
+  .visit-btn-secondary .hero-btn-arrow,
+  .visit-btn-map-open .hero-btn-arrow,
+  .visit-info-strip,
+  .visit-info-grid,
+  .visit-info-col,
+  .visit-info-icon-wrap,
+  .visit-info-icon,
+  .visit-info-title,
+  .visit-info-line,
+  .visit-info-subline,
+  .visit-hours-table tr,
+  .visit-hours-table td,
+  .visit-info-link,
+  .visit-info-sublink,
+  .visit-map-card,
+  .visit-map-bg-img,
+  .visit-map-pin-svg,
+  .visit-map-directions-title,
+  .visit-map-directions-sub,
+  .visit-btn-map-open {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
 }
 
 /* ==========================================================================
@@ -4714,42 +6194,18 @@ div:has(> .wine-card-pill) {
   transition: none !important;
 }
 
-/* 8. Products in Category Section - Completely Static on Hover (No Transitions or Movement) */
+/* 8. Products in Category Section - Smooth Hardware-Accelerated Container Transitions */
 .product-grid-card,
-.product-grid-card.wine-card,
-.product-item-row,
-#products-grid .product-grid-card,
-#products-grid .wine-card,
-#products-grid .product-item-row {
-  transition: none !important;
-  transform: none !important;
+.product-grid-card.wine-card {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease,
+              box-shadow 0.45s ease,
+              background-color 0.4s ease !important;
 }
 
 .product-grid-card:hover,
-.product-grid-card.wine-card:hover,
-.product-item-row:hover,
-#products-grid .product-grid-card:hover,
-#products-grid .wine-card:hover,
-#products-grid .product-item-row:hover {
-  transform: none !important;
-  transition: none !important;
-}
-
-.product-card-arch img,
-.wine-card-img,
-.product-item-img-box img,
-#products-grid img {
-  transition: none !important;
-  transform: none !important;
-}
-
-.product-grid-card:hover .product-card-arch img,
-.product-grid-card:hover .wine-card-img,
-.product-grid-card:hover img,
-.product-item-row:hover img,
-#products-grid .product-grid-card:hover img {
-  transform: none !important;
-  transition: none !important;
+.product-grid-card.wine-card:hover {
+  transform: translateY(-8px) scale(1.01) !important;
 }
 
 /* 9. Footer Social Action Buttons (WhatsApp & Instagram) */
@@ -5009,6 +6465,144 @@ div:has(> .wine-card-pill) {
   background: rgba(26, 20, 16, 0.94);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 24px rgba(212, 168, 106, 0.15);
   transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   GLOBAL HEADING TRANSITIONS & LUXURY MICRO-ANIMATIONS
+   ========================================================================== */
+
+/* 1. All Section Eyebrows & Super-Headings */
+.collection-eyebrow,
+.experience-eyebrow,
+.about-eyebrow,
+[class*="-eyebrow"]:not(.visit-eyebrow) {
+  display: inline-block !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.25s ease,
+              text-shadow 0.25s ease !important;
+  cursor: default !important;
+}
+
+.collection-header:hover .collection-eyebrow,
+.collection-eyebrow:hover {
+  transform: translateY(-1.5px) translateZ(0) !important;
+  color: #e5be85 !important;
+  text-shadow: 0 0 16px rgba(212, 168, 106, 0.5) !important;
+}
+
+/* 2. Collection Section Heading ("EXPLORE OUR COLLECTION") */
+.collection-header {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.collection-main-title {
+  display: inline-block !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.25s ease,
+              text-shadow 0.3s ease !important;
+  cursor: default !important;
+}
+
+.collection-header:hover .collection-main-title,
+.collection-main-title:hover {
+  transform: translateY(-2px) translateZ(0) !important;
+  color: #ffffff !important;
+  text-shadow: 0 6px 28px rgba(0, 0, 0, 0.98), 0 0 20px rgba(212, 168, 106, 0.4) !important;
+}
+
+.collection-subtitle {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease, opacity 0.25s ease !important;
+}
+
+.collection-header:hover .collection-subtitle {
+  transform: translateY(-1px) translateZ(0) !important;
+  color: #b8ada0 !important;
+}
+
+/* 4. About Section Headings */
+#about .flex h2,
+#about [data-reveal] h2 {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.25s ease !important;
+}
+
+#about [data-reveal]:hover h2 {
+  color: #000000 !important;
+}
+
+#about h3 {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.25s ease,
+              text-shadow 0.25s ease !important;
+  cursor: default !important;
+}
+
+#about [data-reveal]:hover h3,
+#about h3:hover {
+  transform: translateY(-2px) translateZ(0) !important;
+  color: #050403 !important;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 5. Category & Detail Page Headings */
+.category-hero-main-title,
+.experience-hero-title,
+.product-detail-title {
+  display: inline-block !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.25s ease,
+              text-shadow 0.3s ease !important;
+  cursor: default !important;
+}
+
+.category-hero-main-title:hover,
+.experience-hero-title:hover,
+.product-detail-title:hover {
+  transform: translateY(-2px) translateZ(0) !important;
+  color: #ffffff !important;
+  text-shadow: 0 6px 28px rgba(0, 0, 0, 0.95), 0 0 20px rgba(212, 168, 106, 0.4) !important;
+}
+
+.category-hero-sub,
+.experience-hero-sub {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease !important;
+}
+
+.category-hero-banner:hover .category-hero-sub,
+.experience-hero-standalone:hover .experience-hero-sub {
+  transform: translateY(-1px) translateZ(0) !important;
+  color: #d8cdbf !important;
+}
+
+/* 7. Reduced Motion for Headings */
+@media (prefers-reduced-motion: reduce) {
+  .collection-eyebrow,
+  .visit-eyebrow,
+  .hero-main-title,
+  .hero-title-ivory,
+  .hero-title-gold,
+  .collection-main-title,
+  .collection-subtitle,
+  #about h2,
+  #about h3,
+  .visit-main-title,
+  .visit-info-title,
+  .visit-map-directions-title,
+  .category-hero-main-title,
+  .experience-hero-title {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* 8. Content Visibility Performance Acceleration */
+#about,
+.experience-section,
+.visit-section,
+.visit-map-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
 }
 
 
