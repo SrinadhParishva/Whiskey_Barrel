@@ -3717,46 +3717,46 @@ div:has(> .wine-card-pill) {
 .hero-line-4 {
   transform: translateY(125%) rotate(1.5deg);
   opacity: 0;
-  transition: transform 1.35s var(--hero-ease-molten),
-              opacity 1.35s var(--hero-ease-molten),
-              letter-spacing 0.7s var(--hero-ease-cinematic),
-              text-shadow 0.7s var(--hero-ease-cinematic),
-              color 0.6s ease !important;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              letter-spacing 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              text-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.3s ease !important;
   will-change: transform, opacity, letter-spacing, text-shadow !important;
 }
 
 .hero-section.hero-loaded .hero-line-1 {
   transform: translateY(0) rotate(0deg);
   opacity: 1;
-  transition-delay: 0.18s !important;
+  transition-delay: 0.04s !important;
 }
 
 .hero-section.hero-loaded .hero-line-2 {
   transform: translateY(0) rotate(0deg);
   opacity: 1;
-  transition-delay: 0.35s !important;
+  transition-delay: 0.08s !important;
 }
 
 .hero-section.hero-loaded .hero-line-3 {
   transform: translateY(0) rotate(0deg);
   opacity: 1;
-  transition-delay: 0.52s !important;
+  transition-delay: 0.12s !important;
 }
 
 .hero-section.hero-loaded .hero-line-4 {
   transform: translateY(0) rotate(0deg);
   opacity: 1;
-  transition-delay: 0.69s !important;
+  transition-delay: 0.16s !important;
 }
 
 .hero-title-ivory {
   display: block !important;
   color: #ede7de !important;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.9) !important;
-  transition: color 0.6s ease,
-              text-shadow 0.65s var(--hero-ease-cinematic),
-              transform 0.65s var(--hero-ease-cinematic),
-              letter-spacing 0.65s var(--hero-ease-cinematic) !important;
+  transition: color 0.3s ease,
+              text-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              letter-spacing 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .hero-title-ivory:hover {
@@ -3782,9 +3782,9 @@ div:has(> .wine-card-pill) {
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
   animation: heroGoldShimmer 9s ease-in-out infinite !important;
-  transition: transform 0.65s var(--hero-ease-cinematic),
-              letter-spacing 0.65s var(--hero-ease-cinematic),
-              filter 0.65s var(--hero-ease-cinematic) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              letter-spacing 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 .hero-title-gold:hover {
@@ -3817,13 +3817,13 @@ div:has(> .wine-card-pill) {
   font-weight: 400 !important;
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.95) !important;
   opacity: 0;
-  transform: translateY(28px);
-  filter: blur(4px);
-  transition: transform 1.25s var(--hero-ease-cinematic),
-              opacity 1.25s var(--hero-ease-cinematic),
-              filter 1.25s var(--hero-ease-cinematic),
-              color 0.65s ease,
-              text-shadow 0.65s ease !important;
+  transform: translateY(16px);
+  filter: blur(2px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.3s ease,
+              text-shadow 0.3s ease !important;
   will-change: transform, opacity, filter !important;
 }
 
@@ -3831,7 +3831,7 @@ div:has(> .wine-card-pill) {
   opacity: 1;
   transform: translateY(0);
   filter: blur(0px);
-  transition-delay: 0.85s !important;
+  transition-delay: 0.18s !important;
 }
 
 .hero-text-block:hover .hero-subtitle {
@@ -3846,9 +3846,9 @@ div:has(> .wine-card-pill) {
   align-items: center !important;
   gap: 1.15rem !important;
   opacity: 0;
-  transform: translateY(28px);
-  transition: transform 1.2s var(--hero-ease-cinematic),
-              opacity 1.2s var(--hero-ease-cinematic) !important;
+  transform: translateY(16px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: transform, opacity !important;
 }
 
@@ -3862,7 +3862,7 @@ div:has(> .wine-card-pill) {
 .hero-section.hero-loaded .hero-cta-group {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 1.02s !important;
+  transition-delay: 0.22s !important;
 }
 
 /* Primary Action Button ("EXPLORE THE COLLECTION") */
@@ -3884,12 +3884,12 @@ div:has(> .wine-card-pill) {
   border-radius: 2px !important;
   border: 1px solid #d4a86a !important;
   box-shadow: 0 4px 20px rgba(212, 168, 106, 0.28), 0 2px 6px rgba(0, 0, 0, 0.4) !important;
-  transition: transform 0.65s var(--hero-ease-cinematic),
-              background 0.6s var(--hero-ease-cinematic),
-              border-color 0.6s var(--hero-ease-cinematic),
-              color 0.55s ease,
-              box-shadow 0.65s var(--hero-ease-cinematic),
-              letter-spacing 0.65s var(--hero-ease-cinematic) !important;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.2s ease,
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              letter-spacing 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: transform, box-shadow !important;
   text-decoration: none !important;
   cursor: pointer !important;
@@ -3909,7 +3909,7 @@ div:has(> .wine-card-pill) {
     transparent 100%
   ) !important;
   transform: skewX(-25deg) !important;
-  transition: left 1.3s var(--hero-ease-cinematic) !important;
+  transition: left 0.75s cubic-bezier(0.16, 1, 0.3, 1) !important;
   pointer-events: none !important;
 }
 
@@ -3920,15 +3920,15 @@ div:has(> .wine-card-pill) {
 .hero-btn-primary:hover {
   background: linear-gradient(135deg, #e5be85 0%, #fae6c6 50%, #e5be85 100%) !important;
   color: #0a0806 !important;
-  transform: translateY(-3px) translateZ(0) !important;
-  box-shadow: 0 12px 36px rgba(212, 168, 106, 0.52), 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+  transform: translateY(-2px) translateZ(0) !important;
+  box-shadow: 0 8px 28px rgba(212, 168, 106, 0.45), 0 3px 8px rgba(0, 0, 0, 0.4) !important;
   border-color: #e5be85 !important;
-  letter-spacing: 0.19em !important;
+  letter-spacing: 0.18em !important;
 }
 
 .hero-btn-primary:active {
-  transform: translateY(-1px) scale(0.982) !important;
-  transition: transform 0.3s var(--hero-ease-cinematic), box-shadow 0.3s ease !important;
+  transform: translateY(0px) scale(0.985) !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease !important;
 }
 
 /* Secondary Action Button ("VISIT THE HOUSE") */
@@ -3952,12 +3952,12 @@ div:has(> .wine-card-pill) {
   border-radius: 2px !important;
   border: 1px solid rgba(212, 168, 106, 0.55) !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
-  transition: transform 0.65s var(--hero-ease-cinematic),
-              background-color 0.6s var(--hero-ease-cinematic),
-              border-color 0.6s var(--hero-ease-cinematic),
-              color 0.55s ease,
-              box-shadow 0.65s var(--hero-ease-cinematic),
-              letter-spacing 0.65s var(--hero-ease-cinematic) !important;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.2s ease,
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              letter-spacing 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: transform, box-shadow !important;
   text-decoration: none !important;
   cursor: pointer !important;
@@ -3977,7 +3977,7 @@ div:has(> .wine-card-pill) {
     transparent 100%
   ) !important;
   transform: skewX(-25deg) !important;
-  transition: left 1.3s var(--hero-ease-cinematic) !important;
+  transition: left 0.75s cubic-bezier(0.16, 1, 0.3, 1) !important;
   pointer-events: none !important;
 }
 
@@ -3989,14 +3989,14 @@ div:has(> .wine-card-pill) {
   background-color: rgba(212, 168, 106, 0.18) !important;
   border-color: #d4a86a !important;
   color: #d4a86a !important;
-  transform: translateY(-3px) translateZ(0) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 24px rgba(212, 168, 106, 0.28) !important;
-  letter-spacing: 0.19em !important;
+  transform: translateY(-2px) translateZ(0) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 168, 106, 0.22) !important;
+  letter-spacing: 0.18em !important;
 }
 
 .hero-btn-secondary:active {
-  transform: translateY(-1px) scale(0.982) !important;
-  transition: transform 0.3s var(--hero-ease-cinematic), box-shadow 0.3s ease !important;
+  transform: translateY(0px) scale(0.985) !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease !important;
 }
 
 .hero-btn-arrow {
@@ -4249,8 +4249,8 @@ div:has(> .wine-card-pill) {
 
 .collection-grid {
   display: grid !important;
-  grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-  gap: 1.25rem !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0.85rem !important;
 }
 
 @media (min-width: 640px) {
@@ -4268,57 +4268,58 @@ div:has(> .wine-card-pill) {
 }
 
 /* ==========================================================================
-   CATEGORY CARD SEQUENTIAL ENTRANCE CASCADE (ONE AFTER ANOTHER ON SCROLL)
+   CATEGORY CARD HIGH-PERFORMANCE INTERACTIVE CARDS
    ========================================================================== */
 .category-card {
   position: relative !important;
   display: flex !important;
   flex-direction: column !important;
   width: 100% !important;
-  max-width: 225px !important;
-  height: 270px !important;
+  max-width: 240px !important;
+  height: 250px !important;
   margin-left: auto !important;
   margin-right: auto !important;
   cursor: pointer !important;
   outline: none !important;
   user-select: none !important;
 
-  /* Hidden initial entrance state */
-  opacity: 0 !important;
-  transform: translateY(28px) scale(0.96) !important;
-  will-change: transform, opacity !important;
+  /* Always visible to prevent scroll blank lag */
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  will-change: transform, box-shadow !important;
   
-  /* Staggered sequential delay based on card index (Whiskey -> Rum -> Beer -> etc.) */
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.35s ease !important;
-  transition-delay: calc(var(--card-index, 0) * 80ms) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s ease !important;
 }
 
-/* Revealed in-view state when category section is scrolled to */
+@media (min-width: 640px) {
+  .category-card {
+    height: 270px !important;
+    max-width: 225px !important;
+  }
+}
+
 .category-card.card-in-view {
   opacity: 1 !important;
   transform: translateY(0) scale(1) !important;
 }
 
-/* Clear transition delay once entrance cascade finishes for instant hover feel */
 .category-card.reveal-completed {
   transition-delay: 0ms !important;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.3s ease,
-              opacity 0.3s ease !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s ease !important;
 }
 
 .category-card:hover {
   transition-delay: 0ms !important;
-  transform: translateY(-5px) scale(1.015) !important;
+  transform: translateY(-4px) scale(1.015) !important;
 }
 
 .category-card .category-card-glow {
-  opacity: 0 !important;
-  transform: translateX(-50%) scale(0.85) !important;
-  transition: opacity 0.5s ease, transform 0.5s ease !important;
-  transition-delay: calc(var(--card-index, 0) * 80ms + 40ms) !important;
+  opacity: 0.75 !important;
+  filter: blur(8px) !important;
+  transform: translateX(-50%) scale(1) !important;
+  transition: opacity 0.25s ease, transform 0.25s ease !important;
 }
 
 .category-card.card-in-view .category-card-glow {
@@ -4329,14 +4330,14 @@ div:has(> .wine-card-pill) {
 
 .category-card.reveal-completed .category-card-glow {
   transition-delay: 0ms !important;
-  transition: opacity 0.3s ease, transform 0.3s ease !important;
+  transition: opacity 0.25s ease, transform 0.25s ease !important;
 }
 
 .category-card:hover .category-card-glow {
   transition-delay: 0ms !important;
   opacity: 1 !important;
-  filter: blur(9px) !important;
-  transform: translateX(-50%) scale(1.1) !important;
+  filter: blur(10px) !important;
+  transform: translateX(-50%) scale(1.08) !important;
 }
 
 .category-card-frame {
@@ -5787,7 +5788,7 @@ div:has(> .wine-card-pill) {
 .category-hero-bg-img {
   position: absolute !important;
   inset: 0 !important;
-  background-image: url('assets/category-barrels-bg.jpg') !important;
+  background-image: url('assets/category-barrels-bg.webp') !important;
   background-size: cover !important;
   background-position: center 25% !important;
   background-repeat: no-repeat !important;
@@ -5846,7 +5847,7 @@ div:has(> .wine-card-pill) {
   background-color: #23160d !important;
   background-image: 
     linear-gradient(180deg, rgba(255, 230, 180, 0.12) 0%, rgba(0, 0, 0, 0.15) 30%, rgba(0, 0, 0, 0.65) 100%),
-    url('assets/wood-filter-beam.jpg') !important;
+    url('assets/wood-filter-beam.webp') !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -6596,14 +6597,139 @@ div:has(> .wine-card-pill) {
   }
 }
 
-/* 8. Content Visibility Performance Acceleration */
-#about,
-.experience-section,
-.visit-section,
+/* ==========================================================================
+   HIGH-PERFORMANCE RENDERING & INSTANT TOUCH RESPONSIVENESS
+   ========================================================================== */
+
+/* 1. Eliminate 300ms mobile touch delay on interactive elements */
+a, button, input, select, textarea,
+.category-card, .category-tab, .nav-plan-btn, .hero-btn-primary, .hero-btn-secondary,
+.home-card-featured, .home-card-half, .product-grid-card, .product-card-heart-btn,
+.visit-btn-primary, .visit-btn-secondary, .visit-btn-map-open, .footer-social-btn,
+.price-pill, .price-dropdown-item {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 2. Hardware Acceleration & Compositing Hints */
+.hero-section,
+.hero-bg-wrapper,
+.hero-text-block,
+.category-card,
+.product-grid-card,
+.home-card-featured,
+.home-card-half,
+.visit-showcase-banner,
+#cart-drawer {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* 3. Smooth momentum scrolling on mobile devices */
+html, body, #cart-items-container {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 4. Optimized Content Visibility for Off-screen Footer */
+footer,
 .visit-map-section {
   content-visibility: auto;
-  contain-intrinsic-size: 1px 600px;
+  contain-intrinsic-size: auto 400px;
 }
+
+/* ==========================================================================
+   5. ULTRA-FAST SCROLL REVEAL UTILITIES
+   ========================================================================== */
+[data-reveal] {
+  opacity: 1;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-init [data-reveal] {
+  opacity: 0;
+}
+
+.reveal-init [data-reveal="up"] {
+  transform: translateY(18px);
+}
+
+.reveal-init [data-reveal="left"] {
+  transform: translateX(-18px);
+}
+
+.reveal-init [data-reveal="right"] {
+  transform: translateX(18px);
+}
+
+.reveal-init [data-reveal="scale"] {
+  transform: scale(0.97);
+}
+
+.reveal-init [data-reveal].is-revealed {
+  opacity: 1 !important;
+  transform: translateY(0) translateX(0) scale(1) !important;
+}
+
+/* ==========================================================================
+   6. LUXURY MOBILE NAVIGATION DRAWER
+   ========================================================================== */
+#mobile-menu-drawer {
+  position: fixed;
+  inset: 0;
+  top: 72px;
+  background: rgba(10, 8, 6, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 45;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.75rem 2.5rem;
+  border-bottom: 1px solid rgba(212, 168, 106, 0.25);
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.25s ease;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#mobile-menu-drawer.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 0;
+  font-family: var(--font-body, "Hanken Grotesk", sans-serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #ede7de;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
+  color: #d4a86a;
+  padding-left: 0.5rem;
+}
+
+.mobile-nav-link span.arrow {
+  color: #d4a86a;
+  font-size: 0.9rem;
+}
+
 
 
 

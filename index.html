@@ -15,18 +15,21 @@
   <meta name="twitter:site" content="@Lovable">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <!-- Google Fonts: Domine (Serif Headings) & Hanken Grotesk (Sans-Serif Body & UI) -->
+  <!-- Google Fonts: Domine (Serif Headings) & Hanken Grotesk (Sans-Serif Body & UI) - Non-Blocking High-Speed Load -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
-    rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Preload Critical LCP Hero Image -->
+  <link rel="preload" as="image" href="assets/hero-whiskey-barrel.webp" fetchpriority="high">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Lucide Icons CDN (Deferred for non-blocking rendering) -->
-  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <!-- Ultra-Fast Local Lucide Icons & App Script -->
+  <script src="assets/lucide.min.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 
 <body class="overflow-x-hidden bg-background text-foreground font-body">
@@ -38,7 +41,7 @@
         <a href="#top" class="group flex items-center gap-3">
           <span
             class="relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-ember/60 bg-background/90 overflow-hidden shadow-sm transition-transform duration-500 group-hover:scale-105 nav-logo-icon">
-            <img src="assets/wb-icon.png" alt="WB Logo Icon" class="h-full w-full object-cover rounded-full" width="40" height="40" decoding="async">
+            <img src="assets/wb-icon.webp" alt="WB Logo Icon" class="h-full w-full object-cover rounded-full" width="40" height="40" decoding="async">
           </span>
           <span class="font-display text-base sm:text-lg tracking-[0.25em] uppercase font-bold text-foreground">Whiskey
             Barrel</span>
@@ -132,6 +135,12 @@
             <span>EXPLORE OUR COLLECTION</span>
             <span>→</span>
           </a>
+
+          <!-- Mobile Menu Toggle Button -->
+          <button type="button" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" class="md:hidden p-2 text-foreground/80 hover:text-ember transition-colors flex items-center justify-center">
+            <i data-lucide="menu" class="h-6 w-6 menu-open-icon"></i>
+            <i data-lucide="x" class="h-6 w-6 menu-close-icon hidden"></i>
+          </button>
         </div>
       </nav>
     </header>
@@ -143,9 +152,9 @@
 
       <!-- Hero Background Image & Cinematic Lighting Overlay -->
       <div class="hero-bg-wrapper absolute inset-0 z-0 select-none pointer-events-none">
-        <img src="assets/hero-whiskey-barrel.jpg" alt="Whiskey Barrel Atmosphere"
+        <img src="assets/hero-whiskey-barrel.webp" alt="Whiskey Barrel Atmosphere"
           class="hero-bg-img w-full h-full object-cover object-[80%_center] sm:object-[75%_center] md:object-[68%_center] lg:object-right"
-          fetchpriority="high" decoding="async">
+          width="1920" height="1080" fetchpriority="high" decoding="async">
         <!-- Directional gradient overlays for luxury contrast and text legibility -->
         <div class="hero-mobile-overlay"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-[#0a0806] via-[#0a0806]/85 sm:via-[#0a0806]/60 md:via-[#0a0806]/35 to-transparent"></div>
@@ -288,7 +297,7 @@
             <div class="category-card-frame">
               <div class="category-card-content">
                 <div class="category-card-img-wrapper">
-                  <img src="assets/cat-whiskey-lux.jpg" alt="Whiskey Collection" class="category-card-img" loading="lazy" decoding="async">
+                  <img src="assets/cat-whiskey-lux.webp" alt="Whiskey Collection" class="category-card-img" width="400" height="400" loading="lazy" decoding="async">
                   <div class="category-card-img-overlay"></div>
                 </div>
                 <div class="category-card-footer">
@@ -308,7 +317,7 @@
             <div class="category-card-frame">
               <div class="category-card-content">
                 <div class="category-card-img-wrapper">
-                  <img src="assets/cat-rum-lux.jpg" alt="Rum Collection" class="category-card-img" loading="lazy" decoding="async">
+                  <img src="assets/cat-rum-lux.webp" alt="Rum Collection" class="category-card-img" width="400" height="400" loading="lazy" decoding="async">
                   <div class="category-card-img-overlay"></div>
                 </div>
                 <div class="category-card-footer">
@@ -328,7 +337,7 @@
             <div class="category-card-frame">
               <div class="category-card-content">
                 <div class="category-card-img-wrapper">
-                  <img src="assets/cat-beer-lux.jpg" alt="Beer Collection" class="category-card-img" loading="lazy" decoding="async">
+                  <img src="assets/cat-beer-lux.webp" alt="Beer Collection" class="category-card-img" width="400" height="400" loading="lazy" decoding="async">
                   <div class="category-card-img-overlay"></div>
                 </div>
                 <div class="category-card-footer">
@@ -348,7 +357,7 @@
             <div class="category-card-frame">
               <div class="category-card-content">
                 <div class="category-card-img-wrapper">
-                  <img src="assets/cat-vodka-lux.jpg" alt="Vodka Collection" class="category-card-img" loading="lazy" decoding="async">
+                  <img src="assets/cat-vodka-lux.webp" alt="Vodka Collection" class="category-card-img" width="400" height="400" loading="lazy" decoding="async">
                   <div class="category-card-img-overlay"></div>
                 </div>
                 <div class="category-card-footer">
@@ -368,7 +377,7 @@
             <div class="category-card-frame">
               <div class="category-card-content">
                 <div class="category-card-img-wrapper">
-                  <img src="assets/cat-wine-lux.jpg" alt="Wine Collection" class="category-card-img" loading="lazy" decoding="async">
+                  <img src="assets/cat-wine-lux.webp" alt="Wine Collection" class="category-card-img" width="400" height="400" loading="lazy" decoding="async">
                   <div class="category-card-img-overlay"></div>
                 </div>
                 <div class="category-card-footer">
@@ -388,7 +397,7 @@
             <div class="category-card-frame">
               <div class="category-card-content">
                 <div class="category-card-img-wrapper">
-                  <img src="assets/cat-gin-lux.jpg" alt="Gin Collection" class="category-card-img" loading="lazy" decoding="async">
+                  <img src="assets/cat-gin-lux.webp" alt="Gin Collection" class="category-card-img" width="400" height="400" loading="lazy" decoding="async">
                   <div class="category-card-img-overlay"></div>
                 </div>
                 <div class="category-card-footer">
@@ -408,7 +417,7 @@
             <div class="category-card-frame">
               <div class="category-card-content">
                 <div class="category-card-img-wrapper">
-                  <img src="assets/cat-tequila-lux.jpg" alt="Tequila Collection" class="category-card-img" loading="lazy" decoding="async">
+                  <img src="assets/cat-tequila-lux.webp" alt="Tequila Collection" class="category-card-img" width="400" height="400" loading="lazy" decoding="async">
                   <div class="category-card-img-overlay"></div>
                 </div>
                 <div class="category-card-footer">
@@ -428,7 +437,7 @@
             <div class="category-card-frame">
               <div class="category-card-content">
                 <div class="category-card-img-wrapper">
-                  <img src="assets/cat-cigar-lux.jpg" alt="Cigar Collection" class="category-card-img" loading="lazy" decoding="async">
+                  <img src="assets/cat-cigar-lux.webp" alt="Cigar Collection" class="category-card-img" width="400" height="400" loading="lazy" decoding="async">
                   <div class="category-card-img-overlay"></div>
                 </div>
                 <div class="category-card-footer">
@@ -451,7 +460,7 @@
           <!-- Section 1: Grand Cru Cellar Reserves -->
           <div data-reveal="up" data-delay="80" class="home-card-featured">
             <!-- Background Image -->
-            <img src="assets/grand_cru_wine.png" alt="Grand Cru Cellar Reserves" class="home-card-bg-img" loading="lazy" decoding="async">
+            <img src="assets/grand_cru_wine.webp" alt="Grand Cru Cellar Reserves" class="home-card-bg-img" width="1200" height="500" loading="lazy" decoding="async">
             <!-- Overlay -->
             <div class="home-card-overlay-featured"></div>
             <!-- Content -->
@@ -478,7 +487,7 @@
             <!-- 1982 Vintage Vault -->
             <div data-reveal="up" data-delay="160" class="home-card-half">
               <!-- Background Image -->
-              <img src="assets/vintage_vault_whiskey.png" alt="1982 Vintage Vault" class="home-card-bg-img" loading="lazy" decoding="async">
+              <img src="assets/vintage_vault_whiskey.webp" alt="1982 Vintage Vault" class="home-card-bg-img" width="600" height="400" loading="lazy" decoding="async">
               <!-- Overlay -->
               <div class="home-card-overlay-half"></div>
               <!-- Content -->
@@ -500,7 +509,7 @@
             <!-- Estate Tastings & Cuvées -->
             <div data-reveal="up" data-delay="240" class="home-card-half">
               <!-- Background Image -->
-              <img src="assets/estate_tastings_wine.png" alt="Estate Tastings & Cuvées" class="home-card-bg-img" loading="lazy" decoding="async">
+              <img src="assets/estate_tastings_wine.webp" alt="Estate Tastings & Cuvées" class="home-card-bg-img" width="600" height="400" loading="lazy" decoding="async">
               <!-- Overlay -->
               <div class="home-card-overlay-half"></div>
               <!-- Content -->
@@ -534,7 +543,7 @@
 
         <!-- Visit Background Image & Cinematic Lighting Overlay -->
         <div class="visit-banner-bg-wrapper">
-          <img src="assets/visit-house-storefront.jpg" alt="Whiskey Barrel Flagship Storefront" class="visit-banner-bg" loading="lazy" decoding="async">
+          <img src="assets/visit-house-storefront.webp" alt="Whiskey Barrel Flagship Storefront" class="visit-banner-bg" width="1920" height="800" loading="lazy" decoding="async">
           <div class="visit-banner-overlay"></div>
         </div>
 
@@ -635,7 +644,7 @@
         <div data-reveal="scale" data-delay="150" class="visit-map-card">
           <!-- Left Map Graphic -->
           <div class="visit-map-visual">
-            <img src="assets/visit-dark-map.jpg" alt="Whiskey Barrel Map Location" class="visit-map-bg-img" loading="lazy" decoding="async">
+            <img src="assets/visit-dark-map.webp" alt="Whiskey Barrel Map Location" class="visit-map-bg-img" width="800" height="500" loading="lazy" decoding="async">
             <div class="visit-map-overlay-pin">
               <svg class="visit-map-pin-svg" viewBox="0 0 24 24" fill="#d4a86a">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
@@ -694,9 +703,32 @@
 
         <span>Please savour responsibly</span>
       </div>
-    </footer>
   </main>
 
+  <!-- Mobile Navigation Drawer -->
+  <nav id="mobile-menu-drawer" aria-label="Mobile Navigation">
+    <div class="flex flex-col space-y-1">
+      <a href="index.html" class="mobile-nav-link"><span>Home</span><span class="arrow">→</span></a>
+      <a href="index.html#about" class="mobile-nav-link"><span>About</span><span class="arrow">→</span></a>
+      <a href="index.html#expressions" class="mobile-nav-link"><span>Collection</span><span class="arrow">→</span></a>
+      <a href="experience.html" class="mobile-nav-link"><span>Experience</span><span class="arrow">→</span></a>
+      <a href="visit.html" class="mobile-nav-link"><span>Visit & Hours</span><span class="arrow">→</span></a>
+    </div>
+    <div class="mt-8 pt-6 border-t border-[#2d2620] space-y-4 text-xs text-muted-foreground">
+      <div class="flex items-center gap-3">
+        <i data-lucide="map-pin" class="h-4 w-4 text-ember shrink-0"></i>
+        <span>12205 Shawnee Mission PKWY, Shawnee, KS 66216</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <i data-lucide="phone" class="h-4 w-4 text-ember shrink-0"></i>
+        <a href="tel:+19135550199" class="hover:text-ember transition-colors">+1 (913) 555-0199</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <i data-lucide="mail" class="h-4 w-4 text-ember shrink-0"></i>
+        <a href="mailto:whiskeybarrel@parishva.in" class="hover:text-ember transition-colors">whiskeybarrel@parishva.in</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- Wishlist Drawer Component Markup -->
   <div id="cart-drawer-overlay"
@@ -747,9 +779,5 @@
       </div>
     </div>
   </aside>
-
-  <!-- Script -->
-  <script src="script.js"></script>
 </body>
-
 </html>

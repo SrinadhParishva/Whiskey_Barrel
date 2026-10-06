@@ -7,16 +7,21 @@
   <meta name="description" content="Visit Whiskey Barrel in Shawnee, KS. Experience the atmosphere and let our knowledgeable staff guide you to your next favorite bottle.">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-  <!-- Google Fonts: Domine (Serif Headings) & Hanken Grotesk (Sans-Serif Body & UI) -->
+  <!-- Google Fonts: Domine (Serif Headings) & Hanken Grotesk (Sans-Serif Body & UI) - Non-Blocking High-Speed Load -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap"></noscript>
+
+  <!-- Preload Critical Showcase Image -->
+  <link rel="preload" as="image" href="assets/visit-house-storefront.webp" fetchpriority="high">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
-  <!-- Lucide Icons CDN (Deferred for non-blocking rendering) -->
-  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <!-- Ultra-Fast Local Lucide Icons & App Script -->
+  <script src="assets/lucide.min.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body class="overflow-x-hidden bg-background text-foreground font-body">
 
@@ -26,7 +31,7 @@
       <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="index.html" class="group flex items-center gap-3">
           <span class="relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-ember/60 bg-background/90 overflow-hidden shadow-sm transition-transform duration-500 group-hover:scale-105 nav-logo-icon">
-            <img src="assets/wb-icon.png" alt="WB Logo Icon" class="h-full w-full object-cover rounded-full">
+            <img src="assets/wb-icon.webp" alt="WB Logo Icon" class="h-full w-full object-cover rounded-full" width="40" height="40" decoding="async">
           </span>
           <span class="font-display text-base sm:text-lg tracking-[0.25em] uppercase font-bold text-foreground">Whiskey Barrel</span>
         </a>
@@ -114,6 +119,12 @@
             <span>PLAN YOUR VISIT</span>
             <span>→</span>
           </a>
+
+          <!-- Mobile Menu Toggle Button -->
+          <button type="button" id="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" class="md:hidden p-2 text-foreground/80 hover:text-ember transition-colors flex items-center justify-center">
+            <i data-lucide="menu" class="h-6 w-6 menu-open-icon"></i>
+            <i data-lucide="x" class="h-6 w-6 menu-close-icon hidden"></i>
+          </button>
         </div>
       </nav>
     </header>
@@ -127,7 +138,7 @@
 
         <!-- Visit Background Image & Cinematic Lighting Overlay -->
         <div class="visit-banner-bg-wrapper">
-          <img src="assets/visit-house-storefront.jpg" alt="Whiskey Barrel Flagship Storefront" class="visit-banner-bg" loading="lazy" decoding="async">
+          <img src="assets/visit-house-storefront.webp" alt="Whiskey Barrel Flagship Storefront" class="visit-banner-bg" width="1920" height="800" fetchpriority="high" decoding="async">
           <div class="visit-banner-overlay"></div>
         </div>
 
@@ -228,7 +239,7 @@
         <div data-reveal="scale" data-delay="150" class="visit-map-card">
           <!-- Left Map Graphic -->
           <div class="visit-map-visual">
-            <img src="assets/visit-dark-map.jpg" alt="Whiskey Barrel Map Location" class="visit-map-bg-img" loading="lazy" decoding="async">
+            <img src="assets/visit-dark-map.webp" alt="Whiskey Barrel Map Location" class="visit-map-bg-img" width="800" height="500" loading="lazy" decoding="async">
             <div class="visit-map-overlay-pin">
               <svg class="visit-map-pin-svg" viewBox="0 0 24 24" fill="#d4a86a">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
@@ -286,9 +297,32 @@
 
         <span>Please savour responsibly</span>
       </div>
-    </footer>
   </main>
 
+  <!-- Mobile Navigation Drawer -->
+  <nav id="mobile-menu-drawer" aria-label="Mobile Navigation">
+    <div class="flex flex-col space-y-1">
+      <a href="index.html" class="mobile-nav-link"><span>Home</span><span class="arrow">→</span></a>
+      <a href="index.html#about" class="mobile-nav-link"><span>About</span><span class="arrow">→</span></a>
+      <a href="index.html#expressions" class="mobile-nav-link"><span>Collection</span><span class="arrow">→</span></a>
+      <a href="experience.html" class="mobile-nav-link"><span>Experience</span><span class="arrow">→</span></a>
+      <a href="visit.html" class="mobile-nav-link"><span>Visit & Hours</span><span class="arrow">→</span></a>
+    </div>
+    <div class="mt-8 pt-6 border-t border-[#2d2620] space-y-4 text-xs text-muted-foreground">
+      <div class="flex items-center gap-3">
+        <i data-lucide="map-pin" class="h-4 w-4 text-ember shrink-0"></i>
+        <span>12205 Shawnee Mission PKWY, Shawnee, KS 66216</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <i data-lucide="phone" class="h-4 w-4 text-ember shrink-0"></i>
+        <a href="tel:+19135550199" class="hover:text-ember transition-colors">+1 (913) 555-0199</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <i data-lucide="mail" class="h-4 w-4 text-ember shrink-0"></i>
+        <a href="mailto:whiskeybarrel@parishva.in" class="hover:text-ember transition-colors">whiskeybarrel@parishva.in</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- Wishlist Drawer Component Markup -->
   <div id="cart-drawer-overlay" class="fixed inset-0 z-[100] bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-sm"></div>
@@ -334,9 +368,6 @@
       </div>
     </div>
   </aside>
-
-  <!-- Script -->
-  <script src="script.js"></script>
 </body>
 </html>
 

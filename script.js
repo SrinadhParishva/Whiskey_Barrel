@@ -188,7 +188,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.9" }, { label: "AGED", score: "RESERVE" }],
       description: "Single Malt aged 25 years in three oak cask types. Rich notes of citrus, cinnamon, and toasted wood.",
       priceRange: { minVariantPrice: { amount: "1850.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/premium_single_malt_whiskey_bottle_with_a_clean_circular_design_and_a_brushed.png", altText: "The Macallan 25 Fine Oak" } }] },
+      images: { edges: [{ node: { url: "assets/premium_single_malt_whiskey_bottle_with_a_clean_circular_design_and_a_brushed.webp", altText: "The Macallan 25 Fine Oak" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey1", title: "700ml Bottle", price: { amount: "1850.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -204,7 +204,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "WE", score: "94" }, { label: "AGED", score: "RESERVE" }],
       description: "Small Batch Kentucky Straight Bourbon aged 12 years with caramel, vanilla, and charred oak.",
       priceRange: { minVariantPrice: { amount: "85.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/classic_square_shaped_premium_whiskey_bottle_with_a_vintage_inspired_embossed.png", altText: "The Copper Cask 12 Year" } }] },
+      images: { edges: [{ node: { url: "assets/classic_square_shaped_premium_whiskey_bottle_with_a_vintage_inspired_embossed.webp", altText: "The Copper Cask 12 Year" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey2", title: "700ml Bottle", price: { amount: "85.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -220,7 +220,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "RP", score: "99" }, { label: "AGED", score: "RESERVE" }],
       description: "Rare Highland Single Malt Scotch Whisky aged 70 years. Limited edition 1 of 578 with elegant smoke.",
       priceRange: { minVariantPrice: { amount: "320.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/minimalist_premium_whiskey_bottle_with_a_sleek_tall_silhouette_and_a_textured.png", altText: "The Serpentine Cask 70 Year" } }] },
+      images: { edges: [{ node: { url: "assets/minimalist_premium_whiskey_bottle_with_a_sleek_tall_silhouette_and_a_textured.webp", altText: "The Serpentine Cask 70 Year" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey3", title: "700ml Bottle", price: { amount: "320.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -236,7 +236,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "5.0" }, { label: "AGED", score: "RESERVE" }],
       description: "30 Years Old Single Malt in luxury crystal decanter. Dark chocolate, wood spice, and long finish.",
       priceRange: { minVariantPrice: { amount: "3500.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/bold_heavy_set_whiskey_bottle_with_a_wide_base_and_a_black_wax_sealed_top..png", altText: "The Macallan 30 Fine & Rare" } }] },
+      images: { edges: [{ node: { url: "assets/bold_heavy_set_whiskey_bottle_with_a_wide_base_and_a_black_wax_sealed_top..webp", altText: "The Macallan 30 Fine & Rare" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey4", title: "700ml Bottle", price: { amount: "3500.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -252,7 +252,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "RP", score: "93" }, { label: "AGED", score: "RESERVE" }],
       description: "Heritage Small Batch Bourbon Whiskey Aged 15 Years. Distilled in Kentucky with smooth honeycomb.",
       priceRange: { minVariantPrice: { amount: "120.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/baxter-reserve-15.jpg", altText: "The Baxter Reserve 15 Year" } }] },
+      images: { edges: [{ node: { url: "assets/baxter-reserve-15.webp", altText: "The Baxter Reserve 15 Year" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey5", title: "700ml Bottle", price: { amount: "120.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -268,7 +268,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "WE", score: "96" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged 21 years in seasoned Oloroso sherry casks. Dried fruit, dark chocolate, and nutmeg aroma.",
       priceRange: { minVariantPrice: { amount: "240.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/a_luxury_decanter_style_whiskey_bottle_with_a_heavy_base_and_a_geometric_glass.png", altText: "Highland Decanter Cask 21" } }] },
+      images: { edges: [{ node: { url: "assets/a_luxury_decanter_style_whiskey_bottle_with_a_heavy_base_and_a_geometric_glass.webp", altText: "Highland Decanter Cask 21" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey6", title: "700ml Bottle", price: { amount: "240.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -284,7 +284,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.8" }, { label: "AGED", score: "RESERVE" }],
       description: "Artisanal hand-blown glass decanter malt whisky. Delicately balanced with mizunara oak and blossom.",
       priceRange: { minVariantPrice: { amount: "210.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/contemporary_artisanal_whiskey_bottle_with_a_unique_hand_blown_glass.png", altText: "Hand-Blown Artisan Malt" } }] },
+      images: { edges: [{ node: { url: "assets/contemporary_artisanal_whiskey_bottle_with_a_unique_hand_blown_glass.webp", altText: "Hand-Blown Artisan Malt" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey7", title: "700ml Bottle", price: { amount: "210.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -300,7 +300,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "RP", score: "97" }, { label: "AGED", score: "RESERVE" }],
       description: "Exotic bottle featuring etched topographical maps in the glass. Intense peat smoke, sea salt, and cocoa.",
       priceRange: { minVariantPrice: { amount: "290.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/exotic_whiskey_bottle_with_an_etched_topographical_map_design_in_the_glass..png", altText: "Topographical Map Edition" } }] },
+      images: { edges: [{ node: { url: "assets/exotic_whiskey_bottle_with_an_etched_topographical_map_design_in_the_glass..webp", altText: "Topographical Map Edition" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey8", title: "700ml Bottle", price: { amount: "290.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -316,7 +316,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "WE", score: "95" }, { label: "AGED", score: "RESERVE" }],
       description: "Organic flowing glass bottle edition. Smooth velvety honey, green apple, toasted almonds, and vanilla.",
       priceRange: { minVariantPrice: { amount: "175.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/rare_limited_edition_whiskey_bottle_with_an_organic_flowing_glass_shape._deep.png", altText: "Organic Flowing Glass Reserve" } }] },
+      images: { edges: [{ node: { url: "assets/rare_limited_edition_whiskey_bottle_with_an_organic_flowing_glass_shape._deep.webp", altText: "Organic Flowing Glass Reserve" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey9", title: "700ml Bottle", price: { amount: "175.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -332,7 +332,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.7" }, { label: "AGED", score: "RESERVE" }],
       description: "High-end crystal glass studio release aged 18 years. Warm apple pie, clove, and rich toasted oak.",
       priceRange: { minVariantPrice: { amount: "195.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/studio_photography_of_a_premium_high_end_whiskey_bottle._elegant_crystal_glass.png", altText: "Studio Crystal Reserve 18" } }] },
+      images: { edges: [{ node: { url: "assets/studio_photography_of_a_premium_high_end_whiskey_bottle._elegant_crystal_glass.webp", altText: "Studio Crystal Reserve 18" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey10", title: "700ml Bottle", price: { amount: "195.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -348,7 +348,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "RP", score: "92" }, { label: "AGED", score: "RESERVE" }],
       description: "Ultra-premium sleek tapered bottle with silver crest. Spicy rye peppercorn, dark cherry, and maple syrup.",
       priceRange: { minVariantPrice: { amount: "110.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/ultra_premium_whiskey_bottle_featuring_a_sleek_tapered_neck_and_a_silver.png", altText: "Tapered Silver Crest Bourbon" } }] },
+      images: { edges: [{ node: { url: "assets/ultra_premium_whiskey_bottle_featuring_a_sleek_tapered_neck_and_a_silver.webp", altText: "Tapered Silver Crest Bourbon" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey11", title: "700ml Bottle", price: { amount: "110.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -364,7 +364,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "WE", score: "91" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged in deep heavy charred Alligator oak barrels. Sweet campfire smoke, molasses, and toasted pecan.",
       priceRange: { minVariantPrice: { amount: "45.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cask-12.jpg", altText: "Charred American Cask 10" } }] },
+      images: { edges: [{ node: { url: "assets/cask-12.webp", altText: "Charred American Cask 10" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey12", title: "700ml Bottle", price: { amount: "45.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -380,7 +380,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.9" }, { label: "AGED", score: "RESERVE" }],
       description: "Raw uncut cask strength single malt whisky. Bold 58.4% ABV with rich espresso, leather, and dark plum.",
       priceRange: { minVariantPrice: { amount: "165.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/the-reserve.jpg", altText: "The Reserve Barrel Proof" } }] },
+      images: { edges: [{ node: { url: "assets/the-reserve.webp", altText: "The Reserve Barrel Proof" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey13", title: "700ml Bottle", price: { amount: "165.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -396,7 +396,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "RP", score: "96" }, { label: "AGED", score: "RESERVE" }],
       description: "Distilled in 1998 and bottled at peak maturity. Golden amber tone, honeysuckle, and candied citrus.",
       priceRange: { minVariantPrice: { amount: "380.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/bottle.jpg", altText: "Vintage Cask Collection 1998" } }] },
+      images: { edges: [{ node: { url: "assets/bottle.webp", altText: "Vintage Cask Collection 1998" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey14", title: "700ml Bottle", price: { amount: "380.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -412,7 +412,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "WE", score: "93" }, { label: "AGED", score: "RESERVE" }],
       description: "Distillery exclusive small batch malt aged in toasted virgin oak. Creamy vanilla bean, butterscotch, and cedar.",
       priceRange: { minVariantPrice: { amount: "135.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-whiskey.jpg", altText: "Heritage Barrel House Malt" } }] },
+      images: { edges: [{ node: { url: "assets/cat-whiskey.webp", altText: "Heritage Barrel House Malt" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey15", title: "700ml Bottle", price: { amount: "135.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -428,7 +428,7 @@ const WHISKEY_PRODUCTS = [
       badges: [{ label: "WE", score: "96" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged 20 years in a continuous Solera vat system. Warm fig, dark chocolate, clove, and silky toasted oak finish.",
       priceRange: { minVariantPrice: { amount: "220.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/a_luxury_decanter_style_whiskey_bottle_with_a_heavy_base_and_a_geometric_glass.png", altText: "Solera Cask Reserve 20 Year" } }] },
+      images: { edges: [{ node: { url: "assets/a_luxury_decanter_style_whiskey_bottle_with_a_heavy_base_and_a_geometric_glass.webp", altText: "Solera Cask Reserve 20 Year" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/whiskey16", title: "700ml Bottle", price: { amount: "220.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   }
@@ -447,7 +447,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.7" }, { label: "AGED", score: "RESERVE" }],
       description: "Handcrafted Small Batch Reserve Rum aged 18 years in oak casks. Deep caramel, dark molasses, and oak spice.",
       priceRange: { minVariantPrice: { amount: "145.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/the-scotchman-18.jpg", altText: "The Scotchman Reserve 18 Year Rum" } }] },
+      images: { edges: [{ node: { url: "assets/the-scotchman-18.webp", altText: "The Scotchman Reserve 18 Year Rum" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum1", title: "700ml Bottle", price: { amount: "145.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -463,7 +463,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "RP", score: "97" }, { label: "AGED", score: "RESERVE" }],
       description: "Small Batch Dark Reserve Rum aged 25 years. Notes of roasted cocoa, dried fruit, vanilla bean, and toasted oak.",
       priceRange: { minVariantPrice: { amount: "380.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/elite-monogram-25.jpg", altText: "Elite Monogram Reserve 25 Year Rum" } }] },
+      images: { edges: [{ node: { url: "assets/elite-monogram-25.webp", altText: "Elite Monogram Reserve 25 Year Rum" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum2", title: "700ml Bottle", price: { amount: "380.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -479,7 +479,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "WE", score: "91" }, { label: "AGED", score: "RESERVE" }],
       description: "Small Batch Aged 8 Years Rum in hand-blown artisan glass. Vibrant amber tone with golden honey and citrus peel.",
       priceRange: { minVariantPrice: { amount: "75.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/forge-distillery-8.jpg", altText: "Forge Distillery 8 Year Rum" } }] },
+      images: { edges: [{ node: { url: "assets/forge-distillery-8.webp", altText: "Forge Distillery 8 Year Rum" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum3", title: "700ml Bottle", price: { amount: "75.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -495,7 +495,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.8" }, { label: "AGED", score: "RESERVE" }],
       description: "Topographical Edition Aged 18 Years Rum. Intricately carved relief bottle boasting dark brown sugar and coconut.",
       priceRange: { minVariantPrice: { amount: "190.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/terra-vita-18.jpg", altText: "Terra Vita Explorer's 18 Year Rum" } }] },
+      images: { edges: [{ node: { url: "assets/terra-vita-18.webp", altText: "Terra Vita Explorer's 18 Year Rum" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum4", title: "700ml Bottle", price: { amount: "190.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -511,7 +511,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "WE", score: "93" }, { label: "AGED", score: "RESERVE" }],
       description: "Handcrafted 18 Year Aged Rum in a classic round decanter. Smooth finish with butterscotch, nutmeg, and wood.",
       priceRange: { minVariantPrice: { amount: "110.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/highland-distillery-18.jpg", altText: "Highland Estate 18 Year Rum" } }] },
+      images: { edges: [{ node: { url: "assets/highland-distillery-18.webp", altText: "Highland Estate 18 Year Rum" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum5", title: "700ml Bottle", price: { amount: "110.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -527,7 +527,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.6" }, { label: "AGED", score: "RESERVE" }],
       description: "Solera aged 12 years in French oak barrels. Warm toasted coconut, tropical papaya, and honeyed oak finish.",
       priceRange: { minVariantPrice: { amount: "85.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-rum.jpg", altText: "Caribbean Sol Cask 12 Rum" } }] },
+      images: { edges: [{ node: { url: "assets/cat-rum.webp", altText: "Caribbean Sol Cask 12 Rum" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum6", title: "700ml Bottle", price: { amount: "85.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -543,7 +543,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "RP", score: "94" }, { label: "AGED", score: "RESERVE" }],
       description: "Rich Cuban style dark rum aged in charred white oak. Notes of dark chocolate, espresso bean, and cinnamon.",
       priceRange: { minVariantPrice: { amount: "125.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/the-scotchman-18.jpg", altText: "Havana Gold Solera 15" } }] },
+      images: { edges: [{ node: { url: "assets/the-scotchman-18.webp", altText: "Havana Gold Solera 15" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum7", title: "700ml Bottle", price: { amount: "125.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -559,7 +559,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "WE", score: "90" }, { label: "AGED", score: "RESERVE" }],
       description: "Bold overproof Navy rum with intense toasted caramel, dark treacle, pipe tobacco, and aromatic spice.",
       priceRange: { minVariantPrice: { amount: "65.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/elite-monogram-25.jpg", altText: "Demerara Overproof Black Rum" } }] },
+      images: { edges: [{ node: { url: "assets/elite-monogram-25.webp", altText: "Demerara Overproof Black Rum" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum8", title: "700ml Bottle", price: { amount: "65.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -575,7 +575,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.9" }, { label: "AGED", score: "RESERVE" }],
       description: "Prestige 20 year aged Barbados rum. Silky smooth palate of candied ginger, orange peel, and toasted oak.",
       priceRange: { minVariantPrice: { amount: "220.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/forge-distillery-8.jpg", altText: "Barbados Reserve Cask 20" } }] },
+      images: { edges: [{ node: { url: "assets/forge-distillery-8.webp", altText: "Barbados Reserve Cask 20" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum9", title: "700ml Bottle", price: { amount: "220.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -591,7 +591,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "RP", score: "93" }, { label: "AGED", score: "RESERVE" }],
       description: "Funky ester-heavy Jamaican pot still rum. Explosive notes of ripe banana, roasted pineapple, and clove.",
       priceRange: { minVariantPrice: { amount: "95.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/terra-vita-18.jpg", altText: "Artisan Cane Batch 10 Rum" } }] },
+      images: { edges: [{ node: { url: "assets/terra-vita-18.webp", altText: "Artisan Cane Batch 10 Rum" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum10", title: "700ml Bottle", price: { amount: "95.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -607,7 +607,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "WE", score: "92" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged in rare mahogany and bourbon casks. Velvety mouthfeel with crushed vanilla bean, hazelnut, and cocoa.",
       priceRange: { minVariantPrice: { amount: "140.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/highland-distillery-18.jpg", altText: "Royal Mahogany Cask Rum" } }] },
+      images: { edges: [{ node: { url: "assets/highland-distillery-18.webp", altText: "Royal Mahogany Cask Rum" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum11", title: "700ml Bottle", price: { amount: "140.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -623,7 +623,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.7" }, { label: "AGED", score: "RESERVE" }],
       description: "Finished in Tawny Port casks for 24 months. Deep ruby tone, stewed plums, dark cherry, and French oak spice.",
       priceRange: { minVariantPrice: { amount: "160.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-rum.jpg", altText: "Port Cask Finish Dark Rum" } }] },
+      images: { edges: [{ node: { url: "assets/cat-rum.webp", altText: "Port Cask Finish Dark Rum" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum12", title: "700ml Bottle", price: { amount: "160.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -639,7 +639,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "RP", score: "95" }, { label: "AGED", score: "RESERVE" }],
       description: "Raw cask strength 56.5% ABV Jamaican rum. Unfiltered intensity with scorched brown sugar and grilled peach.",
       priceRange: { minVariantPrice: { amount: "130.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/the-scotchman-18.jpg", altText: "Kingston Cask Strength 14" } }] },
+      images: { edges: [{ node: { url: "assets/the-scotchman-18.webp", altText: "Kingston Cask Strength 14" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum13", title: "700ml Bottle", price: { amount: "130.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -655,7 +655,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "WE", score: "89" }, { label: "AGED", score: "RESERVE" }],
       description: "Charcoal filtered crystal white rum. Crisp lime zest, fresh lemongrass, green apple, and smooth finish.",
       priceRange: { minVariantPrice: { amount: "45.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/forge-distillery-8.jpg", altText: "Island Heritage White Rum" } }] },
+      images: { edges: [{ node: { url: "assets/forge-distillery-8.webp", altText: "Island Heritage White Rum" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum14", title: "700ml Bottle", price: { amount: "45.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -671,7 +671,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "5.0" }, { label: "AGED", score: "RESERVE" }],
       description: "Master blender's crowning 30-year reserve rum. Extremely limited release with roasted pecan and dark cocoa.",
       priceRange: { minVariantPrice: { amount: "490.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/elite-monogram-25.jpg", altText: "Admiral's Cellar Reserve 30" } }] },
+      images: { edges: [{ node: { url: "assets/elite-monogram-25.webp", altText: "Admiral's Cellar Reserve 30" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum15", title: "700ml Bottle", price: { amount: "490.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -687,7 +687,7 @@ const RUM_PRODUCTS = [
       badges: [{ label: "RP", score: "95" }, { label: "AGED", score: "RESERVE" }],
       description: "Traditional wooden pot still distillation at 57% ABV. Intense notes of Demerara sugar, charred oak, and dark espresso.",
       priceRange: { minVariantPrice: { amount: "155.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-rum.jpg", altText: "Royal Navy Overproof Cask Rum" } }] },
+      images: { edges: [{ node: { url: "assets/cat-rum.webp", altText: "Royal Navy Overproof Cask Rum" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/rum16", title: "700ml Bottle", price: { amount: "155.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   }
@@ -706,7 +706,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.6" }, { label: "AGED", score: "RESERVE" }],
       description: "Extraordinary Belgian Abbey Ale Grand Cru. Fermented with Champagne yeast for a creamy head and fruity aroma.",
       priceRange: { minVariantPrice: { amount: "28.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/abbaye-saint-feuillien.jpg", altText: "Abbaye Saint-Feuillien Grand Cru" } }] },
+      images: { edges: [{ node: { url: "assets/abbaye-saint-feuillien.webp", altText: "Abbaye Saint-Feuillien Grand Cru" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer1", title: "700ml Bottle", price: { amount: "28.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -722,7 +722,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "UNTAPPD", score: "4.5" }, { label: "AGED", score: "RESERVE" }],
       description: "7.2% ABV Hazy India Pale Ale brewed in Denver, CO. Packed with Citra and Mosaic hops for tropical citrus punch.",
       priceRange: { minVariantPrice: { amount: "18.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cosmic-haze-ipa.jpg", altText: "Cosmic Haze Hazy IPA" } }] },
+      images: { edges: [{ node: { url: "assets/cosmic-haze-ipa.webp", altText: "Cosmic Haze Hazy IPA" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer2", title: "700ml Bottle", price: { amount: "18.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -738,7 +738,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "REFRESH", score: "4.7" }, { label: "AGED", score: "RESERVE" }],
       description: "Craft unfiltered wheat ale brewed with Valencia orange peel and coriander. Refreshing, crisp, and golden pour.",
       priceRange: { minVariantPrice: { amount: "16.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/citrus-wheat-ale.jpg", altText: "Sunburst Citrus Wheat Ale" } }] },
+      images: { edges: [{ node: { url: "assets/citrus-wheat-ale.webp", altText: "Sunburst Citrus Wheat Ale" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer3", title: "700ml Bottle", price: { amount: "16.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -754,7 +754,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "RATEBEER", score: "99" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged in charred bourbon barrels for 12 months. Thick velvety pour with dark espresso, fudge, and oak vanilla.",
       priceRange: { minVariantPrice: { amount: "24.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/rustic-forge-stout.jpg", altText: "Rustic Forge Imperial Stout" } }] },
+      images: { edges: [{ node: { url: "assets/rustic-forge-stout.webp", altText: "Rustic Forge Imperial Stout" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer4", title: "700ml Bottle", price: { amount: "24.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -770,7 +770,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.7" }, { label: "AGED", score: "RESERVE" }],
       description: "Hand-corked 750ml Belgian strong blonde ale. Effervescent carbonation with stone fruit, banana, and clove.",
       priceRange: { minVariantPrice: { amount: "22.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/a_classic_brown_bottle_of_belgian_ale_with_a_traditional_cork_and_wire_closure..png", altText: "Traditional Cork Belgian Ale" } }] },
+      images: { edges: [{ node: { url: "assets/a_classic_brown_bottle_of_belgian_ale_with_a_traditional_cork_and_wire_closure..webp", altText: "Traditional Cork Belgian Ale" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer5", title: "700ml Bottle", price: { amount: "22.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -786,7 +786,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "RATEBEER", score: "98" }, { label: "AGED", score: "RESERVE" }],
       description: "Decadent dark stout aged on cocoa nibs and bourbon barrel oak planks. Rich coffee bean and dark chocolate.",
       priceRange: { minVariantPrice: { amount: "26.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/a_heavy_set_bottle_of_dark_craft_stout_on_a_rustic_wooden_bar._low_key_lighting.png", altText: "Dark Craft Barrel Stout" } }] },
+      images: { edges: [{ node: { url: "assets/a_heavy_set_bottle_of_dark_craft_stout_on_a_rustic_wooden_bar._low_key_lighting.webp", altText: "Dark Craft Barrel Stout" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer6", title: "700ml Bottle", price: { amount: "26.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -802,7 +802,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "UNTAPPD", score: "4.6" }, { label: "AGED", score: "RESERVE" }],
       description: "Freshly canned craft double hazy IPA. Bursting with passionfruit, guava, ripe mango, and pillowy mouthfeel.",
       priceRange: { minVariantPrice: { amount: "20.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/a_modern_can_of_craft_ipa_with_a_colorful_artistic_geometric_label._chilled.png", altText: "Geometric Can Hazy Double IPA" } }] },
+      images: { edges: [{ node: { url: "assets/a_modern_can_of_craft_ipa_with_a_colorful_artistic_geometric_label._chilled.webp", altText: "Geometric Can Hazy Double IPA" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer7", title: "700ml Bottle", price: { amount: "20.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -818,7 +818,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "REFRESH", score: "4.8" }, { label: "AGED", score: "RESERVE" }],
       description: "Traditional German cloudy wheat beer served with orange garnish. Notes of banana bread, clove, and crisp grain.",
       priceRange: { minVariantPrice: { amount: "14.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/a_refreshing_glass_of_wheat_beer_with_an_orange_slice_garnish._bright_airy.png", altText: "Sunlit Golden Witbier Pint" } }] },
+      images: { edges: [{ node: { url: "assets/a_refreshing_glass_of_wheat_beer_with_an_orange_slice_garnish._bright_airy.webp", altText: "Sunlit Golden Witbier Pint" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer8", title: "700ml Bottle", price: { amount: "14.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -834,7 +834,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.5" }, { label: "AGED", score: "RESERVE" }],
       description: "Saison fermented in French oak foeders. Crisp rustic funk, lemon verbena, white pepper, and dry finish.",
       priceRange: { minVariantPrice: { amount: "25.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-beer.jpg", altText: "Oak Barrel Vintage Farmhouse" } }] },
+      images: { edges: [{ node: { url: "assets/cat-beer.webp", altText: "Oak Barrel Vintage Farmhouse" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer9", title: "700ml Bottle", price: { amount: "25.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -850,7 +850,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "UNTAPPD", score: "4.4" }, { label: "AGED", score: "RESERVE" }],
       description: "Classic piney and resinous West Coast IPA. Bright grapefruit bitterness with clean crisp malt backbone.",
       priceRange: { minVariantPrice: { amount: "17.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cosmic-haze-ipa.jpg", altText: "Summit Ridge West Coast IPA" } }] },
+      images: { edges: [{ node: { url: "assets/cosmic-haze-ipa.webp", altText: "Summit Ridge West Coast IPA" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer10", title: "700ml Bottle", price: { amount: "17.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -866,7 +866,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "RATEBEER", score: "100" }, { label: "AGED", score: "RESERVE" }],
       description: "Authentic Trappist monastic Quadrupel. Deep mahogany with dark fig, raisin, plum, and warming alcohol.",
       priceRange: { minVariantPrice: { amount: "32.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/abbaye-saint-feuillien.jpg", altText: "Trappist Reserve Quad 11" } }] },
+      images: { edges: [{ node: { url: "assets/abbaye-saint-feuillien.webp", altText: "Trappist Reserve Quad 11" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer11", title: "700ml Bottle", price: { amount: "32.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -882,7 +882,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "REFRESH", score: "4.6" }, { label: "AGED", score: "RESERVE" }],
       description: "Easy-drinking 4.8% ABV wheat beer infused with sweet Sicilian blood orange puree. Bright tart finish.",
       priceRange: { minVariantPrice: { amount: "15.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/citrus-wheat-ale.jpg", altText: "Blood Orange Session Wheat" } }] },
+      images: { edges: [{ node: { url: "assets/citrus-wheat-ale.webp", altText: "Blood Orange Session Wheat" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer12", title: "700ml Bottle", price: { amount: "15.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -898,7 +898,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "RATEBEER", score: "95" }, { label: "AGED", score: "RESERVE" }],
       description: "Traditional London Baltic porter. Smooth milk chocolate, toasted hazelnut, and dark roasted malt aroma.",
       priceRange: { minVariantPrice: { amount: "19.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/rustic-forge-stout.jpg", altText: "Ironworks Midnight Porter" } }] },
+      images: { edges: [{ node: { url: "assets/rustic-forge-stout.webp", altText: "Ironworks Midnight Porter" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer13", title: "700ml Bottle", price: { amount: "19.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -914,7 +914,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "REFRESH", score: "4.7" }, { label: "AGED", score: "RESERVE" }],
       description: "Unfiltered crispy German pilsner poured straight from the lager tank. Noble hop floral aroma and biscuity malt.",
       priceRange: { minVariantPrice: { amount: "16.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/a_classic_brown_bottle_of_belgian_ale_with_a_traditional_cork_and_wire_closure..png", altText: "Bavarian Keller Pilsner" } }] },
+      images: { edges: [{ node: { url: "assets/a_classic_brown_bottle_of_belgian_ale_with_a_traditional_cork_and_wire_closure..webp", altText: "Bavarian Keller Pilsner" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer14", title: "700ml Bottle", price: { amount: "16.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -930,7 +930,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "RATEBEER", score: "98" }, { label: "AGED", score: "RESERVE" }],
       description: "Luxurious pastry stout aged 18 months in bourbon casks with fresh Madagascar vanilla beans. Melted dark fudge.",
       priceRange: { minVariantPrice: { amount: "35.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/a_heavy_set_bottle_of_dark_craft_stout_on_a_rustic_wooden_bar._low_key_lighting.png", altText: "Bourbon Vanilla Bean Stout" } }] },
+      images: { edges: [{ node: { url: "assets/a_heavy_set_bottle_of_dark_craft_stout_on_a_rustic_wooden_bar._low_key_lighting.webp", altText: "Bourbon Vanilla Bean Stout" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer15", title: "700ml Bottle", price: { amount: "35.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -946,7 +946,7 @@ const BEER_PRODUCTS = [
       badges: [{ label: "RATEBEER", score: "99" }, { label: "AGED", score: "RESERVE" }],
       description: "Belgian abbey quadrupel matured in French oak wine casks. Rich plum, raisin, dark caramel, and warming alcohol finish.",
       priceRange: { minVariantPrice: { amount: "28.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/citrus-wheat-ale.jpg", altText: "Trappist Oak Quad 2021" } }] },
+      images: { edges: [{ node: { url: "assets/citrus-wheat-ale.webp", altText: "Trappist Oak Quad 2021" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/beer16", title: "700ml Bottle", price: { amount: "28.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   }
@@ -965,7 +965,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.8" }, { label: "AGED", score: "RESERVE" }],
       description: "Triple-distilled ultra-premium vodka in a hand-blown glass decanter with pristine clarity and smooth finish.",
       priceRange: { minVariantPrice: { amount: "88.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/vodka-decant-studio.jpg", altText: "Artisanal Hand-Blown Reserve" } }] },
+      images: { edges: [{ node: { url: "assets/vodka-decant-studio.webp", altText: "Artisanal Hand-Blown Reserve" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka1", title: "700ml Bottle", price: { amount: "88.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -981,7 +981,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "WE", score: "93" }, { label: "AGED", score: "RESERVE" }],
       description: "Small-batch craft vodka distilled from organic winter wheat. Crisp minerality with subtle vanilla undertones.",
       priceRange: { minVariantPrice: { amount: "65.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/contemporary_artisanal_vodka_bottle_with_a_unique_hand_blown_glass_appearance.png", altText: "Contemporary Craft Vodka" } }] },
+      images: { edges: [{ node: { url: "assets/contemporary_artisanal_vodka_bottle_with_a_unique_hand_blown_glass_appearance.webp", altText: "Contemporary Craft Vodka" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka2", title: "700ml Bottle", price: { amount: "65.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -997,7 +997,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "RP", score: "96" }, { label: "AGED", score: "RESERVE" }],
       description: "Prestige edition vodka housed in an intricate diamond-cut crystal bottle. Birch charcoal filtered.",
       priceRange: { minVariantPrice: { amount: "160.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/luxury_vodka_bottle_with_an_intricate_diamond_cut_crystal_texture_in_the_glass..png", altText: "Diamond Cut Crystal Vodka" } }] },
+      images: { edges: [{ node: { url: "assets/luxury_vodka_bottle_with_an_intricate_diamond_cut_crystal_texture_in_the_glass..webp", altText: "Diamond Cut Crystal Vodka" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka3", title: "700ml Bottle", price: { amount: "160.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1013,7 +1013,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.7" }, { label: "AGED", score: "RESERVE" }],
       description: "Minimalist tall-silhouette vodka crafted with pure glacial water. Exceptionally light, clean, and velvety.",
       priceRange: { minVariantPrice: { amount: "115.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/ultra_premium_minimalist_vodka_bottle_with_a_sleek_tall_silhouette_and_a.png", altText: "Nordic Glacier Ultra-Premium" } }] },
+      images: { edges: [{ node: { url: "assets/ultra_premium_minimalist_vodka_bottle_with_a_sleek_tall_silhouette_and_a.webp", altText: "Nordic Glacier Ultra-Premium" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka4", title: "700ml Bottle", price: { amount: "115.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1029,7 +1029,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "WE", score: "94" }, { label: "AGED", score: "RESERVE" }],
       description: "High-end studio photography decanter vodka. 5x distilled for supreme silkiness and zero burn finish.",
       priceRange: { minVariantPrice: { amount: "95.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/vodka-crystal-studio.jpg", altText: "Studio Decanter Pristine Vodka" } }] },
+      images: { edges: [{ node: { url: "assets/vodka-crystal-studio.webp", altText: "Studio Decanter Pristine Vodka" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka5", title: "700ml Bottle", price: { amount: "95.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1045,7 +1045,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.6" }, { label: "AGED", score: "RESERVE" }],
       description: "Filtered through silver birch charcoal and quartz crystal. Pristine clarity with subtle black pepper spice.",
       priceRange: { minVariantPrice: { amount: "78.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-vodka.jpg", altText: "Baltic Birch Filtered Reserve" } }] },
+      images: { edges: [{ node: { url: "assets/cat-vodka.webp", altText: "Baltic Birch Filtered Reserve" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka6", title: "700ml Bottle", price: { amount: "78.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1061,7 +1061,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "RP", score: "97" }, { label: "AGED", score: "RESERVE" }],
       description: "Distilled 10 times in copper columns. Housed in a frosted platinum bottle with rich creaminess.",
       priceRange: { minVariantPrice: { amount: "140.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/luxury_vodka_bottle_with_an_intricate_diamond_cut_crystal_texture_in_the_glass..png", altText: "Imperial Platinum Rye 10x" } }] },
+      images: { edges: [{ node: { url: "assets/luxury_vodka_bottle_with_an_intricate_diamond_cut_crystal_texture_in_the_glass..webp", altText: "Imperial Platinum Rye 10x" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka7", title: "700ml Bottle", price: { amount: "140.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1077,7 +1077,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "WE", score: "95" }, { label: "AGED", score: "RESERVE" }],
       description: "Crafted with 4,000-year-old Icelandic volcanic lava field water. Unmatched purity and crisp clean palate.",
       priceRange: { minVariantPrice: { amount: "105.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/ultra_premium_minimalist_vodka_bottle_with_a_sleek_tall_silhouette_and_a.png", altText: "Glacial Peak Single Estate" } }] },
+      images: { edges: [{ node: { url: "assets/ultra_premium_minimalist_vodka_bottle_with_a_sleek_tall_silhouette_and_a.webp", altText: "Glacial Peak Single Estate" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka8", title: "700ml Bottle", price: { amount: "105.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1093,7 +1093,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.7" }, { label: "AGED", score: "RESERVE" }],
       description: "Distilled in the Cognac region of France using copper pot stills. Subtle citrus, almond blossom, and butter.",
       priceRange: { minVariantPrice: { amount: "82.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/contemporary_artisanal_vodka_bottle_with_a_unique_hand_blown_glass_appearance.png", altText: "Artisan Wheat Handcrafted" } }] },
+      images: { edges: [{ node: { url: "assets/contemporary_artisanal_vodka_bottle_with_a_unique_hand_blown_glass_appearance.webp", altText: "Artisan Wheat Handcrafted" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka9", title: "700ml Bottle", price: { amount: "82.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1109,7 +1109,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "RP", score: "93" }, { label: "AGED", score: "RESERVE" }],
       description: "Bottled at the Arctic edge. Micro-filtered through active coconut husk for an ultra-smooth finish.",
       priceRange: { minVariantPrice: { amount: "90.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/vodka-decant-studio.jpg", altText: "Sapphire Ice Pristine Edition" } }] },
+      images: { edges: [{ node: { url: "assets/vodka-decant-studio.webp", altText: "Sapphire Ice Pristine Edition" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka10", title: "700ml Bottle", price: { amount: "90.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1125,7 +1125,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "WE", score: "96" }, { label: "AGED", score: "RESERVE" }],
       description: "Infused with floating 23-karat edible gold leaf flakes. Housed in a hand-carved crystal carafe.",
       priceRange: { minVariantPrice: { amount: "185.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/luxury_vodka_bottle_with_an_intricate_diamond_cut_crystal_texture_in_the_glass..png", altText: "Gold Leaf Heritage Vodka" } }] },
+      images: { edges: [{ node: { url: "assets/luxury_vodka_bottle_with_an_intricate_diamond_cut_crystal_texture_in_the_glass..webp", altText: "Gold Leaf Heritage Vodka" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka11", title: "700ml Bottle", price: { amount: "185.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1141,7 +1141,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.5" }, { label: "AGED", score: "RESERVE" }],
       description: "100% certified organic Scandinavian grain vodka. Clean, crisp, neutral profile perfect for luxury martinis.",
       priceRange: { minVariantPrice: { amount: "70.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/ultra_premium_minimalist_vodka_bottle_with_a_sleek_tall_silhouette_and_a.png", altText: "Nordic Winter Organic Wheat" } }] },
+      images: { edges: [{ node: { url: "assets/ultra_premium_minimalist_vodka_bottle_with_a_sleek_tall_silhouette_and_a.webp", altText: "Nordic Winter Organic Wheat" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka12", title: "700ml Bottle", price: { amount: "70.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1157,7 +1157,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "RP", score: "98" }, { label: "AGED", score: "RESERVE" }],
       description: "Historic recipe aged in oak vats for 60 days. Delicate hints of vanilla, white pepper, and toasted rye.",
       priceRange: { minVariantPrice: { amount: "130.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/contemporary_artisanal_vodka_bottle_with_a_unique_hand_blown_glass_appearance.png", altText: "Royal Polish Rye Reserve" } }] },
+      images: { edges: [{ node: { url: "assets/contemporary_artisanal_vodka_bottle_with_a_unique_hand_blown_glass_appearance.webp", altText: "Royal Polish Rye Reserve" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka13", title: "700ml Bottle", price: { amount: "130.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1173,7 +1173,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "WE", score: "92" }, { label: "AGED", score: "RESERVE" }],
       description: "Distilled using pristine Austrian alpine water. Smooth mineral finish with a touch of sweet grain.",
       priceRange: { minVariantPrice: { amount: "72.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/vodka-crystal-studio.jpg", altText: "Alpine Spring Crystal Vodka" } }] },
+      images: { edges: [{ node: { url: "assets/vodka-crystal-studio.webp", altText: "Alpine Spring Crystal Vodka" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka14", title: "700ml Bottle", price: { amount: "72.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1189,7 +1189,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.9" }, { label: "AGED", score: "RESERVE" }],
       description: "Limited batch vodka delicately steeped with black Perigord truffles. Earthy, savory, and ultra-luxurious.",
       priceRange: { minVariantPrice: { amount: "210.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-vodka.jpg", altText: "Black Diamond Truffle Vodka" } }] },
+      images: { edges: [{ node: { url: "assets/cat-vodka.webp", altText: "Black Diamond Truffle Vodka" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka15", title: "700ml Bottle", price: { amount: "210.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1205,7 +1205,7 @@ const VODKA_PRODUCTS = [
       badges: [{ label: "WE", score: "96" }, { label: "AGED", score: "RESERVE" }],
       description: "Filtered through platinum-coated birch charcoal. Exceptionally smooth, crisp, and pure with subtle cracked pepper notes.",
       priceRange: { minVariantPrice: { amount: "125.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/ultra_premium_minimalist_vodka_bottle_with_a_sleek_tall_silhouette_and_a.png", altText: "Imperial Nordic Platinum Vodka" } }] },
+      images: { edges: [{ node: { url: "assets/ultra_premium_minimalist_vodka_bottle_with_a_sleek_tall_silhouette_and_a.webp", altText: "Imperial Nordic Platinum Vodka" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/vodka16", title: "700ml Bottle", price: { amount: "125.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   }
@@ -1224,7 +1224,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.8" }, { label: "AGED", score: "RESERVE" }],
       description: "2021 Willamette Valley Reserve Pinot Noir. Dark cherry, forest floor, French oak, and silky tannins.",
       priceRange: { minVariantPrice: { amount: "135.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/pinot-noir-etoiles.jpg", altText: "Domaines des Étoiles Pinot Noir" } }] },
+      images: { edges: [{ node: { url: "assets/pinot-noir-etoiles.webp", altText: "Domaines des Étoiles Pinot Noir" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine1", title: "700ml Bottle", price: { amount: "135.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1240,7 +1240,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "RP", score: "99" }, { label: "AGED", score: "RESERVE" }],
       description: "2016 Grand Vin de Bordeaux. World-renowned vintage with cassis, cedarwood, crushed violets, and refined structure.",
       priceRange: { minVariantPrice: { amount: "890.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/chateau-margaux.jpg", altText: "Château Margaux Cabernet 2016" } }] },
+      images: { edges: [{ node: { url: "assets/chateau-margaux.webp", altText: "Château Margaux Cabernet 2016" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine2", title: "700ml Bottle", price: { amount: "890.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1256,7 +1256,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "WE", score: "97" }, { label: "AGED", score: "RESERVE" }],
       description: "Prestige Cuvée Brut Champagne. Effervescent notes of candied citrus, almond, brioche, and golden apple.",
       priceRange: { minVariantPrice: { amount: "240.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/veuve-clicquot-champagne.jpg", altText: "Veuve Clicquot La Grande Dame" } }] },
+      images: { edges: [{ node: { url: "assets/veuve-clicquot-champagne.webp", altText: "Veuve Clicquot La Grande Dame" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine3", title: "700ml Bottle", price: { amount: "240.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1272,7 +1272,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.5" }, { label: "AGED", score: "RESERVE" }],
       description: "Chilled Provence Rosé with delicate fresh red berries, wild strawberries, white peach, and saline finish.",
       priceRange: { minVariantPrice: { amount: "38.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/miraval-rose.jpg", altText: "Château Miraval Côtes Rosé" } }] },
+      images: { edges: [{ node: { url: "assets/miraval-rose.webp", altText: "Château Miraval Côtes Rosé" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine4", title: "700ml Bottle", price: { amount: "38.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1288,7 +1288,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "WE", score: "93" }, { label: "AGED", score: "RESERVE" }],
       description: "2023 Mediterranean Coast Reserve. Crisp green apple, white peach, toasted brioche, and coastal minerality.",
       priceRange: { minVariantPrice: { amount: "42.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/domaine-chardonnay.jpg", altText: "Domaine de la Mer Chardonnay" } }] },
+      images: { edges: [{ node: { url: "assets/domaine-chardonnay.webp", altText: "Domaine de la Mer Chardonnay" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine5", title: "700ml Bottle", price: { amount: "42.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1304,7 +1304,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.7" }, { label: "AGED", score: "RESERVE" }],
       description: "Napa Valley sun-drenched reserve Chardonnay. Creamy lemon curd, toasted macadamia, and vanilla bean oak.",
       priceRange: { minVariantPrice: { amount: "88.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/a_crisp_bottle_of_chilled_white_chardonnay_on_a_bright_sun_drenched_marble.png", altText: "Sun-Drenched Marble Chardonnay" } }] },
+      images: { edges: [{ node: { url: "assets/a_crisp_bottle_of_chilled_white_chardonnay_on_a_bright_sun_drenched_marble.webp", altText: "Sun-Drenched Marble Chardonnay" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine6", title: "700ml Bottle", price: { amount: "88.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1320,7 +1320,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "RP", score: "96" }, { label: "AGED", score: "RESERVE" }],
       description: "Oakville Napa Valley Cabernet. Intense blackberry liqueur, dark espresso, tobacco leaf, and structured tannins.",
       priceRange: { minVariantPrice: { amount: "160.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/a_luxury_bottle_of_deep_red_cabernet_sauvignon_on_a_dark_mahogany_table._soft.png", altText: "Mahogany Table Cabernet 2018" } }] },
+      images: { edges: [{ node: { url: "assets/a_luxury_bottle_of_deep_red_cabernet_sauvignon_on_a_dark_mahogany_table._soft.webp", altText: "Mahogany Table Cabernet 2018" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine7", title: "700ml Bottle", price: { amount: "160.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1336,7 +1336,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "WE", score: "94" }, { label: "AGED", score: "RESERVE" }],
       description: "French Burgundy Premier Cru Pinot Noir. Elegant wild raspberry, damp earth, truffle, and velvet finish.",
       priceRange: { minVariantPrice: { amount: "145.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/a_minimalist_bottle_of_pinot_noir_with_a_textured_cream_label._dramatic_side.png", altText: "Textured Label Pinot Noir" } }] },
+      images: { edges: [{ node: { url: "assets/a_minimalist_bottle_of_pinot_noir_with_a_textured_cream_label._dramatic_side.webp", altText: "Textured Label Pinot Noir" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine8", title: "700ml Bottle", price: { amount: "145.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1352,7 +1352,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.9" }, { label: "AGED", score: "RESERVE" }],
       description: "2012 Vintage Gold Foil Brut Champagne. Fine micro-bubbles with roasted hazelnut, Meyer lemon, and toast.",
       priceRange: { minVariantPrice: { amount: "290.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/a_vintage_style_bottle_of_premium_champagne_with_a_gold_foil_top._dark.png", altText: "Gold Foil Vintage Champagne 2012" } }] },
+      images: { edges: [{ node: { url: "assets/a_vintage_style_bottle_of_premium_champagne_with_a_gold_foil_top._dark.webp", altText: "Gold Foil Vintage Champagne 2012" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine9", title: "700ml Bottle", price: { amount: "290.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1368,7 +1368,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "WE", score: "93" }, { label: "AGED", score: "RESERVE" }],
       description: "Iconic silver ice bucket edition Rosé. Crisp watermelon, white flowers, lemon zest, and mineral purity.",
       priceRange: { minVariantPrice: { amount: "55.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/an_elegant_bottle_of_ros_wine_in_a_modern_silver_ice_bucket._bright_outdoor.png", altText: "Silver Bucket Provence Rosé" } }] },
+      images: { edges: [{ node: { url: "assets/an_elegant_bottle_of_ros_wine_in_a_modern_silver_ice_bucket._bright_outdoor.webp", altText: "Silver Bucket Provence Rosé" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine10", title: "700ml Bottle", price: { amount: "55.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1384,7 +1384,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "RP", score: "98" }, { label: "AGED", score: "RESERVE" }],
       description: "2015 Saint-Julien Grand Cru Classé. Opulent black currant, graphite, cigar box, and velvety long finish.",
       priceRange: { minVariantPrice: { amount: "340.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-wine.jpg", altText: "Grand Cru Bordeaux Reserve 2015" } }] },
+      images: { edges: [{ node: { url: "assets/cat-wine.webp", altText: "Grand Cru Bordeaux Reserve 2015" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine11", title: "700ml Bottle", price: { amount: "340.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1400,7 +1400,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.8" }, { label: "AGED", score: "RESERVE" }],
       description: "2019 Brunello di Montalcino. Ripe red cherry, leather, dried oregano, sandalwood, and firm structure.",
       priceRange: { minVariantPrice: { amount: "120.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/chateau-margaux.jpg", altText: "Tuscan Reserve Sangiovese 2019" } }] },
+      images: { edges: [{ node: { url: "assets/chateau-margaux.webp", altText: "Tuscan Reserve Sangiovese 2019" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine12", title: "700ml Bottle", price: { amount: "120.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1416,7 +1416,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "RP", score: "95" }, { label: "AGED", score: "RESERVE" }],
       description: "2018 Old Vine Barossa Shiraz. Full-bodied black plum, dark chocolate, black pepper, and smoky oak.",
       priceRange: { minVariantPrice: { amount: "95.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/pinot-noir-etoiles.jpg", altText: "Barossa Valley Shiraz Reserve" } }] },
+      images: { edges: [{ node: { url: "assets/pinot-noir-etoiles.webp", altText: "Barossa Valley Shiraz Reserve" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine13", title: "700ml Bottle", price: { amount: "95.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1432,7 +1432,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "WE", score: "94" }, { label: "AGED", score: "RESERVE" }],
       description: "2020 High-altitude Uco Valley Malbec. Intense violet aromas, blackberry compote, mocha, and plush tannins.",
       priceRange: { minVariantPrice: { amount: "68.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/chateau-margaux.jpg", altText: "Mendoza Malbec Gran Reserva" } }] },
+      images: { edges: [{ node: { url: "assets/chateau-margaux.webp", altText: "Mendoza Malbec Gran Reserva" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine14", title: "700ml Bottle", price: { amount: "68.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1448,7 +1448,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.6" }, { label: "AGED", score: "RESERVE" }],
       description: "2022 Loire Valley Sancerre. Electric acidity, flinty minerality, green apple, lime blossom, and grapefruit.",
       priceRange: { minVariantPrice: { amount: "62.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/domaine-chardonnay.jpg", altText: "Sancerre Blanc Les Monts 2022" } }] },
+      images: { edges: [{ node: { url: "assets/domaine-chardonnay.webp", altText: "Sancerre Blanc Les Monts 2022" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine15", title: "700ml Bottle", price: { amount: "62.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1464,7 +1464,7 @@ const WINE_PRODUCTS = [
       badges: [{ label: "RP", score: "98" }, { label: "AGED", score: "RESERVE" }],
       description: "2018 Pauillac Grand Cru Classé. Complex graphite, cassis, tobacco leaf, and refined structured oak tannins.",
       priceRange: { minVariantPrice: { amount: "310.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/a_luxury_bottle_of_deep_red_cabernet_sauvignon_on_a_dark_mahogany_table._soft.png", altText: "Château Prestige Pauillac 2018" } }] },
+      images: { edges: [{ node: { url: "assets/a_luxury_bottle_of_deep_red_cabernet_sauvignon_on_a_dark_mahogany_table._soft.webp", altText: "Château Prestige Pauillac 2018" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/wine16", title: "700ml Bottle", price: { amount: "310.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   }
@@ -1483,7 +1483,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.8" }, { label: "AGED", score: "RESERVE" }],
       description: "Distilled with rare mountain juniper, citrus peel, wild lavender, and cardamom in an amber glass decanter.",
       priceRange: { minVariantPrice: { amount: "95.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/gin-reserve.jpg", altText: "Nocturne Handcrafted Gin" } }] },
+      images: { edges: [{ node: { url: "assets/gin-reserve.webp", altText: "Nocturne Handcrafted Gin" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin1", title: "700ml Bottle", price: { amount: "95.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1499,7 +1499,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "WE", score: "94" }, { label: "AGED", score: "RESERVE" }],
       description: "Crafted in the Scottish Highlands with hand-foraged heather, juniper berries, and pine needles.",
       priceRange: { minVariantPrice: { amount: "78.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-gin.jpg", altText: "Highland Mountain Juniper Gin" } }] },
+      images: { edges: [{ node: { url: "assets/cat-gin.webp", altText: "Highland Mountain Juniper Gin" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin2", title: "700ml Bottle", price: { amount: "78.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1515,7 +1515,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.7" }, { label: "AGED", score: "RESERVE" }],
       description: "Infused with butterfly pea blossom for a natural indigo shade that shifts to rose when tonic is added.",
       priceRange: { minVariantPrice: { amount: "68.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/gin-reserve.jpg", altText: "Empress Sapphire Floral Gin" } }] },
+      images: { edges: [{ node: { url: "assets/gin-reserve.webp", altText: "Empress Sapphire Floral Gin" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin3", title: "700ml Bottle", price: { amount: "68.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1531,7 +1531,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "RP", score: "93" }, { label: "AGED", score: "RESERVE" }],
       description: "Distilled with Valencia orange peel, lemons, rosemary, and thyme. Vibrant, aromatic, and refreshing.",
       priceRange: { minVariantPrice: { amount: "60.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-gin.jpg", altText: "Artisanal Citrus Peel Dry Gin" } }] },
+      images: { edges: [{ node: { url: "assets/cat-gin.webp", altText: "Artisanal Citrus Peel Dry Gin" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin4", title: "700ml Bottle", price: { amount: "60.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1547,7 +1547,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "WE", score: "92" }, { label: "AGED", score: "RESERVE" }],
       description: "Small-batch French gin distilled in copper pots with Provence lavender, lemon verbena, and angelica root.",
       priceRange: { minVariantPrice: { amount: "72.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/gin-reserve.jpg", altText: "Wild Lavender Craft Gin" } }] },
+      images: { edges: [{ node: { url: "assets/gin-reserve.webp", altText: "Wild Lavender Craft Gin" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin5", title: "700ml Bottle", price: { amount: "72.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1563,7 +1563,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.6" }, { label: "AGED", score: "RESERVE" }],
       description: "Savory Tuscan style gin infused with Arbequina olives, fresh rosemary, basil, and Italian juniper.",
       priceRange: { minVariantPrice: { amount: "82.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-gin.jpg", altText: "Olive & Rosemary Mediterranean" } }] },
+      images: { edges: [{ node: { url: "assets/cat-gin.webp", altText: "Olive & Rosemary Mediterranean" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin6", title: "700ml Bottle", price: { amount: "82.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1579,7 +1579,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "RP", score: "96" }, { label: "AGED", score: "RESERVE" }],
       description: "Overproof 57% ABV Navy strength gin. Intense juniper punch, coriander seed, grains of paradise, and lime peel.",
       priceRange: { minVariantPrice: { amount: "88.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/gin-reserve.jpg", altText: "Royal Navy Strength Dry Gin" } }] },
+      images: { edges: [{ node: { url: "assets/gin-reserve.webp", altText: "Royal Navy Strength Dry Gin" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin7", title: "700ml Bottle", price: { amount: "88.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1595,7 +1595,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "REFRESH", score: "4.7" }, { label: "AGED", score: "RESERVE" }],
       description: "Naturally distilled with ruby red grapefruit and hand-picked English elderflowers. Crisp citrus sweetness.",
       priceRange: { minVariantPrice: { amount: "55.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-gin.jpg", altText: "Pink Grapefruit & Elderflower" } }] },
+      images: { edges: [{ node: { url: "assets/cat-gin.webp", altText: "Pink Grapefruit & Elderflower" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin8", title: "700ml Bottle", price: { amount: "55.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1611,7 +1611,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "WE", score: "91" }, { label: "AGED", score: "RESERVE" }],
       description: "Batch No. 10 American dry gin distilled with Cascade hops, chamomile, and fresh grapefruit rind.",
       priceRange: { minVariantPrice: { amount: "65.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/gin-reserve.jpg", altText: "Copper Still Small Batch 10" } }] },
+      images: { edges: [{ node: { url: "assets/gin-reserve.webp", altText: "Copper Still Small Batch 10" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin9", title: "700ml Bottle", price: { amount: "65.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1627,7 +1627,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.8" }, { label: "AGED", score: "RESERVE" }],
       description: "Traditional 18th-century recipe with 9 wild botanicals including cassia bark, liquorice, and coriander.",
       priceRange: { minVariantPrice: { amount: "52.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-gin.jpg", altText: "London Dry Heritage Edition" } }] },
+      images: { edges: [{ node: { url: "assets/cat-gin.webp", altText: "London Dry Heritage Edition" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin10", title: "700ml Bottle", price: { amount: "52.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1643,7 +1643,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "RP", score: "98" }, { label: "AGED", score: "RESERVE" }],
       description: "Iconic German gin boasting 47 hand-picked Black Forest botanicals and cranberries. Unrivaled complexity.",
       priceRange: { minVariantPrice: { amount: "110.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/gin-reserve.jpg", altText: "Black Forest Monkey 47 Reserve" } }] },
+      images: { edges: [{ node: { url: "assets/gin-reserve.webp", altText: "Black Forest Monkey 47 Reserve" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin11", title: "700ml Bottle", price: { amount: "110.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1659,7 +1659,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "WE", score: "95" }, { label: "AGED", score: "RESERVE" }],
       description: "Distilled with fresh Bulgarian rose petals and crisp English cucumbers. Delightfully refreshing profile.",
       priceRange: { minVariantPrice: { amount: "70.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-gin.jpg", altText: "Botanical Garden Cucumber Gin" } }] },
+      images: { edges: [{ node: { url: "assets/cat-gin.webp", altText: "Botanical Garden Cucumber Gin" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin12", title: "700ml Bottle", price: { amount: "70.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1675,7 +1675,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.7" }, { label: "AGED", score: "RESERVE" }],
       description: "Crafted in Goa, India with green cardamom, Malabar black pepper, cinnamon, and wild juniper.",
       priceRange: { minVariantPrice: { amount: "75.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/gin-reserve.jpg", altText: "Spiced Cardamom Artisanal Gin" } }] },
+      images: { edges: [{ node: { url: "assets/gin-reserve.webp", altText: "Spiced Cardamom Artisanal Gin" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin13", title: "700ml Bottle", price: { amount: "75.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1691,7 +1691,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "RP", score: "94" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged 12 months in charred bourbon barrels. Amber hue with vanilla oak notes complementing crisp juniper.",
       priceRange: { minVariantPrice: { amount: "85.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-gin.jpg", altText: "Old Tom Barrel-Aged Gin" } }] },
+      images: { edges: [{ node: { url: "assets/cat-gin.webp", altText: "Old Tom Barrel-Aged Gin" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin14", title: "700ml Bottle", price: { amount: "85.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1707,7 +1707,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.9" }, { label: "AGED", score: "RESERVE" }],
       description: "Presented in a hand-cut crystal decanter. Infused with rare alpine Edelweiss and wild mountain herbs.",
       priceRange: { minVariantPrice: { amount: "160.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/gin-reserve.jpg", altText: "Crystal Decanter Botanical Gin" } }] },
+      images: { edges: [{ node: { url: "assets/gin-reserve.webp", altText: "Crystal Decanter Botanical Gin" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin15", title: "700ml Bottle", price: { amount: "160.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1723,7 +1723,7 @@ const GIN_PRODUCTS = [
       badges: [{ label: "WE", score: "93" }, { label: "AGED", score: "RESERVE" }],
       description: "Hand-harvested Black Forest sloe berries macerated with elderflower and juniper. Rich ruby hue with tart plum notes.",
       priceRange: { minVariantPrice: { amount: "78.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-gin.jpg", altText: "Black Forest Sloe & Elderflower Gin" } }] },
+      images: { edges: [{ node: { url: "assets/cat-gin.webp", altText: "Black Forest Sloe & Elderflower Gin" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/gin16", title: "700ml Bottle", price: { amount: "78.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   }
@@ -1742,7 +1742,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "95" }, { label: "AGED", score: "RESERVE" }],
       description: "Hand-rolled Nicaraguan long-filler tobacco presented in an engraved solid mahogany humidor box.",
       priceRange: { minVariantPrice: { amount: "210.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.jpg", altText: "Aurum Artisanal Reserve Cigars" } }] },
+      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Aurum Artisanal Reserve Cigars" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar1", title: "700ml Bottle", price: { amount: "210.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1758,7 +1758,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "96" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged Cuban-seed Habano wrapper with cedarwood, dark cocoa, roasted espresso, and leather notes.",
       priceRange: { minVariantPrice: { amount: "240.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-cigar.jpg", altText: "Habano Wrapper Robusto Box" } }] },
+      images: { edges: [{ node: { url: "assets/cat-cigar.webp", altText: "Habano Wrapper Robusto Box" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar2", title: "700ml Bottle", price: { amount: "240.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1774,7 +1774,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "94" }, { label: "AGED", score: "RESERVE" }],
       description: "Hand-crafted Torpedo cigars aged 5 years. Presented in a solid mahogany box with gold brass hinges.",
       priceRange: { minVariantPrice: { amount: "195.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.jpg", altText: "Mahogany Engraved Torpedo" } }] },
+      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Mahogany Engraved Torpedo" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar3", title: "700ml Bottle", price: { amount: "195.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1790,7 +1790,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "93" }, { label: "AGED", score: "RESERVE" }],
       description: "7x48 Churchill format with rich Nicaraguan binder and wrapper. Earthy pepper, nutmeg, and dark cocoa.",
       priceRange: { minVariantPrice: { amount: "180.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-cigar.jpg", altText: "Estelí Long-Filler Churchill" } }] },
+      images: { edges: [{ node: { url: "assets/cat-cigar.webp", altText: "Estelí Long-Filler Churchill" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar4", title: "700ml Bottle", price: { amount: "180.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1806,7 +1806,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "95" }, { label: "AGED", score: "RESERVE" }],
       description: "Oily San Andrés Maduro wrapper over Nicaraguan long-fillers. Sweet dark chocolate, black pepper, and cream.",
       priceRange: { minVariantPrice: { amount: "225.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.jpg", altText: "Maduro Vintage Reserve Toro" } }] },
+      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Maduro Vintage Reserve Toro" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar5", title: "700ml Bottle", price: { amount: "225.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1822,7 +1822,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "97" }, { label: "AGED", score: "RESERVE" }],
       description: "Authentic Cuban leaf Corona Gorda. Medium to full-bodied profile with toasted almonds and white pepper.",
       priceRange: { minVariantPrice: { amount: "310.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-cigar.jpg", altText: "Hand-Rolled Corona Gorda" } }] },
+      images: { edges: [{ node: { url: "assets/cat-cigar.webp", altText: "Hand-Rolled Corona Gorda" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar6", title: "700ml Bottle", price: { amount: "310.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1838,7 +1838,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "98" }, { label: "AGED", score: "RESERVE" }],
       description: "Limited edition 10th anniversary release. Aged 8 years for ultimate smoothness with roasted coffee and cedar.",
       priceRange: { minVariantPrice: { amount: "380.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.jpg", altText: "Cuban Heritage Aniversario" } }] },
+      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Cuban Heritage Aniversario" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar7", title: "700ml Bottle", price: { amount: "380.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1854,7 +1854,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "92" }, { label: "AGED", score: "RESERVE" }],
       description: "Sun-grown dark Nicaraguan wrapper. Rich spice, charred oak wood, dark cocoa, and smooth cream finish.",
       priceRange: { minVariantPrice: { amount: "170.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-cigar.jpg", altText: "Nicaragua Dark Wrapper Toro" } }] },
+      images: { edges: [{ node: { url: "assets/cat-cigar.webp", altText: "Nicaragua Dark Wrapper Toro" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar8", title: "700ml Bottle", price: { amount: "170.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1870,7 +1870,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "94" }, { label: "AGED", score: "RESERVE" }],
       description: "Tapered Pirámide shape allowing concentrated flavor delivery. Creamy cedar, caramel, and baking spices.",
       priceRange: { minVariantPrice: { amount: "215.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.jpg", altText: "Royal Selection Pirámide Box" } }] },
+      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Royal Selection Pirámide Box" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar9", title: "700ml Bottle", price: { amount: "215.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1886,7 +1886,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "96" }, { label: "AGED", score: "RESERVE" }],
       description: "Slim 7.5x38 Lancero format for wrapper flavor intensity. Complex cinnamon, leather, and dark berry note.",
       priceRange: { minVariantPrice: { amount: "250.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-cigar.jpg", altText: "Master Blender Reserve Lancero" } }] },
+      images: { edges: [{ node: { url: "assets/cat-cigar.webp", altText: "Master Blender Reserve Lancero" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar10", title: "700ml Bottle", price: { amount: "250.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1902,7 +1902,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "95" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged 10 years in cedar vault rooms. Smooth oaky smoke with toasted walnuts, cocoa bean, and sweet spice.",
       priceRange: { minVariantPrice: { amount: "290.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.jpg", altText: "Gran Reserva Vintage 2015" } }] },
+      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Gran Reserva Vintage 2015" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar11", title: "700ml Bottle", price: { amount: "290.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1918,7 +1918,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "93" }, { label: "AGED", score: "RESERVE" }],
       description: "Classic Belicoso shape with golden foil band. Smooth almond, honeyed toast, and subtle floral cedar.",
       priceRange: { minVariantPrice: { amount: "190.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-cigar.jpg", altText: "Gold Band Belicoso Selection" } }] },
+      images: { edges: [{ node: { url: "assets/cat-cigar.webp", altText: "Gold Band Belicoso Selection" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar12", title: "700ml Bottle", price: { amount: "190.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1934,7 +1934,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "94" }, { label: "AGED", score: "RESERVE" }],
       description: "Sun-drenched Dominican wrapper. Rich cinnamon, white pepper, cedarwood, and natural tobacco sweetness.",
       priceRange: { minVariantPrice: { amount: "205.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.jpg", altText: "Dominican Sungrown Robusto" } }] },
+      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Dominican Sungrown Robusto" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar13", title: "700ml Bottle", price: { amount: "205.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1950,7 +1950,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "99" }, { label: "AGED", score: "RESERVE" }],
       description: "Prestige 15-cigar humidor collection crafted in solid mahogany. Premium full-bodied Nicaraguan reserve.",
       priceRange: { minVariantPrice: { amount: "450.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.jpg", altText: "Emperor Mahogany Humidor" } }] },
+      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Emperor Mahogany Humidor" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar14", title: "700ml Bottle", price: { amount: "450.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1966,7 +1966,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "96" }, { label: "AGED", score: "RESERVE" }],
       description: "Rare small batch release hand-rolled by master torcedores. Delicate spice, roasted espresso, and velvet finish.",
       priceRange: { minVariantPrice: { amount: "280.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-cigar.jpg", altText: "Small Batch Vintage 10-Pack" } }] },
+      images: { edges: [{ node: { url: "assets/cat-cigar.webp", altText: "Small Batch Vintage 10-Pack" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar15", title: "700ml Bottle", price: { amount: "280.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -1982,7 +1982,7 @@ const CIGAR_PRODUCTS = [
       badges: [{ label: "AFICIONADO", score: "97" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged 10-year Dominican binder and filler with silky Habano wrapper. Rich leather, cedar, cinnamon, and cream.",
       priceRange: { minVariantPrice: { amount: "320.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.jpg", altText: "Grand Aniversario Double Corona" } }] },
+      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Grand Aniversario Double Corona" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar16", title: "700ml Bottle", price: { amount: "320.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   }
@@ -2001,7 +2001,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.9" }, { label: "AGED", score: "RESERVE" }],
       description: "Masterfully aged in American oak barrels for 8 months. Iconic hand-painted ceramic decanter with vanilla, hazelnut, and agave nectar notes.",
       priceRange: { minVariantPrice: { amount: "195.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-clase-azul-reposado.jpg", altText: "Clase Azul Reposado Agave" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-clase-azul-reposado.webp", altText: "Clase Azul Reposado Agave" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila1", title: "700ml Bottle", price: { amount: "195.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2017,7 +2017,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "WE", score: "98" }, { label: "AGED", score: "RESERVE" }],
       description: "Handcrafted in small batches and aged for a minimum of two and a half years in charred American white oak casks. Rich caramel and chocolate finish.",
       priceRange: { minVariantPrice: { amount: "220.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-don-julio-1942.jpg", altText: "Don Julio 1942 Extra Añejo" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-don-julio-1942.webp", altText: "Don Julio 1942 Extra Añejo" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila2", title: "700ml Bottle", price: { amount: "220.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2033,7 +2033,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "RP", score: "96" }, { label: "AGED", score: "RESERVE" }],
       description: "Unfiltered 46% ABV artisanal blanco with explosive citrus, green olive, earthy minerals, and sweet slow-roasted agave profile.",
       priceRange: { minVariantPrice: { amount: "95.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-fortaleza-blanco.jpg", altText: "Fortaleza Blanco Still Strength" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-fortaleza-blanco.webp", altText: "Fortaleza Blanco Still Strength" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila3", title: "700ml Bottle", price: { amount: "95.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2049,7 +2049,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "5.0" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged for 49 months in American white oak barrels. Mahogany color with deep aromas of dried fruit, cinnamon, rose petals, and spicy cedar.",
       priceRange: { minVariantPrice: { amount: "380.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-herradura-suprema.jpg", altText: "Herradura Selección Suprema" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-herradura-suprema.webp", altText: "Herradura Selección Suprema" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila4", title: "700ml Bottle", price: { amount: "380.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2065,7 +2065,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "WE", score: "92" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged 14 months in premium oak barrels. Soft caramel, toasted vanilla, cocoa, and subtle spice with an exceptionally velvety lingering finish.",
       priceRange: { minVariantPrice: { amount: "75.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-casamigos-anejo.jpg", altText: "Casamigos Añejo Highland Reserve" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-casamigos-anejo.webp", altText: "Casamigos Añejo Highland Reserve" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila5", title: "700ml Bottle", price: { amount: "75.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2081,7 +2081,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "RP", score: "94" }, { label: "AGED", score: "RESERVE" }],
       description: "Harvested from a single highland field estate. Unmatched purity, white pepper, fresh lime zest, and sweet roasted agave heart notes.",
       priceRange: { minVariantPrice: { amount: "62.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-ocho-plata.jpg", altText: "Tequila Ocho Single Estate Plata" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-ocho-plata.webp", altText: "Tequila Ocho Single Estate Plata" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila6", title: "700ml Bottle", price: { amount: "62.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2097,7 +2097,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.9" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged for more than three years in new American and French oak barrels. Presented in an elegant crystal decanter with toasted oak and vanilla notes.",
       priceRange: { minVariantPrice: { amount: "420.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-gran-patron-piedra.jpg", altText: "Gran Patrón Piedra Extra Añejo" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-gran-patron-piedra.webp", altText: "Gran Patrón Piedra Extra Añejo" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila7", title: "700ml Bottle", price: { amount: "420.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2113,7 +2113,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "WE", score: "97" }, { label: "AGED", score: "RESERVE" }],
       description: "Created in collaboration with Alain Royer of A. de Fussigny Cognac. Aged 5 years in French oak ex-cognac casks for complex stone fruit finish.",
       priceRange: { minVariantPrice: { amount: "185.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-el-tesoro-paradiso.jpg", altText: "El Tesoro Paradiso Cognac Cask" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-el-tesoro-paradiso.webp", altText: "El Tesoro Paradiso Cognac Cask" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila8", title: "700ml Bottle", price: { amount: "185.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2129,7 +2129,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.9" }, { label: "AGED", score: "RESERVE" }],
       description: "Artisanal luxury decanter tequila aged 36 months in charred white oak casks with hints of golden honey, toasted almond, and smoked vanilla.",
       priceRange: { minVariantPrice: { amount: "260.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-tequila.jpg", altText: "Don José Luis Reserva Especial" } }] },
+      images: { edges: [{ node: { url: "assets/cat-tequila.webp", altText: "Don José Luis Reserva Especial" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila9", title: "700ml Bottle", price: { amount: "260.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2145,7 +2145,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "WE", score: "93" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged in French and American oak, finished in port wine casks, then filtered to crystal clarity. Notes of roasted nuts and silky dark berries.",
       priceRange: { minVariantPrice: { amount: "80.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-1800-cristalino.jpg", altText: "1800 Cristalino Añejo Diamond" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-1800-cristalino.webp", altText: "1800 Cristalino Añejo Diamond" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila10", title: "700ml Bottle", price: { amount: "80.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2161,7 +2161,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "RP", score: "98" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged 5 years in historic cellars. Rich amber tone with aromas of dried fig, pipe tobacco, toasted oak, dark chocolate, and candied orange peel.",
       priceRange: { minVariantPrice: { amount: "295.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-siete-leguas.jpg", altText: "Siete Leguas D'Antaño Extra Añejo" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-siete-leguas.webp", altText: "Siete Leguas D'Antaño Extra Añejo" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila11", title: "700ml Bottle", price: { amount: "295.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2177,7 +2177,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "5.0" }, { label: "AGED", score: "RESERVE" }],
       description: "An exceptional joven blend combining Clase Azul Plata with special 8-year extra añejo aged in French oak casks and finished in sherry barrels.",
       priceRange: { minVariantPrice: { amount: "360.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-clase-azul-gold.jpg", altText: "Clase Azul Gold Edition" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-clase-azul-gold.webp", altText: "Clase Azul Gold Edition" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila12", title: "700ml Bottle", price: { amount: "360.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2193,7 +2193,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "WE", score: "96" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged 6 years in Napa Valley Cabernet French White Oak barrels. Complex notes of dried fruit, cinnamon, and caramel with exceptional smoothness.",
       priceRange: { minVariantPrice: { amount: "330.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-codigo-1530.jpg", altText: "Código 1530 Origen Extra Añejo" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-codigo-1530.webp", altText: "Código 1530 Origen Extra Añejo" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila13", title: "700ml Bottle", price: { amount: "330.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2209,7 +2209,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "RP", score: "97" }, { label: "AGED", score: "RESERVE" }],
       description: "Aged 6 years in French oak barrels. Housed in a sun-shaped bottle designed by artist Sergio Bustamante with vanilla, oak, and warm cinnamon notes.",
       priceRange: { minVariantPrice: { amount: "310.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-don-jose-luis-decanter.jpg", altText: "Rey Sol Extra Añejo Handcrafted" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-don-jose-luis-decanter.webp", altText: "Rey Sol Extra Añejo Handcrafted" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila14", title: "700ml Bottle", price: { amount: "310.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2225,7 +2225,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "VIVINO", score: "4.8" }, { label: "AGED", score: "RESERVE" }],
       description: "Distilled from rare wild Tobalá agave in copper pot stills. Subtle smoke with aromas of roasted macadamia, green pepper, nutmeg, and damp earth.",
       priceRange: { minVariantPrice: { amount: "125.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-siete-leguas.jpg", altText: "Montelobos Mezcal Artesanal Tobalá" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-siete-leguas.webp", altText: "Montelobos Mezcal Artesanal Tobalá" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila15", title: "700ml Bottle", price: { amount: "125.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   },
@@ -2241,7 +2241,7 @@ const TEQUILA_PRODUCTS = [
       badges: [{ label: "WE", score: "99" }, { label: "AGED", score: "RESERVE" }],
       description: "Third distillation with wild mountain apples, plums, plantains, almonds, and raw chicken breast suspended in the still. Pure artisanal masterpiece.",
       priceRange: { minVariantPrice: { amount: "240.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/tequila-fortaleza-blanco.jpg", altText: "Del Maguey Single Village Pechuga" } }] },
+      images: { edges: [{ node: { url: "assets/tequila-fortaleza-blanco.webp", altText: "Del Maguey Single Village Pechuga" } }] },
       variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/tequila16", title: "700ml Bottle", price: { amount: "240.00", currencyCode: "USD" }, availableForSale: true } }] }
     }
   }
@@ -2265,11 +2265,16 @@ async function fetchProductByHandle(handle) {
 // Wishlist Core
 const Wishlist = {
   items: [],
+  handlesSet: new Set(),
 
   init() {
     this.load();
     this.setupEventListeners();
     this.render();
+  },
+
+  updateSet() {
+    this.handlesSet = new Set(this.items.map((i) => i.product?.node?.handle || i.handle || (typeof i === "string" ? i : "")));
   },
 
   load() {
@@ -2282,9 +2287,11 @@ const Wishlist = {
     } catch (error) {
       console.error("Failed to load wishlist from localStorage", error);
     }
+    this.updateSet();
   },
 
   save() {
+    this.updateSet();
     try {
       localStorage.setItem("whiskey-barrel-wishlist", JSON.stringify({
         items: this.items
@@ -2295,7 +2302,7 @@ const Wishlist = {
   },
 
   isInWishlist(handle) {
-    return this.items.some((item) => (item.product?.node?.handle === handle || item.handle === handle));
+    return this.handlesSet.has(handle);
   },
 
   toggleItem(handle, variantId) {
@@ -2506,9 +2513,9 @@ const Wishlist = {
           `;
         }).join("");
 
-        // Re-trigger lucide icons rendering inside wishlist items
-        if (window.lucide) {
-          window.lucide.createIcons();
+        // Re-trigger lucide icons rendering inside wishlist items only
+        if (window.lucide && itemsContainer) {
+          window.lucide.createIcons({ root: itemsContainer });
         }
       }
     }
@@ -2799,6 +2806,9 @@ function createWineProductCardHTML(p, priceStr, image, ratingBadge, customTags, 
               alt="${image.altText ?? p.title}"
               class="wine-card-img"
               loading="lazy"
+              decoding="async"
+              width="240"
+              height="360"
             >
           ` : `
             <div class="flex h-full items-center justify-center text-xs text-[#78716c]">
@@ -3131,7 +3141,7 @@ async function handleCategoryPage() {
     productsGrid.classList.remove("hidden");
     productsGrid.innerHTML = filteredList.map((product, idx) => createProductCardHTML(product, idx)).join("");
     if (window.lucide) {
-      window.lucide.createIcons();
+      window.lucide.createIcons({ root: productsGrid });
     }
   };
 
@@ -3161,9 +3171,6 @@ async function handleCategoryPage() {
 
     currentCategoryProducts = meta.products || [];
     resetAllFilters();
-    if (window.lucide) {
-      window.lucide.createIcons();
-    }
   };
 
   // Bind Category Page Filter Bar options
@@ -3428,6 +3435,8 @@ async function handleProductPage() {
             src="${image.url}"
             alt="${image.altText ?? p.title}"
             class="h-[560px] w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105"
+            decoding="async"
+            fetchpriority="high"
           >
         `;
       } else {
@@ -3657,7 +3666,112 @@ function initFilterRedirections() {
   });
 }
 
-// Hero Section Entrance & Next-Level Atmospheric Parallax Transitions
+// Ultra-Fast Scroll Reveal Animations with Large Margin (250px) for Zero Perceived Lag
+function initRevealAnimations() {
+  const revealElements = document.querySelectorAll("[data-reveal]");
+  if (!revealElements.length) return;
+
+  const isReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (isReduced) {
+    revealElements.forEach((el) => el.classList.add("is-revealed"));
+    return;
+  }
+
+  document.documentElement.classList.add("reveal-init");
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const delay = parseInt(el.getAttribute("data-delay") || "0", 10);
+        if (delay > 0) {
+          setTimeout(() => el.classList.add("is-revealed"), Math.min(delay, 120));
+        } else {
+          el.classList.add("is-revealed");
+        }
+        obs.unobserve(el);
+      }
+    });
+  }, {
+    rootMargin: "250px 0px 250px 0px",
+    threshold: 0.01
+  });
+
+  revealElements.forEach((el) => observer.observe(el));
+}
+
+// Mobile Menu Drawer Handler for Instant Tactile Navigation
+function initMobileMenu() {
+  const toggleBtn = document.getElementById("mobile-menu-toggle");
+  const drawer = document.getElementById("mobile-menu-drawer");
+  if (!toggleBtn || !drawer) return;
+
+  const openIcon = toggleBtn.querySelector(".menu-open-icon");
+  const closeIcon = toggleBtn.querySelector(".menu-close-icon");
+
+  const toggle = (force) => {
+    const shouldOpen = typeof force === "boolean" ? force : !drawer.classList.contains("is-open");
+    drawer.classList.toggle("is-open", shouldOpen);
+    toggleBtn.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+    if (openIcon && closeIcon) {
+      openIcon.classList.toggle("hidden", shouldOpen);
+      closeIcon.classList.toggle("hidden", !shouldOpen);
+    }
+  };
+
+  toggleBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggle();
+  });
+
+  // Close when clicking internal navigation links in drawer
+  drawer.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      toggle(false);
+    });
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (drawer.classList.contains("is-open") && !drawer.contains(e.target) && !toggleBtn.contains(e.target)) {
+      toggle(false);
+    }
+  });
+}
+
+// Instant Page Prefetcher for Blazing Fast Page-to-Page Navigation
+function initInstantPagePrefetch() {
+  const prefetchedUrls = new Set();
+  const prefetchUrl = (url) => {
+    if (!url || prefetchedUrls.has(url)) return;
+    // Don't prefetch external links, anchors, tel/mailto
+    if (url.startsWith("http") || url.startsWith("#") || url.startsWith("tel:") || url.startsWith("mailto:") || url.startsWith("javascript:")) return;
+    
+    prefetchedUrls.add(url);
+    const link = document.createElement("link");
+    link.rel = "prefetch";
+    link.href = url;
+    link.as = "document";
+    document.head.appendChild(link);
+  };
+
+  // Prefetch on hover or touchstart
+  document.addEventListener("pointerover", (e) => {
+    const anchor = e.target.closest("a");
+    if (anchor && anchor.getAttribute("href")) {
+      prefetchUrl(anchor.getAttribute("href"));
+    }
+  }, { passive: true });
+
+  document.addEventListener("touchstart", (e) => {
+    const anchor = e.target.closest("a");
+    if (anchor && anchor.getAttribute("href")) {
+      prefetchUrl(anchor.getAttribute("href"));
+    }
+  }, { passive: true });
+}
+
+// Hero Section Entrance & Ultra-Smooth Atmospheric Parallax Transitions
 function initHeroTransitions() {
   const heroSection = document.getElementById("top");
   if (!heroSection || !heroSection.classList.contains("hero-section")) return;
@@ -3670,124 +3784,140 @@ function initHeroTransitions() {
   };
 
   if (document.readyState === "complete" || document.readyState === "interactive") {
-    setTimeout(triggerEntrance, 20);
+    setTimeout(triggerEntrance, 10);
   } else {
     window.addEventListener("load", triggerEntrance, { passive: true });
   }
 
   const heroBgWrapper = heroSection.querySelector(".hero-bg-wrapper");
   const heroTextBlock = heroSection.querySelector(".hero-text-block");
-  const isReducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isReducedMotion = () => window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isFinePointer = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
 
-  // 2. High-Performance Event-Driven Mouse Spotlight & 3D Depth
-  let mouseTargetX = window.innerWidth * 0.5;
-  let mouseTargetY = window.innerHeight * 0.38;
-  let currentMouseX = mouseTargetX;
-  let currentMouseY = mouseTargetY;
-  let isMouseInside = false;
-  let isHeroVisible = true;
-  let rafId = null;
-  let heroRect = heroSection.getBoundingClientRect();
-  let heroHeight = heroSection.offsetHeight || window.innerHeight;
+  // Cache dimensions to completely prevent forced reflow / layout thrashing
+  let cachedHeroHeight = heroSection.offsetHeight || window.innerHeight;
+  let cachedHeroLeft = 0;
+  let cachedHeroTop = 0;
+  let cachedHeroWidth = window.innerWidth;
 
   const updateHeroDimensions = () => {
-    heroRect = heroSection.getBoundingClientRect();
-    heroHeight = heroSection.offsetHeight || window.innerHeight;
+    const rect = heroSection.getBoundingClientRect();
+    cachedHeroHeight = heroSection.offsetHeight || window.innerHeight;
+    cachedHeroLeft = rect.left + window.scrollX;
+    cachedHeroTop = rect.top + window.scrollY;
+    cachedHeroWidth = rect.width || window.innerWidth;
   };
+
   window.addEventListener("resize", updateHeroDimensions, { passive: true });
+  updateHeroDimensions();
 
-  function updateHeroPhysics() {
-    if (!isHeroVisible || isReducedMotion()) {
-      rafId = null;
-      return;
-    }
+  // 2. Event-Driven Mouse Spotlight & 3D Depth (Only on Desktop with Fine Pointer)
+  if (isFinePointer) {
+    let mouseTargetX = window.innerWidth * 0.5;
+    let mouseTargetY = window.innerHeight * 0.38;
+    let currentMouseX = mouseTargetX;
+    let currentMouseY = mouseTargetY;
+    let isMouseInside = false;
+    let isHeroVisible = true;
+    let rafId = null;
 
-    const dx = mouseTargetX - currentMouseX;
-    const dy = mouseTargetY - currentMouseY;
-
-    // Exponential lerp damping (0.12 factor for ultra snappy tracking)
-    currentMouseX += dx * 0.12;
-    currentMouseY += dy * 0.12;
-
-    heroSection.style.setProperty("--hero-mouse-x", `${currentMouseX.toFixed(1)}px`);
-    heroSection.style.setProperty("--hero-mouse-y", `${currentMouseY.toFixed(1)}px`);
-
-    if (heroTextBlock && window.innerWidth >= 768) {
-      const normX = ((currentMouseX - heroRect.left) / (heroRect.width || window.innerWidth) - 0.5) * 2;
-      const normY = ((currentMouseY - heroRect.top) / (heroRect.height || window.innerHeight) - 0.5) * 2;
-      if (isMouseInside) {
-        heroTextBlock.style.transform = `translate3d(${(normX * -6).toFixed(2)}px, ${(normY * -4).toFixed(2)}px, 0)`;
+    function updateHeroPhysics() {
+      if (!isHeroVisible || isReducedMotion()) {
+        rafId = null;
+        return;
       }
-    }
 
-    // Auto-sleep rAF loop once physics settle and mouse is idle
-    if (Math.abs(dx) > 0.4 || Math.abs(dy) > 0.4 || isMouseInside) {
-      rafId = requestAnimationFrame(updateHeroPhysics);
-    } else {
-      rafId = null;
-    }
-  }
+      const dx = mouseTargetX - currentMouseX;
+      const dy = mouseTargetY - currentMouseY;
 
-  function startHeroPhysics() {
-    if (!rafId && isHeroVisible) {
-      rafId = requestAnimationFrame(updateHeroPhysics);
-    }
-  }
+      currentMouseX += dx * 0.14;
+      currentMouseY += dy * 0.14;
 
-  heroSection.addEventListener("mouseenter", () => {
-    updateHeroDimensions();
-    isMouseInside = true;
-    startHeroPhysics();
-  }, { passive: true });
+      heroSection.style.setProperty("--hero-mouse-x", `${currentMouseX.toFixed(1)}px`);
+      heroSection.style.setProperty("--hero-mouse-y", `${currentMouseY.toFixed(1)}px`);
 
-  heroSection.addEventListener("mousemove", (e) => {
-    mouseTargetX = e.clientX - heroRect.left;
-    mouseTargetY = e.clientY - heroRect.top;
-    isMouseInside = true;
-    startHeroPhysics();
-  }, { passive: true });
+      if (heroTextBlock && window.innerWidth >= 768) {
+        const normX = ((currentMouseX) / cachedHeroWidth - 0.5) * 2;
+        const normY = ((currentMouseY) / cachedHeroHeight - 0.5) * 2;
+        if (isMouseInside) {
+          heroTextBlock.style.transform = `translate3d(${(normX * -5).toFixed(2)}px, ${(normY * -3.5).toFixed(2)}px, 0)`;
+        }
+      }
 
-  heroSection.addEventListener("mouseleave", () => {
-    isMouseInside = false;
-    mouseTargetX = heroRect.width * 0.5;
-    mouseTargetY = heroHeight * 0.38;
-    if (heroTextBlock) {
-      heroTextBlock.style.transform = `translate3d(0, 0, 0)`;
-    }
-    startHeroPhysics();
-  }, { passive: true });
-
-  // Pause physics when hero is scrolled out of viewport
-  const heroVisibilityObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      isHeroVisible = entry.isIntersecting;
-      if (isHeroVisible && isMouseInside) {
-        startHeroPhysics();
-      } else if (!isHeroVisible && rafId) {
-        cancelAnimationFrame(rafId);
+      // Auto-sleep rAF loop when idle
+      if (Math.abs(dx) > 0.4 || Math.abs(dy) > 0.4 || isMouseInside) {
+        rafId = requestAnimationFrame(updateHeroPhysics);
+      } else {
         rafId = null;
       }
-    });
-  }, { threshold: 0.05 });
+    }
 
-  heroVisibilityObserver.observe(heroSection);
+    function startHeroPhysics() {
+      if (!rafId && isHeroVisible) {
+        rafId = requestAnimationFrame(updateHeroPhysics);
+      }
+    }
 
-  // 3. Scroll-driven Depth Parallax with rAF throttling
+    heroSection.addEventListener("mouseenter", () => {
+      isMouseInside = true;
+      startHeroPhysics();
+    }, { passive: true });
+
+    heroSection.addEventListener("mousemove", (e) => {
+      mouseTargetX = e.clientX;
+      mouseTargetY = e.clientY;
+      isMouseInside = true;
+      startHeroPhysics();
+    }, { passive: true });
+
+    heroSection.addEventListener("mouseleave", () => {
+      isMouseInside = false;
+      mouseTargetX = cachedHeroWidth * 0.5;
+      mouseTargetY = cachedHeroHeight * 0.38;
+      if (heroTextBlock) {
+        heroTextBlock.style.transform = "translate3d(0, 0, 0)";
+      }
+      startHeroPhysics();
+    }, { passive: true });
+
+    // Pause physics when hero is scrolled out of viewport
+    const heroVisibilityObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        isHeroVisible = entry.isIntersecting;
+        if (isHeroVisible && isMouseInside) {
+          startHeroPhysics();
+        } else if (!isHeroVisible && rafId) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+      });
+    }, { threshold: 0.05 });
+
+    heroVisibilityObserver.observe(heroSection);
+  }
+
+  // 3. Scroll-driven Depth Parallax with Zero Layout Thrashing
   let scrollTicking = false;
+  let isHeroVisible = true;
+
+  const heroScrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { isHeroVisible = entry.isIntersecting; });
+  }, { threshold: 0 });
+  heroScrollObserver.observe(heroSection);
+
   window.addEventListener("scroll", () => {
-    if (!scrollTicking && isHeroVisible) {
+    if (!scrollTicking && isHeroVisible && !isReducedMotion()) {
       window.requestAnimationFrame(() => {
         const scrollY = window.scrollY;
-
-        if (scrollY <= heroHeight + 80 && !isReducedMotion()) {
-          const ratio = Math.min(1, scrollY / heroHeight);
+        if (scrollY <= cachedHeroHeight + 80) {
+          const ratio = Math.min(1, scrollY / cachedHeroHeight);
           if (heroBgWrapper) {
             heroBgWrapper.style.transform = `translate3d(0, ${(scrollY * 0.28).toFixed(1)}px, 0)`;
           }
           if (heroTextBlock && scrollY > 0) {
             heroTextBlock.style.opacity = Math.max(0, 1 - ratio * 1.35).toFixed(3);
             heroTextBlock.style.transform = `translate3d(0, ${(scrollY * 0.2).toFixed(1)}px, 0)`;
-          } else if (heroTextBlock && scrollY === 0 && !isMouseInside) {
+          } else if (heroTextBlock && scrollY === 0) {
             heroTextBlock.style.opacity = "1";
             heroTextBlock.style.transform = "translate3d(0, 0, 0)";
           }
@@ -3806,8 +3936,9 @@ function initCollectionTransitions() {
 
   const categoryCardsGrid = document.getElementById("category-cards-grid");
   const categoryCards = collectionSection.querySelectorAll(".category-card");
+  const isFinePointer = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
 
-  // 1. Intersection Observer for Section Header Entrance (Eyebrow, Title, Subtitle)
+  // 1. Intersection Observer for Section Header Entrance
   const headerObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -3819,7 +3950,7 @@ function initCollectionTransitions() {
 
   headerObserver.observe(collectionSection);
 
-  // 2. Staggered Sequential Entrance for Category Piles
+  // 2. Staggered Sequential Entrance for Category Cards
   if (categoryCards.length > 0) {
     const isReduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -3837,7 +3968,7 @@ function initCollectionTransitions() {
           card.classList.add("card-in-view");
         });
 
-        const totalDuration = (categoryCards.length * 80) + 500;
+        const totalDuration = (categoryCards.length * 80) + 400;
         setTimeout(() => {
           categoryCards.forEach((card) => {
             card.classList.add("reveal-completed");
@@ -3862,40 +3993,42 @@ function initCollectionTransitions() {
 
       const isCollectionHash = window.location.hash === "#expressions" || window.location.hash === "#collection";
       if (isCollectionHash) {
-        setTimeout(triggerCascade, 50);
+        setTimeout(triggerCascade, 30);
       }
     }
   }
 
-  // 3. Subtle Spotlight Tracking for Featured / Vault Bento Cards (Cached Bounding Rect)
-  const featuredCards = collectionSection.querySelectorAll(".home-card-featured, .home-card-half");
-  featuredCards.forEach((card) => {
-    let cardRaf = null;
-    let cardRect = null;
+  // 3. Subtle Spotlight Tracking for Bento Cards (Only fine pointers)
+  if (isFinePointer) {
+    const featuredCards = collectionSection.querySelectorAll(".home-card-featured, .home-card-half");
+    featuredCards.forEach((card) => {
+      let cardRaf = null;
+      let cardRect = null;
 
-    card.addEventListener("mouseenter", () => {
-      cardRect = card.getBoundingClientRect();
-    }, { passive: true });
+      card.addEventListener("mouseenter", () => {
+        cardRect = card.getBoundingClientRect();
+      }, { passive: true });
 
-    card.addEventListener("mousemove", (e) => {
-      if (cardRaf) return;
-      cardRaf = requestAnimationFrame(() => {
-        if (!cardRect) cardRect = card.getBoundingClientRect();
-        const x = ((e.clientX - cardRect.left) / cardRect.width) * 100;
-        const y = ((e.clientY - cardRect.top) / cardRect.height) * 100;
-        card.style.setProperty("--card-mouse-x", `${x.toFixed(1)}%`);
-        card.style.setProperty("--card-mouse-y", `${y.toFixed(1)}%`);
-        cardRaf = null;
-      });
-    }, { passive: true });
+      card.addEventListener("mousemove", (e) => {
+        if (cardRaf) return;
+        cardRaf = requestAnimationFrame(() => {
+          if (!cardRect) cardRect = card.getBoundingClientRect();
+          const x = ((e.clientX - cardRect.left) / cardRect.width) * 100;
+          const y = ((e.clientY - cardRect.top) / cardRect.height) * 100;
+          card.style.setProperty("--card-mouse-x", `${x.toFixed(1)}%`);
+          card.style.setProperty("--card-mouse-y", `${y.toFixed(1)}%`);
+          cardRaf = null;
+        });
+      }, { passive: true });
 
-    card.addEventListener("mouseleave", () => {
-      if (cardRaf) { cancelAnimationFrame(cardRaf); cardRaf = null; }
-      cardRect = null;
-      card.style.setProperty("--card-mouse-x", "50%");
-      card.style.setProperty("--card-mouse-y", "50%");
-    }, { passive: true });
-  });
+      card.addEventListener("mouseleave", () => {
+        if (cardRaf) { cancelAnimationFrame(cardRaf); cardRaf = null; }
+        cardRect = null;
+        card.style.setProperty("--card-mouse-x", "50%");
+        card.style.setProperty("--card-mouse-y", "50%");
+      }, { passive: true });
+    });
+  }
 }
 
 // Visit Section Smooth Hero-Grade Transitions & Atmospheric Depth
@@ -3904,6 +4037,7 @@ function initVisitTransitions() {
   if (!visitSection) return;
 
   const isReducedMotion = () => window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isFinePointer = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
   const banner = visitSection.querySelector(".visit-showcase-banner");
   const bannerBgWrapper = visitSection.querySelector(".visit-banner-bg-wrapper");
   const bannerContent = visitSection.querySelector(".visit-banner-content");
@@ -3918,7 +4052,7 @@ function initVisitTransitions() {
 
   if (isVisitPage) {
     if (document.readyState === "complete" || document.readyState === "interactive") {
-      setTimeout(triggerVisitEntrance, 30);
+      setTimeout(triggerVisitEntrance, 20);
     } else {
       window.addEventListener("load", triggerVisitEntrance, { passive: true });
     }
@@ -3936,10 +4070,10 @@ function initVisitTransitions() {
   }
 
   // 2. High-Performance Event-Driven Mouse Spotlight & 3D Depth on Showcase Banner
-  if (banner) {
+  if (banner && isFinePointer) {
     let bannerRect = null;
-    let mouseTargetX = (banner.offsetWidth || 1000) * 0.5;
-    let mouseTargetY = (banner.offsetHeight || 500) * 0.45;
+    let mouseTargetX = 500;
+    let mouseTargetY = 250;
     let currentMouseX = mouseTargetX;
     let currentMouseY = mouseTargetY;
     let isMouseInside = false;
@@ -3948,8 +4082,13 @@ function initVisitTransitions() {
 
     const updateBannerDimensions = () => {
       bannerRect = banner.getBoundingClientRect();
+      if (!isMouseInside) {
+        mouseTargetX = bannerRect.width * 0.5;
+        mouseTargetY = bannerRect.height * 0.45;
+      }
     };
     window.addEventListener("resize", updateBannerDimensions, { passive: true });
+    updateBannerDimensions();
 
     function updateVisitPhysics() {
       if (!isVisitVisible || isReducedMotion()) {
@@ -3960,15 +4099,15 @@ function initVisitTransitions() {
       const dx = mouseTargetX - currentMouseX;
       const dy = mouseTargetY - currentMouseY;
 
-      currentMouseX += dx * 0.12;
-      currentMouseY += dy * 0.12;
+      currentMouseX += dx * 0.14;
+      currentMouseY += dy * 0.14;
 
       banner.style.setProperty("--visit-mouse-x", `${currentMouseX.toFixed(1)}px`);
       banner.style.setProperty("--visit-mouse-y", `${currentMouseY.toFixed(1)}px`);
 
       if (bannerContent && window.innerWidth >= 768 && bannerRect) {
-        const normX = ((currentMouseX - bannerRect.left) / bannerRect.width - 0.5) * 2;
-        const normY = ((currentMouseY - bannerRect.top) / bannerRect.height - 0.5) * 2;
+        const normX = ((currentMouseX) / bannerRect.width - 0.5) * 2;
+        const normY = ((currentMouseY) / bannerRect.height - 0.5) * 2;
         if (isMouseInside) {
           bannerContent.style.transform = `translate3d(${(normX * -5).toFixed(2)}px, ${(normY * -3.5).toFixed(2)}px, 0)`;
         }
@@ -4008,7 +4147,7 @@ function initVisitTransitions() {
         mouseTargetY = bannerRect.height * 0.45;
       }
       if (bannerContent) {
-        bannerContent.style.transform = `translate3d(0, 0, 0)`;
+        bannerContent.style.transform = "translate3d(0, 0, 0)";
       }
       startVisitPhysics();
     }, { passive: true });
@@ -4026,123 +4165,108 @@ function initVisitTransitions() {
     }, { threshold: 0.05 });
 
     visitVisibilityObserver.observe(visitSection);
-
-    // 3. Scroll-Driven Depth Parallax for Banner Background
-    let scrollTicking = false;
-    let cachedWinHeight = window.innerHeight;
-    window.addEventListener("resize", () => { cachedWinHeight = window.innerHeight; }, { passive: true });
-
-    window.addEventListener("scroll", () => {
-      if (!scrollTicking && isVisitVisible) {
-        window.requestAnimationFrame(() => {
-          if (!isReducedMotion() && banner && bannerBgWrapper) {
-            if (!bannerRect) updateBannerDimensions();
-            const bTop = banner.getBoundingClientRect().top;
-            if (bTop < cachedWinHeight && bTop > -600) {
-              const offsetFromCenter = bTop - (cachedWinHeight * 0.5);
-              bannerBgWrapper.style.transform = `translate3d(0, ${(offsetFromCenter * -0.1).toFixed(1)}px, 0)`;
-            }
-          }
-          scrollTicking = false;
-        });
-        scrollTicking = true;
-      }
-    }, { passive: true });
   }
 
-  // 4. Subtle Spotlight Tracking on Info Cards with Cached Rects
-  const infoCols = visitSection.querySelectorAll(".visit-info-col");
-  infoCols.forEach((col) => {
-    let colRaf = null;
-    let colRect = null;
+  // 3. Subtle Spotlight Tracking on Info Cards with Cached Rects
+  if (isFinePointer) {
+    const infoCols = visitSection.querySelectorAll(".visit-info-col");
+    infoCols.forEach((col) => {
+      let colRaf = null;
+      let colRect = null;
 
-    col.addEventListener("mouseenter", () => {
-      colRect = col.getBoundingClientRect();
-    }, { passive: true });
+      col.addEventListener("mouseenter", () => {
+        colRect = col.getBoundingClientRect();
+      }, { passive: true });
 
-    col.addEventListener("mousemove", (e) => {
-      if (colRaf) return;
-      colRaf = requestAnimationFrame(() => {
-        if (!colRect) colRect = col.getBoundingClientRect();
-        const x = ((e.clientX - colRect.left) / colRect.width) * 100;
-        const y = ((e.clientY - colRect.top) / colRect.height) * 100;
-        col.style.setProperty("--card-mouse-x", `${x.toFixed(1)}%`);
-        col.style.setProperty("--card-mouse-y", `${y.toFixed(1)}%`);
-        colRaf = null;
-      });
-    }, { passive: true });
+      col.addEventListener("mousemove", (e) => {
+        if (colRaf) return;
+        colRaf = requestAnimationFrame(() => {
+          if (!colRect) colRect = col.getBoundingClientRect();
+          const x = ((e.clientX - colRect.left) / colRect.width) * 100;
+          const y = ((e.clientY - colRect.top) / colRect.height) * 100;
+          col.style.setProperty("--card-mouse-x", `${x.toFixed(1)}%`);
+          col.style.setProperty("--card-mouse-y", `${y.toFixed(1)}%`);
+          colRaf = null;
+        });
+      }, { passive: true });
 
-    col.addEventListener("mouseleave", () => {
-      if (colRaf) { cancelAnimationFrame(colRaf); colRaf = null; }
-      colRect = null;
-      col.style.setProperty("--card-mouse-x", "50%");
-      col.style.setProperty("--card-mouse-y", "50%");
-    }, { passive: true });
-  });
+      col.addEventListener("mouseleave", () => {
+        if (colRaf) { cancelAnimationFrame(colRaf); colRaf = null; }
+        colRect = null;
+        col.style.setProperty("--card-mouse-x", "50%");
+        col.style.setProperty("--card-mouse-y", "50%");
+      }, { passive: true });
+    });
 
-  // 5. Subtle Spotlight Tracking on Map Card
-  const mapCard = visitSection.querySelector(".visit-map-card");
-  if (mapCard && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    let mapRaf = null;
-    let mapRect = null;
+    const mapCard = visitSection.querySelector(".visit-map-card");
+    if (mapCard) {
+      let mapRaf = null;
+      let mapRect = null;
 
-    mapCard.addEventListener("mouseenter", () => {
-      mapRect = mapCard.getBoundingClientRect();
-    }, { passive: true });
+      mapCard.addEventListener("mouseenter", () => {
+        mapRect = mapCard.getBoundingClientRect();
+      }, { passive: true });
 
-    mapCard.addEventListener("mousemove", (e) => {
-      if (mapRaf) return;
-      mapRaf = requestAnimationFrame(() => {
-        if (!mapRect) mapRect = mapCard.getBoundingClientRect();
-        const x = ((e.clientX - mapRect.left) / mapRect.width) * 100;
-        const y = ((e.clientY - mapRect.top) / mapRect.height) * 100;
-        mapCard.style.setProperty("--map-mouse-x", `${x.toFixed(1)}%`);
-        mapCard.style.setProperty("--map-mouse-y", `${y.toFixed(1)}%`);
-        mapRaf = null;
-      });
-    }, { passive: true });
+      mapCard.addEventListener("mousemove", (e) => {
+        if (mapRaf) return;
+        mapRaf = requestAnimationFrame(() => {
+          if (!mapRect) mapRect = mapCard.getBoundingClientRect();
+          const x = ((e.clientX - mapRect.left) / mapRect.width) * 100;
+          const y = ((e.clientY - mapRect.top) / mapRect.height) * 100;
+          mapCard.style.setProperty("--map-mouse-x", `${x.toFixed(1)}%`);
+          mapCard.style.setProperty("--map-mouse-y", `${y.toFixed(1)}%`);
+          mapRaf = null;
+        });
+      }, { passive: true });
 
-    mapCard.addEventListener("mouseleave", () => {
-      if (mapRaf) { cancelAnimationFrame(mapRaf); mapRaf = null; }
-      mapRect = null;
-      mapCard.style.setProperty("--map-mouse-x", "50%");
-      mapCard.style.setProperty("--map-mouse-y", "50%");
-    }, { passive: true });
+      mapCard.addEventListener("mouseleave", () => {
+        if (mapRaf) { cancelAnimationFrame(mapRaf); mapRaf = null; }
+        mapRect = null;
+        mapCard.style.setProperty("--map-mouse-x", "50%");
+        mapCard.style.setProperty("--map-mouse-y", "50%");
+      }, { passive: true });
+    }
   }
 }
 
 // Global initialization
 window.addEventListener("DOMContentLoaded", () => {
-  // 1. Initialize Wishlist & Cart
+  // 1. Initialize Instant Page-to-Page Prefetching
+  initInstantPagePrefetch();
+
+  // 2. Initialize Wishlist & Cart
   Cart.init();
 
-  // 2. Initialize Reveal Animations
+  // 2b. Initialize Mobile Navigation Menu
+  initMobileMenu();
+
+  // 3. Initialize Reveal Animations
   initRevealAnimations();
 
-  // 2b. Initialize Hero Transitions
+  // 3b. Initialize Hero Transitions
   initHeroTransitions();
 
-  // 2c. Initialize Collection Transitions
+  // 3c. Initialize Collection Transitions
   initCollectionTransitions();
 
-  // 2d. Initialize Visit Transitions
+  // 3d. Initialize Visit Transitions
   initVisitTransitions();
 
-  // 3. Initialize About Toggle
+  // 4. Initialize About Toggle
   initAboutToggle();
 
-  // 3b. Initialize Price Filter Dropdown
+  // 4b. Initialize Price Filter Dropdown
   initPriceFilterDropdown();
 
-  // 3c. Initialize Filter Redirections
+  // 4c. Initialize Filter Redirections
   initFilterRedirections();
 
-  // 4. Render Lucide icons
+  // 5. Render Lucide icons
   if (window.lucide) {
     window.lucide.createIcons();
   }
 
-  // 5. Run page-specific logic
+  // 6. Run page-specific logic
   const isCategoryPage = window.location.pathname.includes("category.html") || window.location.pathname.includes("/category");
   const isProductPage = window.location.pathname.includes("product.html") || window.location.pathname.includes("/product");
   const isVisitPage = window.location.pathname.includes("visit.html") || window.location.pathname.includes("/visit");
