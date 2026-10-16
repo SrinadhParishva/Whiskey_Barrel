@@ -1729,264 +1729,8 @@ const GIN_PRODUCTS = [
   }
 ];
 
-const CIGAR_PRODUCTS = [
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-1",
-      title: "Aurum Artisanal Reserve Cigars",
-      handle: "aurum-artisanal-reserve-cigars",
-      category: "CIGAR",
-      country: "🇳🇮 Nicaragua",
-      composition: "🍃 Long-Filler Tobacco",
-      type: "🚬 Premium Artisanal Cigar",
-      badges: [{ label: "AFICIONADO", score: "95" }, { label: "AGED", score: "RESERVE" }],
-      description: "Hand-rolled Nicaraguan long-filler tobacco presented in an engraved solid mahogany humidor box.",
-      priceRange: { minVariantPrice: { amount: "210.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Aurum Artisanal Reserve Cigars" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar1", title: "700ml Bottle", price: { amount: "210.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-2",
-      title: "Habano Wrapper Robusto Box",
-      handle: "habano-wrapper-robusto-box",
-      category: "CIGAR",
-      country: "🇨🇺 Cuba",
-      composition: "🍃 Cuban Seed Tobacco",
-      type: "🚬 Habano Robusto (Box of 10)",
-      badges: [{ label: "AFICIONADO", score: "96" }, { label: "AGED", score: "RESERVE" }],
-      description: "Aged Cuban-seed Habano wrapper with cedarwood, dark cocoa, roasted espresso, and leather notes.",
-      priceRange: { minVariantPrice: { amount: "240.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-cigar.webp", altText: "Habano Wrapper Robusto Box" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar2", title: "700ml Bottle", price: { amount: "240.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-3",
-      title: "Mahogany Engraved Torpedo",
-      handle: "mahogany-engraved-torpedo",
-      category: "CIGAR",
-      country: "🇩🇴 Dominican",
-      composition: "🍃 Aged Piloto Cubano",
-      type: "🚬 Torpedo Box of 10",
-      badges: [{ label: "AFICIONADO", score: "94" }, { label: "AGED", score: "RESERVE" }],
-      description: "Hand-crafted Torpedo cigars aged 5 years. Presented in a solid mahogany box with gold brass hinges.",
-      priceRange: { minVariantPrice: { amount: "195.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Mahogany Engraved Torpedo" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar3", title: "700ml Bottle", price: { amount: "195.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-4",
-      title: "Estelí Long-Filler Churchill",
-      handle: "esteli-long-filler-churchill",
-      category: "CIGAR",
-      country: "🇳🇮 Nicaragua",
-      composition: "🍃 Estelí Valley Leaf",
-      type: "🚬 Churchill (Box of 10)",
-      badges: [{ label: "AFICIONADO", score: "93" }, { label: "AGED", score: "RESERVE" }],
-      description: "7x48 Churchill format with rich Nicaraguan binder and wrapper. Earthy pepper, nutmeg, and dark cocoa.",
-      priceRange: { minVariantPrice: { amount: "180.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-cigar.webp", altText: "Estelí Long-Filler Churchill" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar4", title: "700ml Bottle", price: { amount: "180.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-5",
-      title: "Maduro Vintage Reserve Toro",
-      handle: "maduro-vintage-reserve-toro",
-      category: "CIGAR",
-      country: "🇲🇽 Mexico",
-      composition: "🍃 San Andrés Maduro",
-      type: "🚬 Toro Vintage (Box of 10)",
-      badges: [{ label: "AFICIONADO", score: "95" }, { label: "AGED", score: "RESERVE" }],
-      description: "Oily San Andrés Maduro wrapper over Nicaraguan long-fillers. Sweet dark chocolate, black pepper, and cream.",
-      priceRange: { minVariantPrice: { amount: "225.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Maduro Vintage Reserve Toro" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar5", title: "700ml Bottle", price: { amount: "225.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-6",
-      title: "Hand-Rolled Corona Gorda",
-      handle: "hand-rolled-corona-gorda",
-      category: "CIGAR",
-      country: "🇨🇺 Cuba",
-      composition: "🍃 Vuelta Abajo Tobacco",
-      type: "🚬 Corona Gorda (Box of 10)",
-      badges: [{ label: "AFICIONADO", score: "97" }, { label: "AGED", score: "RESERVE" }],
-      description: "Authentic Cuban leaf Corona Gorda. Medium to full-bodied profile with toasted almonds and white pepper.",
-      priceRange: { minVariantPrice: { amount: "310.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-cigar.webp", altText: "Hand-Rolled Corona Gorda" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar6", title: "700ml Bottle", price: { amount: "310.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-7",
-      title: "Cuban Heritage Aniversario",
-      handle: "cuban-heritage-aniversario",
-      category: "CIGAR",
-      country: "🇨🇺 Cuba",
-      composition: "🍃 Vintage 2015 Crop Leaf",
-      type: "🚬 Limited Edition Aniversario",
-      badges: [{ label: "AFICIONADO", score: "98" }, { label: "AGED", score: "RESERVE" }],
-      description: "Limited edition 10th anniversary release. Aged 8 years for ultimate smoothness with roasted coffee and cedar.",
-      priceRange: { minVariantPrice: { amount: "380.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Cuban Heritage Aniversario" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar7", title: "700ml Bottle", price: { amount: "380.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-8",
-      title: "Nicaragua Dark Wrapper Toro",
-      handle: "nicaragua-dark-wrapper-toro",
-      category: "CIGAR",
-      country: "🇳🇮 Nicaragua",
-      composition: "🍃 Sun-Grown Dark Leaf",
-      type: "🚬 Dark Toro (Box of 10)",
-      badges: [{ label: "AFICIONADO", score: "92" }, { label: "AGED", score: "RESERVE" }],
-      description: "Sun-grown dark Nicaraguan wrapper. Rich spice, charred oak wood, dark cocoa, and smooth cream finish.",
-      priceRange: { minVariantPrice: { amount: "170.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-cigar.webp", altText: "Nicaragua Dark Wrapper Toro" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar8", title: "700ml Bottle", price: { amount: "170.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-9",
-      title: "Royal Selection Pirámide Box",
-      handle: "royal-selection-piramide-box",
-      category: "CIGAR",
-      country: "🇩🇴 Dominican",
-      composition: "🍃 Connecticut Broadleaf",
-      type: "🚬 Pirámide (Box of 10)",
-      badges: [{ label: "AFICIONADO", score: "94" }, { label: "AGED", score: "RESERVE" }],
-      description: "Tapered Pirámide shape allowing concentrated flavor delivery. Creamy cedar, caramel, and baking spices.",
-      priceRange: { minVariantPrice: { amount: "215.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Royal Selection Pirámide Box" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar9", title: "700ml Bottle", price: { amount: "215.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-10",
-      title: "Master Blender Reserve Lancero",
-      handle: "master-blender-reserve-lancero",
-      category: "CIGAR",
-      country: "🇳🇮 Nicaragua",
-      composition: "🍃 Rare Jalapa Valley Leaf",
-      type: "🚬 Lancero (Box of 10)",
-      badges: [{ label: "AFICIONADO", score: "96" }, { label: "AGED", score: "RESERVE" }],
-      description: "Slim 7.5x38 Lancero format for wrapper flavor intensity. Complex cinnamon, leather, and dark berry note.",
-      priceRange: { minVariantPrice: { amount: "250.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-cigar.webp", altText: "Master Blender Reserve Lancero" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar10", title: "700ml Bottle", price: { amount: "250.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-11",
-      title: "Gran Reserva Vintage 2015",
-      handle: "gran-reserva-vintage-2015",
-      category: "CIGAR",
-      country: "🇭🇳 Honduras",
-      composition: "🍃 Jamastran Valley Leaf",
-      type: "🚬 Gran Reserva (Box of 10)",
-      badges: [{ label: "AFICIONADO", score: "95" }, { label: "AGED", score: "RESERVE" }],
-      description: "Aged 10 years in cedar vault rooms. Smooth oaky smoke with toasted walnuts, cocoa bean, and sweet spice.",
-      priceRange: { minVariantPrice: { amount: "290.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Gran Reserva Vintage 2015" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar11", title: "700ml Bottle", price: { amount: "290.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-12",
-      title: "Gold Band Belicoso Selection",
-      handle: "gold-band-belicoso-selection",
-      category: "CIGAR",
-      country: "🇩🇴 Dominican",
-      composition: "🍃 Dominican Olor Leaf",
-      type: "🚬 Belicoso (Box of 10)",
-      badges: [{ label: "AFICIONADO", score: "93" }, { label: "AGED", score: "RESERVE" }],
-      description: "Classic Belicoso shape with golden foil band. Smooth almond, honeyed toast, and subtle floral cedar.",
-      priceRange: { minVariantPrice: { amount: "190.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-cigar.webp", altText: "Gold Band Belicoso Selection" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar12", title: "700ml Bottle", price: { amount: "190.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-13",
-      title: "Dominican Sungrown Robusto",
-      handle: "dominican-sungrown-robusto",
-      category: "CIGAR",
-      country: "🇩🇴 Dominican",
-      composition: "🍃 Chateau Sungrown Leaf",
-      type: "🚬 Sungrown Robusto (10-Pack)",
-      badges: [{ label: "AFICIONADO", score: "94" }, { label: "AGED", score: "RESERVE" }],
-      description: "Sun-drenched Dominican wrapper. Rich cinnamon, white pepper, cedarwood, and natural tobacco sweetness.",
-      priceRange: { minVariantPrice: { amount: "205.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Dominican Sungrown Robusto" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar13", title: "700ml Bottle", price: { amount: "205.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-14",
-      title: "Emperor Mahogany Humidor",
-      handle: "emperor-mahogany-humidor",
-      category: "CIGAR",
-      country: "🇳🇮 Nicaragua",
-      composition: "🍃 Ligero Long-Filler Leaf",
-      type: "🚬 Humidor Set (Box of 15)",
-      badges: [{ label: "AFICIONADO", score: "99" }, { label: "AGED", score: "RESERVE" }],
-      description: "Prestige 15-cigar humidor collection crafted in solid mahogany. Premium full-bodied Nicaraguan reserve.",
-      priceRange: { minVariantPrice: { amount: "450.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Emperor Mahogany Humidor" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar14", title: "700ml Bottle", price: { amount: "450.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-15",
-      title: "Small Batch Vintage 10-Pack",
-      handle: "small-batch-vintage-10-pack",
-      category: "CIGAR",
-      country: "🇨🇺 Cuba",
-      composition: "🍃 Hand-Selected Cuban Leaf",
-      type: "🚬 Vintage Small Batch",
-      badges: [{ label: "AFICIONADO", score: "96" }, { label: "AGED", score: "RESERVE" }],
-      description: "Rare small batch release hand-rolled by master torcedores. Delicate spice, roasted espresso, and velvet finish.",
-      priceRange: { minVariantPrice: { amount: "280.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cat-cigar.webp", altText: "Small Batch Vintage 10-Pack" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar15", title: "700ml Bottle", price: { amount: "280.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  },
-  {
-    node: {
-      id: "gid://shopify/Product/custom-cigar-16",
-      title: "Grand Aniversario Double Corona",
-      handle: "grand-aniversario-double-corona",
-      category: "CIGAR",
-      country: "🇩🇴 Dominican Republic",
-      composition: "🍃 Aged Habano 2000 Wrapper",
-      type: "🚬 Double Corona (Box of 10)",
-      badges: [{ label: "AFICIONADO", score: "97" }, { label: "AGED", score: "RESERVE" }],
-      description: "Aged 10-year Dominican binder and filler with silky Habano wrapper. Rich leather, cedar, cinnamon, and cream.",
-      priceRange: { minVariantPrice: { amount: "320.00", currencyCode: "USD" } },
-      images: { edges: [{ node: { url: "assets/cigar-reserve.webp", altText: "Grand Aniversario Double Corona" } }] },
-      variants: { edges: [{ node: { id: "gid://shopify/ProductVariant/cigar16", title: "700ml Bottle", price: { amount: "320.00", currencyCode: "USD" }, availableForSale: true } }] }
-    }
-  }
-];
+// Cigar section items - Coming Soon
+const CIGAR_PRODUCTS = [];
 
 const TEQUILA_PRODUCTS = [
   {
@@ -2573,50 +2317,6 @@ const Wishlist = {
 
 const Cart = Wishlist;
 
-// Reveal Animations using IntersectionObserver with GPU-accelerated opacity/transform
-function initRevealAnimations() {
-  const revealElements = document.querySelectorAll('[data-reveal]:not(.reveal-init)');
-  if (revealElements.length === 0) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const delay = parseInt(el.getAttribute('data-delay') || 0, 10);
-        
-        el.style.transitionDelay = `${delay}ms`;
-        // Apply end state classes
-        el.classList.add('opacity-100', 'translate-x-0', 'translate-y-0', 'scale-100');
-        // Remove start state classes
-        el.classList.remove('opacity-0', 'translate-y-10', '-translate-x-12', 'translate-x-12', 'scale-95');
-        
-        // Clear transition-delay after entrance completes so hover interactions are immediate
-        setTimeout(() => {
-          el.style.transitionDelay = '';
-          el.classList.add('reveal-completed');
-        }, delay + 500);
-        
-        observer.unobserve(el);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '50px 0px 50px 0px' });
-
-  revealElements.forEach((el) => {
-    el.classList.add('reveal-init');
-    const type = el.getAttribute('data-reveal') || 'up';
-    
-    // Set base setup with focused transform and opacity transitions
-    el.classList.add('transition-[opacity,transform]', 'duration-500', 'ease-[cubic-bezier(0.16,1,0.3,1)]', 'opacity-0');
-    
-    // Set starting transforms
-    if (type === 'up') el.classList.add('translate-y-10');
-    else if (type === 'left') el.classList.add('-translate-x-12');
-    else if (type === 'right') el.classList.add('translate-x-12');
-    else if (type === 'scale') el.classList.add('scale-95');
-    
-    observer.observe(el);
-  });
-}
 
 
 // Global Quantity Counter & Wishlist Handlers
@@ -2913,13 +2613,13 @@ async function handleIndexPage() {
   const productsGrid = document.getElementById("products-grid");
 
   try {
-    const products = await fetchProducts(24);
-    
-    if (productsLoading) productsLoading.classList.add("hidden");
-
-    if (products.length === 0) {
-      productsEmpty?.classList.remove("hidden");
-      return;
+    if (productsGrid) {
+      const products = await fetchProducts(24);
+      if (productsLoading) productsLoading.classList.add("hidden");
+      if (products.length === 0) {
+        productsEmpty?.classList.remove("hidden");
+        return;
+      }
     }
 
     const renderProductList = (productList) => {
@@ -3115,7 +2815,7 @@ async function handleCategoryPage() {
     CIGAR: {
       title: "Artisanal Cigar Collection",
       subtitle: "Hand-rolled Nicaraguan long-filler cigars presented in engraved solid mahogany humidor boxes.",
-      products: CIGAR_PRODUCTS
+      products: []
     }
   };
 
@@ -3167,6 +2867,21 @@ async function handleCategoryPage() {
       const url = new URL(window.location);
       url.searchParams.set("category", key);
       history.pushState({ category: key }, "", url);
+    }
+
+    const filterBeamWrapper = document.querySelector(".cask-filter-beam-wrapper");
+    const cigarComingSoonEl = document.getElementById("cigar-coming-soon");
+
+    if (key === "CIGAR") {
+      if (filterBeamWrapper) filterBeamWrapper.classList.add("hidden");
+      if (productsLoading) productsLoading.classList.add("hidden");
+      if (productsGrid) productsGrid.classList.add("hidden");
+      if (productsEmpty) productsEmpty.classList.add("hidden");
+      if (cigarComingSoonEl) cigarComingSoonEl.classList.remove("hidden");
+      return;
+    } else {
+      if (filterBeamWrapper) filterBeamWrapper.classList.remove("hidden");
+      if (cigarComingSoonEl) cigarComingSoonEl.classList.add("hidden");
     }
 
     currentCategoryProducts = meta.products || [];
@@ -3666,7 +3381,7 @@ function initFilterRedirections() {
   });
 }
 
-// Ultra-Fast Scroll Reveal Animations with Large Margin (250px) for Zero Perceived Lag
+// Ultra-Fast Scroll Reveal Animations with Generous Margin (350px) for Zero Perceived Lag
 function initRevealAnimations() {
   const revealElements = document.querySelectorAll("[data-reveal]");
   if (!revealElements.length) return;
@@ -3677,27 +3392,30 @@ function initRevealAnimations() {
     return;
   }
 
-  document.documentElement.classList.add("reveal-init");
-
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const el = entry.target;
-        const delay = parseInt(el.getAttribute("data-delay") || "0", 10);
-        if (delay > 0) {
-          setTimeout(() => el.classList.add("is-revealed"), Math.min(delay, 120));
-        } else {
-          el.classList.add("is-revealed");
-        }
+        el.classList.add("is-revealed");
         obs.unobserve(el);
       }
     });
   }, {
-    rootMargin: "250px 0px 250px 0px",
+    rootMargin: "350px 0px 350px 0px",
     threshold: 0.01
   });
 
-  revealElements.forEach((el) => observer.observe(el));
+  const winHeight = window.innerHeight || 800;
+  revealElements.forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top <= winHeight + 350) {
+      el.classList.add("is-revealed");
+    } else {
+      observer.observe(el);
+    }
+  });
+
+  document.documentElement.classList.add("reveal-init");
 }
 
 // Mobile Menu Drawer Handler for Instant Tactile Navigation
@@ -3776,18 +3494,14 @@ function initHeroTransitions() {
   const heroSection = document.getElementById("top");
   if (!heroSection || !heroSection.classList.contains("hero-section")) return;
 
-  // 1. Trigger hero entrance transition on load
+  // 1. Trigger hero entrance transition immediately
   const triggerEntrance = () => {
     requestAnimationFrame(() => {
       heroSection.classList.add("hero-loaded");
     });
   };
 
-  if (document.readyState === "complete" || document.readyState === "interactive") {
-    setTimeout(triggerEntrance, 10);
-  } else {
-    window.addEventListener("load", triggerEntrance, { passive: true });
-  }
+  triggerEntrance();
 
   const heroBgWrapper = heroSection.querySelector(".hero-bg-wrapper");
   const heroTextBlock = heroSection.querySelector(".hero-text-block");
@@ -3839,7 +3553,7 @@ function initHeroTransitions() {
       if (heroTextBlock && window.innerWidth >= 768) {
         const normX = ((currentMouseX) / cachedHeroWidth - 0.5) * 2;
         const normY = ((currentMouseY) / cachedHeroHeight - 0.5) * 2;
-        if (isMouseInside) {
+        if (isMouseInside && window.scrollY === 0) {
           heroTextBlock.style.transform = `translate3d(${(normX * -5).toFixed(2)}px, ${(normY * -3.5).toFixed(2)}px, 0)`;
         }
       }
@@ -4051,11 +3765,7 @@ function initVisitTransitions() {
   };
 
   if (isVisitPage) {
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-      setTimeout(triggerVisitEntrance, 20);
-    } else {
-      window.addEventListener("load", triggerVisitEntrance, { passive: true });
-    }
+    triggerVisitEntrance();
   } else {
     const visitObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
@@ -4064,7 +3774,7 @@ function initVisitTransitions() {
           observer.unobserve(visitSection);
         }
       });
-    }, { threshold: 0.1, rootMargin: "60px 0px -5% 0px" });
+    }, { threshold: 0.05, rootMargin: "180px 0px 0px 0px" });
 
     visitObserver.observe(visitSection);
   }
@@ -4229,9 +3939,33 @@ function initVisitTransitions() {
   }
 }
 
+// High-Performance Smooth Anchor Navigation
+// Preserves silky smooth in-page transitions when clicking buttons or nav links,
+// while allowing native wheel, trackpad, and touch scrolling to run at 100% full unconstrained speed.
+function initSmoothAnchorNavigation() {
+  document.addEventListener("click", (e) => {
+    const anchor = e.target.closest('a[href^="#"]');
+    if (!anchor) return;
+    const href = anchor.getAttribute("href");
+    if (!href || href === "#" || href === "#!") return;
+
+    const targetEl = document.querySelector(href);
+    if (targetEl) {
+      e.preventDefault();
+      targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (history.pushState) {
+        history.pushState(null, "", href);
+      }
+    }
+  });
+}
+
 // Global initialization
 window.addEventListener("DOMContentLoaded", () => {
-  // 1. Initialize Instant Page-to-Page Prefetching
+  // 1. Initialize Instant Smooth Anchor Navigation
+  initSmoothAnchorNavigation();
+
+  // 1b. Initialize Instant Page-to-Page Prefetching
   initInstantPagePrefetch();
 
   // 2. Initialize Wishlist & Cart
@@ -4280,4 +4014,5 @@ window.addEventListener("DOMContentLoaded", () => {
     handleIndexPage();
   }
 });
+
 

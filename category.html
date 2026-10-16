@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-behavior-smooth">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -260,6 +260,34 @@
         <!-- Dedicated Products Grid (4x4 Grid displaying 16 items per category) -->
         <div id="products-grid" class="hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 md:gap-8 max-w-7xl mx-auto w-full">
           <!-- Dynamically populated product cards in 4x4 Grid (16 items) -->
+        </div>
+
+        <!-- Cigar Coming Soon Container (No images, premium luxury Coming Soon state) -->
+        <div id="cigar-coming-soon" class="hidden my-12 sm:my-16 text-center max-w-2xl mx-auto px-4">
+          <div class="relative overflow-hidden rounded-xl border border-[#d4a86a]/30 bg-gradient-to-b from-[#1b1510] via-[#120e0b] to-[#0a0806] p-10 sm:p-14 shadow-2xl">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(212,168,106,0.15),_transparent_70%)] pointer-events-none"></div>
+            <!-- Elegant gold icon / crest -->
+            <div class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-[#d4a86a]/40 bg-[#261d15]/80 shadow-[0_0_35px_rgba(212,168,106,0.2)]">
+              <svg class="h-9 w-9 text-[#d4a86a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <span class="inline-block px-3.5 py-1 text-[11px] font-semibold tracking-[0.3em] uppercase text-[#d4a86a] bg-[#d4a86a]/10 border border-[#d4a86a]/30 rounded-full mb-4">
+              ARTISANAL RESERVE
+            </span>
+            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-[0.2em] uppercase text-[#f7f3eb] mb-4">
+              COMING SOON
+            </h2>
+            <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-[#d4a86a] to-transparent mx-auto mb-6"></div>
+            <p class="text-sm sm:text-base text-[#c4b5a0] font-serif leading-relaxed max-w-lg mx-auto mb-8">
+              Our curated humidor selection and hand-rolled artisanal cigars are currently in preparation. Please check back soon for the official release.
+            </p>
+            <a href="index.html#expressions" class="inline-flex items-center gap-2 px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.25em] text-[#0c0a08] bg-gradient-to-r from-[#d4a86a] via-[#e8c89b] to-[#d4a86a] rounded-sm shadow-lg hover:shadow-[#d4a86a]/30 hover:brightness-110 transition-all duration-300">
+              <span>EXPLORE SPIRITS</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
         </div>
 
       </div>
