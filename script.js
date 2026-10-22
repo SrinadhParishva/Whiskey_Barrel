@@ -2743,6 +2743,9 @@ async function handleIndexPage() {
     const categoryCards = document.querySelectorAll(".category-card");
     categoryCards.forEach((card) => {
       card.addEventListener("click", (e) => {
+        if (e.target.closest(".whiskey-card-action-btn, .whiskey-card-quick-actions, a, button")) {
+          return;
+        }
         e.preventDefault();
         e.stopPropagation();
         const cat = card.getAttribute("data-category-card");
@@ -2862,6 +2865,33 @@ async function handleCategoryPage() {
     if (breadcrumbCategoryEl) {
       breadcrumbCategoryEl.textContent = key.charAt(0) + key.slice(1).toLowerCase();
     }
+
+    // Toggle Exclusive Category Action Buttons (Maps, Phone, Instagram, WhatsApp) for WHISKEY, RUM, BEER, VODKA, WINE, GIN
+    const whiskeyFooterActionsEl = document.getElementById("whiskey-footer-actions");
+    const defaultFooterSocialEl = document.getElementById("default-footer-social");
+    if (whiskeyFooterActionsEl) {
+      if (["WHISKEY", "RUM", "BEER", "VODKA", "WINE", "GIN"].includes(key)) {
+        whiskeyFooterActionsEl.classList.remove("hidden");
+        whiskeyFooterActionsEl.style.display = "flex";
+        if (defaultFooterSocialEl) {
+          defaultFooterSocialEl.classList.add("hidden");
+          defaultFooterSocialEl.style.display = "none";
+        }
+        if (window.lucide) {
+          window.lucide.createIcons({ root: whiskeyFooterActionsEl });
+        }
+      } else {
+        whiskeyFooterActionsEl.classList.add("hidden");
+        whiskeyFooterActionsEl.style.display = "none";
+        if (defaultFooterSocialEl) {
+          defaultFooterSocialEl.classList.remove("hidden");
+          defaultFooterSocialEl.style.display = "flex";
+        }
+      }
+    }
+
+
+
 
     if (updateUrl) {
       const url = new URL(window.location);

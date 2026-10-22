@@ -6737,6 +6737,247 @@ footer,
   font-size: 0.9rem;
 }
 
+/* ==========================================================================
+   EXCLUSIVE "WHISKEY" CATEGORY ACTION BUTTONS (MAPS, PHONE, INSTAGRAM, WHATSAPP)
+   Only active & displayed for the Whiskey category
+   ========================================================================== */
+
+/* 1. Category Page Footer Action Bar */
+.whiskey-footer-actions,
+.whiskey-exclusive-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.35rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 30;
+  animation: whiskeyActionsFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes whiskeyActionsFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.whiskey-action-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  background: rgba(18, 14, 11, 0.88);
+  border: 1px solid rgba(212, 168, 106, 0.32);
+  color: #ede2d3;
+  text-decoration: none;
+  font-family: var(--font-body, "Hanken Grotesk", sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 
+    0 4px 14px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.whiskey-action-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.whiskey-action-btn:hover::before {
+  opacity: 1;
+}
+
+.whiskey-action-btn .whiskey-btn-icon,
+.whiskey-action-btn .whiskey-btn-svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.whiskey-action-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  color: #ffffff;
+}
+
+.whiskey-action-btn:hover .whiskey-btn-icon,
+.whiskey-action-btn:hover .whiskey-btn-svg {
+  transform: scale(1.18);
+}
+
+/* Individual Button Hover Accents on Category Page */
+
+/* Maps - Warm Gold / Amber Glow */
+.whiskey-action-maps:hover {
+  background: rgba(30, 22, 16, 0.96);
+  border-color: rgba(212, 168, 106, 0.9);
+  color: #ffd99f;
+  box-shadow: 
+    0 6px 20px rgba(212, 168, 106, 0.32),
+    0 0 16px rgba(212, 168, 106, 0.22),
+    inset 0 0 10px rgba(212, 168, 106, 0.18);
+}
+
+/* Phone - Intense Ember / Copper Glow */
+.whiskey-action-phone:hover {
+  background: rgba(36, 20, 14, 0.96);
+  border-color: rgba(224, 112, 48, 0.9);
+  color: #ffb088;
+  box-shadow: 
+    0 6px 20px rgba(224, 112, 48, 0.32),
+    0 0 16px rgba(224, 112, 48, 0.22),
+    inset 0 0 10px rgba(224, 112, 48, 0.18);
+}
+
+/* Instagram - Luxury Rose / Magenta Glow */
+.whiskey-action-instagram:hover {
+  background: rgba(38, 16, 26, 0.96);
+  border-color: rgba(225, 48, 108, 0.9);
+  color: #ff7aa8;
+  box-shadow: 
+    0 6px 20px rgba(225, 48, 108, 0.32),
+    0 0 16px rgba(225, 48, 108, 0.22),
+    inset 0 0 10px rgba(225, 48, 108, 0.18);
+}
+
+/* WhatsApp - Rich Emerald / WhatsApp Green Glow */
+.whiskey-action-whatsapp:hover {
+  background: rgba(14, 34, 22, 0.96);
+  border-color: rgba(37, 211, 102, 0.9);
+  color: #55f392;
+  box-shadow: 
+    0 6px 20px rgba(37, 211, 102, 0.32),
+    0 0 16px rgba(37, 211, 102, 0.22),
+    inset 0 0 10px rgba(37, 211, 102, 0.18);
+}
+
+/* 2. Homepage Category Card Floating Quick Actions (Strictly Whiskey Card) */
+.whiskey-card-quick-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border-radius: 9999px;
+  background: rgba(12, 10, 8, 0.88);
+  border: 1px solid rgba(212, 168, 106, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 25;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.whiskey-card-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: rgba(24, 18, 14, 0.9);
+  border: 1px solid rgba(212, 168, 106, 0.28);
+  color: #ede2d3;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.whiskey-card-action-btn i,
+.whiskey-card-action-btn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.whiskey-card-action-btn:hover {
+  transform: translateY(-2px) scale(1.15);
+}
+
+.whiskey-card-action-btn.card-action-maps:hover {
+  background: rgba(45, 30, 20, 0.98);
+  border-color: #d4a86a;
+  color: #ffd99f;
+  box-shadow: 0 0 10px rgba(212, 168, 106, 0.5);
+}
+
+.whiskey-card-action-btn.card-action-phone:hover {
+  background: rgba(50, 25, 15, 0.98);
+  border-color: #e07030;
+  color: #ffb088;
+  box-shadow: 0 0 10px rgba(224, 112, 48, 0.5);
+}
+
+.whiskey-card-action-btn.card-action-instagram:hover {
+  background: rgba(50, 18, 34, 0.98);
+  border-color: #e1306c;
+  color: #ff7aa8;
+  box-shadow: 0 0 10px rgba(225, 48, 108, 0.5);
+}
+
+.whiskey-card-action-btn.card-action-whatsapp:hover {
+  background: rgba(18, 48, 28, 0.98);
+  border-color: #25d366;
+  color: #55f392;
+  box-shadow: 0 0 10px rgba(37, 211, 102, 0.5);
+}
+
+@media (max-width: 640px) {
+  .whiskey-footer-actions,
+  .whiskey-exclusive-actions {
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .whiskey-action-btn {
+    padding: 0.5rem 0.95rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+  }
+
+  .whiskey-card-quick-actions {
+    top: 6px;
+    right: 6px;
+    gap: 4px;
+    padding: 3px 5px;
+  }
+
+  .whiskey-card-action-btn {
+    width: 25px;
+    height: 25px;
+  }
+
+  .whiskey-card-action-btn i,
+  .whiskey-card-action-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
 
 
 
